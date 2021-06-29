@@ -1,2 +1,2 @@
-The new PhysioData Toolbox in under construction. 🚧
+The new PhysioData Toolbox is under construction. 🚧
 Please tune in again in a few weeks.
