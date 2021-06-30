@@ -1,0 +1,3 @@
+Variable,Unit,Description
+"IBI_index","s","The value of the IBI with the given index, per event."
+"Delay_IBI_index","s","The time of the IBI with the given index, relative to the event."

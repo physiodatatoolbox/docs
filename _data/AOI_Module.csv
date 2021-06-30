@@ -1,0 +1,5 @@
+Variable,Unit,Description
+"AOI_Total_Hit_Time","s","The total cumulative hit time in the AOI (AOI), per epoch."
+"AOI_Time_to_First_Hit","s","The time from the start of the epoch to the first hit in the AOI (AOI), per epoch. Is zero if the epoch started during a hit, blank/NaN if epoch did not feature any hits"
+"AOI_First_Hit_Duration","s","The duration of the first hit in the AOI (AOI), per epoch. If the epoch started or ended while a hit, was active, only the duration during the epoch is considered."
+"AOI_Hit_Count","-","The total distinct times that the AOI (AOI) was hit, per epoch."

@@ -1,3 +1,12 @@
+---
+
+---
+{% comment %} NOTE: This is for compatibility with pdt v0.5.0, which uses the old WP link format:
+https://physiodatatoolbox.leidenuniv.nl/toolboxFiles/pdtInfo.json
+
+If this is changed to anything higher than 0.5.0, users using v0.5.0 will get a notification
+that there is a new version available.
+{% endcomment %}
 {
     "version": "0.5.0"
   }

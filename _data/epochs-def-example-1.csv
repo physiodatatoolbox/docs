@@ -1,0 +1,5 @@
+epochName,startChannel,startValue,startOccur,startDelay,endChannel,endValue,endOccur,endDelay
+"Epoch_1","4","10","1","0","4","20","1","0"
+"Epoch_2","4","30","1","dur-1","4","30","1","dur"
+"Epoch_3","4","40","1","dur","4","10","2","dur"
+"Epoch_4","4","10","1","0","4","10","2","0"

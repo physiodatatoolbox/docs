@@ -1,0 +1,53 @@
+// These are specific styles for the PDT site.
+
+
+// Make the sidebar a bit wider (to fit the title, and longer page names)
+//$nav-width: 300px;
+//$nav-width-md: 316x;
+
+
+
+// Hide the just-the-doc footer
+.site-footer {
+    visibility: hidden
+  }
+
+
+// Justify body text. Don't do it for headers, it hakes
+// them ugly when they wrap on mobile screens
+body {
+    text-align: justify;
+}
+h1, h2, h3, h4, h5, h6, .nav-list-link, .text-mono, table{
+    text-align: left;
+}
+
+// The page abstract style
+.pdt-abstract-title {
+  @extend .fs-9;
+}
+.pdt-abstract-body {
+  @extend .fs-6, .fw-300;
+}
+
+
+// Style for standard buttons
+.pdt-btn {
+  @extend .fs-5, .btn;
+}
+
+
+// Colors
+$body-background-color: $white;
+$sidebar-color: $grey-lt-000;
+$search-background-color: $white;
+$code-background-color: $grey-lt-000;
+$feedback-color: darken($sidebar-color, 3%);
+
+$body-text-color: $grey-dk-100;
+$body-heading-color: $grey-dk-300;
+$search-result-preview-color: $grey-dk-000;
+$nav-child-link-color: $grey-dk-100;
+$link-color: #274980;
+$btn-primary-color: $purple-100;
+$base-button-color: #ebeef2; //#f7f7f7;

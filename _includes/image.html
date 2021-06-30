@@ -1,0 +1,91 @@
+
+<!---
+    Images include for nice images in the PDT Doc. -Elio
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center. -->
+{% if include.indent_left %}
+    {% capture l_padding %}{{ include.indent_left }}{% endcapture %}
+    {% assign r_padding = "0px" %}
+{% else %}
+    {% assign l_padding = "26px" %}
+    {% assign r_padding = "26px" %}
+{% endif %}
+
+<!-- The image path: -->
+{% capture img_path %}
+    {{ site.url }}/{{ site.baseurl }}/assets/images/{{ include.img }}
+{% endcapture %}
+
+<!-- The image number counter: -->
+{% unless image_counter %}
+    {% assign image_counter = 1 %}
+{% else %}
+    {% assign image_counter = image_counter | plus: 1 %}
+{% endunless %}
+
+
+<!-- 
+Add fancy img-aware drop-shadow:
+https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css -->
+{% if include.no_shadow %}
+    {% assign shadow_style = "" %}
+{% else %}
+    {% capture shadow_style %}
+        -webkit-filter: drop-shadow(1px 1px 3px #222);
+        filter: drop-shadow(1px 1px 3px #222);
+    {% endcapture %}
+{% endif %}
+
+
+<!-- Make figure
+
+Use table for formatting, see:
+https://stackoverflow.com/a/11652170 -->
+<figure  class=""
+    style="
+        padding: 0px;
+        padding-left: {{ l_padding }};
+        padding-right: {{ r_padding }};
+        {% unless include.indent_left %} margin: auto; {% endunless%}
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        {% if include.max_width %} max-width: {{ include.max_width }}; {% endif %}
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <a href="{{ img_path }} " title="{{ include.title }}">
+        <img 
+            {% if include.id %} id="{{ include.id }}" {% endif %} 
+            src="{{ img_path }} "
+            alt="{{ include.title }}" 
+            style="
+            {% if include.max_width %} width: 100%; {% endif %}
+            display: block;
+            {{ shadow_style }};
+            ">
+	</a>
+
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    {% if include.caption %}
+        <figcaption class="fs-3"
+            style="
+            line-height: 1.5;
+                padding: 0px;
+                {% if include.no_shadow %} padding-top: 10px; {% else %} padding-top: 16px; {% endif %}
+                padding-left: {{ l_padding }};
+                padding-right: {{ r_padding }};
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+            <a href="#{{ include.id }}">Figure {{ image_counter }}</a>:
+            {{ include.caption }}
+        </figcaption>
+    {% endif %}
+</figure>

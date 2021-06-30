@@ -1,0 +1,15 @@
+
+{% for setting_item in site.data.module_details[page.classname].settings %}
+{% for item_info in setting_item %}
+
+{% if item_info.header and item_info.header != "" %} - **{{ item_info.header }}**  {% endif %}
+{% if item_info.subheader and item_info.subheader != "" %}    {{ item_info.subheader | newline_to_br }}{% endif %}
+
+{% if item_info.label and item_info.unit and item_info.desc %}
+     - **{{ item_info.label }}{% unless item_info.unit == "" %} [{{ item_info.unit }}]{% endunless%}:**  
+        {{ item_info.desc }}
+{% endif %}
+
+{% endfor %}
+{% endfor %}
+

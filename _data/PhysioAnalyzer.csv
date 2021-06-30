@@ -1,0 +1,8 @@
+Variable,Unit,Description
+"mean","-","The mean of the signal inside the current epoch."
+"min","-","The minimum of the signal inside the current epoch."
+"minPointTime","s","The time where the minimum of the signal (inside the epoch) was reached, relative to the start of the epoch."
+"max","-","The maximum of the signal inside the current epoch."
+"maxPointTime","s","The time where the maximum of the signal (inside the epoch) was reached, relative to the start of the epoch."
+"std","-","The standard deviation (nanstd) of the signal inside the current epoch."
+"validSampleCount","count","The count of the valid samples inside the current epoch."

@@ -1,0 +1,7 @@
+---
+
+---
+{% comment %} NOTE: Keep the front matter so that the JSON is processed as by the Liquid Engine.{% endcomment %}
+{
+    "version": "{{ site.pdt_version }}"
+  }

@@ -1,0 +1,32 @@
+
+<!---
+    Adds a table with PhysioAnalyzer metrics to a page. -Elio
+-->
+
+{% unless table_counter %}
+    {% assign table_counter = 1 %}
+{% else %}
+    {% assign table_counter = table_counter | plus: 1 %}
+{% endunless %}
+
+<a id="{{ include.id }}" href="#{{ include.id }}">Table {{ table_counter }}</a>:
+{{ include.caption }}
+{: .fs-3 .mb-1}
+<table>
+  {% for row in site.data[include.csv_name] %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}:</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
+
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
+
+
+
