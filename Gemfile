@@ -35,3 +35,9 @@ gem "just-the-docs"
 gem 'eventmachine', :github => 'eventmachine/eventmachine', :ref => 'b7d9ef8'
 
 gem 'html-proofer'
+
+
+# Address GitHub dependabot issues:
+gem "nokogiri", ">= 1.11.4"
+gem "kramdown", ">= 2.3.1"
+gem "rexml", ">= 3.2.5"
