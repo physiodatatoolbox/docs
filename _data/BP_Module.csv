@@ -12,4 +12,4 @@ Variable,Unit,Description
 "Mean_MAP","mmHg","The mean MAP (Mean Arterial Pressure), per epoch."
 "Mean_Pulse","BPM","The mean of the interpolated pulse, as estimated from the intervals between the systolic peaks, per epoch."
 "Pulse_Coverage","%","The percentage of the epoch for which there is (interpolated) pulse data."
-"Missing_Data","%","Percentage of missing data (either do to calibrations or user rejection), per epoch."
+"Missing_Data","%","Percentage of missing data (either due to calibrations or user rejection), per epoch."

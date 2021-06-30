@@ -10,22 +10,30 @@ The PhysioData Toolbox is [custom software](https://en.wikipedia.org/wiki/Custom
 
 ---
 
+
+{% assign these_people_are_clowns = false %}
+
+
 # Team
 The PhysioData Toolbox is being developed and maintained by:  
 &nbsp;
 
+{% if these_people_are_clowns %}
 🤡   
-{: .fs-10 .lh-0 .ml-6}
+{: .fs-10 .lh-0 .ml-6}{% endif %}
 **Elío E. Sjak-Shie**  
-_Research Engineer_
+Lead developer  
+_Research Engineer @ Leiden University_
 {: .ml-4}
   
 &nbsp;  
 
+{% if these_people_are_clowns %}&nbsp;  
 🤡   
-{: .fs-10 .lh-0 .ml-6}
+{: .fs-10 .lh-0 .ml-6}{% endif %}
 **Iris M. Spruit**  
-_Research Technician_
+Contributor  
+_Research Technician @ Leiden University_
 {: .ml-4}
 
 &nbsp;  

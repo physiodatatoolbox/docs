@@ -20,7 +20,7 @@ The Toolbox requires the MATLAB 2020b Component Runtime (v9.9):
 
 [Download MATLAB 2020b Component Runtime](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 480px; text-align: center;"}
 
-See [installation guide below](#installation).
+See installation guide [below](#installation).
 {: .pdt-abstract-body}
 
 ---
@@ -62,7 +62,7 @@ If you require support, or if you have any questions, comments or suggestions, p
     Before running the Toolbox executables, please ensure that the zip file is unpacked to a folder where you have write-access, preferably on a local drive. Additionally, do not put the Toolbox in a folder controlled by a file-synchronization service (e.g. Dropbox).
 
  - **Wait:**  
-    When running PhysioDataToolbox.exe for the first time, it will attempt to create a folder named PhysioDataToolbox_mcr in the same directory as the executable, and unpack its dependencies there. This may take **several minutes**, especially when running the Toolbox on network or non-SSD drives. Similarly, running FileConverter.exe for the first time, creates a folder named FileConverter_mcr. Please be patient. Subsequent launches should be much faster.
+    When running PhysioDataToolbox.exe for the first time, it will attempt to create a folder named PhysioDataToolbox_mcr in the same directory as the executable, and unpack its dependencies there. This may take **several minutes**, especially when running the Toolbox on network or non-SSD drives. Please be patient. Subsequent launches should be much faster.
 
  - **Ask for help:**  
     Contact the [developers](#license-and-support) and explain your predicament.

@@ -27,7 +27,7 @@ In the Toolbox, epochs are tied to the PhysioAnalyzer modules. Each PhysioAnalyz
     no_shadow = true
     caption = "The settings panel of the Generic Signal Analyzer, shown twice with different epoch settings. Note the setting labeled 'Generate epochs from', and the dropdown menu beside it. When the user selects 'Epoch Definition Table', the default option, then a button appears below the menu (left). Clicking the button opens the Epoch Builder GUI, where users can import, edit and test epoch definition tables. When 'PhysioAnalyzer with tag:' is selected (right), a text field appears allowing users to enter the tag of the PhysioAnalyzer from which the epochs should be copied (e.g. 'ECG')." %}
 
-Next to analyzing epochs generated using an epoch definition, the Toolbox will also analyze pre-made epochs saved in the PhysioData file. See XXX for more information. <!--- TODO: add reference -->
+Next to analyzing epochs generated using an epoch definition, the Toolbox will also analyze pre-made epochs saved in the PhysioData file. <!--- TODO: add link to file spec. -->
 
 ---
 

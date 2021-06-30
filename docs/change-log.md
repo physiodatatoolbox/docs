@@ -32,5 +32,10 @@ PhysioData Toolbox Version 0.6 contains several improvements over v0.5.
  - **This website:**  
     The PhysioData Toolbox documentation has been updated and moved from a pdt document to this website.
 
-## PhysioData Toolbox version prior to 0.6
+## PhysioData Toolbox v<0.6
 Versions older than 0.6 are considered legacy. Please contact us if you require access to them.
+
+---
+
+# Document Archive #
+Archival snapshots of this website representing older PhysioData Toolbox versions can be found on [here](./doc-versions.html).

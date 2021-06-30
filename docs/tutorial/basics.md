@@ -7,10 +7,8 @@ parent: Tutorial
 # Basic Walkthrough #
 {: .pdt-abstract-title, .no_toc}
 
-The basics tutorial will teach users the core concepts of the Toolbox, and how to import, visualize, clean and analyze data.
+The basic tutorial will teach users the core concepts of the Toolbox, and how to import, visualize, clean and analyze data.
 {: .pdt-abstract-body}
-
-👷🏻‍♀️ 🚧 Under construction 🚧 👷🏻
 
 ---
 {% include pdt_toc.md %}
@@ -20,9 +18,11 @@ The basics tutorial will teach users the core concepts of the Toolbox, and how t
 This tutorial uses an ECG, Skin Conductance and Blood Pressure example dataset provided in the PhysioData Toolbox zip file. However, core concepts of the PhysioData Toolbox that apply to all data types are introduced. Following this basic tutorial is recommended for all first-time users, including researchers seeking to analyze other data types, such as eye-tracking data. This tutorial will take approximately 1.5 hours to complete.
 
 ## Converting Raw Data ##
-The PhysioData Toolbox can only read **PhysioData Files**, which are special MATLAB files with the .physioData format. To convert your own data for use in the PhysioData Toolbox, use the [File Converter](..\user-guide\file-converter.md). For the current tutorial, use the provided files, however.
+The PhysioData Toolbox can only read **PhysioData Files**, which are special MATLAB files with the .physioData format. To convert your own data for use in the PhysioData Toolbox, use the [File Converter](..\user-guide\file-converter.md). For the current tutorial, use the provided files, as explained below.
 
-If you do not have a file format supported by the File Converter, you can generate PhysioData files using a custom MATLAB script. <!--- TODO: add link to PhysioData Format -->
+If you do not have a file format supported by the File Converter, you can generate PhysioData files using a custom MATLAB script.
+
+<!--- TODO: add link to PhysioData Format -->
 
 ## Example Dataset ##
 The Shock-Conditioning example files loosely represent a classic supra/sub perceptual electrical shock conditioning task. The experiment consisted of several phases and trials, which can be identified using the markers, events and pre-generated epochs found in the files. During the experiment, ECG, Skin Conductance and Blood Pressure signals were obtained. The example dataset is specifically designed to exhibit the usage of several Toolbox features.
@@ -121,10 +121,12 @@ The Shock-Conditioning example files loosely represent a classic supra/sub perce
 
 ---
 
-# Importing Files #
-Download the Toolbox as described [here](../installation.html), and launch it by running the **PhysioDataToolbox.exe** file. When run for the first time, it may take a few minutes before the Toolbox loads. Once the Toolbox loads, the **Session Manager** will become visible, which is the interface that allows users to import and analyze PhysioData files.
+# Running the Toolbox #
+Download the Toolbox as described [here](../installation.html), and launch it by running the **PhysioDataToolbox.exe** file. When run for the first time, it may take a few minutes before the Toolbox loads. Once the Toolbox loads, read the welcome message and launch the **Session Manager**.
 
-## Open files ## 
+---
+
+# Importing Files #
 Click on the **Open** button in the Session Manager and select the folder with the example files \(PhysioDataToolbox\data\example_datasets\ECG_EDA_BP_ShockCS\\). Alternatively, you can open the example files by going to **Menu**, selecting **Open Example Files** and clicking **ECG EDA BP ShockCS**. The Session Manager should now list all PhysioData files inside the folder (12 in total). Note the PhysioAnalyzers within the files in red. Because we will make new Analyzers in this walkthrough, start by clicking the **Remove Analyses** button below the file tree, checking all **PhysioAnalyzer Tags** checkboxes, and clicking the **Remove from all files** button. 
 
 {% include image.html

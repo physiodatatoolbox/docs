@@ -7,7 +7,7 @@ parent: User Guide
 # File Converter #
 {: .pdt-abstract-title, .no_toc}
 
-The File Converter is an application included with the PhysioData Toolbox that converts various data formats into PhysioData files for use in the Toolbox.
+The File Converter is an app that converts various data formats into PhysioData files for use in the Toolbox.
 {: .pdt-abstract-body}
 
 ---
@@ -15,21 +15,28 @@ The File Converter is an application included with the PhysioData Toolbox that c
 ---
 
 # Introduction #
-The PhysioData toolbox is designed to only analyze standardized PhysioData files, which are MATLAB files with the physioData extension that comply with the [PhysioData file specification](XXX). 
+The PhysioData toolbox is designed to only analyze standardized PhysioData files, which are MATLAB files with the physioData extension that comply with the PhysioData file specification. 
 
-To facilitate the batch conversion of raw physiological data to the PhysioData format, the toolbox is bundled with a separate _File Converter_ application. The File Converter can be launched by running the **FileConverter.exe** file.
+<!--- TODO: Link to file specification above. --->
+
+To facilitate the batch conversion of raw physiological data to the PhysioData format, the toolbox includes a separate _File Converter_ application.
+
+## Launching the File Converter ##
+The File Converter can be launched by selecting it from the welcome screen, or by clicking the menu in the top left corner of the Session Manager, then selecting the File Converter.
 
 ## Supported File Types ##
 The current version of the File Converter supports the following raw file formats:
 
  - BIOPAC
  - VU-AMS 
- - Philips Achieva MRI 'PhysLog' files
- - BioSemi
  - E-Prime Extension for Tobii (EET)
  - EyeLink
 
+<!-- TODO: Re-add  the BioSemi and scanner converter docs. -->
+
 Other raw file types can be converted to the PhysioData format by using a custom MATLAB script that generates the PhysioData File.
+
+<!--- TODO: Link to section about manually generating PhysioData files. --->
 
 ---
 
@@ -41,6 +48,9 @@ Files can be imported into the File Converter by clicking the **Select Files** b
     title="File converter interface"
     id = "fc-1"
     caption="The File Converter interface, showing 5 imported BIOPAC files (PPN_01.acq – PPN_05.acq) with 13 channels each" %}
+
+<!-- TODO: Remake the printscreen to include the new Session Manager buttons. Also add it to the description. -->
+
 
 The first column in the Current Raw Files table contains checkboxes used for enabling and disabling individual files for conversion. The **File** and **Info** columns to the right of that show the file names and a summary of the file contents, respectively.
 
@@ -70,9 +80,8 @@ If the File Converter detects imminent filename collisions, i.e. that similarly 
  - **Completely overwrite existing PhysioData files:**  
    When selected, any preexisting PhysioData file with a conflicting name will be completely overwritten.
 
----
 
-# BIOPAC Files #
+## BIOPAC Files ##
 The built-in BIOPAC converter supports AcqKnowledge (v3.9 – v5.0.2) data saved as .acq files or exported as .mat files. Due to a limitation in the BIOPAC File API, only AcqKnowledge .acq files that comply with the following requirements can be converted: 
  - All channels must have the same sampling rate 
  - All channels must have the same length
@@ -83,17 +92,53 @@ When using digital markers, and depending on the experimental design, the BIOPAC
 
 The BIOPAC converter does not feature any custom options.
 
---- 
 
-# VU-AMS #
+## VU-AMS ##
 The VU-AMS converter supports converting raw 5FS files recorded using the VU-AMS system. All sub-sampled signals are up-sampled to the master sampling rate through linear interpolation and nearest neighbor extrapolation.
 
 If a channel labeled Z0 is present, a -dZdt channel is generated using a differentiating 256 order FIR filter with a high-pass cutoff frequency of 1 Hz, and a low-pass cutoff frequency of 10 Hz.
 
 The VU-AMS converter does not feature any custom options. 
 
----
 
+## EET Output ##
+The E-Prime Extensions for Tobii (EET) output converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions.
+
+This converter features the following custom options:
+
+ - **Eye-tracking Event Generation:**  
+  In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values.
+
+ - **Gap Threshold:**  
+  The Toolbox assumes that a time gap between subsequent rows in the gazedata file indicates a break in a section, even if the rows otherwise form a contiguous section. The gap is classified as a difference in row-timestamps with duration larger than N times the sample duration (1/fs). N must be larger than 1, and can be inf. Setting it to inf effectively turns of the above mentioned assumption.
+
+ - **AOI Analysis:**  
+   In this field, one column name of the EET files can be specified. This column should hold the current area of interest (AOI) hit data. It thus holds the AOI name that is currently looked at (if any). In EET 3.2 files, the ComponentName column can be used for AOI Analysis. The ComponentName column is automatically created in EET 3.2 files and the (sub)object or slide state that is currently being looked at.
+
+{% include image.html
+    img="user-guide\file-converter\eet-custom-options.png"
+    title="EET custom options"
+    id="eet-opts"
+    caption="The custom conversion options available for EET files." %}
+
+
+## EyeLink ##
+The EyeLink converter can be used to extract raw pupil-size data from SR research’s EyeLink .edf files.
+
+This converter features the following custom options:
+
+ - **Remove EyeLink System Events:**  
+  The File Converter converts all messages available in the .edf file to eye-tracking events, except the events that match the regular expression specified in this field. Leaving the field blank converts all messages. Many EyeLink system-events are not actually used by the PhysioData Toolbox and can therefore be omitted from conversion. The default value removes these system-events.
+
+
+ - **DataViewer Options:**  
+  If messages were sent with an time-offset prefix as defined by DataViewer, then the timestamps of those messages can be corrected accordingly by the File Converter. Messages should have the following format: <offset> <msg>, where <offset> is the message delay in ms.
+
+
+
+<!--- Currently disabled modules: --->
+
+{% comment %}
 # LIBC Achieva MRI #
 PhysLog files generated by the LIBC Philips Achieva 3T MRI scanner can be converted to the PhysioData format using the LIBC Achieva MRI converter. Note that this converter is designed for use with data from the Leiden University scanner, and may not work as intended on data from other scanners, even those of the same make and model.
 
@@ -119,20 +164,4 @@ For BioSemi files, the following BioSemi Options can be set:
     caption="The custom conversion options available for BioSemi files." %}
 
 ---
-
-# EET Output #
-The E-Prime Extensions for Tobii (EET) output converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions.
-
-This converter features the following custom options:
-
- - **Eye-tracking Event Generation:**  
-  In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values.
-
- - **AOI Analysis:**  
-   In this field, one column name of the EET files can be specified. This column should hold the current area of interest (AOI) hit data. It thus holds the AOI name that is currently looked at (if any). In EET 3.2 files, the ComponentName column can be used for AOI Analysis. The ComponentName column is automatically created in EET 3.2 files and the (sub)object or slide state that is currently being looked at.
-
-{% include image.html
-    img="user-guide\file-converter\eet-custom-options.png"
-    title="EET custom options"
-    id="eet-opts"
-    caption="The custom conversion options available for EET files." %}
+{% endcomment %}
