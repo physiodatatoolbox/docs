@@ -25,9 +25,7 @@ The **Area of Interest Hit Analyzer** visualizes pre-classified hit data inside 
     img="user-guide/physioanalyzers/aoi-module-gui-1.png"
     title= page.title
     id="gui-1"
-    caption="
-    The Area of Interest Hit GUI, showing the hit data per AOI. In the current file there were four AOIs. Notice that the EXP_AOIEyes AOI was hit most frequently. 
-    " %} 
+    caption="The Area of Interest Hit GUI, showing the hit data per AOI. In the current file there were four AOIs. Notice that the EXP_AOIEyes AOI was hit most frequently." %} 
 
 ---
 

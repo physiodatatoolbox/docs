@@ -48,9 +48,7 @@ The Pupil Diameter module includes a popup window for visualizing the filter thr
     img="user-guide/physioanalyzers/pupil-module-filters-1.png"
     title= "Pupil diameter analyzer filters"
     id="filters-1"
-    caption="
-    The Pupil Diameter module's filter visualization window.
-    " %}
+    caption="The Pupil Diameter module's filter visualization window." %}
 
 As described at the start of this section, the user can overrule the automatic sample rejection algorithm. This can be done by selecting a time section of the data by right-clicking and dragging inside the graph, then selecting one of the following actions, per eye:
 
@@ -82,34 +80,26 @@ Similarly, in cases where the filter rejected valid samples, and the issue canno
     img="user-guide/physioanalyzers/pupil-module-correction-1.png"
     title= "Pupil size correction 1"
     id="correction-1"
-    caption="
-    A Pupil diameter dataset showing measurement artifacts in the right pupil diameter samples. To correct this, the user can complement the raw data filter by manually rejecting the erroneous samples.
-    " %} 
+    caption="A Pupil diameter dataset showing measurement artifacts in the right pupil diameter samples. To correct this, the user can complement the raw data filter by manually rejecting the erroneous samples." %} 
 
 {% include image.html
     img="user-guide/physioanalyzers/pupil-module-correction-2.png"
     title= "Pupil size correction 2"
     id="correction-2"
-    caption="
-    Inserting a rejection zone. The desired section is selected by left-clicking in the pupil diameter graph and dragging the highlighted section while holding down the mouse button. Once the desired section has been selected, releasing the mouse button opens a popup menu with several correction options.
-    " %} 
+    caption="Inserting a rejection zone. The desired section is selected by left-clicking in the pupil diameter graph and dragging the highlighted section while holding down the mouse button. Once the desired section has been selected, releasing the mouse button opens a popup menu with several correction options." %} 
 
 {% include image.html
     img="user-guide/physioanalyzers/pupil-module-correction-3.png"
     title= "Pupil size correction 3"
     id="correction-3"
-    caption="
-    Force reject samples. In the current example, the 'Force rejection' option is chosen for the right eye to manually remove the erroneous samples.
-    " %} 
+    caption="Force reject samples. In the current example, the 'Force rejection' option is chosen for the right eye to manually remove the erroneous samples." %} 
  
 
  {% include image.html
     img="user-guide/physioanalyzers/pupil-module-correction-4.png"
     title= "Pupil size correction 4"
     id="correction-4"
-    caption="
-    Once a 'force-reject' zone has been inserted, no raw samples for the eye it was defined for are used. In this case, the erroneous contribution of the noisy right pupil samples is removed, leaving a smooth 'mean pupil diameter' signal generated solely from the left pupil data (in the force-reject zone).
-    " %} 
+    caption="Once a 'force-reject' zone has been inserted, no raw samples for the eye it was defined for are used. In this case, the erroneous contribution of the noisy right pupil samples is removed, leaving a smooth 'mean pupil diameter' signal generated solely from the left pupil data (in the force-reject zone)." %} 
 
 ---
 
@@ -126,9 +116,7 @@ In addition, pupil size samples that are simply outside of a predefined feasible
     title= page.title
     id="artifacts"
     no_shadow = true
-    caption="
-    Raw pupil diameter data showing the different kinds of artifacts that are targeted by the raw data filter presented in this paper. The invalid samples targeted for rejection are shown circled. A. Certain artifacts, especially those caused by blinks, are characterized by large inter-sample changes in pupil size; i.e., disproportionately large dilation speeds, as visualized by the arrows. Additionally, the edges of eye-blink gaps may show slopes caused by the onset of eyelid occlusion. B. Outlying clusters of erroneous data-points can be identified by their abnormally large deviation from a smooth trend-line (solid black line). C. Small islands of spurious samples can be identified by their temporal isolation from other samples, as visualized by the horizontal arrows.
-    " %} 
+    caption="Raw pupil diameter data showing the different kinds of artifacts that are targeted by the raw data filter presented in this paper. The invalid samples targeted for rejection are shown circled. A. Certain artifacts, especially those caused by blinks, are characterized by large inter-sample changes in pupil size; i.e., disproportionately large dilation speeds, as visualized by the arrows. Additionally, the edges of eye-blink gaps may show slopes caused by the onset of eyelid occlusion. B. Outlying clusters of erroneous data-points can be identified by their abnormally large deviation from a smooth trend-line (solid black line). C. Small islands of spurious samples can be identified by their temporal isolation from other samples, as visualized by the horizontal arrows." %} 
  
 ### Removing Dilation-Speed Outliers and Edge-Artifacts ###
 Dilation speed outliers are samples that feature a disproportionately large absolute pupil size change relative to their adjacent samples. Because the changes between samples due to actual pupil dilation and constriction are generally less than those resulting from artifacts, such as system errors or blinks, detecting outliers in these changes is an effective way of spotting and rejecting invalid samples.
@@ -203,9 +191,7 @@ The maximum allowable interpolation gap. Sections that were generated by interpo
     title= "Pupil diameter preprocessing results"
     id="preprocessing-1"
     no_shadow = true
-    caption="
-    A non-toolbox plot showing the result of the preprocessing pipeline. Shown are: the raw pupil diameter samples of the right and left eyes (blue and red dots, respectively), and the interpolated and low pass filtered 'mean pupil diameter' signal (green line). The mean pupil diameter signal was generated from the valid raw samples of both pupils, including during the absence of one pupil's data, in which case the local pupil size difference was estimated and used to generate the 'mean pupil size' value (as can be seen at 0.6 seconds). The settings used stipulated that signals were not to be interpolated over gaps larger than 250 ms, hence the missing data around 3.3 seconds.
-    " %} 
+    caption="A non-toolbox plot showing the result of the preprocessing pipeline. Shown are: the raw pupil diameter samples of the right and left eyes (blue and red dots, respectively), and the interpolated and low pass filtered 'mean pupil diameter' signal (green line). The mean pupil diameter signal was generated from the valid raw samples of both pupils, including during the absence of one pupil's data, in which case the local pupil size difference was estimated and used to generate the 'mean pupil size' value (as can be seen at 0.6 seconds). The settings used stipulated that signals were not to be interpolated over gaps larger than 250 ms, hence the missing data around 3.3 seconds." %} 
 
 ---
 

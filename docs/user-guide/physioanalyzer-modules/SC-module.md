@@ -25,9 +25,7 @@ The **Skin Conductance Analyzer** can be used to: processes **Skin Conductance L
     img="user-guide/physioanalyzers/sc-module-gui-1.png"
     title= page.title
     id="gui-1"
-    caption="
-    The Skin Conductance Analyzer GUI, showing the SCL (in axes labeled Skin Conductance) and the phasic channel (in the axes labeled Phasic SC).
-    " %} 
+    caption="The Skin Conductance Analyzer GUI, showing the SCL (in axes labeled Skin Conductance) and the phasic channel (in the axes labeled Phasic SC)." %} 
 
 ---
 
@@ -39,18 +37,14 @@ The Skin Conductance Analyzer features the same correction method as the  [Gener
     title= "SCL Correction 1"
     id="correction-1"
     no_shadow = true
-    caption="
-    A section of the SCL signal (light blue line) showing a dipping artifact around t = 520 s, caused by an electrode-disconnection event. As a result, the tonic SCL (dark blue line) gets pulled downwards, which also leads to artifacts in the phasic SCL (not shown), as it’s calculated using the tonic signal. To correct this, a zone can be created inside which the raw signal is discarded and interpolated, see Figure 50.
-    " %} 
+    caption="A section of the SCL signal (light blue line) showing a dipping artifact around t = 520 s, caused by an electrode-disconnection event. As a result, the tonic SCL (dark blue line) gets pulled downwards, which also leads to artifacts in the phasic SCL (not shown), as it’s calculated using the tonic signal. To correct this, a zone can be created inside which the raw signal is discarded and interpolated, see Figure 50." %} 
 
 {% include image.html
     img="user-guide/physioanalyzers/sc-module-correction-2.png"
     title= "SCL Correction 2"
     id="correction-2"
     no_shadow = true
-    caption="
-    After inserting an interpolation zone is created, visualized as the red rectangle in the top 'Raw-Skip' graph, the raw signal is interpolated over the ‘skip zone’ and the filtered and tonic SCL signals no longer feature the dipping artifact.
-    " %} 
+    caption="After inserting an interpolation zone is created, visualized as the red rectangle in the top 'Raw-Skip' graph, the raw signal is interpolated over the ‘skip zone’ and the filtered and tonic SCL signals no longer feature the dipping artifact." %} 
 
 Additionally, the module includes the ability to add zones in which SCR detection is disabled; referred to as **SCR rejection** zones. These zones, visualized as red rectangles in the second graph from the top, have two effects:
 
@@ -66,9 +60,7 @@ Additionally, the module includes the ability to add zones in which SCR detectio
     title= "SCR Correction"
     id="correction-3"
     no_shadow = true
-    caption="
-    Inserting a 'SCR rejection' zone over an inflection point causes the Toolbox to merge bordering SCRs.
-    " %} 
+    caption="Inserting a 'SCR rejection' zone over an inflection point causes the Toolbox to merge bordering SCRs." %} 
 
 ---
 
@@ -105,9 +97,7 @@ It is from these tonic and phasic signals, which all have 20 Hz resolution, that
     title= "SCR Correction"
     id="tonic-phasic"
     no_shadow = true
-    caption="
-    The filtered SCL signal (light blue line, top graph); tonic SCL signal (dark blue line, top graph); and phasic SCL signal (orange line, bottom graph). Additionally, the area under the phasic line is visualized in light orange (bottom graph).
-    " %} 
+    caption="The filtered SCL signal (light blue line, top graph); tonic SCL signal (dark blue line, top graph); and phasic SCL signal (orange line, bottom graph). Additionally, the area under the phasic line is visualized in light orange (bottom graph)." %} 
 
 ## Step 3: SCR Detection and Analysis ##
 If enabled, SCRs are detected on the resampled SCL signal described in Step 2, which has a 20 Hz resolution, using the approach described here.
@@ -126,9 +116,7 @@ For each previously found valley-peak pair, the section of the SCL'' signal betw
     title= "SCR Inflection"
     id="no-split-scr"
     no_shadow = true
-    caption="
-    An SCR that has not been split at its inflection points; i.e., superimposed SCRs detection is disabled. The rising edge of the SCR clearly features an inflection point around t = 1935.4 s; and one less distinguishable inflection point at t = 1933.5 s.
-    " %} 
+    caption="An SCR that has not been split at its inflection points; i.e., superimposed SCRs detection is disabled. The rising edge of the SCR clearly features an inflection point around t = 1935.4 s; and one less distinguishable inflection point at t = 1933.5 s." %} 
  
 
 
@@ -137,9 +125,7 @@ For each previously found valley-peak pair, the section of the SCL'' signal betw
     title= "SCR Detection"
     id="scr-detection"
     no_shadow = true
-    caption="
-    Left: when superimposed SCR detection is enabled, the rising SCR is split at its two inflection points, which are defined as the negative-to-positive zero-crossings of the second derivative of the SCL (the pink dotted lines). Right: increasing the derivative smoothing window size smooths out the second derivative of the SCL, thereby reducing the inflection point detection sensitivity.
-    " %} 
+    caption="Left: when superimposed SCR detection is enabled, the rising SCR is split at its two inflection points, which are defined as the negative-to-positive zero-crossings of the second derivative of the SCL (the pink dotted lines). Right: increasing the derivative smoothing window size smooths out the second derivative of the SCL, thereby reducing the inflection point detection sensitivity." %} 
 
 ### SCR Classification ###
 Valley-peak pairs, which may now include those generated by inflection-point splitting, are filtered using the user-specified amplitude and rise time criteria. Additionally, any valley-peak pair with a valley and/or peak inside a SCR rejection zone is discarded. The remaining valley-peak pairs are classified as SCRs, with the valley being defined as the SCRs onset time, and the peak as its peak.

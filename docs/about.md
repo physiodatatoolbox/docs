@@ -48,10 +48,10 @@ The above-mentioned souls are affiliated with the following groups:
 {% include image.html
     img="fsw-logo.jpg"
     title="FSW"
-    id="fsw"
     max_width="340px"
     indent_left = "20px"
     no_shadow = true
+    no_popup = true
     %}
 _Faculty of Social and Behavioral Sciences  
 Leiden University  
@@ -63,10 +63,10 @@ Leiden, The Netherlands_
 {% include image.html
     img="libc-logo.png"
     title="FSW"
-    id="fsw"
     max_width="340px"
     indent_left = "20px"
     no_shadow = true
+    no_popup = true
     %}
 _Leiden Institute for Brain and Cognition  
 Leiden, The Netherlands_

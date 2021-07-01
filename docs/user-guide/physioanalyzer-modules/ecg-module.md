@@ -73,17 +73,13 @@ In the case that either noise or a secondary ECG wave is erroneously detected as
     img="user-guide/physioanalyzers/ecg-module-correction-r-1.png"
     title= "R-Peak correction 1"
     id="correction-1"
-    caption="
-    Excluding an erroneous R-peak, located at approximately 341 seconds: first select the section in the ECG axes using the left mouse button, then select the disregard option from the popup menu.
-    " %} 
+    caption="Excluding an erroneous R-peak, located at approximately 341 seconds: first select the section in the ECG axes using the left mouse button, then select the disregard option from the popup menu." %} 
 
 {% include image.html
     img="user-guide/physioanalyzers/ecg-module-correction-r-2.png"
     title= "R-Peak correction 2"
     id="correction-2"
-    caption="
-    An R-peak exclusion zone has now been created, and the erroneous R-peak removed. Notice how the IBIs and IHR lines are updated.
-    " %} 
+    caption="An R-peak exclusion zone has now been created, and the erroneous R-peak removed. Notice how the IBIs and IHR lines are updated." %} 
 
 Conversely, a missed R-peak results in a single distinctly long IBI. This can be corrected by inserting an IBI exclusion zone over the long IBI. Missed R-peaks can be caused by temporary loss of transmission when using wireless systems. In those cases, the loss of transmission produces a flat-line in the raw signal, which can sometimes be seen at the spot where the missing R-peak is expected to have been.
 
@@ -91,17 +87,13 @@ Conversely, a missed R-peak results in a single distinctly long IBI. This can be
     img="user-guide/physioanalyzers/ecg-module-correction-ibi-1.png"
     title= "IBI correction 1"
     id="ibi-correction-1"
-    caption="
-    Excluding an erroneous IBI, located at approximately 335.7 seconds: first select the section in the IBI axes by clicking the left mouse button and dragging the cursor; then, select the ‘disregard’ option from the menu.
-    " %} 
+    caption="Excluding an erroneous IBI, located at approximately 335.7 seconds: first select the section in the IBI axes by clicking the left mouse button and dragging the cursor; then, select the ‘disregard’ option from the menu." %} 
 
 {% include image.html
     img="user-guide/physioanalyzers/ecg-module-correction-ibi-2.png"
     title= "IBI correction 2"
     id="ibi-correction-2"
-    caption="
-    An IBI exclusion zone has now been created, and the erroneous IBI removed. Notice how the IHR line is also updated. IBIs that are rejected based on the criteria defined in the Feature Detection Settings are marked using a diamond, whereas IBIs that are rejected based on the exclusion zones are marked using squares, as in the figure above.
-    " %} 
+    caption="An IBI exclusion zone has now been created, and the erroneous IBI removed. Notice how the IHR line is also updated. IBIs that are rejected based on the criteria defined in the Feature Detection Settings are marked using a diamond, whereas IBIs that are rejected based on the exclusion zones are marked using squares, as in the figure above." %} 
 
 ---
 

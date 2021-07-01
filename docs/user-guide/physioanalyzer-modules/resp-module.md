@@ -27,9 +27,7 @@ The respiration module defines a single breath as an inhalation followed directl
     img="user-guide/physioanalyzers/resp-module-gui-1.png"
     title= page.title
     id="gui-1"
-    caption="
-    The Respiration Module GUI.
-    " %} 
+    caption="The Respiration Module GUI." %} 
 
 ---
 

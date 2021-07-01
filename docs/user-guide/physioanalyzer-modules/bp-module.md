@@ -37,26 +37,20 @@ When a noisy section is detected, the user can insert a correction zone by left-
     img="user-guide/physioanalyzers/bp-module-correction-1.png"
     title= "Blood Pressure analyzer artifact correction 1"
     id="correction-1"
-    caption="
-    A blood pressure plot showing some deviating waveforms around 1880 seconds.
-    " %}
+    caption="A blood pressure plot showing some deviating waveforms around 1880 seconds." %}
 
 {% include image.html
     img="user-guide/physioanalyzers/bp-module-correction-2.png"
     title= "Blood Pressure analyzer artifact correction 2"
     id="correction-2"
-    caption="
-    Once the noisy section is selected, systolic and diastolic peak detection can be enabled or disabled within that section.
-    " %} 
+    caption="Once the noisy section is selected, systolic and diastolic peak detection can be enabled or disabled within that section." %} 
 
 
 {% include image.html
     img="user-guide/physioanalyzers/bp-module-correction-3.png"
     title= "Blood Pressure analyzer artifact correction 3"
     id="correction-3"
-    caption="
-    Disabling the peak detection within the previously selected section removes the deviation from the interpolated blood pressure signals.
-    " %} 
+    caption="Disabling the peak detection within the previously selected section removes the deviation from the interpolated blood pressure signals." %} 
 
 
 <!-- TODO: Write the Processing and Analysis Pipeline section

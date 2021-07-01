@@ -64,7 +64,6 @@ Any generic signal, such as skin temperature, can be analyzed using the Generic 
 {% include image.html
     img="user-guide/physioanalyzers/physioanalyzer-gui-1.png"
     title= page.title
-    id="gui-1"
     caption="A Generic Signal Analyzer tagged HR, showing a heart-rate signal as calculated in real-time using AcqKnowledge." %} 
 
 ## ECG Signal Analyzer
@@ -73,7 +72,6 @@ The ECG Signal Analyzer module lets the user preprocess and analyze a raw ECG si
 {% include image.html
     img="user-guide/physioanalyzers/ecg-module-gui-1.png"
     title= page.title
-    id="gui-1"
     caption="The ECG Signal Analyzer interface, showing the raw and filtered ECG signals, the detected R-peaks, the IBIs and the instantaneous heart rate." %} 
 
 ## IBI Analyzer
@@ -82,7 +80,6 @@ The IBI Analyzer module performs heartbeat locked analysis around user-specified
 {% include image.html
     img="user-guide/physioanalyzers/ibi-module-gui-1.png"
     title= page.title
-    id="gui-1"
     caption="The IBI Sequence Analyzer, showing IBIs -5 to 5 surrounding an event (red triangle)." %} 
 
 ## HRV Analyzer
@@ -91,7 +88,6 @@ The Heart Rate Variability (HRV) Analyzer retrieves corrected IBI data from a li
 {% include image.html
     img="user-guide/physioanalyzers/hrv-module-gui-1.png"
     title= page.title
-    id="gui-1"
     caption="The HRV module's GUI. The top graph shows the epochs (green, blue and red rectangles), and the graph below that shows the IBI events (blue circles), the contiguous IBIs (blue line) and the global trend baseline (red line). The bottom left panel shows the name of the current epoch in the dropdown menu, and under it various metrics for that epoch. The bottom right panel shows collapsible graphs that visualize the: detrended IBIs; IBI successive differences; Poincaré plot; and Lomb-Scargle periodogram (for power analysis)." %} 
 
 ## ICG Ensemble Analyzer
@@ -100,10 +96,7 @@ The ICG Ensemble Analyzer module generates one ICG and one ECG ensemble waveform
 {% include image.html
     img="user-guide/physioanalyzers/icg-ensemble-module-gui-1.png"
     title= page.title
-    id="gui-1"
-    caption="
-    The ICG Ensemble Analyzer (Manual Scoring) GUI, showing: the ICG signal and the R-peak times (top graph, labeled dZ/dt); the current epoch data (leftmost table); the ensemble ECG and ICG curves, as well as the individual waveforms (two center graphs); and, the individual waveform data (rightmost table).
-    " %}
+    caption="The ICG Ensemble Analyzer (Manual Scoring) GUI, showing: the ICG signal and the R-peak times (top graph, labeled dZ/dt); the current epoch data (leftmost table); the ensemble ECG and ICG curves, as well as the individual waveforms (two center graphs); and, the individual waveform data (rightmost table)." %}
 
 ##  Blood Pressure Analyzer
 Standard statistics regarding the systolic, diastolic and mean arterial blood pressures can be extracted using the Blood Pressure Analyzer module.
@@ -111,7 +104,6 @@ Standard statistics regarding the systolic, diastolic and mean arterial blood pr
 {% include image.html
     img="user-guide/physioanalyzers/bp-module-gui-1.png"
     title= page.title
-    id="gui-1"
     caption="The BP Analyzer GUI, showing the BP signals and the estimated pulse. Note the automatically detected calibration event around 1865 seconds." %} 
 
 ## Respiration Analyzer
@@ -120,10 +112,7 @@ The Respiration Analyzer lets the user preprocess and analyze a chest or abdomen
 {% include image.html
     img="user-guide/physioanalyzers/resp-module-gui-1.png"
     title= page.title
-    id="gui-1"
-    caption="
-    The Respiration Module GUI.
-    " %} 
+    caption="The Respiration Module GUI." %} 
 
 ## EMG Analyzer
 Filtered, rectified and smoothed EMG signals can be extracted from the raw EMG using the EMG Analyzer module, which outputs descriptive statistical analysis of all these derived signals.
@@ -131,7 +120,6 @@ Filtered, rectified and smoothed EMG signals can be extracted from the raw EMG u
 {% include image.html
     img="user-guide/physioanalyzers/emg-module-gui-1.png"
     title= page.title
-    id="gui-1"
     caption="The EMG Signal Analyzer interface." %} 
 
 ## Skin Conductance Analyzer
@@ -141,10 +129,7 @@ The Skin Conductance Analyzer module extracts metrics about the skin conductance
 {% include image.html
     img="user-guide/physioanalyzers/sc-module-gui-1.png"
     title= page.title
-    id="gui-1"
-    caption="
-    The Skin Conductance Analyzer GUI, showing the SCL (in axes labeled Skin Conductance) and the phasic channel (in the axes labeled Phasic SC).
-    " %} 
+    caption="The Skin Conductance Analyzer GUI, showing the SCL (in axes labeled Skin Conductance) and the phasic channel (in the axes labeled Phasic SC)." %} 
 
 ## Pupil Diameter Analyzer
 The Pupil Diameter Analyzer module features user-specifiable raw data filters and signal interpolation options, and exports a variety of pupil-size metrics.
@@ -153,7 +138,6 @@ The Pupil Diameter Analyzer module features user-specifiable raw data filters an
 {% include image.html
     img="user-guide/physioanalyzers/pupil-module-gui-1.png"
     title= page.title
-    id="gui-1"
     caption="The Pupil Diameter analyzer gui." %} 
 
 
@@ -163,8 +147,5 @@ With the Area of Interest Hit Analyzer, gaze data in the shape of area of intere
 
 {% include image.html
     img="user-guide/physioanalyzers/aoi-module-gui-1.png"
-    title= page.title
-    id="gui-1"
-    caption="
-    The Area of Interest Hit GUI, showing the hit data per AoOI. In the current file there were four AOIs.
-    " %} 
+    title= "Area of Interest Hit Analyzer"
+    caption="The Area of Interest Hit GUI, showing the hit data per AoOI. In the current file there were four AOIs." %} 

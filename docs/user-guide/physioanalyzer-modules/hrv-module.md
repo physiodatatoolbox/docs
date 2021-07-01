@@ -54,8 +54,7 @@ The RMSSD and the successive IBI differences from which it was calculated are vi
     title= "Detrended IBIs and RMSSD"
     id="gui-detrend-rmssd"
     no_shadow = true
-    caption="
-    The detrended epoch-specific IBIs (top) and the differences between them (bottom). For visualization purposes, the heart rate acceleration events are plotted in pink and the heart rate deceleration events in aquamarine. Note that a heart rate acceleration is defined as an increase in heart rate, which equals a decrease in inter beat interval." %} 
+    caption="The detrended epoch-specific IBIs (top) and the differences between them (bottom). For visualization purposes, the heart rate acceleration events are plotted in pink and the heart rate deceleration events in aquamarine. Note that a heart rate acceleration is defined as an increase in heart rate, which equals a decrease in inter beat interval." %} 
 
 ## Frequency-Domain Analysis ##
 The **Lomb-Scargle** method is used to estimate the IBI time-series' Power Spectral Density (PSD), from which the Very Low Frequency (VLF), Low Frequency (LF), and High Frequency (HF) powers are computed.
@@ -65,9 +64,7 @@ The **Lomb-Scargle** method is used to estimate the IBI time-series' Power Spect
     title= "Lomb-Scargle Periodogram"
     id="ls-1"
     no_shadow = true
-    caption="
-    A Power Spectral Density estimate computed using the Lomb-Scargle  periodogram method. The Very Low, Low and High Frequency bands are visualized in purple, red and green, respectively.
-    " %}
+    caption="A Power Spectral Density estimate computed using the Lomb-Scargle  periodogram method. The Very Low, Low and High Frequency bands are visualized in purple, red and green, respectively." %}
 
 ## Non-Linear Analysis ##
 The HRV module generates a Poincaré plot for the non-linear analysis of HRV. A **Poincaré plot** is a scatter plot where each IBI (IBI<sub>n</sub>) is plotted against the subsequent IBI (IBI<sub>n+1</sub>), with the former and latter representing the horizontal and vertical axes, respectively. The Poincaré plot refers to IBIn and IBIn+1 as RR<sub>n</sub> and RR<sub>n+1</sub> in order to better comply with convention.
@@ -77,9 +74,7 @@ The HRV module generates a Poincaré plot for the non-linear analysis of HRV. A 
     title= "Poincaré Plot"
     id="PP-1"
     no_shadow = true
-    caption="
-    A Poincaré plot showing IBI<sub>n</sub> vs IBI<sub>n+1</sub> points. Heart rate accelerations are plotted in pink, while decelerations are plotted in aquamarine. The ellipses represent 1, 2 and 3 times SD1 and SD2; i.e., the spread perpendicular to and along the identity line.
-    " %}
+    caption="A Poincaré plot showing IBI<sub>n</sub> vs IBI<sub>n+1</sub> points. Heart rate accelerations are plotted in pink, while decelerations are plotted in aquamarine. The ellipses represent 1, 2 and 3 times SD1 and SD2; i.e., the spread perpendicular to and along the identity line." %}
 
 ---
 
@@ -94,8 +89,7 @@ The corrected IBIs from the linked ECG module are retrieved. If enabled by the u
     title= "Poincaré Plot"
     id="PP-1"
     no_shadow = true
-    caption="
-    The high-pass cutoff frequency of the smoothness priors detrending filter as a function of lambda (&#955;), as computed for a 10 minute epoch." %}
+    caption="The high-pass cutoff frequency of the smoothness priors detrending filter as a function of lambda (&#955;), as computed for a 10 minute epoch." %}
 
 ## Step 2: Epoch Segmentation and Detrending ##
 The epoch-specific IBIs are isolated by copying all IBIs and rejecting those located outside of the current epoch, with the 'IBI location' for a given IBI event being defined as the timestamp of the R-peak that ends that inter beat interval.

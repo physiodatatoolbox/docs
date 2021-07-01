@@ -1,11 +1,14 @@
 
 <!---
-    Images include for nice images in the PDT Doc. -Elio
+    Images include for nice images in the PDT Doc.
 -->
+
+
 
 <!-- Left and right padding for image:
  - Allow users to set a left indent parameter,
-   which overrides the image's tendency to center. -->
+   which overrides the image's tendency to center.
+-->
 {% if include.indent_left %}
     {% capture l_padding %}{{ include.indent_left }}{% endcapture %}
     {% assign r_padding = "0px" %}
@@ -14,12 +17,17 @@
     {% assign r_padding = "26px" %}
 {% endif %}
 
-<!-- The image path: -->
+
+<!-- The image path:
+-->
 {% capture img_path %}
     {{ site.url }}/{{ site.baseurl }}/assets/images/{{ include.img }}
 {% endcapture %}
 
-<!-- The image number counter: -->
+
+
+<!-- The image number counter:
+-->
 {% unless image_counter %}
     {% assign image_counter = 1 %}
 {% else %}
@@ -27,9 +35,20 @@
 {% endunless %}
 
 
-<!-- 
-Add fancy img-aware drop-shadow:
-https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css -->
+
+<!-- Determine the ID: 
+-->
+{% if include.id %}
+    {% capture cur_id %}{{ include.id }}{% endcapture %}
+{% else %}
+    {% capture cur_id %}IMAGE{{ image_counter }}{% endcapture %}
+{% endif %}
+
+
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
 {% if include.no_shadow %}
     {% assign shadow_style = "" %}
 {% else %}
@@ -40,10 +59,10 @@ https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css -->
 {% endif %}
 
 
-<!-- Make figure
-
-Use table for formatting, see:
-https://stackoverflow.com/a/11652170 -->
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
 <figure  class=""
     style="
         padding: 0px;
@@ -56,10 +75,12 @@ https://stackoverflow.com/a/11652170 -->
         {% if include.max_width %} max-width: {{ include.max_width }}; {% endif %}
         ">
 
+
     <!-- Add an image with a link to the image source: -->
-    <a href="{{ img_path }} " title="{{ include.title }}">
+    <!-- <a href="{{ img_path }} " title="{{ include.title }}"> -->
         <img 
-            {% if include.id %} id="{{ include.id }}" {% endif %} 
+            {% unless include.no_popup %}class = "pdtImg"{% endunless %}
+            id="{{ cur_id }}"
             src="{{ img_path }} "
             alt="{{ include.title }}" 
             style="
@@ -67,7 +88,7 @@ https://stackoverflow.com/a/11652170 -->
             display: block;
             {{ shadow_style }};
             ">
-	</a>
+	<!-- </a> -->
 
     <!-- Add caption, with a "Figure X:" prefix that
         has a link to the figure anchor.
@@ -84,8 +105,44 @@ https://stackoverflow.com/a/11652170 -->
                 text-align: justify;
                 display: table-caption;
                 caption-side: bottom;">
-            <a href="#{{ include.id }}">Figure {{ image_counter }}</a>:
+            <a href="#{{ cur_id }}">Figure {{ image_counter }}</a>:
             {{ include.caption }}
         </figcaption>
     {% endif %}
 </figure>
+
+
+
+
+
+
+<!---
+    Add lightbox popup code:
+-->
+
+{% unless include.no_popup %}
+<script>
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("{{ cur_id }}");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = "{{ include.caption }}";
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+
+</script>
+{% endunless %}

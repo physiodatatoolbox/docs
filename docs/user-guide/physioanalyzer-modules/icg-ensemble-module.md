@@ -26,9 +26,7 @@ The **ICG Ensemble Analyzer** module performs epoch-based analysis of ensemble I
     img="user-guide/physioanalyzers/icg-ensemble-module-gui-1.png"
     title= page.title
     id="gui-1"
-    caption="
-    The ICG Ensemble Analyzer (Manual Scoring) GUI, showing: the ICG signal and the R-peak times (top graph, labeled dZ/dt); the current epoch data (leftmost table); the ensemble ECG and ICG curves, as well as the individual waveforms (two center graphs); and, the individual waveform data (rightmost table). Note that the first waveform in the table can be excluded from the ensemble by unchecking the 'Use Waveform' box. The rejected waveform is visualized by a triangle in the Wave-Skip graph, above its R-peak location.
-    " %}
+    caption="The ICG Ensemble Analyzer (Manual Scoring) GUI, showing: the ICG signal and the R-peak times (top graph, labeled dZ/dt); the current epoch data (leftmost table); the ensemble ECG and ICG curves, as well as the individual waveforms (two center graphs); and, the individual waveform data (rightmost table). Note that the first waveform in the table can be excluded from the ensemble by unchecking the 'Use Waveform' box. The rejected waveform is visualized by a triangle in the Wave-Skip graph, above its R-peak location." %}
 
 To ensemble the ICG and ECG signals, a valid ECG Signal Analyzer module must be present in the PhysioData file. The R-peak times from this ECG module, as well as the user specified waveform start and end offsets, are used to slice the ICG and ECG signals into individual waveforms. Only waveforms that completely fit inside one or more epochs are further processed. The filtered ECG signal from the ECG module is used for the ECG waveforms, and the ICG signal is taken from the user specified channel, and optionally pre-processed.
 
@@ -42,9 +40,7 @@ The waveform rejection criteria, and the placement strategy for the Q, B, C and 
     id="landmarks"
     no_shadow = true
     max_width="600px"
-    caption="
-    The ECG (top) and ICG (bottom) ensembles, and their landmarks. The R and C points are automatically detected, whereas the Q, B and X points must be manually scored by the user.
-    " %}
+    caption="The ECG (top) and ICG (bottom) ensembles, and their landmarks. The R and C points are automatically detected, whereas the Q, B and X points must be manually scored by the user." %}
 
 ---
 
