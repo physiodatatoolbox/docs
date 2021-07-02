@@ -16,30 +16,3 @@
 
 
 
-
-<!-- The modal div (for popups)  
-        https://www.w3schools.com/howto/howto_css_modal_images.asp
--->
-<div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
-</div>
-
-<script>
-
-    // Close the modal window when users click it's background:
-    var modal = document.getElementById("myModal");
-    modal.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    {% if false %}
-    // Go to image src when users click it:
-    var modalImg = document.getElementById("img01");
-    modalImg.onclick = function () {
-        location.href = this.src;
-    }
-    {% endif %}
-
-</script>
