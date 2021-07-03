@@ -29,7 +29,7 @@ The Shock-Conditioning example files loosely represent a classic supra/sub perce
 
 <details markdown="1">
   <summary markdown="span">**Example Dataset Details**</summary>
-  Below a description of the six phases of the experiment and their associated markers, events, and pregenerated epochs is given.
+  Below a description of the six phases of the experiment and their associated events, markers, and pregenerated epochs is given. Events and markers signal important moments in the data. [Events](..\user-guide\epochs.html#referenceable-events) are messages that describe a certain moment. [Markers](..\user-guide\epochs.html#markers) are recorded as signal and assume numeric values that signify certain moments. [Epochs](..\user-guide\epochs.html) are segments of data that are created by referencing events and markers.
 
   <p markdown="block">
   **Habituation Phase:**  
@@ -190,13 +190,11 @@ The **Define Epochs** tab of the Epoch Builder window shows the **Epoch Definiti
  - Click on the second tab to see all referenceable data inside the current file. In the example files, these are the markers in channel 4, the events, and the file events.
  > Let's say we want to create the following epochs:
  > - **Habituation epochs** that span from the events 'Habituation_Start' to 'Habituation_End'
- > - **Baseline epoch** that spans from the event 'Baseline_Start (\<MOVIENAME>)' to the event 'Baseline_End (\<MOVIENAME>)'
  > - **Stimulus epochs:**
  >    - CS+ image 1 epochs, that span from the onset of marker with value 11 to 8 seconds later
  >    - CS+ image 2 epochs, that span from the onset of marker with value 12 to 8 seconds later
  > - **Extinction supra epochs** that span for the duration of the marker with value 100
- > - **Rating epochs** that start 5 seconds before the 'Pic_\<ID>\_rated_\<RATING>' events and end at the 'Pic_\<ID>\_rated_\<RATING>' events.
- 
+
  NOTE: for more details about the phases of the experiment and their associated markers and events, see the [Example Dataset](#example-dataset) section.
 
 ### Define the habituation epochs ###
@@ -206,7 +204,7 @@ The epoch definition of the habituation epochs is provided in the [Figure](#habi
  1. In the newly created row, fill in the **epochName**: `Habituation`.
  1. Define the start of the epoch:
      - Since we want to reference an event, fill in `events` in the **startChannel** field, or right-click on the field and select **Channels available in test file** and **Use Events (26 found)**.
-     - Fill in the **startValue**, which is the name of the event, in this case `Habituation_Start`, or right-click on the field, select **Events available in channel** and select **Habituation_Start (2 occurrences)**.
+     - Fill in the **startValue**, which is the name of the event, in this case `Habituation_Start` (note that the start- and endValue are case-sensitive!), or right-click on the field, select **Events available in channel** and select **Habituation_Start (2 occurrences)**.
      - Because we want to create epochs of all habituation segments, we want to reference all 'Habituation_Start' events. This is achieved by filling in `1:last` in **startOccur**, or right-clicking on the field and selecting **All occurrences**.
      - The epochs should start directly on the 'Habituation_Start' events, therefore we can leave the startDelay at `0`.
  1. Define the end of the epoch:
@@ -220,29 +218,6 @@ The epoch definition of the habituation epochs is provided in the [Figure](#habi
             id="habituationEpochs"
             caption="The Epoch Definition Table with the Habituation epochs added." %}
 
-### Define the baseline epoch ###
-The epoch definition of the baseline epoch is provided in the [Figure](#baselineEpochs) below. 
- 1. Add another row to the Epoch Definition Table
- 1. Fill in the **epochName**: `Baseline`
- 1. Define the start of the epoch:
-     - Fill in `events` in the **startChannel** field or right click and navigate to the right channel.
-     - Fill in the **startValue**. The baseline events start with 'Baseline_Start', followed by a space and then the name of the video clip the participant watched in parentheses: 'Baseline_Start (\<MOVIENAME>)'. We can reference all baseline events with all different movie names using one [regular expression](https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html): `^Baseline_Start (.*)$`
-         - `^` and `$` mark the start and end of the regular expression, respectively
-         - `.` means any single character
-         - `*` means 0 or more consecutive times.
-     - Leave **startOccur** to `1` (there is only one baseline segment).
-     - Leave **startDelay** at `0`. 
- 1. Define the end of the epoch:
-     - Copy the information of the start of the epoch to the end of the epoch by right-clicking and selecting **Copy from start definition**
-     - Modify the **endValue** to `^Baseline_End (.*)$`
- 1. Hit the **Generate Epochs** button and check whether the epoch was created correctly.
-
- {% include image.html
-            img="tutorial\Baseline-epochs.png"
-            title="Baseline Epochs"
-            id="baselineEpochs"
-            caption="The Epoch Definition Table with the Baseline epochs added." %}
-
 ### Define the stimulus epochs ###
 The epoch definition of the stimulus epochs is provided in the [Figure](#stimulusEpochs) below. 
  1. Add another row to the Epoch Definition Table
@@ -254,9 +229,9 @@ The epoch definition of the stimulus epochs is provided in the [Figure](#stimulu
      - The epochs start at the onset of the marker, therefore the **startDelay** can be left at `0`.
  1. Define the end of the epochs:
      - Copy the information of the start of the epoch to the end of the epoch.
-     - Adjust the **endDelay** to `8`.
+     - Adjust the **endDelay** to `8` (note that the start- and endDelay are in seconds!).
  1. Since the CS+ with image 2 epoch definition is very similar to the CS+ image 1 epoch definition, right click on any of the cells of the row we just created and select **Duplicate row**. 
- 1. In the new row, we only need to adjust the epoch name and the the marker value to reference the CS+ image 2 trials:
+ 1. In the new row, we only need to adjust the epoch name and the marker value to reference the CS+ image 2 trials:
      - Fill in `CS_plus_Resp_img_2` in **epochName**.
      - Fill in `12`in **startValue** and in **endValue**.
  1. Hit the **Generate Epochs** button and check whether the epochs were created correctly.
@@ -287,26 +262,66 @@ The epoch definition of the extinction supra epochs is provided in the [Figure](
             id="extSupraEpochs"
             caption="The Epoch Definition Table with the extinction supra epochs added." %}
 
-### Define the rating epochs ###
-The epoch definition of the rating epochs is provided in the [Figure](#ratingEpochs) below.
- 1. Click **Add Row**
- 1. Fill in the **epochName**: `Rating`.
- 1. Define the start of the epochs:
-     - Fill in `events` (or use the right-click option) in **startChannel**.
-     - We want to reference all the rating events, but because participants gave different ratings to different pictures, the names of these events differ per participant. Again, we can use regular expressions to reference all events with the same pattern. In our case, we want to reference all events with the following pattern: 'Pic_\<ID>\_rated_\<RATING>', where \<ID> can be a digit ranging 1-4 and \<RATING> can be a digit ranging 1-5. In regular expression this translates to `Pic_\d_rated_\d`, where `\d` means any numeric digit. When using regular expressions in the Epoch Builder, always start with `^` and end with `$`. Thus, fill in `^Pic_\d_rated_\d$` in **startValue**.
-     - Reference all occurrences in **startOccur**.
-     - We want the epochs to start 5 seconds before the events, therefore, fill in `-5` in **startDelay**.
- 1. Define the end of the epochs:
-     - Copy the start epoch fields to the end epoch fields.
-     - We want the epochs to end at the events, therefore fill in `0` in **endDelay**.
- 1. Hit the **Generate Epochs** button and notice that 4 small epochs were created.
- 1. Since this is the last epoch set, click **OK** to close the Epoch Builder window and return to the PhysioAnalyzer settings window. We'll leave the settings to their default values for now (see the [ECG Analyzer](..\user-guide\physioanalyzer-modules\ecg-module.html#settings) chapter in the User Guide for more information on the ECG analyzer settings). Click **OK** to save the changes and return to the Session Manager.
+<details markdown="1">
+  <summary markdown="span">**Advanced epoch definitions using regular expressions**</summary>
+  The following part shows how to create epochs by referencing multiple events with regular expressions. Most users will not need to use them.
+
+   > Let's say we also want to create the following epochs:
+   > - **Baseline epoch** that spans from the event 'Baseline_Start (\<MOVIENAME>)' to the event 'Baseline_End (\<MOVIENAME>)'
+   > - **Rating epochs** that start 5 seconds before the 'Pic_\<ID>\_rated_\<RATING>' events and end at the 'Pic_\<ID>\_rated_\<RATING>' events.
+
+  <p markdown="block">
+  **Define the baseline epoch**
+
+ The epoch definition of the baseline epoch is provided in the [Figure](#baselineEpochs) below. 
+  1. Add another row to the Epoch Definition Table
+  1. Fill in the **epochName**: `Baseline`
+  1. Define the start of the epoch:
+     - Fill in `events` in the **startChannel** field or right click and navigate to the right channel.
+     - Fill in the **startValue**. The baseline events start with 'Baseline_Start', followed by a space and then the name of the video clip the participant watched in parentheses: 'Baseline_Start (\<MOVIENAME>)'. We can reference all baseline events with all different movie names using one [regular expression](https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html): `^Baseline_Start (.*)$`
+         - `^` and `$` mark the start and end of the regular expression, respectively
+         - `.` means any single character
+         - `*` means 0 or more consecutive times.
+     - Leave **startOccur** to `1` (there is only one baseline segment).
+     - Leave **startDelay** at `0`. 
+  1. Define the end of the epoch:
+     - Copy the information of the start of the epoch to the end of the epoch by right-clicking and selecting **Copy from start definition**
+     - Modify the **endValue** to `^Baseline_End (.*)$`
+  1. Hit the **Generate Epochs** button and check whether the epoch was created correctly.
 
   {% include image.html
-            img="tutorial\Rating-epochs.png"
-            title="Rating Epochs"
-            id="ratingEpochs"
-            caption="The Epoch Definition Table with the rating epochs added." %}
+            img="tutorial\Baseline-epochs.png"
+            title="Baseline Epochs"
+            id="baselineEpochs"
+            caption="The Epoch Definition Table with the Baseline epochs added." %}
+</p>
+  <p markdown="block">
+  **Define the rating epochs**
+
+  The epoch definition of the rating epochs is provided in the [Figure](#ratingEpochs) below.
+  1. Click **Add Row**
+  1. Fill in the **epochName**: `Rating`.
+  1. Define the start of the epochs:
+      - Fill in `events` (or use the right-click option) in **startChannel**.
+      - We want to reference all the rating events, but because participants gave different ratings to different pictures, the names of these events differ per participant. Again, we can use regular expressions to reference all events with the same pattern. In our case, we want to reference all events with the following pattern: 'Pic_\<ID>\_rated_\<RATING>', where \<ID> can be a digit ranging 1-4 and \<RATING> can be a digit ranging 1-5. In regular expression this translates to `Pic_\d_rated_\d`, where `\d` means any numeric digit. When using regular expressions in the Epoch Builder, always start with `^` and end with `$`. Thus, fill in `^Pic_\d_rated_\d$` in **startValue**.
+      - Reference all occurrences in **startOccur**.
+      - We want the epochs to start 5 seconds before the events, therefore, fill in `-5` in **startDelay**.
+  1. Define the end of the epochs:
+      - Copy the start epoch fields to the end epoch fields.
+      - We want the epochs to end at the events, therefore fill in `0` in **endDelay**.
+  1. Hit the **Generate Epochs** button and notice that 4 small epochs were created.
+
+  {% include image.html
+              img="tutorial\Rating-epochs.png"
+              title="Rating Epochs"
+              id="ratingEpochs"
+              caption="The Epoch Definition Table with the rating epochs added." %}
+
+</p>
+</details>
+
+### Finish creating the ECG PhysioAnalyzer ###
+When done with creating epochs, click **OK** to close the Epoch Builder window and return to the PhysioAnalyzer settings window. We'll leave the settings to their default values for now (see the [ECG Analyzer](..\user-guide\physioanalyzer-modules\ecg-module.html#settings) chapter in the User Guide for more information on the ECG analyzer settings). Click **OK** to save the changes and return to the Session Manager. Note that although we have created an analyzer, the analyzer and the settings and epochs it contains are not applied to the data files yet. We will first create the other analyzers, then apply all analyzers to our data files. 
 
 ## Creating the SC PhysioAnalyzer ##
  - Click the **Create New Analyzer** button again and select the **Skin Conductance Analyzer**.
@@ -362,7 +377,7 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="rPeakRejection1"
             caption="Selecting and disregarding an R-peak." %}
 
-    {% include image.html
+  {% include image.html
             img="tutorial\ECG_Faulty_R-Peak-3.png"
             title="R-Peak rejection 2"
             id="rPeakRejection2"
@@ -377,7 +392,7 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="ibiRejection1"
             caption="IBI artifacts." %}
 
-    {% include image.html
+  {% include image.html
             img="tutorial\ECG_Faulty_IBI-2.png"
             title="IBI rejection 2"
             id="ibiRejection2"
@@ -404,15 +419,16 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
 
  - Zoom in at some of the artifacts. Many IBIs are automatically rejected, visualized by diamonds in the IBI graph. Notice that each time before an outlying IBI occurs, an R-peak is 'missed' by the PhysioData Toolbox. This means that a 'true' R-peak was not detected as R-peak. Rather than manually removing each IBI, we can fix this by adjusting the **Minimum R-peak value** setting in this particular PhysioAnalyzer. Zoom completely out by double clicking on the ECG graph. Notice that the R-peaks hover around 0.5 mV, but do not go below 0.3 mV. Click the **View/Edit Settings** button in the ECG tab and set the **Minimum R-peak value** value to `0.3`. After clicking **Ok**, the ECG module will automatically detect the R-peaks with a value above 0.3.
 
-      {% include image.html
+    {% include image.html
             img="tutorial\ECG_Low_R-peaks-2.png"
             title="Low R-peaks 2"
             id="lowRPeaks2"
-            caption="R-peaks missed by the PhysioData Toolbox." %} 
-     {% include image.html
+            caption="R-peaks missed by the PhysioData Toolbox." %}
+
+  {% include image.html
             img="tutorial\ECG_Low_R-peaks-3.png"
-            title="Low R-peaks 1"
-            id="lowRPeaks1"
+            title="Low R-peaks 3"
+            id="lowRPeaks3"
             caption="Adjusting the settings of the PhysioAnalyzer for the current PhysioData file." %}
 
  - One outlying IBI remains at around 800 s. Remove this IBI. 
@@ -456,7 +472,7 @@ The HRV module itself does not allow users to correct artifacts, this must inste
 
 ## Viewing results ##
  - Review the other modules in the other files, correct where necessary, and mark them as accepted.
- - You can view each module’s individual results by clicking the **View Results** button. This will perform descriptive analyses on each epoch in the current PhysioAnalyzer, and show the results in Excel. In the **metadata** tab summaries of all current settings and states are provided. 
+ - You can view each module’s individual results by clicking the **View Results** button. This will perform descriptive analyses on each epoch in the current PhysioAnalyzer, and show the results in Excel. In the **INFO** tab summaries of all current settings and states are provided. 
  - Close the PhysioAnalyzer Viewer when done and go back to the Session Manager.
 
 ---

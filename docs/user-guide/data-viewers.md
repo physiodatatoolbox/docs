@@ -171,7 +171,7 @@ Clicking on an epoch rectangle or an event triangle opens a window displaying it
 {% include image.html
     img="/user-guide/data-viewers/epochs-events.png"
     title="Epochs"
-    id="acc-1"
+    id="acc-2"
     no_shadow = true
     max_width="420px"
     caption="Top: an epoch plot, showing three minute-long epochs that have been sliced into 10 second segments. Bottom: an event plot showing nine events. The time axis of the epoch and event graphs correspond to the time axis of the graphs below them." %}

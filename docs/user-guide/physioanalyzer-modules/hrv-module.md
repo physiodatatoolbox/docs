@@ -86,8 +86,8 @@ The corrected IBIs from the linked ECG module are retrieved. If enabled by the u
 
 {% include image.html
     img="user-guide/physioanalyzers/hrv-module-detrending-filter.png"
-    title= "Poincaré Plot"
-    id="PP-1"
+    title= "Lambda"
+    id="lambda-1"
     no_shadow = true
     caption="The high-pass cutoff frequency of the smoothness priors detrending filter as a function of lambda (&#955;), as computed for a 10 minute epoch." %}
 
