@@ -9,8 +9,10 @@ nav_order: 3
 The PhysioData Toolbox can be downloaded as a zip file containing the executables and supplementary files:
 {: .pdt-abstract-body}
 
-[Download PhysioData Toolbox v{{ site.pdt_version }}](https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp){: .pdt-btn style="width: 480px; text-align: center;"}
+❗ **The Toolbox will be released on July 8<sup>th</sup>, 2021.**
+{: .fs-5 .fw-300 .ml-4}
 
+[Download PhysioData Toolbox v{{ site.pdt_version }}](https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp){: .pdt-btn style="width: 480px; text-align: center;"}
 
 ❕ **The Toolbox is only compatible with Windows.**
 {: .fs-5 .fw-300 .ml-4}
