@@ -33,7 +33,7 @@ PhysioData Toolbox Version 0.6 contains several improvements over v0.5.
     The PhysioData Toolbox documentation has been updated and moved from a pdt document to this website.
 
 ## PhysioData Toolbox v0.5.0 ## 
-Versions older than 0.6 are considered legacy. A zip file containing PhysioData Toolbox v0.5.0, including all documentation, can be downloaded [here](https://surfdrive.surf.nl/files/index.php/s/V4d5vPp976TlXuk). 
+Versions older than 0.6 are considered legacy. A zip file containing PhysioData Toolbox v0.5.0, including all documentation, can be downloaded [here](https://surfdrive.surf.nl/files/index.php/s/V4d5vPp976TlXuk/download). 
 
 ## PhysioData Toolbox v<0.5
 Please contact us if you require older versions v0.5.0.
