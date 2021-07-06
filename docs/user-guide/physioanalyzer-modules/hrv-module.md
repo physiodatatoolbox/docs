@@ -148,4 +148,4 @@ The auto-generated table below lists all the metrics produced by the {{ page.tit
 ---
 # References #
 
-[^1]: Van Boxtel, A. (2010). Filter for optimal smoothing of acoustic and electric blink reflex EMG responses to determine blink response magnitude. Biological Psychology, 85, 299-305.
+[^1]: Tarvainen, M. P., Ranta-Aho, P. O., & Karjalainen, P. A. (2002). An advanced detrending method with application to HRV analysis. IEEE Transactions on Biomedical Engineering, 49, 172-175. doi: 10.1109/10.979357
