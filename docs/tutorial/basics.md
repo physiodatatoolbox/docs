@@ -29,7 +29,7 @@ The Shock-Conditioning example files loosely represent a classic supra/sub perce
 
 <details markdown="1">
   <summary markdown="span">**Example Dataset Details**</summary>
-  Below a description of the six phases of the experiment and their associated events, markers, and pregenerated epochs is given. Events and markers signal important moments in the data. [Events](..\user-guide\epochs.html#referenceable-events) are messages that describe a certain moment. [Markers](..\user-guide\epochs.html#markers) are recorded as signal and assume numeric values that signify certain moments. [Epochs](..\user-guide\epochs.html) are segments of data that are created by referencing events and markers.
+  Below a description of the six phases of the experiment and their associated events, markers, and pregenerated epochs is given. Events and markers signal important moments in the data. **Events** are messages that describe a certain moment. **Markers** are recorded as signal and assume numeric values that signify certain moments. **Epochs** are segments of data that are created by referencing events and markers. See the [Epochs](..\user-guide\epochs.md) chapter for more information on events, markers, and epochs.
 
   <p markdown="block">
   **Habituation Phase:**  
@@ -136,7 +136,7 @@ Click on the **Open** button in the Session Manager and select the folder with t
             caption="The Session Manager with the example files loaded." %}
 
 ## View Raw Data ## 
-Click on the **View Raw Data** button to launch the **Raw Data Viewer**. The Raw Data Viewer displays all signal channels, events, eye-tracking data, and epochs inside the physioData file. When a marker channel is detected, it is automatically analyzed and visualized in a separate tab.
+Click on the **View Raw Data** button to launch the **Raw Data Viewer**. The Raw Data Viewer displays all signal channels, events, eye-tracking data, and epochs inside the PhysioData file. When a marker channel is detected, it is automatically analyzed and visualized in a separate tab.
 
  - Which file is currently being shown is specified in the **Current File** bar above the tabs. To navigate to a different file, either select it using the dropdown menu, or use the buttons.
 
@@ -168,7 +168,7 @@ Click on the **View Raw Data** button to launch the **Raw Data Viewer**. The Raw
 
  - Click on the **File events** tab to view the file events inside the current file.
 
- - Click on the **Prebuilt Epochs** tab to view the epochs that were prebuilt in the PhysioData File. See the [Defining Epochs](#defining-epochs) chapter below for more information on how to generate more epochs.
+ - Click on the **Prebuilt Epochs** tab to view the epochs that were prebuilt in the PhysioData File. Below, in the [Defining Epochs](#defining-epochs) chapter we will generate more epochs.
 
  - When done inspecting the raw data, close the Raw Data Viewer and return to the Session Manager.
 
@@ -179,11 +179,11 @@ Click on the **View Raw Data** button to launch the **Raw Data Viewer**. The Raw
 
 ## Creating the ECG PhysioAnalyzer ##
 - In the Session Manager, click on the **Create New Analyzer** button and choose the **ECG Signal Analyzer**.
-- Since 'ECG' is a fitting name for the module and the ECG signal is in channel 1 (click the **'See Channels** button to verify this), the settings can be left at their default values.
+- Since 'ECG' is a fitting name for the module and the ECG signal is in channel 1 (click the **See Channels** button to verify this), these settings can be left at their default values.
 - Click on the **View/Edit Epochs** button to open the **Epoch Builder**.
 
 ## Defining Epochs ##
-**Epochs**, also called trails or segments, are sections of interest within a recording. Epochs are generally defined relative to **markers** or **events**, which are special timestamped moments within the recorded data. The toolbox is designed to automatically segment a signal into epochs using a collection of user-specified rules, and extract relevant metrics for each epoch.
+**Epochs**, also called trails or segments, are sections of interest within a recording. Epochs are generally defined relative to **markers** or **events**, which are special timestamped moments within the recorded data. The toolbox is designed to automatically segment a signal into epochs using a collection of user-specified rules, and extract relevant metrics for each epoch. For more information on epochs, markers, and events, see the [Epochs](..\user-guide\epochs.md) chapter.
 
 The **Define Epochs** tab of the Epoch Builder window shows the **Epoch Definition Table**. Here, the rules for defining epochs are created. By default, an epoch spanning the whole file is created. Notice that in the **Preview of epochs** graph the prebuilt epochs are also visible.
 
@@ -200,7 +200,7 @@ The **Define Epochs** tab of the Epoch Builder window shows the **Epoch Definiti
 ### Define the habituation epochs ###
 The epoch definition of the habituation epochs is provided in the [Figure](#habituationEpochs) below.
  1. Go back to the **Define Epochs** tab.
- 1. Click **add row**
+ 1. Click **add row**.
  1. In the newly created row, fill in the **epochName**: `Habituation`.
  1. Define the start of the epoch:
      - Since we want to reference an event, fill in `events` in the **startChannel** field, or right-click on the field and select **Channels available in test file** and **Use Events (26 found)**.
@@ -220,7 +220,7 @@ The epoch definition of the habituation epochs is provided in the [Figure](#habi
 
 ### Define the stimulus epochs ###
 The epoch definition of the stimulus epochs is provided in the [Figure](#stimulusEpochs) below. 
- 1. Add another row to the Epoch Definition Table
+ 1. Add another row to the Epoch Definition Table.
  1. In the new row, fill in the **epochName**: `CS_plus_Resp_img_1`.
  1. Define the start of the epochs:
      - Since we want to reference markers in channel 4, fill in `4` in the **startChannel** cell (or right-click on the cell and select the appropriate option).
@@ -244,7 +244,7 @@ The epoch definition of the stimulus epochs is provided in the [Figure](#stimulu
 
 ### Define the extinction supra epochs ###
 The epoch definition of the extinction supra epochs is provided in the [Figure](#extSupraEpochs) below.
- 1. Add another row 
+ 1. Add another row.
  1. Fill in the **epochName**: `Ext_Supra`.
  1. Define the start of the epochs:
      - Again, we want to reference markers in channel 4, fill in `4` in the **startChannel** cell (or right-click on the cell and select the appropriate option).
@@ -267,25 +267,25 @@ The epoch definition of the extinction supra epochs is provided in the [Figure](
   The following part shows how to create epochs by referencing multiple events with regular expressions. Most users will not need to use them.
 
    > Let's say we also want to create the following epochs:
-   > - **Baseline epoch** that spans from the event 'Baseline_Start (\<MOVIENAME>)' to the event 'Baseline_End (\<MOVIENAME>)'
+   > - **Baseline epoch** that spans from the event 'Baseline_Start (\<MOVIENAME>)' to the event 'Baseline_End (\<MOVIENAME>)'.
    > - **Rating epochs** that start 5 seconds before the 'Pic_\<ID>\_rated_\<RATING>' events and end at the 'Pic_\<ID>\_rated_\<RATING>' events.
 
   <p markdown="block">
   **Define the baseline epoch**
 
  The epoch definition of the baseline epoch is provided in the [Figure](#baselineEpochs) below. 
-  1. Add another row to the Epoch Definition Table
-  1. Fill in the **epochName**: `Baseline`
+  1. Add another row to the Epoch Definition Table.
+  1. Fill in the **epochName**: `Baseline`.
   1. Define the start of the epoch:
      - Fill in `events` in the **startChannel** field or right click and navigate to the right channel.
      - Fill in the **startValue**. The baseline events start with 'Baseline_Start', followed by a space and then the name of the video clip the participant watched in parentheses: 'Baseline_Start (\<MOVIENAME>)'. We can reference all baseline events with all different movie names using one [regular expression](https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html): `^Baseline_Start (.*)$`
-         - `^` and `$` mark the start and end of the regular expression, respectively
-         - `.` means any single character
+         - `^` and `$` mark the start and end of the regular expression, respectively.
+         - `.` means any single character.
          - `*` means 0 or more consecutive times.
      - Leave **startOccur** to `1` (there is only one baseline segment).
      - Leave **startDelay** at `0`. 
   1. Define the end of the epoch:
-     - Copy the information of the start of the epoch to the end of the epoch by right-clicking and selecting **Copy from start definition**
+     - Copy the information of the start of the epoch to the end of the epoch by right-clicking and selecting **Copy from start definition**.
      - Modify the **endValue** to `^Baseline_End (.*)$`
   1. Hit the **Generate Epochs** button and check whether the epoch was created correctly.
 
@@ -299,7 +299,7 @@ The epoch definition of the extinction supra epochs is provided in the [Figure](
   **Define the rating epochs**
 
   The epoch definition of the rating epochs is provided in the [Figure](#ratingEpochs) below.
-  1. Click **Add Row**
+  1. Click **Add Row**.
   1. Fill in the **epochName**: `Rating`.
   1. Define the start of the epochs:
       - Fill in `events` (or use the right-click option) in **startChannel**.
@@ -321,7 +321,7 @@ The epoch definition of the extinction supra epochs is provided in the [Figure](
 </details>
 
 ### Finish creating the ECG PhysioAnalyzer ###
-When done with creating epochs, click **OK** to close the Epoch Builder window and return to the PhysioAnalyzer settings window. We'll leave the settings to their default values for now (see the [ECG Analyzer](..\user-guide\physioanalyzer-modules\ecg-module.html#settings) chapter in the User Guide for more information on the ECG analyzer settings). Click **OK** to save the changes and return to the Session Manager. Note that although we have created an analyzer, the analyzer and the settings and epochs it contains are not applied to the data files yet. We will first create the other analyzers, then apply all analyzers to our data files. 
+When done with creating epochs, click **OK** to close the Epoch Builder window and return to the PhysioAnalyzer settings window. We'll leave the settings to their default values for now (see the [ECG Analyzer](..\user-guide\physioanalyzer-modules\ecg-module.html#settings) chapter in the User Guide for more information on the ECG analyzer settings). Click **OK** to save the changes and return to the Session Manager. Note that although we created an analyzer, the analyzer and the settings and epochs it contains are not applied to the data files yet. We will first create the other analyzers, then apply all analyzers to our data files. 
 
 ## Creating the SC PhysioAnalyzer ##
  - Click the **Create New Analyzer** button again and select the **Skin Conductance Analyzer**.
@@ -398,7 +398,7 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="ibiRejection2"
             caption="Select and disregard IBI." %} 
 
- - Since manually removing individual IBIs can be time consuming, a better approach may be to adjust the **Maximum IBI value** setting in this particular PhysioAnalyzer. Zoom the IBI plot completely out by double clicking it. Notice how the correct IBIs in this file are never located above 1.3 s. Click the **View/Edit Settings** button in the ECG tab and set the **Maximum IBI** value to `1.3`. After clicking **Ok**, the ECG module will automatically remove all IBIs above the said threshold. In the IBI graph, these automatically rejected IBIs are displayed as diamonds and are not used to generate the Instantaneous Heart Rate (IHR), which is calculated by interpolating all non-rejected IBIs.
+ - Since manually removing individual IBIs can be time consuming, a better approach may be to adjust the **Maximum IBI value** setting in this particular PhysioAnalyzer. Zoom the IBI plot completely out by double clicking it. Notice how the correct IBIs in this file are never located above 1.3 s. Click the **View/Edit Settings** button in the ECG tab and set the **Maximum IBI** value to `1.3`. After clicking **Ok**, the ECG module will automatically remove all IBIs above the said threshold. In the IBI graph, these automatically rejected IBIs are displayed as diamonds and are not used to generate the Instantaneous Heart Rate (IHR), which is calculated by interpolating all non-rejected IBIs. Note that adjusting the settings within the PhysioAnalyzer Viewer will only affect the current file. Other files are not affected and keep the settings as originally specified when the PhysioAnalyzer was created.
 
     {% include image.html
             img="tutorial\ECG_Edit_Settings.png"
@@ -425,7 +425,7 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="lowRPeaks2"
             caption="R-peaks missed by the PhysioData Toolbox." %}
 
-  {% include image.html
+{% include image.html
             img="tutorial\ECG_Low_R-peaks-3.png"
             title="Low R-peaks 3"
             id="lowRPeaks3"
@@ -446,7 +446,7 @@ Data correction in the Skin Conductance graph consists of the user inserting **R
             title="SC artifact 1"
             id="scArtifact1"
             caption="Selecting and disregarding a SC zone." %}
-     {% include image.html
+  {% include image.html
             img="tutorial\SC_faulty_spike-3.png"
             title="SC artifact 2"
             id="scArtifact2"
@@ -480,7 +480,7 @@ The HRV module itself does not allow users to correct artifacts, this must inste
 # Updating the Settings
 At times it may be necessary to update one or more specific settings within multiple existing PhysioAnalyzers, without overwriting other customized settings, and without removing the corrections. This can be done using the **PhysioAnalyzer Configurator** in the Session Manager.
 
-Say we want to update the epochs definitions in all files, but leave the other settings intact:
+Say we want to update the epoch definitions in all files, but leave the other settings intact:
  - Select any file in the file tree, and click the **Import from PhysioData file** button. Remove the **Skin Conductance Analyzer** and the **HRV Analyzer** from the PhysioAnalyzer tree by selecting them (by clicking them) and clicking the **Remove Analyzer** button. 
  - Click the **View/Edit Analyzer** button, then in the settings dialog, the **Click to View/Edit Epochs** button.
  - We are going to add trial baseline epochs (ranging 2 seconds before stimulus onset to stimulus onset) that precede the already existing CS+ epochs.
@@ -499,7 +499,7 @@ Say we want to update the epochs definitions in all files, but leave the other s
  - We will also add a Metadata Column so that more information is included in the exported data:
      - Click **Add Metadata Column**
      - Enter `Type` in the Column Name field.
-     - In the newly created column, fill in `response` in rows 4 and 5 and `baseline` in rows 8 and 9.
+     - In the newly created column, fill in `response` in 'Resp' epochs (rows 3 and 4) and `baseline` in the 'Base' epochs (rows 6 and 7).
 
        {% include image.html
             img="tutorial\EpochsAdjusted-2.png"
@@ -508,7 +508,7 @@ Say we want to update the epochs definitions in all files, but leave the other s
             caption="The Epoch Definition table with the baseline epochs and metadata column added." %}
 
  - Click **Ok** in the Epoch Builder and the Settings dialog to return to the Session Manager.
- - Expand the ECG module in the PhysioAnalyzer tree, and deselect all settings except the **Epochs** (labeled **Epochs from definition: 9 row(s) in table**). 
+ - Expand the ECG module in the PhysioAnalyzer tree, and deselect all settings except the **Epochs** (labeled **Epochs from definition: 7 row(s) in table**). 
 
 {% include image.html
     img="tutorial\EpochSettingSelected-2.png"
