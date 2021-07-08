@@ -8,7 +8,7 @@ parent: Tutorial
 # {{ page.title }} #
 {: .pdt-abstract-title, .no_toc}
 
-A short tutorial specific to analyzing eye-tracking data.
+A short tutorial specific to analyzing ECG data.
 {: .pdt-abstract-body}
 
 👷🏻‍♀️ 🚧 Under construction. 🚧 👷🏻

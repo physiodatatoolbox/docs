@@ -46,13 +46,13 @@ The PhysioData Toolbox is designed to fullfil the following purposes:
     The Toolbox can automatically summarize or resample all epochs in the imported files, and export the results for further statistical analysis.
 
 # Session Manager #
-The PhysioData Toolbox is operated using the Session Manager window, which can be used to import multiple files and apply user-specified analysis procedures to them. All files can then be analyzed simultaneously, and their results consolidated into a single table. Additionally, the session can be saved at any time and resumed afterwards. All analyses pipelines are fully parametric and non-destructive.
+The PhysioData Toolbox is operated using the Session Manager window, which can be used to import multiple files and apply user-specified analysis procedures to them. All files can then be analyzed simultaneously, and their results consolidated into a single table. Additionally, the session can be saved at any time and resumed afterwards. All analysis pipelines are fully parametric and non-destructive.
 
 {% include image.html
     img="user-guide\session-manager\session-manager.png"
     title="Session Manager"
     id="session-manager-img"
-    caption="The Session Manager, which is the main toolbox window. It manages the PhysioData files, the PhysioAnalyzers modules and the data export." %}
+    caption="The Session Manager, which is the main toolbox window. It manages the PhysioData files, the PhysioAnalyzer modules and the data export." %}
 
 # Modules
 The Toolbox features various modules, each containing an adjustable analysis pipeline specific to a certain data type. For the full documentation, see the [PhysioAnalyzer page](./user-guide/physioanalyzer-modules.html) in the User Guide.
@@ -112,7 +112,7 @@ The Respiration Analyzer lets the user preprocess and analyze a chest or abdomen
 {% include image.html
     img="user-guide/physioanalyzers/resp-module-gui-1.png"
     title= page.title
-    caption="The Respiration Module GUI." %} 
+    caption="The Respiration Module GUI, showing the respiration signal, the durations of the breath, inhalation, and exhalation, and the breath amplitude." %} 
 
 ## EMG Analyzer
 Filtered, rectified and smoothed EMG signals can be extracted from the raw EMG using the EMG Analyzer module, which outputs descriptive statistical analysis of all these derived signals.
@@ -120,7 +120,7 @@ Filtered, rectified and smoothed EMG signals can be extracted from the raw EMG u
 {% include image.html
     img="user-guide/physioanalyzers/emg-module-gui-1.png"
     title= page.title
-    caption="The EMG Signal Analyzer interface." %} 
+    caption="The EMG Signal Analyzer interface, showing the raw, filtered, rectified, and smoothed EMG signals." %} 
 
 ## Skin Conductance Analyzer
 The Skin Conductance Analyzer module extracts metrics about the skin conductance level (SCL), phasic activity, and Skin Conductance Responses (SCRs) per epoch.
@@ -129,7 +129,7 @@ The Skin Conductance Analyzer module extracts metrics about the skin conductance
 {% include image.html
     img="user-guide/physioanalyzers/sc-module-gui-1.png"
     title= page.title
-    caption="The Skin Conductance Analyzer GUI, showing the SCL (in axes labeled Skin Conductance) and the phasic channel (in the axes labeled Phasic SC)." %} 
+    caption="The Skin Conductance Analyzer GUI, showing the SCL (in axis labeled Skin Conductance) and the phasic channel (in the axis labeled Phasic SC)." %} 
 
 ## Pupil Diameter Analyzer
 The Pupil Diameter Analyzer module features user-specifiable raw data filters and signal interpolation options, and exports a variety of pupil-size metrics.
@@ -138,7 +138,7 @@ The Pupil Diameter Analyzer module features user-specifiable raw data filters an
 {% include image.html
     img="user-guide/physioanalyzers/pupil-module-gui-1.png"
     title= page.title
-    caption="The Pupil Diameter analyzer gui." %} 
+    caption="The Pupil Diameter Analyzer GUI, showing the left, right, and mean pupil diameter." %} 
 
 
 ## Area of Interest Hit Analyzer
@@ -148,4 +148,4 @@ With the Area of Interest Hit Analyzer, gaze data in the shape of area of intere
 {% include image.html
     img="user-guide/physioanalyzers/aoi-module-gui-1.png"
     title= "Area of Interest Hit Analyzer"
-    caption="The Area of Interest Hit GUI, showing the hit data per AoOI. In the current file there were four AOIs." %} 
+    caption="The Area of Interest Hit GUI, showing the hit data per AOI. In the current file there were four AOIs." %} 
