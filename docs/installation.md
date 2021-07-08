@@ -44,7 +44,7 @@ Once the MATLAB runtime is ready:
  - Download and unpack the [Toolbox zip file](#download-and-installation), preferable to local storage.
  - Run the **PhysioDataToolbox.exe** file.
 
-If this is your first time using the Toolbox, follow the [Basic Walkthrough](.\tutorial\basics.md) to get acquainted with the Toolbox features.
+If this is your first time using the Toolbox, follow the [Basic Walkthrough](.\tutorial\basics.html) to get acquainted with the Toolbox features.
 
 ❕ 🙁 Problems? See Troubleshooting [below](#troubleshooting).
 {: .ml-4}
