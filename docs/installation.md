@@ -18,7 +18,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 
 <details markdown="1">
   <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
-  250B3F39E1DF3E720F60543FA937B244EDBFC33AB5502A3DCBCDF1436510F51F
+  2936DB0D67ED7B1BEF807772FA2EE0BC2CB52B65E701D8636EB59ADE45019108
   {: .fs-5 .fw-300 .ml-4}
 </details>
 
