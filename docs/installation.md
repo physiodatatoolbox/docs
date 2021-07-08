@@ -50,7 +50,7 @@ If this is your first time using the Toolbox, follow the [Basic Walkthrough](.\t
 {: .ml-4}
 
 ## SmartScreen Warning ##
-When running PhysioDataToolbox.exe for the first time, especially recently released versions, you might get a Windows 10 SmartScreen warning. This is because even though the PhysioData Toolbox executable is signed, it is considered _unrecognized_ until it has built a reputation with the Microsoft SmartScreen system (see [here](https://security.stackexchange.com/a/139520) for more info).
+When running PhysioDataToolbox.exe for the first time, especially recently released versions, you might get a Windows 10 SmartScreen warning. This is because even though the PhysioData Toolbox executable is signed, it is considered _unrecognized_ until it has built a reputation with the Microsoft SmartScreen system ([more info](https://en.wikipedia.org/wiki/Microsoft_SmartScreen#Code_Signing_Certificates)).
 
 To run the Toolbox anyway, click **More Info**, then **Run anyway**.
 
