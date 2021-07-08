@@ -12,7 +12,9 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 ❗ **The Toolbox is only compatible with Windows.**
 {: .fs-5 .fw-300 .ml-4}
 
-[Download PhysioData Toolbox v{{ site.pdt_version }}](https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp){: .pdt-btn style="width: 480px; text-align: center;"}
+<!-- https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp -->
+
+[Download PhysioData Toolbox v{{ site.pdt_version }}](https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download){: .pdt-btn style="width: 480px; text-align: center;"}
 
 <details markdown="1">
   <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
