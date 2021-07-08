@@ -9,13 +9,16 @@ nav_order: 3
 The PhysioData Toolbox can be downloaded as a zip file containing the executables and supplementary files:
 {: .pdt-abstract-body}
 
-❗ **The Toolbox will be released on July 8<sup>th</sup>, 2021.**
+❗ **The Toolbox is only compatible with Windows.**
 {: .fs-5 .fw-300 .ml-4}
 
 [Download PhysioData Toolbox v{{ site.pdt_version }}](https://surfdrive.surf.nl/files/index.php/s/b1GHscuteRPT3ap/download){: .pdt-btn style="width: 480px; text-align: center;"}
 
-❕ **The Toolbox is only compatible with Windows.**
-{: .fs-5 .fw-300 .ml-4}
+<details markdown="1">
+  <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
+  250B3F39E1DF3E720F60543FA937B244EDBFC33AB5502A3DCBCDF1436510F51F
+  {: .fs-5 .fw-300 .ml-4}
+</details>
 
 The Toolbox requires the MATLAB 2020b Component Runtime (v9.9):
 {: .pdt-abstract-body}
@@ -43,6 +46,17 @@ If this is your first time using the Toolbox, follow the [Basic Walkthrough](.\t
 
 ❕ 🙁 Problems? See Troubleshooting [below](#troubleshooting).
 {: .ml-4}
+
+## SmartScreen Warning ##
+When running PhysioDataToolbox.exe for the first time, especially recently released versions, you might get a Windows 10 SmartScreen warning. This is because even though the PhysioData Toolbox executable is signed, it is considered _unrecognized_ until it has built a reputation with the Microsoft SmartScreen system (see [here](https://security.stackexchange.com/a/139520) for more info).
+
+To run the Toolbox anyway, click **More Info**, then **Run anyway**.
+
+{% include image.html
+    img="smartscreen-popup.png"
+    title="SmartScreen"
+    caption="When running a new version of the Toolbox for the first time, you might encounter a Windows SmartScreen warning. To run the Toolbox,  click More info then Run anyway." %}
+
 
 ---
 
