@@ -30,7 +30,7 @@ The **Skin Conductance Analyzer** can be used to: processes **Skin Conductance L
 ---
 
 # User Corrections #
-The Skin Conductance Analyzer features the same correction method as the  [Generic Signal Analyzer](./physioanalyzer.html#user-corrections); i.e., sections of the raw signal can be marked for exclusion and interpolation. Due to way the tonic signal is measured---with a moving minimum filter---it is imperative to remove dipping artifacts, such as those cause by electrode disconnection. 
+The Skin Conductance Analyzer features the same correction method as the  [Generic Signal Analyzer](./physioanalyzer.html#user-corrections); i.e., sections of the raw signal can be marked for exclusion and interpolation. Due to the way the tonic signal is measured---with a moving minimum filter---it is imperative to remove dipping artifacts, such as those cause by electrode disconnection. 
 
 {% include image.html
     img="user-guide/physioanalyzers/sc-module-correction-1.png"

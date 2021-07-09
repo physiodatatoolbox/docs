@@ -18,7 +18,7 @@ Epoch are relevant time segments within a recording. The Toolbox can automatical
 # Introduction #
 One key feature of the Toolbox is its ability to automatically segment data into relevant sections, aka **epochs**, for analysis. This automatic segmentation occurs by applying a user-defined rule-set to the data inside a PhysioData file, and resolving that into epochs. The rule-set, aka **epoch definition**, defines how each epoch must be constructed by referencing events, markers, etc. inside the file. These data are referred to as **Referenceable Events**.
 
-In the Toolbox, epochs are tied to the PhysioAnalyzer modules. Each PhysioAnalyzer has a setting labeled **Generate epoch from** and a drop down menu allowing the user to select **Epoch Definition Table** or **PhysioAnalyzer with tag**. If the former is selected, the module will generate its won epochs based on the epoch definition table provided; or, if the latter is selected, the module copies epochs from another module, selected via its tag.
+In the Toolbox, epochs are tied to the PhysioAnalyzer modules. Each PhysioAnalyzer has a setting labeled **Generate epoch from** and a drop down menu allowing the user to select **Epoch Definition Table** or **PhysioAnalyzer with tag**. If the former is selected, the module will generate its own epochs based on the epoch definition table provided; or, if the latter is selected, the module copies epochs from another module, selected via its tag.
 
 {% include image.html
     img="user-guide/epochs/epoch-settings.png"

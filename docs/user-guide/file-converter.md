@@ -109,7 +109,7 @@ This converter features the following custom options:
  - **Eye-tracking Event Generation:**  
   In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values.
 
- - **Gap Threshold:**  
+ - **Gap Threshold:** 
   The Toolbox assumes that a time gap between subsequent rows in the gazedata file indicates a break in a section, even if the rows otherwise form a contiguous section. The gap is classified as a difference in row-timestamps with duration larger than N times the sample duration (1/fs). N must be larger than 1, and can be inf. Setting it to inf effectively turns off the above mentioned assumption.
 
  - **AOI Analysis:**  
