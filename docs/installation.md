@@ -14,7 +14,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 
 <!-- https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp -->
 
-[Download PhysioData Toolbox v{{ site.pdt_version }}](https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download){: .pdt-btn style="width: 480px; text-align: center;"}
+[PhysioData Toolbox v{{ site.pdt_version }}](https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download){: .pdt-btn style="width: 340px; text-align: center;"}
 
 <details markdown="1">
   <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
@@ -25,7 +25,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 The Toolbox requires the MATLAB 2020b Component Runtime (v9.9):
 {: .pdt-abstract-body}
 
-[Download MATLAB 2020b Component Runtime](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 480px; text-align: center;"}
+[MATLAB 2020b Component Runtime](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 340; text-align: center;"}
 
 See installation guide [below](#installation).
 {: .pdt-abstract-body}
