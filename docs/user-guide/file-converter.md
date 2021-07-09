@@ -115,8 +115,6 @@ This converter features the following custom options:
  - **AOI Analysis:**  
    In this field, one column name of the EET files can be specified. This column should hold the current area of interest (AOI) hit data. It thus holds the AOI name that is currently looked at (if any). In EET 3.2 files, the ComponentName column can be used for AOI Analysis. The ComponentName column is automatically created in EET 3.2 files and contains the (sub)object or slide state that is currently being looked at.
 
-<!-- TODO: Remake the printscreen to include the Gap Threshold setting. -->
-
 {% include image.html
     img="user-guide\file-converter\eet-custom-options.png"
     title="EET custom options"
@@ -136,7 +134,11 @@ This converter features the following custom options:
  - **DataViewer Options:**  
   If messages were sent with an time-offset prefix as defined by DataViewer, then the timestamps of those messages can be corrected accordingly by the File Converter. Messages should have the following format: \<offset> \<msg>, where \<offset> is the message delay in ms.
 
-
+{% include image.html
+    img="user-guide\file-converter\eyelink-custom-options.png"
+    title="EyeLink custom options"
+    id="el-opts"
+    caption="The custom conversion options available for EyeLink files." %}
 
 <!--- Currently disabled modules: --->
 
