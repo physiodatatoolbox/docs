@@ -63,9 +63,16 @@ To run the Toolbox anyway, click **More Info**, then **Run anyway**.
 ---
 
 # License and Support
-This Toolbox is made freely available 'as is' to students and researchers. The software has undergone testing and validation, but is presented in good faith without any guarantee, and without warranty of fitness for a particular purpose. Always double-check the results, and please report any errors, inconsistencies and suggestions to the development team.
+This Toolbox is in active development and is made freely available 'as is' to students and researchers. The software has undergone thorough testing and validation, but is presented without guarantee, and without warranty of fitness for a particular purpose. Always double-check the results, and please report any errors, inconsistencies and suggestions to the development team.
 
-The PhysioData Toolbox is strictly for non-diagnostic and non-commercial use.
+This software is meant strictly for non-diagnostic, non-medical and non-commercial use.
+
+This Toolbox sends anonymous usage data to an online analytics server for tracking how often the Toolbox and its various features are used. These data are necessary for rationalizing the continued development and maintenance of the Toolbox and its components. No physiological (meta)data, analysis results or personally identifiable information is collected.
+
+If you use this Toolbox, please cite it using the following information:
+
+Sjak-Shie, E. E. (2021). PhysioData Toolbox (Version 0.6.1) [Computer software]. Retrieved from https://PhysioDataToolbox.leidenuniv.nl.
+{: .text-mono}
 
 If you require support, or if you have any questions, comments or suggestions, please contact us at [PhysioDataToolbox@fsw.leidenuniv.nl](mailto:PhysioDataToolbox@fsw.leidenuniv.nl).
 
@@ -83,4 +90,4 @@ If you require support, or if you have any questions, comments or suggestions, p
     When running PhysioDataToolbox.exe for the first time, it will attempt to create a folder named PhysioDataToolbox_mcr in the same directory as the executable, and unpack its dependencies there. This may take **several minutes**, especially when running the Toolbox on network or non-SSD drives. Please be patient. Subsequent launches should be much faster.
 
  - **Ask for help:**  
-    Contact the [developers](#license-and-support) and explain your predicament.
+    Contact the [developers](./about.html) and explain your predicament.

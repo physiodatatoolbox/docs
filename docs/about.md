@@ -55,7 +55,8 @@ The above-mentioned souls are affiliated with the following groups:
     %}
 _Faculty of Social and Behavioral Sciences  
 Leiden University  
-Leiden, The Netherlands_
+Leiden, The Netherlands_  
+[Website](https://www.universiteitleiden.nl/en/social-behavioural-sciences/)
 {: .fs-3 .ml-4}
   
 &nbsp;  
@@ -69,7 +70,8 @@ Leiden, The Netherlands_
     no_popup = true
     %}
 _Leiden Institute for Brain and Cognition  
-Leiden, The Netherlands_
+Leiden, The Netherlands_  
+[Website](https://www.universiteitleiden.nl/en/social-behavioural-sciences/libc)
 {: .fs-3 .ml-4}
 
 ---
