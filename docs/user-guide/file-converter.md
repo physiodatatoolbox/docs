@@ -109,13 +109,11 @@ This converter features the following custom options:
  - **Eye-tracking Event Generation:**  
   In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values.
 
- - **Gap Threshold:**  
+ - **Gap Threshold:** 
   The Toolbox assumes that a time gap between subsequent rows in the gazedata file indicates a break in a section, even if the rows otherwise form a contiguous section. The gap is classified as a difference in row-timestamps with duration larger than N times the sample duration (1/fs). N must be larger than 1, and can be inf. Setting it to inf effectively turns off the above mentioned assumption.
 
  - **AOI Analysis:**  
    In this field, one column name of the EET files can be specified. This column should hold the current area of interest (AOI) hit data. It thus holds the AOI name that is currently looked at (if any). In EET 3.2 files, the ComponentName column can be used for AOI Analysis. The ComponentName column is automatically created in EET 3.2 files and contains the (sub)object or slide state that is currently being looked at.
-
-<!-- TODO: Remake the printscreen to include the Gap Threshold setting. -->
 
 {% include image.html
     img="user-guide\file-converter\eet-custom-options.png"
@@ -136,7 +134,11 @@ This converter features the following custom options:
  - **DataViewer Options:**  
   If messages were sent with an time-offset prefix as defined by DataViewer, then the timestamps of those messages can be corrected accordingly by the File Converter. Messages should have the following format: \<offset> \<msg>, where \<offset> is the message delay in ms.
 
-
+{% include image.html
+    img="user-guide\file-converter\eyelink-custom-options.png"
+    title="EyeLink custom options"
+    id="el-opts"
+    caption="The custom conversion options available for EyeLink files." %}
 
 <!--- Currently disabled modules: --->
 

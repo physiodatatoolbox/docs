@@ -36,7 +36,7 @@ The HRV module itself does not allow users to correct artifacts, this must inste
 ---
 
 # HRV Analyses #
-The HRV module performs a collection of time-domain, frequency-domain and non-linear analyses on detrended IBIs located within a specific epoch. See the [Metrics](#metics) section for a full overview of the output.
+The HRV module performs a collection of time-domain, frequency-domain and non-linear analyses on detrended IBIs located within a specific epoch. See the [Metrics](#metrics) section for a full overview of the output.
 
 ## Time-Domain Analysis ##
 The HRV module extracts the following standard time-domain metrics from the detrended IBI data:
