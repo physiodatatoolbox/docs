@@ -14,6 +14,9 @@ The PhysioData Toolbox is in constant development. The latest public version is 
 # Change Log #
 Although the Toolbox can generally open files from older versions, it is not guaranteed that the results obtained in different PhysioData Toolbox versions are completely equal. It is therefore strongly advised to analyze a dataset using a single version. Also, double check the PhysioAnalyzer data, settings and user corrections when loading older files.
 
+## PhysioData Toolbox v0.6.1
+Minor bugfix relating to the Gazedata Converter.
+
 ## PhysioData Toolbox v0.6.0
 PhysioData Toolbox Version 0.6 contains several improvements over v0.5.
 
@@ -31,6 +34,9 @@ PhysioData Toolbox Version 0.6 contains several improvements over v0.5.
 
  - **This website:**  
     The PhysioData Toolbox documentation has been updated and moved from a pdt document to this website.
+
+ - **Less converters:**  
+    The MRI scanner Physlog and BioSemi converters have been removed until a future release.
 
 ## PhysioData Toolbox v0.5.0 ## 
 Versions older than 0.6 are considered legacy. A zip file containing PhysioData Toolbox v0.5.0, including all documentation, can be downloaded [here](https://surfdrive.surf.nl/files/index.php/s/V4d5vPp976TlXuk/download). 

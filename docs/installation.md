@@ -9,13 +9,18 @@ nav_order: 3
 The PhysioData Toolbox can be downloaded as a zip file containing the executables and supplementary files:
 {: .pdt-abstract-body}
 
-❗ **The Toolbox will be released on July 8<sup>th</sup>, 2021.**
+❗ **The Toolbox is only compatible with Windows.**
 {: .fs-5 .fw-300 .ml-4}
 
-[Download PhysioData Toolbox v{{ site.pdt_version }}](https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp){: .pdt-btn style="width: 480px; text-align: center;"}
+<!-- https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp -->
 
-❕ **The Toolbox is only compatible with Windows.**
-{: .fs-5 .fw-300 .ml-4}
+[Download PhysioData Toolbox v{{ site.pdt_version }}](https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download){: .pdt-btn style="width: 480px; text-align: center;"}
+
+<details markdown="1">
+  <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
+  2936DB0D67ED7B1BEF807772FA2EE0BC2CB52B65E701D8636EB59ADE45019108
+  {: .fs-5 .fw-300 .ml-4}
+</details>
 
 The Toolbox requires the MATLAB 2020b Component Runtime (v9.9):
 {: .pdt-abstract-body}
@@ -39,10 +44,21 @@ Once the MATLAB runtime is ready:
  - Download and unpack the [Toolbox zip file](#download-and-installation), preferable to local storage.
  - Run the **PhysioDataToolbox.exe** file.
 
-If this is your first time using the Toolbox, follow the [Basic Walkthrough](.\tutorial\basics.md) to get acquainted with the Toolbox features.
+If this is your first time using the Toolbox, follow the [Basic Walkthrough](.\tutorial\basics.html) to get acquainted with the Toolbox features.
 
 ❕ 🙁 Problems? See Troubleshooting [below](#troubleshooting).
 {: .ml-4}
+
+## SmartScreen Warning ##
+When running PhysioDataToolbox.exe for the first time, especially recently released versions, you might get a Windows 10 SmartScreen warning. This is because even though the PhysioData Toolbox executable is signed, it is considered _unrecognized_ until it has built a reputation with the Microsoft SmartScreen system ([more info](https://en.wikipedia.org/wiki/Microsoft_SmartScreen#Code_Signing_Certificates)).
+
+To run the Toolbox anyway, click **More Info**, then **Run anyway**.
+
+{% include image.html
+    img="smartscreen-popup.png"
+    title="SmartScreen"
+    caption="When running a new version of the Toolbox for the first time, you might encounter a Windows SmartScreen warning. To run the Toolbox,  click More info then Run anyway." %}
+
 
 ---
 

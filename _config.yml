@@ -34,7 +34,7 @@ baseurl_static: ""
 
 
 # PDT variables:
-pdt_version: 0.6.0
+pdt_version: 0.6.1
 
 
 # Theme settings:

@@ -113,7 +113,7 @@ This is a smaller image, at its native size.
     img="test-small.png"
     title="Test Small Image"
     id="test-small-1"
-    caption="Small image with long at its native size (no size specified). Captions wraps." %}
+    caption="Small image with long caption at its native size (no size specified). Captions wraps." %}
 
 ---
 # References #
