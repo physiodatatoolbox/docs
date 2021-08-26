@@ -18,6 +18,14 @@ gem "github-pages", group: :jekyll_plugins
 #  gem "jekyll-feed", "~> 0.12"
 #end
 
+
+
+#----------------------------------------------------------------------------
+# Note, if bundle update fails in Windows, run the editor
+# (e.g. VS Code) in admin mode.
+#----------------------------------------------------------------------------
+
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
@@ -41,3 +49,4 @@ gem 'html-proofer'
 gem "nokogiri", ">= 1.11.4"
 gem "kramdown", ">= 2.3.1"
 gem "rexml", ">= 3.2.5"
+gem "addressable", ">= 2.8.0"
