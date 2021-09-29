@@ -31,6 +31,8 @@
         "resampling",
         "rmssd",
         "rmssds",
+        "struct",
+        "structs",
         "tobii",
         "unchecking",
         "unmark",
