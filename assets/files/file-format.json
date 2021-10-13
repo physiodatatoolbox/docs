@@ -1,46 +1,76 @@
-[{
-    "field": "PhysioData",
-    "size": "1 x 1",
-    "type": "struct",
-    "desc": "The root physioData object. This is either a struct, or the contents of a .PhysioData MATLAB file.",
-    "children": [{
-            "field": "data",
-            "size": "1 x 1",
-            "type": "struct",
-            "desc": "A scalar struct holding all raw data, including events.",
-            "children": [{
-                    "field": "labels",
-                    "size": "1 x 1",
-                    "type": "struct",
-                    "desc": "A scalar struct holding all labels, which are events pertaining to signals."
-                },
-                {
-                    "field": "signals",
-                    "size": "1 x 1",
-                    "type": "struct",
-                    "desc": "A scalar struct holds raw signal data in a collection of channels.",
-                    "children": [{
-                            "field": "fs",
-                            "size": "1 x 1",
-                            "type": "double",
-                            "desc": "A scalar double indicating the sampling frequency of the signals, in Hz. The time vector is dynamically calculated with the first sample at t = 0, with an sample interval of 1/fs."
-                        },
-                        {
-                            "field": "channels",
-                            "size": "1 x k",
-                            "type": "cell",
-                            "desc": "A cell array that holds one signal per cell; i.e. one time-series per channel. All channels must contain the same amount of samples in a single column. All signals share the same time-vector."
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "field": "epoch",
-            "size": "1 x 1",
-            "type": "struct",
-            "desc": "A scalar struct holding the pre-generated epochs."
-        }
-
-    ]
-}]
+[
+    {
+        "field": "PhysioData",
+        "size": "1 x 1",
+        "type": "struct",
+        "desc": "The root physioData object. This is either a struct, or the contents of a .PhysioData MATLAB file.",
+        "children": [
+            {
+                "field": "data",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct holding all raw data, including events.",
+                "children": [
+                    {
+                        "field": "labels",
+                        "size": "1 x 1",
+                        "type": "struct",
+                        "desc": "The labels field inside the data variable holds the labels (i.e. events) that are associated with the signals inside the PhysioData file. This field can be omitted if no labels are present.",
+                        "children": [
+                            {
+                                "field": "t",
+                                "size": "k x 1",
+                                "type": "double",
+                                "desc": "A single column vector with the times, in seconds, of the labels."
+                            },
+                            {
+                                "field": "channels",
+                                "size": "1 x 1",
+                                "type": "cell",
+                                "desc": "A single cell that holds a [k x 1 cell] cell array of strings from character arrays, with each string being the name/value of the label."
+                            },
+                            {
+                                "field": "channelUnits",
+                                "size": "1 x 1",
+                                "type": "cell",
+                                "desc": "A single cell containing a [1 x 1 cell] cell with the following string: ‘-’ (labels don’t have units)."
+                            },
+                            {
+                                "field": "channelNames",
+                                "size": "1 x 1",
+                                "type": "cell",
+                                "desc": "A single cell containing a [1 x 1 cell] cell with the following string: ‘Labels’."
+                            }
+                        ]
+                    },
+                    {
+                        "field": "signals",
+                        "size": "1 x 1",
+                        "type": "struct",
+                        "desc": "A scalar struct holds raw signal data in a collection of channels.",
+                        "children": [
+                            {
+                                "field": "fs",
+                                "size": "1 x 1",
+                                "type": "double",
+                                "desc": "A scalar double indicating the sampling frequency of the signals, in Hz. The time vector is dynamically calculated with the first sample at t = 0, with an sample interval of 1/fs."
+                            },
+                            {
+                                "field": "channels",
+                                "size": "1 x k",
+                                "type": "cell",
+                                "desc": "A cell array that holds one signal per cell; i.e. one time-series per channel. All channels must contain the same amount of samples in a single column. All signals share the same time-vector."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "field": "epoch",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct holding the pre-generated epochs."
+            }
+        ]
+    }
+]

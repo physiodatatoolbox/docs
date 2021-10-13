@@ -89,8 +89,10 @@ Hello.
 
 <script>
 
+    // The code below parses the file description in the json and visualizes it in a tree using the vanillatree lib.
+
     // Read in tree stuff:
-    const main = document.querySelector('filetree');
+    const main = document.querySelector("filetree");
     const tree = new VanillaTree( main);
 
     // Read javascript:
