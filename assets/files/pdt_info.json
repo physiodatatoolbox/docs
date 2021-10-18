@@ -3,5 +3,8 @@
 ---
 {% comment %} NOTE: Keep the front matter so that the JSON is processed as by the Liquid Engine.{% endcomment %}
 {
-    "version": "{{ site.pdt_version }}"
+    "version": "{{ site.pdt_version }}",
+    "download_url": "{{site.pdt_download_url}}",
+    "mcr_ver_short": "{{sit.pdt_mcr_ver_short}}",
+    "mcr_ver_long": "{{site.pdt_mcr_ver_long}}"
   }

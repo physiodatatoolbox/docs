@@ -14,7 +14,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 
 <!-- https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp -->
 
-[Download PhysioData Toolbox v{{ site.pdt_version }}](https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download){: .pdt-btn style="width: 480px; text-align: center;"}
+[Download PhysioData Toolbox v{{ site.pdt_version }}]({{ site.pdt_download_url }}){: .pdt-btn style="width: 480px; text-align: center;"}
 
 <details markdown="1">
   <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
@@ -22,10 +22,10 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
   {: .fs-5 .fw-300 .ml-4}
 </details>
 
-The Toolbox requires the MATLAB 2020b Component Runtime (v9.9):
+The Toolbox requires the free {{ site.pdt_mcr_ver_long }}:
 {: .pdt-abstract-body}
 
-[Download MATLAB 2020b Component Runtime](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 480px; text-align: center;"}
+[Download {{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 480px; text-align: center;"}
 
 See installation guide [below](#installation).
 {: .pdt-abstract-body}
@@ -35,9 +35,9 @@ See installation guide [below](#installation).
 ---
 
 # Installation
-Before running the Toolbox, download and install the free [MATLAB 2020b Component Runtime (v9.9)](https://nl.mathworks.com/products/compiler/matlab-runtime.html). You will need admin rights to install it. Ask your IT department to install if you don't have the necessary permissions.
+Before running the Toolbox, download and install the free [{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html). You will need admin rights to install it. Ask your IT department to install if you don't have the necessary permissions.
 
-If you already have MATLAB 2020b **including the Compiler Toolbox**, you should already have the correct runtime installed.
+If you already have {{ site.pdt_matlab_ver }} **including the Compiler Toolbox**, you should already have the correct runtime installed.
 
 Once the MATLAB runtime is ready:
 
