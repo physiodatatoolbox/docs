@@ -14,7 +14,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 
 <!-- https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp -->
 
-[PhysioData Toolbox v{{ site.pdt_version }}]({{ site.pdt_download_url }}){: .pdt-btn style="width: 340px; text-align: center;"}
+[PhysioData Toolbox v{{ site.pdt_version }}]({{ site.pdt_download_url }}){: .pdt-btn style="width: 400px; text-align: center;"}
 
 <details markdown="1">
   <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
@@ -25,7 +25,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 The Toolbox requires the free {{ site.pdt_mcr_ver_long }}:
 {: .pdt-abstract-body}
 
-[{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 340px; text-align: center;"}
+[{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 400px; text-align: center;"}
 
 See installation guide [below](#installation).
 {: .pdt-abstract-body}
