@@ -6,7 +6,7 @@ nav_order: 2
 # PhysioData Toolbox 
 {: .pdt-abstract-title }
 
-The PhysioData Toolbox is a free easy-to-use and fully graphical application for visualizing, segmenting and analyzing physiological data.
+The PhysioData Toolbox is a free easy-to-use and fully graphical application for visualizing, segmenting and analyzing physiological data. It currently supports ECG, Skin Conductance, EMG, ICG, Blood Pressure, Respiration, Pupil Size and Gaze AOI hit data.
 {: .pdt-abstract-body}
 
 ---

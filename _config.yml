@@ -49,6 +49,12 @@ remote_theme: pmarsceill/just-the-docs
 logo: "/assets/images/pdt.png"
 color_scheme: "pdt"
 
+
+# Google Analytics Tracking:
+ga_tracking: UA-122931168-1
+ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings
+
+
 #plugins:
   #- jekyll-feed
 

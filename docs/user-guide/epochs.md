@@ -206,7 +206,7 @@ Specifying the value parameter as:
    When specifying the value as a string---e.g. value = `Label A`, only labels with values that completely match (case sensitive) are used. Note that leading and trailing white spaces are ignored.
 
  - **A regular expression:**  
-   When the value is specified as a string enclosed in ^ and $---e.g. value = `$Label [A-Z]^`, it is treated as a regular expression, and any events with values matching the expression are used. Note that both ^ and $ anchors are used as part of the expression. See [MATLAB](https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html) help for more information about regular expressions.
+   When the value is specified as a string enclosed in ^ and $---e.g. value = `$Label [A-Z]^`, it is treated as a regular expression, and any events with values matching the expression are used. Note that both the ^ and $ anchors are used as part of the expression. See [MATLAB](https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html) help for more information about regular expressions. Feel free to email the [developers](../about.html) for help generating regular expression patterns.
 
 ## Multiple Occurrence ##
 Similar to specifying numeric values, occurrences can be specified as a single number or as a set. Additionally, the keyword `last` can be used, which will resolve to the index of the last event that matches the specified value. The usage of last is equal to the MATLAB usage of `end` (which can also be used instead of last). As an example, when specifying occur = `1:last`, all occurrences of the events that match the specified value are selected.
