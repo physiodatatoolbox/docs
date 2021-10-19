@@ -6,5 +6,5 @@
     "version": "{{ site.pdt_version }}",
     "download_url": "{{site.pdt_download_url}}",
     "mcr_ver_short": "{{site.pdt_mcr_ver_short}}",
-    "mcr_ver_long": "{{site.pdt_mcr_ver_long}}"
+    "matlab_ver": "{{site.pdt_matlab_ver}}"
   }

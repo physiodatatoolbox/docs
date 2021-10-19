@@ -40,7 +40,7 @@ pdt_version: 0.6.1
 pdt_download_url: https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download
 pdt_mcr_ver_short: 9.9
 pdt_mcr_ver_long: MATLAB 2020b Component Runtime (v9.9)
-pdt_matlab_ver: MATLAB 2020b
+pdt_matlab_ver: 2020b
 
 
 # Theme settings:
