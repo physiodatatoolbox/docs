@@ -14,7 +14,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 
 <!-- https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp -->
 
-[Download PhysioData Toolbox v{{ site.pdt_version }}]({{ site.pdt_download_url }}){: .pdt-btn style="width: 480px; text-align: center;"}
+[PhysioData Toolbox v{{ site.pdt_version }}]({{ site.pdt_download_url }}){: .pdt-btn style="width: 340px; text-align: center;"}
 
 <details markdown="1">
   <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
@@ -25,7 +25,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 The Toolbox requires the free {{ site.pdt_mcr_ver_long }}:
 {: .pdt-abstract-body}
 
-[Download {{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 480px; text-align: center;"}
+[{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 340px; text-align: center;"}
 
 See installation guide [below](#installation).
 {: .pdt-abstract-body}
@@ -63,13 +63,13 @@ To run the Toolbox anyway, click **More Info**, then **Run anyway**.
 ---
 
 # License and Support
-This Toolbox is in active development and is made freely available 'as is' to students and researchers. The software has undergone thorough testing and validation, but is presented without guarantee, and without warranty of fitness for a particular purpose. Always double-check the results, and please report any errors, inconsistencies and suggestions to the development team.
+The Toolbox is in active development and is made freely available 'as is' to students and researchers. The software has undergone thorough testing and validation, but is presented without guarantee, and without warranty of fitness for a particular purpose. Always double-check the results, and please report any errors, inconsistencies and suggestions to the development team.
 
-This software is meant strictly for non-diagnostic, non-medical and non-commercial use.
+The PhysioData Toolbox is meant strictly for non-diagnostic, non-medical and non-commercial use.
 
 This Toolbox sends anonymous usage data to an online analytics server for tracking how often the Toolbox and its various features are used. These data are necessary for rationalizing the continued development and maintenance of the Toolbox and its components. No physiological (meta)data, analysis results or personally identifiable information is collected.
 
-If you use this Toolbox, please cite it using the following information:
+If you use the PhysioData Toolbox, please cite it using the following information:
 
 Sjak-Shie, E. E. (2021). PhysioData Toolbox (Version 0.6.1) [Computer software]. Retrieved from https://PhysioDataToolbox.leidenuniv.nl.
 {: .text-mono}
