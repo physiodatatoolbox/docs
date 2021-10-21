@@ -104,17 +104,17 @@ The Shock-Conditioning example files loosely represent a classic supra/sub perce
 
   | Event:                       | Event indicates:                               |
   | -----------------------------|:----------------------------------------------:|
-  | Pic\_\<ID\>\_rated\_\<RAT\>  | Rating event, with encoded iamge ID and rating |
-  | Pic\_\<ID\>\_rated\_\<RAT\>  | Rating event, with encoded iamge ID and rating |
-  | Pic\_\<ID\>\_rated\_\<RAT\>  | Rating event, with encoded iamge ID and rating |
-  | Pic\_\<ID\>\_rated\_\<RAT\>  | Rating event, with encoded iamge ID and rating |
+  | Pic\_\<ID\>\_rated\_\<RAT\>  | Rating event, with encoded image ID and rating |
+  | Pic\_\<ID\>\_rated\_\<RAT\>  | Rating event, with encoded image ID and rating |
+  | Pic\_\<ID\>\_rated\_\<RAT\>  | Rating event, with encoded image ID and rating |
+  | Pic\_\<ID\>\_rated\_\<RAT\>  | Rating event, with encoded image ID and rating |
 
 </p>
 
   <p markdown="block">
   **Questionnaire Phase:**  
 
-  After the experiment, the participants were asked to fill in a questionaire. The span of this event is indicated by a pregenerated epoch named 'Questionnaire'.
+  After the experiment, the participants were asked to fill in a questionnaire. The span of this event is indicated by a pregenerated epoch named 'Questionnaire'.
 
 </p>  
 </details>

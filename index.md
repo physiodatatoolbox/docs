@@ -13,6 +13,7 @@ The PhysioData Toolbox is a free easy-to-use and fully graphical application for
 ❕ **July 8<sup>th</sup>, 2021:** Version {{ site.pdt_version }} released. 
 {: .fs-5 .fw-300}
 
+
 ---
 
 {% assign show_smiley = true %}

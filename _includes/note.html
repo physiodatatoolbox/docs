@@ -1,6 +1,6 @@
 
 <!---
-    Don't use this
+    This displays a multi-line capable message with an alert icon.
 -->
 
 
@@ -9,18 +9,20 @@
 <div class="alert-wrapper" 
     style="
         display: grid;
-        grid-template-columns: 40px 100%;
+        grid-template-columns: 34px auto;
         grid-template-rows: auto;
         gap: 0px 0px;
         margin-top: 8px;
         margin-bottom: 8px;
         grid-template-areas: 'alert-icon alert-text';
-        ">
+        background-color: #fdf4f4;
+        border-radius: 6px;
+        border: 1px solid #dfdedd">
 
     <div class="fs-5" 
         style="
             grid-area: alert-icon;
-            background-color:white;
+            background-color:transparent;
             display: flex; 
             align-items: center;
             justify-content: center;
@@ -31,12 +33,12 @@
     <div class="lh-tight"
         style="
             grid-area: alert-text;
-            background-color:white;
+            background-color:transparent;
             display: flex; 
             align-items: center;
-            ">
+            margin-right: 12px;">
         
-        {{ include.text }}
+        {{ include.text | markdownify }}
 
     </div>
     
