@@ -24,11 +24,11 @@ nav_exclude: true
 
 ---
 
-For information about the different Toolbox versions, please visit the [Version History](./change-log.html) page.
+For the change log, please visit the [Version History](./change-log.html) page.
 
 <!---
 Do not edit below START LIST, it is auto-generated.
 -->
-Documentation for various PhysioData Toolbox versions:
+Documentation of all recent PhysioData Toolbox versions:
  - [PhysioData Toolbox v{{ site.pdt_version}} (latest version)]({{ site.baseurl_static }}/).
- <!--- START LIST --->
+<!--- START LIST --->

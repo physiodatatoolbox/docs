@@ -18,7 +18,7 @@ The basic tutorial will teach users the core concepts of the Toolbox, and how to
 This tutorial uses an ECG, Skin Conductance and Blood Pressure example dataset provided in the PhysioData Toolbox zip file. However, core concepts of the PhysioData Toolbox that apply to all data types are introduced. Following this basic tutorial is recommended for all first-time users, including researchers seeking to analyze other data types, such as eye-tracking data. This tutorial will take approximately 1.5 hours to complete.
 
 ## Converting Raw Data ##
-The PhysioData Toolbox can only read **PhysioData Files**, which are special MATLAB files with the .physioData format. To convert your own data for use in the PhysioData Toolbox, use the [File Converter](..\user-guide\file-converter.md). For the current tutorial, use the provided files, as explained below.
+The PhysioData Toolbox can only read **PhysioData Files**, which are special MATLAB files with the .physioData format. To convert your own data for use in the PhysioData Toolbox, use the [File Converter](..\user-guide\file-converter.html). For the current tutorial, use the provided files, as explained below.
 
 If you do not have a file format supported by the File Converter, you can generate PhysioData files using a custom MATLAB script.
 
@@ -29,7 +29,7 @@ The Shock-Conditioning example files loosely represent a classic supra/sub perce
 
 <details markdown="1">
   <summary markdown="span">**Example Dataset Details**</summary>
-  Below a description of the six phases of the experiment and their associated events, markers, and pregenerated epochs is given. Events and markers signal important moments in the data. **Events** are messages that describe a certain moment. **Markers** are recorded as signal and assume numeric values that signify certain moments. **Epochs** are segments of data that are created by referencing events and markers. See the [Epochs](..\user-guide\epochs.md) chapter for more information on events, markers, and epochs.
+  Below a description of the six phases of the experiment and their associated events, markers, and pregenerated epochs is given. Events and markers signal important moments in the data. **Events** are messages that describe a certain moment. **Markers** are recorded as signal and assume numeric values that signify certain moments. **Epochs** are segments of data that are created by referencing events and markers. See the [Epochs](..\user-guide\epochs.html) chapter for more information on events, markers, and epochs.
 
   <p markdown="block">
   **Habituation Phase:**  
@@ -183,7 +183,7 @@ Click on the **View Raw Data** button to launch the **Raw Data Viewer**. The Raw
 - Click on the **View/Edit Epochs** button to open the **Epoch Builder**.
 
 ## Defining Epochs ##
-**Epochs**, also called trails or segments, are sections of interest within a recording. Epochs are generally defined relative to **markers** or **events**, which are special timestamped moments within the recorded data. The toolbox is designed to automatically segment a signal into epochs using a collection of user-specified rules, and extract relevant metrics for each epoch. For more information on epochs, markers, and events, see the [Epochs](..\user-guide\epochs.md) chapter.
+**Epochs**, also called trails or segments, are sections of interest within a recording. Epochs are generally defined relative to **markers** or **events**, which are special timestamped moments within the recorded data. The toolbox is designed to automatically segment a signal into epochs using a collection of user-specified rules, and extract relevant metrics for each epoch. For more information on epochs, markers, and events, see the [Epochs](..\user-guide\epochs.html) chapter.
 
 The **Define Epochs** tab of the Epoch Builder window shows the **Epoch Definition Table**. Here, the rules for defining epochs are created. By default, an epoch spanning the whole file is created. Notice that in the **Preview of epochs** graph the prebuilt epochs are also visible.
 
