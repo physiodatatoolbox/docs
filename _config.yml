@@ -34,7 +34,7 @@ baseurl_static: ""
 
 
 # PDT variables:
-pdt_version: 0.6.1
+pdt_version: 0.6.2
 
 # PDT download variables:
 pdt_download_url: https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download
