@@ -105,8 +105,8 @@ This feature can be used to quickly detect whether all accepted R-peaks (inside 
 
 {% include image.html
     img="user-guide/physioanalyzers/ecg-module-r-waves-1.png"
-    title= "IBI correction 1"
-    id="ibi-correction-1"
+    title= "IBI correction 3"
+    id="ibi-correction-3"
     caption="The R-waves side-panel. Note that the deviating QRS wave can be quickly identified using the side-panel, without having to asses each wave individually. When the deviating line is clicked, the Toolbox zooms into that section on the main axes." %}
 
 ## Adding R-Peaks ##
@@ -140,7 +140,7 @@ Users can manually add R-peaks at any time-point inside the ECG signal by right 
     id="add-r-3"
     caption="A manually added R-peak. In this case, the option 'Add at nearest peak' was chosen, which placed the R-peak at the top of the peak. Note that the large jump in the IBI times-series has now disappeared. " %} 
 
-The user-defined R-peaks are not influenced by the R-rejection zones, and have precedence over the automatically detected R-peaks. As such, automatically detected R-peaks that are too close the the user-defined R-peaks are automatically rejected. This distance is determined by the R-separation parameter in the module's settings, but it regardlessly always at least 100 ms. Similarly, new user-defined R-peaks have precedence over older ones, so when a new one is added, old ones that are too close are deleted.
+The user-defined R-peaks are not influenced by the R-rejection zones, and have precedence over the automatically detected R-peaks. As such, automatically detected R-peaks that are too close to the user-defined R-peaks are automatically rejected. This distance is determined by the R-separation parameter in the module's settings, but it is regardlessly always at least 100 ms. Similarly, new user-defined R-peaks have precedence over older ones, so when a new one is added, old ones that are too close are deleted.
 
 ### When to Add R-Peaks ###
 It is generally not necessary to add R-peaks if only a few are missing (compared to the length of the epoch). Furthermore, R-peaks should only be added when their locations can be visually determined, but when the detection parameters can not be tweaked further to enable the Toolbox to find them automatically. The exception to this rule is if users are specifically interested in the R-peak count, in which case adding missing R-peaks will enable the correction of that metric (even if the exact location cannot be determined).

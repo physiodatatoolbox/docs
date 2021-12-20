@@ -167,15 +167,21 @@ This converter features the following custom options:
 
 
 ## Experimental Design Considerations ##
-Placeholder text.
+There are a few considerations one should keep in mind when designing an E-Prime task with EET eye tracking and when aiming to analyze the data with the PhysioData Toolbox.
 
-<!-- TODO: Add some remarks about what to pay attention to when designing experiments for use in the Toolbox. -->
+The first is the **Eye-tracking Event Generation** column(s). This column should hold data relevant for event generation (usually String data) and is crucial, as it will be impossible to create epochs without it. The event generation column could for example hold the currently running object in E-Prime, such as “Stimulus” or “Fixation”. When segmentation requires more detailed information, multiple columns can be used for event generation. For example, the currently running object, and the condition of the current trial (e.g. “congruent” and “incongruent”). See the [figure below](#eet-gazedata) for example event generation columns in the gazedata file.
 
-## Analysis Tips ##
-Placeholder text.
+By default, E-Prime does not save any event data in the gazedata file, these data have to be defined by the user. See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Software/E-Prime/E-Prime%20and%20Tobii) for instructions on how to incorporate Tobii eye tracking in an E-Prime experiment, including adding event data to the gazedata files.
 
-<!-- TODO: Add some remarks about EET specific analysis stuff. -->
+Another consideration is the AOI column used for the **AOI Analysis** (not relevant when only pupil data is analyzed). The AOI column should hold the name of the AOI the participant was looking at. By default, E-Prime 3 (when used with EET 3.2) saves a variable called **ComponentName**. This variable holds the component of the experiment (e.g. Slide sub-object) the participant is looking at. This variable could function as an AOI column. However, whether this variable is suited should be evaluated. See the [figure below](#eet-gazedata) for an example AOI column in the gazedata.
 
+It is highly recommended to convert gazedata from an initial pilot to check whether the event generation column(s) and (if applicable) the AOI column are sufficient for the purpose of the study, before starting data collection.
+
+{% include image.html
+    img="user-guide\file-converter\eet-converter-gazedata.png"
+    title="EET example gazedata"
+    id="eet-gazedata"
+    caption= "EET example gazedata obtained with a (fictitious) E-Prime task. In the task, each trial consisted of a Fixation followed by a Stimulus. The Stimulus was a Slide object with a picture of a face with a certain expression (happy, angry or sad). By using empty text sub-objects, several AOIs were drawn: AOIFace (face excluding the eyes, nose and mouth), AOIEyes, AOINose, and AOIMouth. The task saved the ObjectOnScreen variable, holding the currently running object (Fixation or Stimulus), the Condition variable, holding the emotion of the person in the picture (happy, angry or sad), and the AOI variable, holding the AOI that was being looked at. Events can be generated using both the ObjectOnScreen and Condition variable in the following way: ObjectOnScreen;Condition. This will create the following events: 'Stimulus angry', 'Stimulus happy', etc. The AOI column can be used for the AOI Analysis." %}
 
 ---
 
@@ -196,8 +202,10 @@ This converter features the following custom options:
     id="el-opts"
     caption="The custom conversion options available for EyeLink files." %}
 
+## Experimental Design Considerations ##
+When collecting pupil size with an EyeLink eye tracker, the use of a head stabilizer (chinrest) is required and it is advised to keep the camera distance fixed for all participants. Also, make sure that the AREA or DIAMETER setting in the EyeLink recording software is consistent for all participants. For more information on collecting pupil size with EyeLink, see [Recording and Analyzing Pupil Data (Pupillometry)](https://www.sr-support.com/showthread.php?tid=41&pid=40#pid40) on the SR Research Support Forum (note that you need to log-in or register to be able to view the thread).
 
 ## Analysis Tips ##
-Placeholder text (e.g. amplitude, mm conversion, etc.).
+The Pupil Diameter module expects the pupil diameter to be in mm. This is not the case for EyeLink data, where pupil diameter is reported in arbitrary pixels. Therefore, the module's gain or detection and rejection criteria will need to be modified.
 
-<!-- TODO: Add some remarks about EET specific analysis stuff. -->
+EyeLink pupil diameter data can be converted to mm, for instructions see [FAQ: How can I convert pupil size to mm](https://www.sr-support.com/thread-154.html) on the SR Research Support Forum (note that you need to log-in or register to be able to view the thread). Converting the pupil diameter to mm can be done in the PhysioData Toolbox, by using the **Gain** setting in the Pupil Diameter module, or it can be done after processing the data in the PhysioData Toolbox, in for example Excel, R or SPSS.
