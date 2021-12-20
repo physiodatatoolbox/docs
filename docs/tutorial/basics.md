@@ -369,6 +369,7 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
  - Looking at the ECG and IBI plots, a few anomalies can be noticed:
      - In the ECG plot there are two R-peaks clearly higher than the other R-peaks at around 500 s and 1100 s. This does not necessarily mean these peaks are faulty, but it is worth checking out.
      - In the IBI plot there are a few clear outliers around 300 and 900 s, with high IBI values, and some possible outliers between 400 and 600 s and around 1100 s, with low IBI values.
+      > Note that deviating QRS waves can also be detected by using the [**View R-Waves button**](..\user-guide\physioanalyzer-modules\ecg-module.html#view-r-waves), introduced in version 0.6.2.
  - Zoom in (by selecting an area with the right mouse button) at the high R-peak around 500s. Notice that this peak is not a 'real' R-peak, but an extra peak between two R-peaks, resulting in two short IBIs. The R-peak can be removed by selecting an area covering the faulty R-peak (using the left mouse button), and selecting **Disregard R-Peaks in selected section**. The disregarded region is visualized in the **R-Skip** graph above the ECG plot. Notice how removing this R-peak also corrects the faulty IBIs at this time point.
 
    {% include image.html
