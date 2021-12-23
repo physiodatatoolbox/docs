@@ -34,10 +34,10 @@ baseurl_static: ""
 
 
 # PDT variables:
-pdt_version: 0.6.1
+pdt_version: 0.6.2
 
-# PDT download variables:
-pdt_download_url: https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download
+# PDT download variables (for the latest version):
+pdt_download_url: https://surfdrive.surf.nl/files/index.php/s/fWa41Qiq1ODlxzy/download
 pdt_mcr_ver_short: 9.9
 pdt_mcr_ver_long: MATLAB 2020b Component Runtime (v9.9)
 pdt_matlab_ver: 2020b

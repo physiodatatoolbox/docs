@@ -1,0 +1,17 @@
+
+
+# Special config for testing site using html-proofer.
+# https://www.supertechcrew.com/jekyll-check-for-broken-links/
+
+
+url:                     "http://localhost:4000"
+
+# Analytics
+analytics:
+  provider               : false
+  google:
+    tracking_id          :
+
+sass:
+  sass_dir: _sass
+  style: expanded

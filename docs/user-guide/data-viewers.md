@@ -26,6 +26,19 @@ The PhysioData Toolbox contains two types of Viewers:
 
 The Data Viewers feature a navigation bar just below the banner, which can be used to change the file currently displayed in the Viewer.
 
+{% include image.html
+    img="/user-guide/data-viewers/raw-data-viewer.png"
+    title="Raw Data Viewer"
+    id="raw-data"
+    caption="The Raw Data Viewer, showing the raw data inside the current file." %}
+
+{% include image.html
+    img="/user-guide/data-viewers/physioanalyzer-viewer.png"
+    title="PhysioAnalyzer Viewer"
+    id="pa-data"
+    caption="The PhysioAnalyzer Viewer, showing the PhysioAnalyzer modules inside the current file." %}
+
+
 ## Graph Interactions
 The graphs shown in the Raw Data and PhysioAnalyzer Viewer windows all exhibit the same general zooming and panning behavior, which is controlled using the scroll wheel, and the left and right mouse buttons.
 
@@ -71,8 +84,6 @@ When a graph has a legend, the legend entries can be clicked to hide the corresp
  
 # Raw Data Viewer
 The **Raw Data Viewer** visualizes the raw data inside a PhysioData file. For more information about raw data, see the [Session Manager](.\session-manager.html#raw-data) section.
-
-<!--- TODO: Generate Raw Data Viewer pictures  -->
 
 The viewer consists of the following tabs:
  - **File Info:**  

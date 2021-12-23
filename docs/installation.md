@@ -18,7 +18,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 
 <details markdown="1">
   <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
-  2936DB0D67ED7B1BEF807772FA2EE0BC2CB52B65E701D8636EB59ADE45019108
+  8ADDCEB0601531D2ABEF7D8A3329DFD531A0518ED27F396F821BCA32A78F905D
   {: .fs-5 .fw-300 .ml-4}
 </details>
 
@@ -71,7 +71,7 @@ This Toolbox sends anonymous usage data to an online analytics server for tracki
 
 If you use the PhysioData Toolbox, please cite it using the following information:
 
-Sjak-Shie, E. E. (2021). PhysioData Toolbox (Version 0.6.1) [Computer software]. Retrieved from https://PhysioDataToolbox.leidenuniv.nl.
+Sjak-Shie, E. E. (2021). PhysioData Toolbox (Version {{ site.pdt_version }}) [Computer software]. Retrieved from https://PhysioDataToolbox.leidenuniv.nl.
 {: .text-mono}
 
 If you require support, or if you have any questions, comments or suggestions, please contact us at [PhysioDataToolbox@fsw.leidenuniv.nl](mailto:PhysioDataToolbox@fsw.leidenuniv.nl).

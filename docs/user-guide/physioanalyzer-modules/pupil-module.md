@@ -101,6 +101,8 @@ Similarly, in cases where the filter rejected valid samples, and the issue canno
     id="correction-4"
     caption="Once a 'force-reject' zone has been inserted, no raw samples for the eye it was defined for are used. In this case, the erroneous contribution of the noisy right pupil samples is removed, leaving a smooth 'mean pupil diameter' signal generated solely from the left pupil data (in the force-reject zone)." %} 
 
+<!-- TODO: Mention Fast Mode -->
+
 ---
 
 # Processing and Analysis Pipeline

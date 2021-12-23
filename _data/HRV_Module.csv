@@ -23,7 +23,7 @@ Variable,Unit,Description
 "poincare_SD2","ms","The poincare SD2: the standard deviation of RRn against RRn+1, in the direction of the diagonal RRn = RRn+1 line."
 "poincare_SD2_SD1_ratio","-","The poincare SD2 divided by the poincare SD1."
 "HR_mean","BPM","Mean of the continuous Heart Rate, as interpolated from the accepted IBI data points."
-"R_peakCount","count","Count of accepted R-peaks inside current epoch."
+"R_peakCount","count","Count of accepted R-peaks inside current epoch, including user-defined added R-peaks."
 "IBI_mean","s","Arithmetic mean of the accepted discrete IBIs. IBI values are defined as: IBI(n) = Rt(n)-Rt(n-1), and are timestamped using: IBIt(n) = Rt(n)."
 "IBI_min","s","Min value of the accepted discrete IBI data points."
 "IBI_max","s","Max value of the accepted discrete IBI data points."

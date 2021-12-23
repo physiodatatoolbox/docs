@@ -1,6 +1,7 @@
 Variable,Unit,Description
 "HR_mean","BPM","Mean of the continuous Heart Rate, as interpolated from the accepted IBI data points."
-"R_peakCount","count","Count of accepted R-peaks inside current epoch."
+"R_peakCount","count","Count of accepted R-peaks inside current epoch, including user-defined added R-peaks."
+"R_peakUserDefinedCount","count","Count of user-defined R-peaks inside current epoch."
 "IBI_mean","s","Arithmetic mean of the accepted discrete IBIs. IBI values are defined as: IBI(n) = Rt(n)-Rt(n-1), and are timestamped using: IBIt(n) = Rt(n)."
 "IBI_weighted_mean","s","Self-weighted mean of the accepted discrete IBIs; i.e., sum(IBIs.^2)/sum(IBIs)."
 "IBI_min","s","Min value of the accepted discrete IBI data points."
