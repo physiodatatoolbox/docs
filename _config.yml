@@ -46,7 +46,7 @@ pdt_matlab_ver: 2020b
 # Theme settings:
 #theme: just-the-docs    
 remote_theme: pmarsceill/just-the-docs
-logo: "/assets/images/pdt.png"
+logo: "/assets/images/pdt.svg"
 color_scheme: "pdt"
 
 
