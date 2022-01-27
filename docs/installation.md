@@ -12,13 +12,13 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 ❗ **The Toolbox is only compatible with Windows.**
 {: .fs-5 .fw-300 .ml-4}
 
-[PhysioData Toolbox v{{ site.pdt_version }}]({{ site.pdt_download_url }}){: .pdt-btn style="width: 400px; text-align: center;"}
+[PhysioData Toolbox v{{ site.pdt_version }}]({{ site.pdt_download_url }}){: .pdt-btn style="width: 320px; text-align: center;"}
 
 
 The Toolbox requires the free {{ site.pdt_mcr_ver_long }}:
 {: .pdt-abstract-body}
 
-[{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 400px; text-align: center;"}
+[MATLAB Runtimes](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 320px; text-align: center;"}
 
 See installation guide [below](#installation).
 {: .pdt-abstract-body}
@@ -34,7 +34,7 @@ If you already have MATLAB {{ site.pdt_matlab_ver }} **including the Compiler To
 
 Once the MATLAB runtime is ready:
 
- - Download and unpack the [Toolbox zip file](#download-and-installation), preferable to local storage.
+ - Download and unpack the [Toolbox zip file](#download-and-installation), preferably to local storage.
  - Run the **PhysioDataToolbox.exe** file.
 
 If this is your first time using the Toolbox, follow the [Basic Walkthrough](.\tutorial\basics.html) to get acquainted with the Toolbox features.
