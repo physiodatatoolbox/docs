@@ -116,13 +116,29 @@ This is a smaller image, at its native size.
     caption="Small image with long caption at its native size (no size specified). Captions wraps." %}
 
 ---
-# References #
+# Style Conventions.
 
-[^1]: Van Boxtel, A. (2010). Filter for optimal smoothing of acoustic and electric blink reflex EMG responses to determine blink response magnitude. Biological Psychology, 85, 299-305.
+## Header Capitalization ##
+Capitalize every word of Titles, and H1 and H2.
 
-# Emphasizing words #
+## Emphasizing words ##
 
 Use **bold** for emphasizing Buttons, Windows, tabs, concepts (e.g. **epochs**, **Save**)
 Use 'single quotations' for event names, epoch names, etc (e.g. 'Habituation_Start').
 Use `back-ticks` for values that are filled in (for example in the Epoch Definition Table, e.g. `1:last`, `ECG`).
+
+
+
+
+<!-- KEEP REFERENCES AT THE END! -->
+
+---
+# References #
+
+
+<!-- The footnotes, example below, will always be placed at the end of the page. -->
+
+[^1]: Van Boxtel, A. (2010). Filter for optimal smoothing of acoustic and electric blink reflex EMG responses to determine blink response magnitude. Biological Psychology, 85, 299-305.
+
+
 

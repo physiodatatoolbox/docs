@@ -12,15 +12,8 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 ❗ **The Toolbox is only compatible with Windows.**
 {: .fs-5 .fw-300 .ml-4}
 
-<!-- https://i.giphy.com/media/8cuVdoyDlfRnPFYMcv/giphy.webp -->
-
 [PhysioData Toolbox v{{ site.pdt_version }}]({{ site.pdt_download_url }}){: .pdt-btn style="width: 400px; text-align: center;"}
 
-<details markdown="1">
-  <summary class="fs-5 fw-300 ml-4" markdown="span">SHA-256 checksum</summary>
-  8ADDCEB0601531D2ABEF7D8A3329DFD531A0518ED27F396F821BCA32A78F905D
-  {: .fs-5 .fw-300 .ml-4}
-</details>
 
 The Toolbox requires the free {{ site.pdt_mcr_ver_long }}:
 {: .pdt-abstract-body}
@@ -71,8 +64,7 @@ This Toolbox sends anonymous usage data to an online analytics server for tracki
 
 If you use the PhysioData Toolbox, please cite it using the following information:
 
-Sjak-Shie, E. E. (2021). PhysioData Toolbox (Version {{ site.pdt_version }}) [Computer software]. Retrieved from https://PhysioDataToolbox.leidenuniv.nl.
-{: .text-mono}
+{% include citation.html %}
 
 If you require support, or if you have any questions, comments or suggestions, please contact us at [PhysioDataToolbox@fsw.leidenuniv.nl](mailto:PhysioDataToolbox@fsw.leidenuniv.nl).
 

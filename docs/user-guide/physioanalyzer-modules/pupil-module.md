@@ -101,7 +101,24 @@ Similarly, in cases where the filter rejected valid samples, and the issue canno
     id="correction-4"
     caption="Once a 'force-reject' zone has been inserted, no raw samples for the eye it was defined for are used. In this case, the erroneous contribution of the noisy right pupil samples is removed, leaving a smooth 'mean pupil diameter' signal generated solely from the left pupil data (in the force-reject zone)." %} 
 
-<!-- TODO: Mention Fast Mode -->
+<!-- TODO: Consider maybe converting the above to an animation. -->
+
+
+## Fast-Mode ##
+This module features a special variation of the "fast-mode" correction feature, which can be enable thought the Menu button of the PhysioAnalyzer Viewer ([more info](..\data-viewers.html#fast-mode)). When Fast-Mode is enabled: left-to-right selections add Force-Reject zones, while right-to-left selections clear both Force-Reject and Force-Accept zones.
+
+### Eye Selection ###
+By default, the Fast-Mode applies the zone-actions to all available eyes. To select a specific eye:
+ - **To only affect the left-eye:**  
+    Hold down **Z** while selecting the zone; or, hide the right-eye's raw samples by clicking it in the legend.
+
+- **To only affect the right-eye:**  
+    Hold down **X** while selecting the zone; or, hide the left-eye's raw samples by clicking it in the legend.
+
+### Zone-Type Selection ###
+By default, the Fast-Mode creates a **Force-Reject** zone. To create a **Force-Accept** zone, hold down **C** while selecting the zone. This can be done in combination with the Z and X keys to insert a Force-Accept zone for a specific eye.
+
+<!-- TODO: Add fast-mode animation. -->
 
 ---
 

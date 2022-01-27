@@ -1,10 +1,24 @@
 ---
 
 ---
-{% comment %} NOTE: Keep the front matter so that the JSON is processed as by the Liquid Engine.{% endcomment %}
+{% comment %} 
+
+NOTE: Keep the front matter so that the JSON is processed by the Liquid Engine.
+The for-loop builds the version_archive JSON object from the pdt_version_archive site parameter in _config.yml
+
+Keep this format consistent; the Toolbox and other automation-schemes refer to it.
+
+{% endcomment %}
 {
     "version": "{{ site.pdt_version }}",
     "download_url": "{{site.pdt_download_url}}",
     "mcr_ver_short": "{{site.pdt_mcr_ver_short}}",
-    "matlab_ver": "{{site.pdt_matlab_ver}}"
+    "matlab_ver": "{{site.pdt_matlab_ver}}",
+    "version_archive" : [
+      {% for ver in site.pdt_version_archive %}{
+      "version" : "{{ ver.pdt_version }}" ,
+      "download_url" : "{{ ver.pdt_download_url }}",
+      "release_date_str" : "{{ ver.pdt_release_date_str }}"
+      }{% unless forloop.last %},{% endunless%}{% endfor %}
+      ]
   }

@@ -18,9 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+
+#---------------------------------------------------------------------------------------
+# Site and URL Params:
+#---------------------------------------------------------------------------------------
+
+
 # PDT Site Metadata:
-title: PhysioData Toolbox
-email: PhysioDataToolbox@fsw.leidenuniv.nl
+title: 'PhysioData Toolbox'
+email: 'PhysioDataToolbox@fsw.leidenuniv.nl'
 description: >-
   The PhysioData Toolbox is an application for analyzing physiological signals.
 baseurl: ""
@@ -33,25 +39,51 @@ url: "https://physiodatatoolbox.leidenuniv.nl"
 baseurl_static: ""
 
 
-# PDT variables:
-pdt_version: 0.6.2
+#---------------------------------------------------------------------------------------
+# PDT and Version Params:
+#---------------------------------------------------------------------------------------
+
+
+# PDT variables (for the current version):
+pdt_version: '0.6.3'
+pdt_year: '2022'
+pdt_release_date_str: 'Jan 27<sup>th</sup>, 2022'
+
 
 # PDT download variables (for the latest version):
-pdt_download_url: https://surfdrive.surf.nl/files/index.php/s/fWa41Qiq1ODlxzy/download
-pdt_mcr_ver_short: 9.9
-pdt_mcr_ver_long: MATLAB 2020b Component Runtime (v9.9)
-pdt_matlab_ver: 2020b
+pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/bUL3YZOiZ5d1KSI/download'
+pdt_mcr_ver_short: '9.9'
+pdt_mcr_ver_long: 'MATLAB 2020b Component Runtime (v9.9)'
+pdt_matlab_ver: '2020b'
+
+
+# Version archive (the pdt_info.json asset uses this array to generate a
+# web-accessible json for automated legacy Toolbox version installation):
+pdt_version_archive:
+- pdt_version: '0.6.2'
+  pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/fWa41Qiq1ODlxzy/download'
+  pdt_release_date_str: 'Dec 23<sup>rd</sup>, 2021'
+- pdt_version: '0.6.1'
+  pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download'
+  pdt_release_date_str: 'July 8<sup>th</sup>, 2021'
+- pdt_version: '0.5.0'
+  pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/V4d5vPp976TlXuk/download'
+  pdt_release_date_str: 'Oct 1<sup>st</sup>, 2019'
+
+#---------------------------------------------------------------------------------------
+# Theme and Build Settings:
+#---------------------------------------------------------------------------------------
 
 
 # Theme settings:
 #theme: just-the-docs    
-remote_theme: pmarsceill/just-the-docs
-logo: "/assets/images/pdt.svg"
-color_scheme: "pdt"
+remote_theme: 'pmarsceill/just-the-docs'
+logo: '/assets/images/pdt.svg'
+color_scheme: 'pdt'
 
 
 # Google Analytics Tracking:
-ga_tracking: UA-122931168-1
+ga_tracking: 'UA-122931168-1'
 ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings
 
 
