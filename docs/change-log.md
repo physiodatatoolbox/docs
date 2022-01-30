@@ -26,7 +26,7 @@ PhysioData Toolbox version 0.6.3 contains several minor bugfixes and improvement
      - Fixed an issue that may cause referenceable events to be plotted in an incorrect graph.
      - The Pupil size module's fast-mode has been improved and documented ([link](./user-guide/physioanalyzer-modules/pupil-module.html#fast-mode)).
      - The minimum selection size has been decreased (narrower areas can now be selected).
-     - Resampling timestamps (in the `time_Epoch` variable) are now rounded to the nearest 0.0001 second to avoid floating point errors from preventing equivalent time-points from being grouped together.
+     - Resampling timestamps (in the `time_Epoch` variable) are now rounded to the nearest 0.0001 second to avoid floating point errors from preventing equivalent time-points from being grouped together. Additionally, the variable `resampled_index` has been added, which indicates the index of the resampled data-point.
      - Other minor GUI corrections and framework updates.
 
 ---

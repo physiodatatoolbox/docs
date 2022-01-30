@@ -2,8 +2,7 @@
 title: Tips, Tricks and FAQ
 layout: default
 nav_order: 60
-parent: User Guide
-nav_exclude: true
+nav_exclude: true #parent: User Guide
 ---
 
 # {{ page.title }}

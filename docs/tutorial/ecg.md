@@ -1,7 +1,7 @@
 ---
 title: Analyzing ECG and HRV Data
 nav_order: 2
-parent: Tutorial
+nav_exclude: true #parent: Tutorial
 ---
 <!--- TODO: Write ECG HRV tutorial. -->
 

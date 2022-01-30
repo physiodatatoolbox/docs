@@ -126,8 +126,10 @@ Download the Toolbox as described [here](../installation.html), and launch it by
 
 ---
 
+<!-- Note for below, insert zero-width white spaces so that long strings can be broken (handy for the narrow mobile-mode). -->
+
 # Importing Files #
-Click on the **Open** button in the Session Manager and select the folder with the example files \(PhysioDataToolbox\data\example_datasets\ECG_EDA_BP_ShockCS\\). Alternatively, you can open the example files by going to **Menu**, selecting **Open Example Files** and clicking **ECG EDA BP ShockCS**. The Session Manager should now list all PhysioData files inside the folder (12 in total). Note the PhysioAnalyzers within the files in red. Because we will make new Analyzers in this walkthrough, start by clicking the **Remove Analyses** button below the file tree, checking all **PhysioAnalyzer Tags** checkboxes, and clicking the **Remove from all files** button. 
+Click on the **Open** button in the Session Manager and select the folder with the example files \(PhysioDataToolbox\&#8203;data\&#8203;example_datasets\&#8203;ECG_EDA_BP_ShockCS\\). Alternatively, you can open the example files by going to **Menu**, selecting **Open Example Files** and clicking **ECG EDA BP ShockCS**. The Session Manager should now list all PhysioData files inside the folder (12 in total). Note the PhysioAnalyzers within the files in red. Because we will make new Analyzers in this walkthrough, start by clicking the **Remove Analyses** button below the file tree, checking all **PhysioAnalyzer Tags** checkboxes, and clicking the **Remove from all files** button. 
 
 {% include image.html
             img="tutorial\SessionManager_filesOpened.png"

@@ -2,8 +2,7 @@
 title: Experiment Setup and Design
 layout: default
 nav_order: 70
-parent: User Guide
-nav_exclude: true
+nav_exclude: true #parent: User Guide
 ---
 
 # {{ page.title }}

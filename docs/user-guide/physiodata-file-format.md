@@ -2,8 +2,7 @@
 title: PhysioData File Format
 layout: default
 nav_order: 90
-parent: User Guide
-nav_exclude: true
+nav_exclude: true #parent: User Guide
 ---
 
 # {{ page.title }}

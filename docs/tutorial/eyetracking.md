@@ -1,7 +1,7 @@
 ---
 title: Analyzing Eye-Tracking Data
 nav_order: 3
-parent: Tutorial
+nav_exclude: true #parent: Tutorial
 ---
 <!--- TODO: Write ET tutorial. -->
 
