@@ -28,7 +28,7 @@ See installation guide [below](#installation).
 ---
 
 # Installation
-Before running the Toolbox, download and install the free [{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html). You will need admin rights to install it. Ask your IT department to install if you don't have the necessary permissions.
+Before running the Toolbox, download and install the free [{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html). You will need admin rights to install it. Ask your IT department to install it if you don't have the necessary permissions.
 
 If you already have MATLAB {{ site.pdt_matlab_ver }} **including the Compiler Toolbox**, you should already have the correct runtime installed.
 
