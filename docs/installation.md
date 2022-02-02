@@ -27,13 +27,23 @@ See installation guide [below](#installation).
 {% include pdt_toc.md %}
 ---
 
-# Installation
-Before running the Toolbox, download and install the free [{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html). You will need admin rights to install it. Ask your IT department to install it if you don't have the necessary permissions.
+# Installation #
+Before running the Toolbox, download and install the free [{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html). You will need admin rights to install it. Ask your IT department to install it if you don't have the necessary permissions. If you already have MATLAB {{ site.pdt_matlab_ver }} including the Compiler Toolbox, you should already have the correct runtime installed.
 
-If you already have MATLAB {{ site.pdt_matlab_ver }} **including the Compiler Toolbox**, you should already have the correct runtime installed.
+<details markdown="1">
+  <summary markdown="span">Click for **Leiden University**-specific details.</summary>
+---
+Leiden University researchers wishing to run the PhysioData Toolbox on their managed work PCs can ask the ISSC to install the correct MATLAB runtime  for them ({{ site.pdt_mcr_ver_long }}). This should be done through the ISSC helpdesk portal ([here](https://helpdesk.universiteitleiden.nl/), then: Software & web services > Install or request software > Request software). Since this is free software, a 0 can be entered in the required SAP field.
+
+Students and researchers at the FSW can also make use of the PCs in the Data analysis room (1B02) to run the Toolbox. These PCs already have MATLAB and various Toolbox versions installed (see the "PhysioData Toolbox" folder on the desktop).
+
+The Toolbox will run fine through Remote Desktop, but is not compatible with Citrix.
+
+---
+
+</details>
 
 Once the MATLAB runtime is ready:
-
  - Download and unpack the [Toolbox zip file](#download-and-installation), preferably to local storage.
  - Run the **PhysioDataToolbox.exe** file.
 
@@ -51,6 +61,10 @@ To run the Toolbox anyway, click **More Info**, then **Run anyway**.
     img="smartscreen-popup.png"
     title="SmartScreen"
     caption="When running a new version of the Toolbox for the first time, you might encounter a Windows SmartScreen warning. To run the Toolbox,  click More info then Run anyway." %}
+
+
+
+
 
 
 ---
@@ -73,7 +87,7 @@ If you require support, or if you have any questions, comments or suggestions, p
 # Troubleshooting
 
  - **Ensure correct runtime installation**:  
-    Make sure that the correct version (2020b, v9.9) of the MATLAB Component Runtime has been properly installed. An older or newer version will not suffice.
+    Make sure that the correct version of the MATLAB Component Runtime ({{ site.pdt_mcr_ver_long }}) has been properly installed. An older or newer version will not suffice.
 
  - **Unpack zip to suitable location:**  
     Before running the Toolbox executables, please ensure that the zip file is unpacked to a folder where you have write-access, preferably on a local drive. Additionally, do not put the Toolbox in a folder controlled by a file-synchronization service (e.g. Dropbox).
