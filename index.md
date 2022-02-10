@@ -10,8 +10,8 @@ nav_order: 1
 The PhysioData Toolbox is a free easy-to-use and fully graphical application for visualizing, segmenting and analyzing physiological data.
 {: .pdt-abstract-body}
 
-❕ **{{ site.pdt_release_date_str }}:** Version {{ site.pdt_version }} released ([see what's new](./docs/change-log.html)).
-{: .fs-5 .fw-300}
+**{{ site.pdt_release_date_str }}:** Version {{ site.pdt_version }} released ([see what's new](./docs/change-log.html)). 
+{: .pdt-abstract-body}
 
 ---
 
