@@ -1,0 +1,69 @@
+<!---
+    This include builds a tree from json data (used to visualize the PDT file format).
+-->
+
+<filetree class="text-mono fs-3"></filetree>
+
+<!-- 
+  On first run, add the script and CSS:
+    INFO:  https://ashutosh.blog/embedding-code-from-github-in-a-website
+-->
+
+{% unless json_tree_has_already_run %}
+{% assign json_tree_has_already_run = true %}
+
+<link rel="stylesheet" href="{{ site.url }}/{{ site.baseurl }}/assets/libs/vanillatree/vanillatree.css">
+<script src="{{ site.url }}/{{ site.baseurl }}/assets/libs/vanillatree/vanillatree.min.js"></script>
+
+<script>
+    // The code below parses the file description in the json and visualizes it in a tree using the vanillatree lib.
+
+    // Read in tree stuff:
+    const main = document.querySelector("filetree");
+    const tree = new VanillaTree(main);
+
+    // Read javascript:
+    var oXHR = new XMLHttpRequest();
+    oXHR.onreadystatechange = ajaxCallback;
+    oXHR.overrideMimeType("application/json");
+    oXHR.responseType = "json"
+    oXHR.open("GET", "{{ site.url }}/{{ site.baseurl }}/assets/files/{{ include.json_name }}", true);
+    oXHR.send();
+
+    // File read callback:
+    function ajaxCallback() {
+        if (oXHR.readyState == 4 && oXHR.status == "200") {
+
+            // Build tree:
+            window.pdt_format = this.response
+            addNode(this.response[0], "")
+        }
+    }
+
+    // Adds node:
+    function addNode(node_data, parent_id) {
+
+        // ID for current node:
+        let node_id = parent_id + node_data.field
+
+        // Data for current node (tree leaf):
+        let tree_node_data = {
+            label: `<b>${node_data.field}</b><br><div style="white-space: break-spaces;margin: 0px 0px 5px 0px">[${node_data.size} ${node_data.type}]<br><i>${node_data.desc}</i></div>`,
+            parent: parent_id,
+            id: node_id,
+            opened: true
+        }
+
+        // Add node:
+        tree.add(tree_node_data);
+
+        // Add children:
+        if (node_data.children) {
+            for (child_node_data of node_data.children) {
+                addNode(child_node_data, node_id)
+            }
+        }
+    }
+</script>
+
+{% endunless %}

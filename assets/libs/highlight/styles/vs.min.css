@@ -1,0 +1,78 @@
+
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+
+    /* The CSS below was added to override the themes code style. */
+    background: #fdfcf4;
+    border: 1px solid #7c7c7c;
+    border-radius: 4px;
+    padding-top: 18px;
+	padding-bottom: 18px;
+
+}
+
+code.hljs {
+    padding: 3px 5px
+}
+
+.hljs {
+    background: #fff;
+    color: #000
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+    color: green
+}
+
+/*  .hljs-built_in,   This line was removed, since MATLAB does not highlight this. */ 
+.hljs-keyword,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-tag {
+    color: rgb(14, 0, 255)
+}
+
+.hljs-addition,
+.hljs-attribute,
+.hljs-literal,
+.hljs-section,
+.hljs-string,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-title,
+.hljs-type {
+    color: rgb(170, 4, 249)
+}
+
+.hljs-deletion,
+.hljs-meta,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+    color: #2b91af
+}
+
+.hljs-doctag {
+    color: grey
+}
+
+.hljs-attr {
+    color: red
+}
+
+.hljs-bullet,
+.hljs-link,
+.hljs-symbol {
+    color: #00b0e8
+}
+
+.hljs-emphasis {
+    font-style: italic
+}
+
+.hljs-strong {
+    font-weight: 700
+}

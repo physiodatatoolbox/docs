@@ -1,3 +1,11 @@
+.vtree {
+    background: #fdfcf4;
+    border: 1px solid #7c7c7c;
+    border-radius: 4px;
+    padding-top: 18px;
+	padding-bottom: 18px;
+}
+
 .vtree ul.vtree-subtree, .vtree li.vtree-leaf {
 	margin: 0;
 	padding: 0;
@@ -41,6 +49,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	cursor: pointer;
 }
 
 .vtree li.vtree-leaf.vtree-has-children.closed > span.vtree-toggle {
@@ -52,21 +61,25 @@
 	line-height: 20px;
 	display: inline-block;
 	vertical-align: top;
-	cursor: pointer;
+	/* cursor: pointer; */
 	max-width: 100%;
 	margin-left: 18px;
 	padding: 0 2px 4px;
 }
 
+/*
+
 .vtree li.vtree-leaf a.vtree-leaf-label:hover {
 	background-color: #e7f4f9;
-	outline: 1px solid #d8f0fa;
+	outline: 1px solid #d8f0fa;c
 }
 
 .vtree li.vtree-leaf.vtree-selected > a.vtree-leaf-label {
 	background-color: #beebff;
 	outline: 1px solid #99defd;
 }
+
+*/
 
 .vtree-contextmenu {
 	position: absolute;

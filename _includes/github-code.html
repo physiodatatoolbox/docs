@@ -1,0 +1,103 @@
+<!---
+    This include fetches and displays code from github.
+-->
+
+<!--
+    Add a <pre> block with the data attribs. This block will be populated with the code.
+-->
+
+<pre class="fs-5"
+  {% if include.data_start %} data-start="{{ include.data_start }}"{% endif %}
+  {% if include.data_end %} data-end="{{ include.data_end }}"{% endif %}
+  {% if include.data_lang %} data-lang="{{ include.data_lang }}"{% endif %}
+  {% if include.data_src %} data-src="{{ include.data_src }}"{% endif %}
+  {% if include.data_view %} data-view="{{ include.data_view }}"{% endif %}
+></pre>
+
+<!-- 
+  On first run, add the script and CSS:
+    INFO:  https://ashutosh.blog/embedding-code-from-github-in-a-website
+-->
+
+{% unless gh_code_has_already_run %}
+    {% assign gh_code_has_already_run = true %}
+
+<link rel="stylesheet"
+      href="/assets/libs/highlight/styles/vs.min.css">
+<script src="/assets/libs/highlight/highlight.min.js" onload="hljs.initHighlightingOnLoad();"></script>
+
+<script>
+  function normalizeWhiteSpace(code) {
+    let lines = code.split("\n");
+    if (lines.length < 1) {
+      return code;
+    }
+
+    let spacesToRemove = Infinity;
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].length < 1) {
+        continue;
+      }
+
+      spacesToRemove = Math.min(spacesToRemove, lines[i].search(/\S|$/));
+    }
+
+    return lines
+      .map(function (v) {
+        return v.substring(spacesToRemove);
+      })
+      .join("\n");
+  }
+
+  function createCodeElement(code, language) {
+    let element = document.createElement("code");
+    element.innerHTML = normalizeWhiteSpace(code);
+    if (language) {
+      element.classList.add(`language-${language}`);
+    }
+
+    return element;
+  }
+
+  function createFileLinkElement(url) {
+    let element = document.createElement("a");
+    element.innerHTML = "View file";
+    element.href = url;
+
+    let container = document.createElement("div");
+    container.classList.add("view-file");
+    container.appendChild(element);
+    return container;
+  }
+</script>
+<script>
+  addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("pre[data-src]").forEach(function (item) {
+      let url = item.getAttribute("data-src");
+      let viewURL = item.getAttribute("data-view") || url;
+      let start = parseInt(item.getAttribute("data-start") || 1);
+      let end = parseInt(item.getAttribute("data-end") || -1);
+      let language = item.getAttribute("data-lang");
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.addEventListener("load", function () {
+        let code = `error: unable to load the resource at "${url}"`;
+        if (this.responseText) {
+          code = this.responseText
+            .split("\n")
+            .slice(start - 1, end)
+            .join("\n");
+        }
+
+        let codeElement = createCodeElement(code, language);
+        hljs.highlightBlock(codeElement);
+        item.appendChild(codeElement);
+        //item.appendChild(createFileLinkElement(viewURL));
+      });
+
+      xhr.send();
+    });
+  });
+</script>
+{% endunless %}
