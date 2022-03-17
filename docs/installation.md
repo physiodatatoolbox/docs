@@ -27,22 +27,10 @@ See installation guide [below](#installation).
 {% include pdt_toc.md %}
 ---
 
-{% comment %}
-
-NOTE:
-The PDT website does not currently include any FSW specific info; only info about the Toolbox. As such, FSW specific info has been temporarily disabled.
-Users should check the Wiki instead.
-
-{% endcomment %} 
-{% assign show_fsw_info = false %}
-
-
 # Installation #
 Before running the Toolbox, download and install the free [{{ site.pdt_mcr_ver_long }}](https://nl.mathworks.com/products/compiler/matlab-runtime.html). You will need admin rights to install it. Ask your IT department to install it if you don't have the necessary permissions.
 
 If you already have MATLAB {{ site.pdt_matlab_ver }} **including the Compiler Toolbox**, you should already have the correct runtime installed.
-
-{% if show_fsw_info %}If you want to run the Toolbox on a **Leiden University** owned PC, please see [below](#leiden-university).{% endif %}
 
 Once the MATLAB runtime is ready:
  - Download and unpack the [Toolbox zip file](#download-and-installation), preferably to local storage.
@@ -62,15 +50,6 @@ To run the Toolbox anyway, click **More Info**, then **Run anyway**.
     img="smartscreen-popup.png"
     title="SmartScreen"
     caption="When running a new version of the Toolbox for the first time, you might encounter a Windows SmartScreen warning. To run the Toolbox,  click More info then Run anyway." %}
-
-{% if show_fsw_info %}
-## Leiden University ##
-Leiden University researchers wishing to run the PhysioData Toolbox on their managed work PCs can ask the ISSC to install the correct MATLAB runtime  for them ({{ site.pdt_mcr_ver_long }}). This should be done through the ISSC's [helpdesk portal](https://helpdesk.universiteitleiden.nl/) (Software & web services ⇨ Install or request software ⇨ Request software). Since this is free software, a 0 can be entered in the required SAP field.
-
-Alternatively, students and researchers at the FSW can make use of the PCs in the Data analysis room (1B02) to run the Toolbox. These PCs already have MATLAB and various Toolbox versions installed (see the "PhysioData Toolbox" folder on the desktop). More info about 1B02 can be found on its [Wiki page](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Facilities/Researchdata%20analysis%20room/).
-
-The Toolbox will run fine through Remote Desktop, but is not compatible with Citrix.
-{% endif %}
 
 ---
 

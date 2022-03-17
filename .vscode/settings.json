@@ -16,6 +16,8 @@
         "drawio",
         "elio",
         "gazedata",
+        "helpdesk",
+        "ISSC",
         "libc",
         "occurrence",
         "pairable",
@@ -33,6 +35,7 @@
         "rmssds",
         "tobii",
         "unchecking",
+        "unmanaged",
         "unmark",
         "upsampling",
         "walkthrough"
