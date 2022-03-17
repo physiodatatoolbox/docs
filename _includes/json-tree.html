@@ -48,7 +48,7 @@
 
         // Data for current node (tree leaf):
         let tree_node_data = {
-            label: `<b>${node_data.field}</b><br><div style="white-space: break-spaces;margin: 0px 0px 5px 0px">[${node_data.size} ${node_data.type}]<br><i>${node_data.desc}</i></div>`,
+            label: `<div style="padding: 5px; border: 1px solid #b5b5b5; border-radius: 4px; width: fit-content; background: #f5f6fa"><b>${node_data.field}</b></div><div style="white-space: break-spaces;margin: 5px 0px 15px 5px">[${node_data.size} ${node_data.type}]<br><i>${node_data.desc}</i></div>`,
             parent: parent_id,
             id: node_id,
             opened: true

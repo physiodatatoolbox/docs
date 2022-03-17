@@ -55,9 +55,11 @@ code.hljs {
     color: #2b91af
 }
 
+/*  This style below was removed since MATLAB doesn;t use it. 
 .hljs-doctag {
     color: grey
 }
+*/ 
 
 .hljs-attr {
     color: red

@@ -45,8 +45,9 @@ gem 'eventmachine', :github => 'eventmachine/eventmachine', :ref => 'b7d9ef8'
 gem 'html-proofer'
 
 
-# Address GitHub dependabot issues:
-gem "nokogiri", ">= 1.12.5"
+# Address GitHub dependabot issues. After updating the list, run VS Code in admin mode, and run bundle update, see above:
+gem "nokogiri", ">= 1.13.2"
 gem "kramdown", ">= 2.3.1"
 gem "rexml", ">= 3.2.5"
 gem "addressable", ">= 2.8.0"
+gem "commonmarker", ">= 0.23.4"
