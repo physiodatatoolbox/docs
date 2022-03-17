@@ -2,8 +2,6 @@
     Images include for nice images in the PDT Doc.
 -->
 
-
-
 <!-- Left and right padding for image:
  - Allow users to set a left indent parameter,
    which overrides the image's tendency to center.
@@ -16,20 +14,16 @@
 {% assign r_padding = "26px" %}
 {% endif %}
 
-
 <!-- The image path:
 -->
 {% capture img_path %}
 {{ site.url }}/{{ site.baseurl }}/assets/images/{{ include.img }}
 {% endcapture %}
 
-
-
 <!-- The image number counter:
 -->
 {% unless image_counter %}
 {% assign image_counter = 1 %}
-
 
 
 <!-- iF this is the first run, add a modal div (for popups)  
@@ -68,8 +62,6 @@
 {% assign image_counter = image_counter | plus: 1 %}
 {% endunless %}
 
-
-
 <!-- Determine the ID: 
 -->
 {% if include.id %}
@@ -77,8 +69,6 @@
 {% else %}
 {% capture cur_id %}IMAGE{{ image_counter }}{% endcapture %}
 {% endif %}
-
-
 
 <!-- Add fancy img-aware drop-shadow:
         https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
@@ -88,7 +78,6 @@
 {% else %}
 {% capture shadow_style %}-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);{% endcapture %}
 {% endif %}
-
 
 <!-- Make figure:
         Use table for formatting, see:
@@ -105,7 +94,6 @@
         {% if include.max_width %} max-width: {{ include.max_width }}; {% endif %}
         ">
 
-
     <!-- Add an image with a link to the image source: -->
     <!-- <a href="{{ img_path }} " title="{{ include.title }}"> -->
     <img {% unless include.no_popup %}class="pdtImg" {% endunless %} id="{{ cur_id }}" src="{{ img_path }} "
@@ -115,7 +103,6 @@
             {{ shadow_style }};
             ">
     <!-- </a> -->
-
     <!-- Add caption, with a "Figure X:" prefix that
         has a link to the figure anchor.
         Format the caption as one font size smaller than the body.-->
@@ -136,15 +123,9 @@
     {% endif %}
 </figure>
 
-
-
-
-
-
 <!---
     Add lightbox popup code:
 -->
-
 {% unless include.no_popup %}
 <script>
 
