@@ -17,12 +17,12 @@ The basic tutorial will teach users the core concepts of the Toolbox, and how to
 # Introduction
 This tutorial uses an ECG, Skin Conductance and Blood Pressure example dataset provided in the PhysioData Toolbox zip file. However, core concepts of the PhysioData Toolbox that apply to all data types are introduced. Following this basic tutorial is recommended for all first-time users, including researchers seeking to analyze other data types, such as eye-tracking data. This tutorial will take approximately 1.5 hours to complete.
 
+Please note that the Toolbox is designed for use with a **3-button mouse** (e.g. a mouse with a clickable scroll wheel). A track-pad will not allow full interaction with the graphs.
+
 ## Converting Raw Data ##
 The PhysioData Toolbox can only read **PhysioData Files**, which are special MATLAB files with the .physioData format. To convert your own data for use in the PhysioData Toolbox, use the [File Converter](..\user-guide\file-converter.html). For the current tutorial, use the provided files, as explained below.
 
-If you do not have a file format supported by the File Converter, you can generate PhysioData files using a custom MATLAB script.
-
-<!--- TODO: add link to PhysioData Format -->
+If your raw data is stored in a format that is not supported by the File Converter, you can still generate PhysioData files for processing in the Toolbox using a custom MATLAB script ([more info](..\user-guide\physiodata-file-format.html)).
 
 ## Example Dataset ##
 The Shock-Conditioning example files loosely represent a classic supra/sub perceptual electrical shock conditioning task. The experiment consisted of several phases and trials, which can be identified using the markers, events and pre-generated epochs found in the files. During the experiment, ECG, Skin Conductance and Blood Pressure signals were obtained. The example dataset is specifically designed to exhibit the usage of several Toolbox features.

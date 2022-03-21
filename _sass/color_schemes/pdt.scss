@@ -37,6 +37,11 @@ h1, h2, h3, h4, h5, h6, .nav-list-link, .text-mono, table{
 }
 
 
+// Make the hyperlink underline stronger:
+a:not([class]) {
+  background-image: linear-gradient(#eeebee 0%, #808080 100%) !important;
+}
+
 // The default style does not add a margin at the bottom of a
 // nested list, so add it here:
 .main-content ul {

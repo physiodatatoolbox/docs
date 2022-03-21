@@ -6,6 +6,16 @@
     Add a <pre> block with the data attribs. This block will be populated with the code.
 -->
 
+
+{% unless code_counter %}
+    {% assign code_counter = 1 %}
+{% else %}
+    {% assign code_counter = code_counter | plus: 1 %}
+{% endunless %}
+
+<a id="{{ include.id }}" href="#{{ include.id }}">Code {{ code_counter }}</a>:
+{{ include.caption }}
+{: .fs-3 .mb-1}
 <pre class="fs-5"
   {% if include.data_start %} data-start="{{ include.data_start }}"{% endif %}
   {% if include.data_end %} data-end="{{ include.data_end }}"{% endif %}
@@ -24,7 +34,12 @@
 
 <link rel="stylesheet"
       href="/assets/libs/highlight/styles/vs.min.css">
-<script src="/assets/libs/highlight/highlight.min.js" onload="hljs.initHighlightingOnLoad();"></script>
+<script src="/assets/libs/highlight/highlight.min.js" onload="hljs.highlightAll();"></script>
+<link rel="stylesheet"
+      href="/assets/libs/highlight-line-number/style.css">
+<script src="/assets/libs/highlight-line-number/highlightjs-line-numbers.min.js"></script>
+
+
 
 <script>
   function normalizeWhiteSpace(code) {
@@ -71,7 +86,7 @@
   }
 </script>
 <script>
-  addEventListener("DOMContentLoaded", function () {
+  addEventListener("DOMContentLoaded", function () {    
     document.querySelectorAll("pre[data-src]").forEach(function (item) {
       let url = item.getAttribute("data-src");
       let viewURL = item.getAttribute("data-view") || url;
@@ -91,9 +106,12 @@
         }
 
         let codeElement = createCodeElement(code, language);
-        hljs.highlightBlock(codeElement);
+        hljs.highlightElement(codeElement);
         item.appendChild(codeElement);
-        //item.appendChild(createFileLinkElement(viewURL));
+       //item.appendChild(createFileLinkElement(viewURL));
+
+      hljs.initLineNumbersOnLoad();
+
       });
 
       xhr.send();

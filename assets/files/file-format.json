@@ -116,6 +116,16 @@
                         "desc": "The name of the user that created the file. Can be omitted if irrelevant."
                     }
                 ]
+            },{
+                "field": "UserData",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct that can be used to hold user data. This variable will be copied to the output when generating a Data Archive. It can be omitted if irrelevant."
+            },{
+                "field": "physioAnalyzerTemplates",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct that holds the PhysioAnalyzer module's settings and state. This variable is not intended to be user-modifiable."
             }
         ]
     }

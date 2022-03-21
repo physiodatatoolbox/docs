@@ -3,13 +3,17 @@
     This displays a multi-line capable message with an alert icon.
 -->
 
-
+{% if include.icon %}
+{% assign icon = include.icon %}
+{% else %}
 {% assign icon = "❕" %}
+{% endif %}
+
 
 <div class="alert-wrapper" 
     style="
         display: grid;
-        grid-template-columns: 34px auto;
+        grid-template-columns: 40px auto;
         grid-template-rows: auto;
         gap: 0px 0px;
         margin-top: 8px;
