@@ -80,7 +80,7 @@ The tree below visualizes the most user-relevant contents of a PhysioData file, 
 ---
 
 # MATLAB Examples #
-Any suitable data can be converted into a PhysioData file for use in the Toolbox using custom MATLAB scripts. Download the code and data for the examples below from [this GitHub repo](https://github.com/physiodatatoolbox/code_examples).
+Any suitable data can be converted into a PhysioData file for use in the Toolbox using custom MATLAB scripts. **Download** the code and data for the examples below from [this GitHub repo](https://github.com/physiodatatoolbox/code_examples) by clicking on the Code button and Download ZIP.
 
 ## Basic Example 1 ##
 This example shows how to create a PhysioData file from ECG and EDA (skin conductance) data saved inside a tsv file. It also shows how to add custom referenceable events (labels) and pre-generated epochs.
@@ -88,7 +88,7 @@ This example shows how to create a PhysioData file from ECG and EDA (skin conduc
 {% include github-code.html
     data_lang="matlab"
     id = "Example1"
-    caption = "An example showing the basic elements of saving signals and timing metadata inside a PhysioData file. Find this example and its data [here](https://github.com/physiodatatoolbox/code_examples/tree/main/Generating_PhysioData_Files/Basic_Example_1) on the GitHub examples repo."
+    caption = "An example showing the basic elements of saving signals and timing metadata inside a PhysioData file. Find this example and its data in the [/code_examples/Generating_PhysioData_Files/](https://github.com/physiodatatoolbox/code_examples/tree/main/Generating_PhysioData_Files/Basic_Example_1) folder of the examples repo."
     data_src="https://raw.githubusercontent.com/physiodatatoolbox/code_examples/main/Generating_PhysioData_Files/Basic_Example_1/main.m"
 %}
 
