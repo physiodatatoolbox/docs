@@ -91,9 +91,9 @@
       let url = item.getAttribute("data-src");
       let viewURL = item.getAttribute("data-view") || url;
       let start = parseInt(item.getAttribute("data-start") || 1);
-      let end = parseInt(item.getAttribute("data-end") || -1);
+      let end = parseInt(item.getAttribute("data-end")) || Infinity;
       let language = item.getAttribute("data-lang");
-
+      
       let xhr = new XMLHttpRequest();
       xhr.open("GET", url);
       xhr.addEventListener("load", function () {

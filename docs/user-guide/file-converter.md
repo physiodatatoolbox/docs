@@ -34,9 +34,7 @@ The current version of the File Converter supports the following raw file format
  - E-Prime Extension for Tobii (EET)
  - EyeLink
 
-Other raw file types can be converted to the PhysioData format by using a custom MATLAB script that generates the PhysioData File.
-
-<!--- TODO: Link to section about manually generating PhysioData files. --->
+If your raw data is stored in another format, you can still generate PhysioData files for processing in the Toolbox using a custom MATLAB script ([more info](..\user-guide\physiodata-file-format.html)).
 
 ---
 
