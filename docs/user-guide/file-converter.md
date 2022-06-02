@@ -77,7 +77,7 @@ If the File Converter detects imminent filename collisions, i.e. that similarly 
 ---
 
 # BIOPAC Files #
-The built-in BIOPAC converter supports AcqKnowledge (v3.9 – v5.0.6) data saved as .acq files or exported as .mat files. Due to a limitation in the BIOPAC File API, only AcqKnowledge .acq files that comply with the following requirements can be converted: 
+The built-in BIOPAC converter supports AcqKnowledge (**v3.9 – v5.0.2**) data saved as .acq files or exported as .mat files. Due to a limitation in the BIOPAC File API, only AcqKnowledge .acq files that comply with the following requirements can be converted: 
  - All channels must have the same sampling rate 
  - All channels must have the same length
 
