@@ -90,5 +90,5 @@ Versions older than 0.6 are considered legacy. A zip file containing PhysioData 
 ---
 
 # PhysioData Toolbox v<0.5
-Please contact us if you require older versions v0.5.0.
+Please contact us if you require versions older than v0.5.0.
 
