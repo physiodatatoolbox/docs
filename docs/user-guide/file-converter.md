@@ -81,7 +81,7 @@ The built-in BIOPAC converter supports AcqKnowledge (**v3.9 – v5.0.2**) data s
  - All channels must have the same sampling rate 
  - All channels must have the same length
 
-However, AcqKnowledge data that don't conform to this requirement can still be exported as .mat files and converted. Note that when AcqKnowledge saves data as a .mat file, the events are lost.
+However, AcqKnowledge data that don't conform to this requirement can still be exported as .mat files and converted. Note that when AcqKnowledge saves data as a .mat file, the events are lost. Alternatively, the data can be saved as a 'Windows AcqKnowledge 3 Graph', which is compatible with the BIOPAC File Converter.
 
 When using digital markers, and depending on the experimental design, the BIOPAC AcqKnowledge data may contain 8 digital channels that are only used to calculate a separate 8-bit decimal marker channel. If this is the case, these 8 single-bit channels, usually labeled 'Digital Input', should be omitted from conversion as they are not necessary for data analysis.
 
