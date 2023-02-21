@@ -83,7 +83,7 @@ One common technique for logging events is to record markers, aka triggers, in a
 
 Markers are converted into referenceable events using the following rules:
 
- - A signal is considered a marker channel if it is more that 75% flat, and has only digital non-negative values less or equal to 65535.
+ - A signal is considered a marker channel if it is more that 75% flat, and has only non-negative integer values less than or equal to 65535.
  - A marker is defined as a contiguous section in the signal with an integer value of 1 or higher; i.e., a marker cannot have a value of 0. A zero in the signal is simply interpreted as the absence of a marker.
  - If a marker channel starts with a non-zero value, that section is not classified as a marker. Markers start being classified at the first value-change that produces a non-zero value. This is done to prevent marker values present before the task starts (but when the recording is already taking place) from being classified as markers. As a result, if the signal starts with a non-zero value, then goes to zero, that time point cannot be referenced as it is neither the end nor start of any marker.
  - If a marker channel holds a value only for a single sample, that value is not classified as a marker. This is done to prevent very short intermediate values from being classified as markers.
