@@ -17,8 +17,6 @@ The File Converter is an app that converts various data formats into PhysioData 
 # Introduction #
 The PhysioData toolbox is designed to only analyze standardized PhysioData files, which are MATLAB files with the physioData extension that comply with the PhysioData file specification. 
 
-<!--- TODO: Link to file specification above. --->
-
 To facilitate the batch conversion of raw physiological data to the PhysioData format, the toolbox includes a separate _File Converter_ application.
 
 ## Launching the File Converter ##
@@ -31,8 +29,8 @@ The current version of the File Converter supports the following raw file format
  - VU-AMS
  - BioSemi
  - LIBC Philips Achieva 3T MRI scanner
- - E-Prime Extension for Tobii (EET)
  - EyeLink
+ - Tobii
 
 If your raw data is stored in another format, you can still generate PhysioData files for processing in the Toolbox using a custom MATLAB script ([more info](..\user-guide\physiodata-file-format.html)).
 
@@ -81,9 +79,9 @@ The built-in BIOPAC converter supports AcqKnowledge (**v3.9 – v5.0.2**) data s
  - All channels must have the same sampling rate 
  - All channels must have the same length
 
-However, AcqKnowledge data that don't conform to this requirement can still be exported as .mat files and converted. Note that when AcqKnowledge saves data as a .mat file, the events are lost. Alternatively, the data can be saved as a 'Windows AcqKnowledge 3 Graph', which is compatible with the BIOPAC File Converter.
+However, AcqKnowledge data that don't conform to this requirement can still be exported as .mat files and converted. Note that when AcqKnowledge saves data as a .mat file, the events are lost. Alternatively, the data can be saved as a 'Windows AcqKnowledge 3 Graph' inside AcqKnowledge, which is compatible with the BIOPAC File Converter.
 
-When using digital markers, and depending on the experimental design, the BIOPAC AcqKnowledge data may contain 8 digital channels that are only used to calculate a separate 8-bit decimal marker channel. If this is the case, these 8 single-bit channels, usually labeled 'Digital Input', should be omitted from conversion as they are not necessary for data analysis.
+When using digital markers, and depending on the experimental design, the BIOPAC AcqKnowledge data may contain 8 digital channels that are only used to calculate a separate 8-bit decimal marker channel. If this is the case, these 8 single-bit channels, usually labeled 'Digital Input', should be omitted from conversion as they are not necessary for data analysis. Do this by unchecking the columns pertaining to these bit-channels.
 
 The BIOPAC converter does not feature any custom conversion options.
 
@@ -143,7 +141,20 @@ For BioSemi files, the following BioSemi Options can be set:
 
 ---
 
-# EET Output #
+# Tobii #
+The Tobii converter can convert data recorded with an Tobii eye-tracker, in combination with the following software:
+
+ - **E-Prime Extensions for Tobii (EET v3.2):**  
+    Text files with the .txt extension generated in E-Prime 
+ with the EET v3.2 plugin.
+ - **E-Prime Extensions for Tobii (EET 2.0 - 3.1):**  
+    Text files with the .gazedata extension generated in E-Prime with older EET plugins.
+ - **Tobii Pro Lab:**  
+    Text files with the .plof extension generated Tobii Pro Lab.
+ - **OpenSesame and PyGaze:**  
+    Text files with the .tsv extension generated in OpenSesame with the PyGaze plugin.
+
+## E-Prime Extensions for Tobii ##
 The E-Prime Extensions for Tobii (EET) output converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions.
 
 This converter features the following custom options:
@@ -164,7 +175,7 @@ This converter features the following custom options:
     caption="The custom conversion options available for EET files." %}
 
 
-## Experimental Design Considerations ##
+### Experimental Design Considerations ###
 There are a few considerations one should keep in mind when designing an E-Prime task with EET eye tracking and when aiming to analyze the data with the PhysioData Toolbox.
 
 The first is the **Eye-tracking Event Generation** column(s). This column should hold data relevant for event generation (usually String data) and is crucial, as it will be impossible to create epochs without it. The event generation column could for example hold the currently running object in E-Prime, such as “Stimulus” or “Fixation”. When segmentation requires more detailed information, multiple columns can be used for event generation. For example, the currently running object, and the condition of the current trial (e.g. “congruent” and “incongruent”). See the [figure below](#eet-gazedata) for example event generation columns in the gazedata file.
@@ -180,6 +191,13 @@ It is strongly recommended to convert gazedata from an initial pilot to check wh
     title="EET example gazedata"
     id="eet-gazedata"
     caption= "EET example gazedata obtained with a (fictitious) E-Prime task. In the task, each trial consisted of a Fixation followed by a Stimulus. The Stimulus was a Slide object with a picture of a face with a certain expression (happy, angry or sad). By using empty text sub-objects, several AOIs were drawn: AOIFace (face excluding the eyes, nose and mouth), AOIEyes, AOINose, and AOIMouth. The task saved the ObjectOnScreen variable, holding the currently running object (Fixation or Stimulus), the Condition variable, holding the emotion of the person in the picture (happy, angry or sad), and the AOI variable, holding the AOI that was being looked at. Events can be generated using both the ObjectOnScreen and Condition variable in the following way: ObjectOnScreen;Condition. This will create the following events: 'Stimulus angry', 'Stimulus happy', etc. The AOI column can be used for the AOI Analysis." %}
+
+
+## Tobii Pro Lab
+<!-- TODO: Add documentation about TPL plof conversion. -->
+
+## OpenSesame and PyGaze
+<!-- TODO: Add documentation about OS and PyGaze conversion. -->
 
 ---
 
