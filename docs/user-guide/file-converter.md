@@ -194,10 +194,21 @@ It is strongly recommended to convert gazedata from an initial pilot to check wh
 
 
 ## Tobii Pro Lab
-<!-- TODO: Add documentation about TPL plof conversion. -->
+The Tobii converter can convert plof (Pro Lab Output Format) files, which can be exported in Tobii Pro Lab. The Toolbox imports the following data, if present:
+
+ - **Pupil size:**  
+  Pupil size data is converted for use with the Pupil Size module.
+ - **AOI:**  
+  The area of interest (AOI) hits are converted for use with the AOI module.
+ - **Events:**  
+  All events in the `Stimulus` and `EyetrackerCalibration` category are converted for use in epoch generation. These events are saved in the eye-tracking dataset, and can be referred to using the channel `ET.events`.
+
+The plof converter does not feature any special settings.
 
 ## OpenSesame and PyGaze
-<!-- TODO: Add documentation about OS and PyGaze conversion. -->
+The Tobii converter can convert tsv files produced by running eye-tracking experiment using OpenSesame and PyGaze.
+
+<!-- TODO: Elaborate. -->
 
 ---
 
