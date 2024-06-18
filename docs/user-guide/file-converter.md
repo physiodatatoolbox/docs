@@ -17,10 +17,12 @@ The File Converter is an app that converts various data formats into PhysioData 
 # Introduction #
 The PhysioData toolbox is designed to only analyze standardized PhysioData files, which are MATLAB files with the physioData extension that comply with the PhysioData file specification. 
 
-To facilitate the batch conversion of raw physiological data to the PhysioData format, the toolbox includes a separate _File Converter_ application.
+To facilitate the batch conversion of raw physiological data to the PhysioData format, the toolbox includes a **File Converter** app.
 
 ## Launching the File Converter ##
-The File Converter can be launched by selecting it from the welcome screen, or by clicking the menu in the top left corner of the Session Manager, then selecting the File Converter.
+The File Converter can be launched by running **PhysioDataToolbox.exe**, then clicking the File Converter button on the welcome screen, or by clicking the menu in the top left corner of the Session Manager, then selecting the File Converter.
+
+See the [installation page](..\installation.html) for more information.
 
 ## Supported File Types ##
 The current version of the File Converter supports the following raw file formats:
@@ -67,7 +69,7 @@ If the File Converter detects imminent filename collisions, i.e. that similarly 
    If this option is left selected, the raw files that would produce a PhysioData files that already exist are not converted.
 
  - **Only overwrite the raw data inside the existing PhysioData files:**  
-   This option causes the File Converter to only rewrite the raw data inside the PhysioData file, if it already exists, leaving any modules settings, states and corrections intact. Use this option if for instance you already have modules and correction in the file that you do not want to override, but you do want to change the raw data.
+   This option causes the File Converter to only rewrite the raw data inside the PhysioData file, if it already exists, leaving all module's settings, states and corrections intact. Use this option if for instance you already have modules and correction in the file that you do not want to override, but you do want to change the raw data.
 
  - **Completely overwrite existing PhysioData files:**  
    When selected, any preexisting PhysioData file with a conflicting name will be completely overwritten.
@@ -76,12 +78,15 @@ If the File Converter detects imminent filename collisions, i.e. that similarly 
 
 # BIOPAC Files #
 The built-in BIOPAC converter supports AcqKnowledge (**v3.9 – v5.0.2**) data saved as .acq files or exported as .mat files. Due to a limitation in the BIOPAC File API, only AcqKnowledge .acq files that comply with the following requirements can be converted: 
+
  - All channels must have the same sampling rate 
  - All channels must have the same length
 
-However, AcqKnowledge data that don't conform to this requirement can still be exported as .mat files and converted. Note that when AcqKnowledge saves data as a .mat file, the events are lost. Alternatively, the data can be saved as a 'Windows AcqKnowledge 3 Graph' inside AcqKnowledge, which is compatible with the BIOPAC File Converter.
+However, AcqKnowledge data that don't conform to this requirement can still be exported as .mat files and converted. Note that when AcqKnowledge saves data as a .mat file, the events are lost.
 
-When using digital markers, and depending on the experimental design, the BIOPAC AcqKnowledge data may contain 8 digital channels that are only used to calculate a separate 8-bit decimal marker channel. If this is the case, these 8 single-bit channels, usually labeled 'Digital Input', should be omitted from conversion as they are not necessary for data analysis. Do this by unchecking the columns pertaining to these bit-channels.
+If the AcqKnowledge files are newer than what the Toolbox supports, the data can be saved as a 'Windows AcqKnowledge 3 Graph' inside AcqKnowledge, which is compatible with the BIOPAC File Converter.
+
+When using digital markers, and depending on the experimental design, the BIOPAC AcqKnowledge data may contain 8 digital channels that are only used to calculate a separate 8-bit decimal marker channel. If this is the case, these 8 single-bit channels, usually labeled 'Digital Input', should be omitted from conversion as they are not necessary for data analysis. Do this by unchecking the columns pertaining to these bit-channels. The Toolbox attempts to automatically uncheck the bit channels for conversion if it deems them unnecessary.
 
 The BIOPAC converter does not feature any custom conversion options.
 
@@ -144,20 +149,19 @@ For BioSemi files, the following BioSemi Options can be set:
 # Tobii #
 The Tobii converter can convert data recorded with an Tobii eye-tracker, in combination with the following software:
 
- - **E-Prime Extensions for Tobii (EET v3.2):**  
-    Text files with the .txt extension generated in E-Prime 
- with the EET v3.2 plugin.
- - **E-Prime Extensions for Tobii (EET 2.0 - 3.1):**  
+ - **E-Prime Extensions for Tobii (EET) version v3.2:**  
+    Text files with the .txt extension generated in E-Prime with the EET v3.2 plugin.
+ - **E-Prime Extensions for Tobii (EET) versions 2.0-3.1:**  
     Text files with the .gazedata extension generated in E-Prime with older EET plugins.
  - **Tobii Pro Lab:**  
-    Text files with the .plof extension generated Tobii Pro Lab.
+    Text files with the .plof extension generated Tobii Pro Lab (TPL).
  - **OpenSesame and PyGaze:**  
     Text files with the .tsv extension generated in OpenSesame with the PyGaze plugin.
 
-## E-Prime Extensions for Tobii ##
-The E-Prime Extensions for Tobii (EET) output converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions.
+<!-- TODO: Add image of options. -->
 
-This converter features the following custom options:
+## E-Prime Extensions for Tobii ##
+The Tobii converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions, and features the following custom options:
 
  - **Eye-tracking Event Generation:**  
   In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values.
@@ -194,7 +198,7 @@ It is strongly recommended to convert gazedata from an initial pilot to check wh
 
 
 ## Tobii Pro Lab
-The Tobii converter can convert plof (Pro Lab Output Format) files, which can be exported in Tobii Pro Lab. The Toolbox imports the following data, if present:
+The Tobii converter can convert plof (Pro Lab Output Format) files, which can be generated in Tobii Pro Lab. The converter has been tested with plof version 2.2 through 2.5, and imports the following data, if present:
 
  - **Pupil size:**  
   Pupil size data is converted for use with the Pupil Size module.
@@ -203,12 +207,48 @@ The Tobii converter can convert plof (Pro Lab Output Format) files, which can be
  - **Events:**  
   All events in the `Stimulus` and `EyetrackerCalibration` category are converted for use in epoch generation. These events are saved in the eye-tracking dataset, and can be referred to using the channel `ET.events`.
 
-The plof converter does not feature any special settings.
+The plof converter does not feature any custom settings.
 
 ## OpenSesame and PyGaze
-The Tobii converter can convert tsv files produced by running eye-tracking experiment using OpenSesame and PyGaze.
+The Tobii converter can convert tsv files produced by running eye-tracking experiments using OpenSesame and PyGaze, and a Tobii eye-tracker. The converter was tested with OpenSesame 3 and 4, PyGaze 0.7; and the following Tobii eye-tracker models: X3-60, X3-120, Fusion, Nano and Spectrum.
 
-<!-- TODO: Elaborate. -->
+<!-- TODO: Check PyGaze version and Eye-Trackers above. -->
+
+For OpenSesame/PyGaze tsv files, the following option is available:
+
+ - **OpenSesame time Variable Name:**  
+   The name of the variable indicating the current OpenSesame time. See below for details. If the field is left blank, the messages in the tsv files are parsed as they are, without any time correction or trial generation. 
+
+<!-- TODO: In PDT: Add ET-info (from tsv header) to PDT module's info table, and document here. Also add the OS-ET time offset. -->
+
+### Experiment Structure and Conversion Actions ###
+
+A typical PhysioData Toolbox-compatible OpenSesame/PyGaze experiment has the following structure:
+
+ - **Initialization:**  
+  The **pygaze_init** object in OpenSesame initializes PyGaze and the Tobii eye-tracker.
+ - **Time logging:**  
+  An **inline_script** object can be used to log the current OpenSesame time by placing the following code in its **Run** tab: `eyetracker.log_var('cur_os_time', clock.time())`. This is necessary for mapping the OpenSesame times to the eyetracker timestamps, see below. It is advised to add a second instance of this object at the end of the experiment to minimize the effect of clock drift.
+ - **Trials:**  
+ Each trial should consist of the following eye-tracker control objects:
+   - **Start of trial:**  
+   The **pygaze_start_recording** object starts the recording of the current trial. Keep `start_trial` as the status message string.
+   - **Log custom variables (optional):**  
+   Any number of **pygaze_log** objects can be used inside the current trial to mark events, or log variables belonging to the current trial. In this usage, the **Automatically log all variables** checkbox should be unchecked, and the message manually entered in the object's textbox. 
+   - **End of trial:**  
+   The **pygaze_stop_recording** object ends the recording of the current trial. Keep `stop_trial` as the status message string, and optionally append it with a whitespace, followed by a suffix (e.g. trial name, trial conditions, etc.). This suffix will be used to label the trial, see below. A valid stop trial message is e.g. `stop_trial CAT DOG`.
+   - **Log OpenSesame variables:**  
+   The **pygaze_log** object logs the current values of all OpenSesame variables when the **Automatically log all variables** checkbox is enabled. This includes the onset times of each OpenSesame object, which is used by the Toolbox to create corresponding events that can be referenced when generating epochs.
+
+When converting tsv data, the converter performs the following actions:
+ - **Pupil size:**  
+  The pupil size data is converted for use with the Pupil Size module. 
+ - **Time correction and event generation:**  
+  The converter uses the 'cur_os_time' messages to calculate the OpenSesame/eye-tracker time offset, and creates events corresponding to the actual onset time of each OpenSesame object of which the onset time was logged. These events are given the name of the corresponding object, prepended by  'OBJECT: '.
+ - **Trial generation:**  
+  The converter finds each pair of 'start_trial' and subsequent 'stop_trial' messages, and considers the interval between them as being a single trial. For each trial, and event spanning its duration named 'trial \<TRIAL NUMBER>' is created. Additionally, the converter extracts the suffix of each stop_trial message, if present, and appends it to all events in the corresponding trial using the following format: '\<ORIGINAL VALUE> (<SUFFIX>)'.
+
+  The events created by the converter can be referenced in the by setting the **startChannel** or **endChannel** to `et.events`, see the [Epochs](.\epochs.html) page.
 
 ---
 
@@ -220,8 +260,15 @@ This converter features the following custom options:
  - **Remove EyeLink System Events:**  
   The File Converter converts all messages available in the .edf file to eye-tracking events, except the events that match the regular expression specified in this field. Leaving the field blank converts all messages. Many EyeLink system-events are not actually used by the PhysioData Toolbox and can therefore be omitted from conversion. The default value removes these system-events.
 
- - **DataViewer Options:**  
-  If messages were sent with an time-offset prefix as defined by DataViewer, then the timestamps of those messages can be corrected accordingly by the File Converter. Messages should have the following format: \<offset> \<msg>, where \<offset> is the message delay in ms.
+ - **Data interpretation:**  
+   - **No special interpretation:**  
+     The data is not interpreted in any special way and left as is.
+   - **DataViewer interpretation:**  
+     The data is interpreted as conforming to a sunset of the DataViewer convention, namely:
+     - **Message offset correction:**  
+       If messages were sent with an time-offset prefix as defined by DataViewer, then the timestamps of those messages can be corrected accordingly by the File Converter. These messages should have the following format: `\<offset> \<msg>`, where `\<offset>` is the message delay in ms.
+     - **Trial generation:**  
+       Trials are generated from 'TRIALID' and 'TRIAL_RESULT' messages-pairs. At least one trial must be present. These trials are converted into pregenerated epochs by the converter. Additionally, trial variables (messages in form of `!V TRIAL_VAR <NAME> <VALUE>`) are parsed and added as epoch metadata.
 
 {% include image.html
     img="user-guide\file-converter\eyelink-custom-options.png"
@@ -230,6 +277,9 @@ This converter features the following custom options:
     caption="The custom conversion options available for EyeLink files." %}
 
 ## Experimental Design Considerations ##
+
+<!-- TODO: Assess below. Consider adding information about conversion to mm. -->
+
 When collecting pupil size with an EyeLink eye tracker, the use of a head stabilizer (chinrest) is required and it is advised to keep the camera distance fixed for all participants. Also, make sure that the AREA or DIAMETER setting in the EyeLink recording software is consistent for all participants. For more information on collecting pupil size with EyeLink, see [Recording and Analyzing Pupil Data (Pupillometry)](https://www.sr-support.com/showthread.php?tid=41&pid=40#pid40) on the SR Research Support Forum (note that you need to log-in or register to be able to view the thread).
 
 ## Analysis Tips ##
