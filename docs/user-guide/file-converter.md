@@ -161,16 +161,16 @@ The Tobii converter can convert data recorded with an Tobii eye-tracker, in comb
 <!-- TODO: Add image of options. -->
 
 ## E-Prime Extensions for Tobii ##
-The Tobii converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions, and features the following custom options:
+The Tobii converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions. In the mode the following custom options are available:
 
  - **Eye-tracking Event Generation:**  
-  In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values.
+  In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values if multiple columns are used. Leave this field blank to disable this feature. Multiple columns can be separated by a semicolon. See the [Experimental Design Considerations](#experimental-design-considerations) section below for more information.
 
  - **Gap Threshold:** 
-  The Toolbox assumes that a time gap between subsequent rows in the gazedata file indicates a break in a section, even if the rows otherwise form a contiguous section. The gap is classified as a difference in row-timestamps with duration larger than N times the sample duration (1/fs). N must be larger than 1, and can be inf. Setting it to inf effectively turns off the above mentioned assumption.
+  The Toolbox assumes that a time gap between subsequent rows in the gazedata file indicates a break in a section, even if the rows otherwise form a contiguous section. The gap is classified as a difference in row-timestamps with duration larger than N times the sample duration (1/fs). N must be larger than 1, and can be inf. Setting it to inf effectively turns off the above mentioned assumption. The default value of 2 should work in most cases.
 
  - **AOI Analysis:**  
-   In this field, one column name of the EET files can be specified. This column should hold the current area of interest (AOI) hit data. It thus holds the AOI name that is currently looked at (if any). In EET 3.2 files, the ComponentName column can be used for AOI Analysis. The ComponentName column is automatically created in EET 3.2 files and contains the (sub)object or slide state that is currently being looked at.
+   The Toolbox can perform simple area of interest (AOI) analysis if the AOI hits have been pre-calculated, and tabulated as a single column with each row indicating the currently looked-at AOI. The name of this column can be entered into the AOI Analysis field to activate the AOI analysis feature, of the field can be left empty to deactivate it. In EET 3.2 files, the ComponentName column can be used for AOI Analysis. The ComponentName column is automatically created in EET 3.2 files and contains the (sub)object or slide state that is currently being looked at. See the [Experimental Design Considerations](#experimental-design-considerations) section below for more information.
 
 {% include image.html
     img="user-guide\file-converter\eet-custom-options.png"
@@ -286,3 +286,21 @@ When collecting pupil size with an EyeLink eye tracker, the use of a head stabil
 The Pupil Diameter module expects the pupil diameter to be in mm. This is not the case for EyeLink data, where pupil diameter is reported in arbitrary pixels. Therefore, the module's gain or detection and rejection criteria will need to be modified.
 
 EyeLink pupil diameter data can be converted to mm, for instructions see this [FAQ](https://www.sr-support.com/thread-154.html) on the SR Research Support Forum (log-in required). Converting the pupil diameter to mm can be done in the PhysioData Toolbox, by using the **Gain** setting in the Pupil Diameter module, or it can be done after processing the data in the PhysioData Toolbox, in for example Excel, R or SPSS.
+
+---
+
+# Signal TSV File Converter
+The Signal TSV File converter can convert arbitrary signals saved as standard tabular tsv files into the PhysioData files. These tsv files must contain uniformly sampled data, with a sampling frequency between 100 and 10000 Hz, and a duration of at least 10 seconds. Each signal (aka channel) should live in its own column, and all channels must all have the same sampling rate. All channel elements must be convertible to numerical values. The table may also contain a single separate column with events, where each discrete event is encoded as a single string, and event-segments as contiguous sections off the same strings. Blank elements indicate no events or event-sections.
+
+The TSV file should have the following specification:
+
+ - **File extension:** `tsv`.
+ - **Variable separator:** tab.
+ - **Decimal separator:** comma or period, see below.
+ - **Header:** optional, see below.
+
+{% include image.html
+    img="user-guide\file-converter\signal-tsv-setup-options.png"
+    title="Signal TSV File setup options"
+    id="el-opts"
+    caption="The setup options available for signal tsv files." %}
