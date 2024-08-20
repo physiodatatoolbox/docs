@@ -33,6 +33,7 @@ The current version of the File Converter supports the following raw file format
  - LIBC Philips Achieva 3T MRI scanner
  - EyeLink
  - Tobii
+ - TSV (only signals, not eye-tracking data)
 
 If your raw data is stored in another format, you can still generate PhysioData files for processing in the Toolbox using a custom MATLAB script ([more info](..\user-guide\physiodata-file-format.html)).
 
@@ -290,7 +291,9 @@ EyeLink pupil diameter data can be converted to mm, for instructions see this [F
 ---
 
 # Signal TSV File Converter
-The Signal TSV File converter can convert arbitrary signals saved as standard tabular tsv files into the PhysioData files. These tsv files must contain uniformly sampled data, with a sampling frequency between 100 and 10000 Hz, and a duration of at least 10 seconds. Each signal (aka channel) should live in its own column, and all channels must all have the same sampling rate. All channel elements must be convertible to numerical values. The table may also contain a single separate column with events, where each discrete event is encoded as a single string, and event-segments as contiguous sections off the same strings. Blank elements indicate no events or event-sections.
+The Signal TSV File converter can convert arbitrary signals saved as standard tabular tsv files into the PhysioData files. These tsv files must contain uniformly sampled data, with a sampling frequency between 100 and 10000 Hz, and a duration of at least 10 seconds. Each signal (aka channel) should live in its own column, and all channels must all have the same sampling rate. All channel elements must be convertible to numerical values.
+
+The table may also contain events in the last column. The converter will then convert the strings in the event columns into referenceable events that can be used when generating epochs. Each string, or section of strings, is converted to start and end labels. Blank elements indicate no events. Download an example file [here](/assets/files/ecg_data.tsv).
 
 The TSV file should have the following specification:
 
