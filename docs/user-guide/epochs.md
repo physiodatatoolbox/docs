@@ -211,12 +211,19 @@ Specifying the value parameter as:
  - **A regular expression:**  
    When the value is specified as a string enclosed in ^ and $---e.g. value = `$Label [A-Z]^`, it is treated as a regular expression, and any events with values matching the expression are used. Note that both the ^ and $ anchors are used as part of the expression. See [MATLAB](https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html) help for more information about regular expressions. Feel free to email the [developers](../about.html) for help generating regular expression patterns.
 
-## Multiple Occurrence ##
+## Multiple Occurrences ##
 Similar to specifying numeric values, occurrences can be specified as a single number or as a set. Additionally, the keyword `last` can be used, which will resolve to the index of the last event that matches the specified value. The usage of last is equal to the MATLAB usage of `end` (which can also be used instead of last). As an example, when specifying occur = `1:last`, all occurrences of the events that match the specified value are selected.
 
 Note that when the value is not strictly specified---i.e., it is specified as a regular expression or a numeric range---the selected events may not have exactly the same value, but will still be ordered sequentially. For instance, when using [these markers](#marker-list), and specifying value = `[1:255]`, then occur = `[2 3]`, the second and third of all the markers with values between 1 and 255 are selected; i.e., the 2nd and 3rd markers in the list. These are the occurrences 2 and 3 of the events that match the value specification (`[1:255]`), even though those events themselves don't have occurrence 2 and 3; they are both the first occurrence of their exact values. The occur parameter targets the order of the events that were selected by the value filter, thus if the value is not strictly specified, the occurrences inside the set produced by the value filter might differ from the event occurrences.
 
 Occurrences must resolve to positive integers, and basic MATLAB functions can be used, like max(), min(), ceil(), floor(), round(), etc.
+
+## Relative Occurrences ##
+As of version 0.7.0, the endOccur can be defined relative to the that epochs's start time by appending the occurrence with the `AFTER` keyword. For instance, filling in `1 AFTER` in endOccur will find the first occurrence after the epoch's start time that matches the endValue.
+ 
+When using the `AFTER` keyword, only scalar occurrences in endOccur are supported; e.g., an endOccur of `[1 2] AFTER` will produce an error. However, the startOccur (or startDelay) can be non-scalar, in which case--when using the `AFTER` keyword--the endOccur will be applied to each resolved start time. For instance, say a file contains 10 markers with value 20 indicating the start of an epoch, each followed by a marker with a value of either an 21 or 22, indicating the end of that epoch. These epochs can be defined using the startValue of 20, a startOccur of `1:last`, an endValue of `[21 22]`, and an endOccur of `1 AFTER`.
+ 
+Similarly, the `BEFORE` keyword can be used in the startOccur to indicate the start occurrence needs to be limited to the time before the end of the epoch; e.g., a startOccur of `last BEFORE` will match the last event that matches the startValue before the end time, or times if the end definition resolves to multiple times.
 
 ## Multiple Delays ##
 The delay parameter can be specified as a single number or as a vector; or as a formula that resolves into one of the two. When specified as a single number, that delay is applied to all events that match the value and occurrences specified in the definition. For instance, if the value and occurrence parameters produce 2 events, and the delay is specified as delay = `5`, then two time points will be produces; 5 seconds after both events.

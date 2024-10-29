@@ -176,7 +176,7 @@ Click on the **View Raw Data** button to launch the **Raw Data Viewer**. The Raw
 
 ---
 
-# Creating PhysioAnalyzer modules #
+# Creating PhysioAnalyzer Modules #
 **PhysioAnalyzer modules** are signal-specific preprocessing, visualization and analysis pipelines that users can construct and apply to the files. If, for instance, a PhysioData file contains electrocardiogram (ECG) and skin conductance (SC) signals, the user can add ECG and SC modules to the file in order to perform ECG and SC specific analyses on the respective data.
 
 ## Creating the ECG PhysioAnalyzer ##
@@ -375,33 +375,22 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
  - Zoom in (by selecting an area with the right mouse button) at the high R-peak around 500s. Notice that this peak is not a 'real' R-peak, but an extra peak between two R-peaks, resulting in two short IBIs. The R-peak can be removed by selecting an area covering the faulty R-peak (using the left mouse button), and selecting **Disregard R-Peaks in selected section**. The disregarded region is visualized in the **R-Skip** graph above the ECG plot. Notice how removing this R-peak also corrects the faulty IBIs at this time point.
 
    {% include image.html
-            img="tutorial\ECG_Faulty_R-Peak-2.png"
-            title="R-Peak rejection1"
+            img="tutorial\ecg-peak-rejection.gif"
+            title="R-Peak rejection"
             id="rPeakRejection1"
             caption="Selecting and disregarding an R-peak." %}
-
-  {% include image.html
-            img="tutorial\ECG_Faulty_R-Peak-3.png"
-            title="R-Peak rejection 2"
-            id="rPeakRejection2"
-            caption="Newly created R-skip zone." %}           
 
  - Zoom in at the 300 s outliers in the IBI plot and notice how this is caused by missing R-waves in the ECG signal, resulting in two instances of doubly long IBIs. Since R-peaks cannot be manually added in this version of the toolbox, correction must involve removing the bad IBIs.
  - The IBI artifacts can be manually corrected in a similar manner as removing the R-Peak. Zoom in to the IBI artifact at 274 s, and, using the left mouse button, select an area covering the IBI. Subsequently, select **Disregard IBIs in selected section** from the menu. The toolbox will now refrain from using any IBIs located inside this newly inserted **IBI skip zone**, which is visualized in the **IBI-skip** graph.
 
    {% include image.html
-            img="tutorial\ECG_Faulty_IBI-1.png"
-            title="IBI rejection 1"
+            img="tutorial\ibi-rejection.gif"
+            title="IBI rejection"
             id="ibiRejection1"
-            caption="IBI artifacts." %}
+            caption="Selecting and disregarding erroneous IBIs." %}
 
-  {% include image.html
-            img="tutorial\ECG_Faulty_IBI-2.png"
-            title="IBI rejection 2"
-            id="ibiRejection2"
-            caption="Select and disregard IBI." %} 
-
- - Since manually removing individual IBIs can be time consuming, a better approach may be to adjust the **Maximum IBI value** setting in this particular PhysioAnalyzer. Zoom the IBI plot completely out by double clicking it. Notice how the correct IBIs in this file are never located above 1.3 s. Click the **View/Edit Settings** button in the ECG tab and set the **Maximum IBI** value to `1.3`. After clicking **Ok**, the ECG module will automatically remove all IBIs above the said threshold. In the IBI graph, these automatically rejected IBIs are displayed as diamonds and are not used to generate the Instantaneous Heart Rate (IHR), which is calculated by interpolating all non-rejected IBIs. Note that adjusting the settings within the PhysioAnalyzer Viewer will only affect the current file. Other files are not affected and keep the settings as originally specified when the PhysioAnalyzer was created.
+ - Since manually removing individual IBIs can be time consuming, a better approach may be to adjust the automatic IBI filtering this particular PhysioAnalyzer. Zoom the IBI plot completely out by double clicking it. Notice how the correct IBIs in this file are never located above 1.3 s, or below 0.5 s (zoom in to verify). Click the **View/Edit Settings** button in the ECG tab and set the **Maximum IBI** value to `1.3` and the **Minimum IBI value** to `0.5`. After clicking **Ok**, the ECG module will automatically remove all IBIs outside of these thresholds.
+ <br>In the IBI graph, these automatically rejected IBIs are displayed as diamonds and are not used to generate the Instantaneous Heart Rate (IHR), which is calculated by interpolating all non-rejected IBIs. Note that adjusting the settings within the PhysioAnalyzer Viewer will only affect the current file. Other files are not affected and keep the settings as originally specified when the PhysioAnalyzer was created. Note that only clear outliers can be removed using thresholds. Other erroneous R-peaks and IBIs must be removed manually using rejection zones.
 
     {% include image.html
             img="tutorial\ECG_Edit_Settings.png"
@@ -409,7 +398,6 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="ecgEditSettings"
             caption="Edit ECG settings of current PhysioData file." %} 
 
- - Check out and if necessary remove the possible outliers located around 550 s and 1100 s. 
  - When done, mark the ECG module in 'CS_Example_01' as accepted by clicking the checkbox.
  - Press the **Save** button next to the **Menu** button to save the corrections you just made in the current PhysioData file.
  - Navigate to the ECG tab in 'CS_Example_04' and notice that there seem to be a lot of artifacts in the IBI data.
@@ -420,13 +408,15 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="lowRPeaks1"
             caption="ECG containing a lot of IBI artifacts." %} 
 
- - Zoom in at some of the artifacts. Many IBIs are automatically rejected, visualized by diamonds in the IBI graph. Notice that each time before an outlying IBI occurs, an R-peak is 'missed' by the PhysioData Toolbox. This means that a 'true' R-peak was not detected as R-peak. Rather than manually removing each IBI, we can fix this by adjusting the **Minimum R-peak value** setting in this particular PhysioAnalyzer. Zoom completely out by double clicking on the ECG graph. Notice that the R-peaks hover around 0.5 mV, but do not go below 0.3 mV. Click the **View/Edit Settings** button in the ECG tab and set the **Minimum R-peak value** value to `0.3`. After clicking **Ok**, the ECG module will automatically detect the R-peaks with a value above 0.3.
+ - Zoom in at some of the artifacts. Many IBIs are automatically rejected, visualized by diamonds in the IBI graph. Notice that each time before an outlying IBI occurs, an R-peak is 'missed' by the PhysioData Toolbox. This means that a 'true' R-peak was not detected as R-peak.
 
     {% include image.html
             img="tutorial\ECG_Low_R-peaks-2.png"
             title="Low R-peaks 2"
             id="lowRPeaks2"
             caption="R-peaks missed by the PhysioData Toolbox." %}
+ 
+ - Rather than manually removing each IBI, we can fix this by adjusting the **Minimum R-peak value** setting in this particular PhysioAnalyzer. Zoom completely out by double clicking on the ECG graph. Notice that the R-peaks hover around 0.5 mV, but do not go below 0.3 mV. Click the **View/Edit Settings** button in the ECG tab and set the **Minimum R-peak value** value to `0.3`. After clicking **Ok**, the ECG module will automatically detect the R-peaks with a value above 0.3.
 
 {% include image.html
             img="tutorial\ECG_Low_R-peaks-3.png"
