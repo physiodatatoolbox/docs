@@ -15,7 +15,7 @@ The File Converter is an app that converts various data formats into PhysioData 
 ---
 
 # Introduction #
-The PhysioData toolbox is designed to only analyze standardized PhysioData files, which are MATLAB files with the physioData extension that comply with the PhysioData file specification. 
+The PhysioData toolbox is designed to only analyze standardized PhysioData files, which are MATLAB files with the `physioData` extension that comply with the PhysioData file specification. 
 
 To facilitate the batch conversion of raw physiological data to the PhysioData format, the toolbox includes a **File Converter** app.
 
@@ -33,14 +33,15 @@ The current version of the File Converter supports the following raw file format
  - LIBC Philips Achieva 3T MRI scanner
  - EyeLink
  - Tobii
- - TSV (only signals, not eye-tracking data)
+ - TSV with signals
+ - TSV with eye-tracking data
 
 If your raw data is stored in another format, you can still generate PhysioData files for processing in the Toolbox using a custom MATLAB script ([more info](..\user-guide\physiodata-file-format.html)).
 
 ---
 
 # User Interface #
-Files can be imported into the File Converter by clicking the **Select Files** button and selecting the correct file type and import options. Once the raw files have been imported, information about their contents is presented in the **Current Raw Files** table, with each row below the top row representing a single file.
+Files can be imported into the File Converter by clicking the **Select Files** button and selecting the correct file type and import options. Once the raw files have been imported, information about their contents is presented in the **Current Raw Files** table, with each row below the top row representing a single file. The **Destination Folder** path indicates the location where the converted files will be stored, and can be changed by clicking the **Select Folder** button.
 
 {% include image.html
     img="user-guide\file-converter\file-converter-interface.png"
@@ -48,14 +49,11 @@ Files can be imported into the File Converter by clicking the **Select Files** b
     id = "fc-1"
     caption="The File Converter interface, showing 5 imported BIOPAC files (PPN_01.acq – PPN_05.acq) with 13 channels each" %}
 
-<!-- TODO: Remake the printscreen to include the new Session Manager buttons. Also add it to the description. -->
-
-
 The first column in the Current Raw Files table contains checkboxes used for enabling and disabling individual files for conversion. The **File** and **Info** columns to the right of that show the file names and a summary of the file contents, respectively.
 
-In the case that the raw files contain signals, the subsequent columns will show their names and units. Similarly, if a file contains pupil diameter data, columns representing the left and right pupil size data will appear. The checkboxes in the top row can be used to enable and disable individual channels for conversion. It is strongly recommended to not convert data that are not required for analysis.
+In the case that the raw files contain signals, the subsequent columns will show their names and units. Similarly, if a file contains pupil diameter data, columns representing the left and right pupil size data will appear. The checkboxes in the top row can be used to enable and disable individual channels for conversion. _It is strongly recommended to not convert data that are not required for analysis._
 
-Below the table, the **Clear File List** button resets the converter to its default empty state, and the **Converter Options** button launches a menu showing custom conversion options for the selected file type. This button is disabled if the file type does not have any custom options, as is the case for BIOPAC files.
+Below the table, the **Open Session Manager** closes the File Converter and launches the Session Manager, and the **Clear File List** button resets the converter to its default empty state. The **Converter Options** button launches a menu showing custom conversion options for the selected file type. This button is disabled if the file type does not have any custom options, as is the case for BIOPAC files.
 
 ## Data Previewer ##
 Clicking the **Preview Converted Data** button converts the first enabled raw file and displays the converted data in a new window called **Data Previewer**, which is similar to the Toolbox's Raw Data Viewer. For more information about viewing and navigating through raw data, see the [Data Viewers](..\user-guide\data-viewers.md).
@@ -78,7 +76,7 @@ If the File Converter detects imminent filename collisions, i.e. that similarly 
 ---
 
 # BIOPAC Files #
-The built-in BIOPAC converter supports AcqKnowledge (**v3.9 – v5.0.2**) data saved as .acq files or exported as .mat files. Due to a limitation in the BIOPAC File API, only AcqKnowledge .acq files that comply with the following requirements can be converted: 
+The built-in BIOPAC converter supports AcqKnowledge (**v3.9 – v5.0.8**) data saved as .acq files or exported as .mat files. Due to a limitation in the BIOPAC File API, only AcqKnowledge .acq files that comply with the following requirements can be converted: 
 
  - All channels must have the same sampling rate 
  - All channels must have the same length
@@ -94,9 +92,9 @@ The BIOPAC converter does not feature any custom conversion options.
 ---
 
 # VU-AMS #
-The VU-AMS converter supports converting raw 5FS files recorded using the VU-AMS system. All sub-sampled signals are up-sampled to the master sampling rate through linear interpolation and nearest neighbor extrapolation.
+The VU-AMS converter supports converting raw 5FS files recorded using the VU-AMS system. All sub-sampled signals are up-sampled to the master sampling rate through linear interpolation and nearest neighbor extrapolation. Note that only the ECG, SCL, DZ, Z0 and BAT channels are extracted from the files, when available.
 
-If a channel labeled Z0 is present, a -dZ/dt channel is generated using a differentiating 256 order FIR filter with a high-pass cutoff frequency of 1 Hz, and a low-pass cutoff frequency of 10 Hz.
+If the Z0 channel is present, a -dZ/dt channel is generated using a differentiating 256 order FIR filter with a high-pass cutoff frequency of 1 Hz, and a low-pass cutoff frequency of 10 Hz.
 
 The VU-AMS converter does not feature any custom options. 
 
@@ -159,10 +157,8 @@ The Tobii converter can convert data recorded with an Tobii eye-tracker, in comb
  - **OpenSesame and PyGaze:**  
     Text files with the .tsv extension generated in OpenSesame with the PyGaze plugin.
 
-<!-- TODO: Add image of options. -->
-
 ## E-Prime Extensions for Tobii ##
-The Tobii converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions. In the mode the following custom options are available:
+The Tobii converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions. In these modes, the following custom options are available:
 
  - **Eye-tracking Event Generation:**  
   In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values if multiple columns are used. Leave this field blank to disable this feature. Multiple columns can be separated by a semicolon. See the [Experimental Design Considerations](#experimental-design-considerations) section below for more information.
