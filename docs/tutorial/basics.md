@@ -389,6 +389,8 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="ibiRejection1"
             caption="Selecting and disregarding erroneous IBIs." %}
 
+Note, to remove an inserted rejection zone, add a new zone the covers the zone you want to remove and select the opposite option. See the [Data Viewers](..\user-guide\data-viewers.html#the-physioanalyzer-viewer) page for more information.
+
  - Since manually removing individual IBIs can be time consuming, a better approach may be to adjust the automatic IBI filtering this particular PhysioAnalyzer. Zoom the IBI plot completely out by double clicking it. Notice how the correct IBIs in this file are never located above 1.3 s, or below 0.5 s (zoom in to verify). Click the **View/Edit Settings** button in the ECG tab and set the **Maximum IBI** value to `1.3` and the **Minimum IBI value** to `0.5`. After clicking **Ok**, the ECG module will automatically remove all IBIs outside of these thresholds.
  <br>In the IBI graph, these automatically rejected IBIs are displayed as diamonds and are not used to generate the Instantaneous Heart Rate (IHR), which is calculated by interpolating all non-rejected IBIs. Note that adjusting the settings within the PhysioAnalyzer Viewer will only affect the current file. Other files are not affected and keep the settings as originally specified when the PhysioAnalyzer was created. Note that only clear outliers can be removed using thresholds. Other erroneous R-peaks and IBIs must be removed manually using rejection zones.
 
@@ -435,16 +437,11 @@ Data correction in the Skin Conductance graph consists of the user inserting **R
  - Select a section straddling the artifact. Focus on covering the spike in the gray raw data signal. Select **Disregard raw skin conductance data and interpolate** and **Do not detect SCRs with landmarks in selected section** to remove the spike and to not use the section for SCR detection.
 
      {% include image.html
-            img="tutorial\SC_faulty_spike-2.png"
-            title="SC artifact 1"
+            img="tutorial\SC_faulty_spike.gif"
+            title="SC artifact"
             id="scArtifact1"
-            caption="Selecting and disregarding a SC zone." %}
-  {% include image.html
-            img="tutorial\SC_faulty_spike-3.png"
-            title="SC artifact 2"
-            id="scArtifact2"
-            caption="Newly created SC raw skip zone." %}
-
+            caption="Selecting and disregarding a zone in the skin conductance signal." %}
+  
  - Do the same for the other artifacts.
  - When done, mark the SC module in 'CS_Example_01' as accepted by clicking the checkbox.
  - Press the **Save** button to save the corrections you just made.
@@ -492,7 +489,7 @@ Say we want to update the epoch definitions in all files, but leave the other se
  - We will also add a Metadata Column so that more information is included in the exported data:
      - Click **Add Metadata Column**
      - Enter `Type` in the Column Name field.
-     - In the newly created column, fill in `response` in 'Resp' epochs (rows 3 and 4) and `baseline` in the 'Base' epochs (rows 6 and 7).
+     - In the newly created column, fill in `response` in 'Resp' epochs (rows 3 and 4) and `baseline` in the 'Base' epochs (rows 8 and 9).
 
        {% include image.html
             img="tutorial\EpochsAdjusted-2.png"
@@ -511,15 +508,7 @@ Say we want to update the epoch definitions in all files, but leave the other se
     no_shadow = true
     caption = "The ECG module with only the Epochs setting checked." %}
 
- - Click the **Apply to PhysioData Files**. This will open a summary of the settings that are to be pushed to the files. In this window, click **Apply to all files** to propagate the listed settings, in this case the epochs, to all the PhysioData files. This will leave the other settings intact.
-
- {% include image.html
-    img="tutorial\PhysioAnalyzerSetting-2.png"
-    title= "PhysioAnalyzer Setting"
-    id="physioAnalyzerSetting"
-    max_width="500px"
-    no_shadow = true
-    caption = "The Batch PhysioAnalyzer Propagator window. It shows a summary of the PhysioAnalyzers that are about to be pushed to the files, including their settings." %}
+ - Click the **Apply to PhysioData Files**. This will open a summary of the settings that are to be pushed to the files. Notice that only the epochs are now included in the settings. Click **Apply to all files** to propagate the listed settings, in this case the epochs, to all the PhysioData files. This will leave the other settings intact. It is also possible to preselect files in the file tree, and push settings only to them.
 
  Note that the **Maximum IBI value** setting in 'CS_Example_01' and the **Minimum R-peak value** in 'CS_Examples_04' were previously customized and differ from the other files. As such, if that setting were not unchecked in the PhysioAnalyzer tree, its value would be pushed to all files overwriting any file-specific values.
 
