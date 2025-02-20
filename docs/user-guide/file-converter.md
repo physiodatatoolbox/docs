@@ -209,14 +209,10 @@ The plof converter does not feature any custom settings.
 ## OpenSesame and PyGaze
 The Tobii converter can convert tsv files produced by running eye-tracking experiments using OpenSesame and PyGaze, and a Tobii eye-tracker. The converter was tested with OpenSesame 3 and 4, PyGaze 0.7; and the following Tobii eye-tracker models: X3-60, X3-120, Fusion, Nano and Spectrum.
 
-<!-- TODO: Check PyGaze version and Eye-Trackers above. -->
-
 For OpenSesame/PyGaze tsv files, the following option is available:
 
  - **OpenSesame time Variable Name:**  
    The name of the variable indicating the current OpenSesame time. See below for details. If the field is left blank, the messages in the tsv files are parsed as they are, without any time correction or trial generation. 
-
-<!-- TODO: In PDT: Add ET-info (from tsv header) to PDT module's info table, and document here. Also add the OS-ET time offset. -->
 
 ### Experiment Structure and Conversion Actions ###
 
@@ -277,7 +273,7 @@ This converter features the following custom options:
 
 <!-- TODO: Assess below. Consider adding information about conversion to mm. -->
 
-When collecting pupil size with an EyeLink eye tracker, the use of a head stabilizer (chinrest) is required and it is advised to keep the camera distance fixed for all participants. Also, make sure that the AREA or DIAMETER setting in the EyeLink recording software is consistent for all participants. For more information on collecting pupil size with EyeLink, see [Recording and Analyzing Pupil Data (Pupillometry)](https://www.sr-support.com/showthread.php?tid=41&pid=40#pid40) on the SR Research Support Forum (note that you need to log-in or register to be able to view the thread).
+When collecting pupil size with an EyeLink eye tracker, the use of a head stabilizer (chinrest) is required unless a tracking sticker is used. Additionally, it is advised to keep the camera distance fixed for all participants. Also, make sure that the AREA or DIAMETER setting in the EyeLink recording software is consistent for all participants. For more information on collecting pupil size with EyeLink, see [Recording and Analyzing Pupil Data (Pupillometry)](https://www.sr-support.com/showthread.php?tid=41&pid=40#pid40).
 
 ## Analysis Tips ##
 The Pupil Diameter module expects the pupil diameter to be in mm. This is not the case for EyeLink data, where pupil diameter is reported in arbitrary pixels. Therefore, the module's gain or detection and rejection criteria will need to be modified.
