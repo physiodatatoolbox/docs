@@ -1,18 +1,25 @@
 <!---
     This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
 -->
+
+{% if site.baseurl contains "/archive" %}
+{% capture ver_str %}Version&nbsp;{{ site.pdt_version }}&nbsp;(Archive){% endcapture %}
+{% else %}
+{% capture ver_str %}Version&nbsp;{{ site.pdt_version }}{% endcapture %}
+{% endif %}
+
 <nav aria-label="Auxiliary" class="aux-nav">
     <ul class="aux-nav-list">
 
         <li class="aux-nav-list-item">
             <a href="{{ site.baseurl_static }}/docs/doc-versions.html" class="site-button fs-4"
-                title="Click for other PhysioData Toolbox versions.">
-                Version {{ site.pdt_version }}.
+                title="Click for other PhysioData Toolbox versions."
+                {% if site.baseurl contains "/archive" %}  style="background-color: #f10b3747;" {% endif %}
+                >
+                {{ ver_str }}
             </a>
         </li>
 
     </ul>
 </nav>
-
-
-
