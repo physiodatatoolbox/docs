@@ -1,0 +1,35 @@
+
+.hljs-ln-numbers {
+    text-align: left;
+    color: #ccc;
+    border-right: 1px solid #d1caca;
+    vertical-align: top;
+    padding-right: 5px !important;
+    min-width: 10px !important;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .hljs-ln-code {
+    padding-left: 10px !important;
+  }
+
+  .hljs-ln-code, .hljs-ln-numbers {
+    background: none;
+    border-bottom: none !important;
+  }
+
+  /* .hljs-ln-code,
+  .hljs-ln-numbers {
+    line-height: 14px;
+  } */
+
+  code {
+    white-space: pre-wrap;
+    overflow: auto;
+  }

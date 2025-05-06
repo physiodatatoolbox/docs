@@ -24,11 +24,11 @@ nav_exclude: true
 
 ---
 
-For the change log, please visit the [Version History](./change-log.html) page.
+For the change-log and important update considerations, please see the [Version History](./change-log.html) page.
+Note, this page--the Document Archive--can be reached by clicking the version banner on the top right of each page.
 
-<!---
-Do not edit below START LIST, it is auto-generated.
--->
-Documentation of all recent PhysioData Toolbox versions:
+Documentation of the current PhysioData Toolbox version:
  - [PhysioData Toolbox v{{ site.pdt_version}} (latest version)]({{ site.baseurl_static }}/).
-<!--- START LIST --->
+
+Documentation of previous versions:
+- [PhysioData Toolbox v0.6.3](./archive/v0.6.3).

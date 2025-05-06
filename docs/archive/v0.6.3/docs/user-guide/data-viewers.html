@@ -1,0 +1,1344 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(3)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Data Viewers | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Data Viewers" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Data Viewers" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"Data Viewers","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/data-viewers.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide.html">User Guide</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Data Viewers</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="pdt-abstract-title, no_toc" id="data-viewers">
+  
+  
+    <a href="#data-viewers" class="anchor-heading" aria-labelledby="data-viewers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Data Viewers
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">The Toolbox features data viewers to visualize and allow interaction with the raw data and analysis pipelines inside the PhysioData files.</p><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ol>
+      <li><a href="#graph-interactions" id="markdown-toc-graph-interactions">Graph Interactions</a>        <ol>
+          <li><a href="#zooming-and-panning" id="markdown-toc-zooming-and-panning">Zooming and Panning</a></li>
+          <li><a href="#graph-context-menu-and-legend" id="markdown-toc-graph-context-menu-and-legend">Graph Context Menu and Legend</a></li>
+          <li><a href="#zooming-and-panning-with-keyboard" id="markdown-toc-zooming-and-panning-with-keyboard">Zooming and Panning with Keyboard</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#raw-data-viewer" id="markdown-toc-raw-data-viewer">Raw Data Viewer</a></li>
+  <li><a href="#the-physioanalyzer-viewer" id="markdown-toc-the-physioanalyzer-viewer">The PhysioAnalyzer Viewer</a>    <ol>
+      <li><a href="#user-correction-zones" id="markdown-toc-user-correction-zones">User Correction Zones</a>        <ol>
+          <li><a href="#fast-mode" id="markdown-toc-fast-mode">Fast-Mode</a></li>
+        </ol>
+      </li>
+      <li><a href="#menu" id="markdown-toc-menu">Menu</a></li>
+      <li><a href="#tab-toolbar" id="markdown-toc-tab-toolbar">Tab Toolbar</a></li>
+      <li><a href="#accepted-checkbox" id="markdown-toc-accepted-checkbox">Accepted Checkbox</a></li>
+      <li><a href="#epoch-and-event-graphs" id="markdown-toc-epoch-and-event-graphs">Epoch and Event Graphs</a></li>
+    </ol>
+  </li>
+</ol>
+
+</details><hr />
+<h1 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h1>
+    
+<p><strong>Data Viewers</strong> are graphical user interfaces that display data, such as graphs and tables, and allow the user to navigate and interact with the displayed data.</p>
+
+<p>The PhysioData Toolbox contains two types of Viewers:</p>
+<ul>
+  <li>
+    <p><strong>The Raw Data Viewer:</strong><br />
+ This viewer displays information about the raw data inside the PhysioData. To open the Raw Data Viewer,  select a file in the Session Manager and click the <strong>View Raw Data</strong> button.</p>
+  </li>
+  <li>
+    <p><strong>The PhysioAnalyzer Viewer:</strong><br />
+ The PhysioAnalyzer Viewer is a window for inspecting and interacting with the PhysioAnalyzers inside each PhysioData file. The data of each PhysioAnalyzer is visualized in a separate tab. To open the PhysioData Viewer, select a file in the Session Manager and click the <strong>View Analyses</strong> button.</p>
+  </li>
+</ul>
+
+<p>The Data Viewers feature a navigation bar just below the banner, which can be used to change the file currently displayed in the Viewer.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- iF this is the first run, add a modal div (for popups)  
+        https://www.w3schools.com/howto/howto_css_modal_images.asp
+-->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" data-proofer-ignore="" />
+    <div id="caption"></div>
+</div>
+
+<script>
+
+    // Close the modal window when users click it's background:
+    var modal = document.getElementById("myModal");
+    modal.style.cursor ="pointer";
+    modal.onclick = function () {
+        modal.style.display = "none";
+        
+        // Reenable the scrollbar on the overlying body:
+        document.body.style.overflow = '';
+    }
+
+    
+
+</script>
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/raw-data-viewer.png
+ " title="Raw Data Viewer"> -->
+    <img class="pdtImg" id="raw-data" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/raw-data-viewer.png
+ " alt="Raw Data Viewer" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#raw-data">Figure 1</a>:
+        The Raw Data Viewer, showing the raw data inside the current file.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("raw-data");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Raw Data Viewer, showing the raw data inside the current file.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/physioanalyzer-viewer.png
+ " title="PhysioAnalyzer Viewer"> -->
+    <img class="pdtImg" id="pa-data" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/physioanalyzer-viewer.png
+ " alt="PhysioAnalyzer Viewer" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#pa-data">Figure 2</a>:
+        The PhysioAnalyzer Viewer, showing the PhysioAnalyzer modules inside the current file.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("pa-data");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The PhysioAnalyzer Viewer, showing the PhysioAnalyzer modules inside the current file.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="graph-interactions">
+  
+  
+    <a href="#graph-interactions" class="anchor-heading" aria-labelledby="graph-interactions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Graph Interactions
+  
+  
+</h2>
+    
+<p>The graphs shown in the Raw Data and PhysioAnalyzer Viewer windows all exhibit the same general zooming and panning behavior, which is controlled using the scroll wheel, and the left and right mouse buttons.</p>
+<h3 id="zooming-and-panning">
+  
+  
+    <a href="#zooming-and-panning" class="anchor-heading" aria-labelledby="zooming-and-panning"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Zooming and Panning
+  
+  
+</h3>
+    
+<p>The following zooming actions can be performed when interacting with axes:</p>
+<ul>
+  <li>
+    <p><strong>Selection Zooming:</strong><br />
+ Right-clicking inside a graph and moving the mouse while holding down the right mouse button creates a transparent blue selection rectangle, releasing the mouse button then zooms in to that rectangle.</p>
+  </li>
+  <li>
+    <p><strong>Horizontal Zooming:</strong><br />
+ Zooming the horizontal axis is done by scrolling the mouse scroll-wheel; scrolling up zooms in and scrolling down zooms out.</p>
+  </li>
+  <li>
+    <p><strong>Vertical Zooming:</strong><br />
+ Zooming the vertical axis is done by pressing the mouse scroll-wheel, then scrolling it while holding it down; scrolling up zooms in and scrolling down zooms out.</p>
+  </li>
+  <li>
+    <p><strong>Dragging:</strong><br />
+ You can drag the graph left, right, up and down by clicking the mouse scroll-wheel button while the cursor is positioned inside the graph, then holding the button down and moving the mouse.</p>
+  </li>
+  <li>
+    <p><strong>Horizontal Panning:</strong><br />
+ You can pan horizontally—i.e., shift the graphs left or right—by scrolling up or down while holding down the right mouse button.</p>
+  </li>
+  <li>
+    <p><strong>Reset:</strong><br />
+ Double-click on a graph using the left mouse button to reset the zoom. This will zoom out to a level where all data points fit inside the graph.</p>
+  </li>
+</ul>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/graph_interactions.gif
+ " title="Graph Interactions"> -->
+    <img class="pdtImg" id="ga" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/graph_interactions.gif
+ " alt="Graph Interactions" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ga">Figure 3</a>:
+        Animations of basic graphs interactions (zooming, panning, etc.).
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ga");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Animations of basic graphs interactions (zooming, panning, etc.).";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h3 id="graph-context-menu-and-legend">
+  
+  
+    <a href="#graph-context-menu-and-legend" class="anchor-heading" aria-labelledby="graph-context-menu-and-legend"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Graph Context Menu and Legend
+  
+  
+</h3>
+    
+<p>Each module creates its own customized set of graphs and plots. Generally, right-clicking inside a graph without moving the mouse opens a menu with zooming and PhysioAnalyzer-specific analysis and interaction options.</p>
+
+<p>When a graph has a legend, the legend entries can be clicked to hide the corresponding lines. Hiding unnecessary lines may improve performance when scrolling and panning long recordings.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/menu-and-legend.gif
+ " title="Context Menu and Legend"> -->
+    <img class="pdtImg" id="ga2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/menu-and-legend.gif
+ " alt="Context Menu and Legend" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ga2">Figure 4</a>:
+        Graph context menu and legend actions.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ga2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Graph context menu and legend actions.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h3 id="zooming-and-panning-with-keyboard">
+  
+  
+    <a href="#zooming-and-panning-with-keyboard" class="anchor-heading" aria-labelledby="zooming-and-panning-with-keyboard"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Zooming and Panning with Keyboard
+  
+  
+</h3>
+    
+<p>The graphs can also be controlled using the keyboard. However, this feature is still in development and may be slow and buggy. The keys currently only work in the PhysioAnalyzer Viewer, and you can’t combine keys.</p>
+
+<ul>
+  <li>
+    <p><strong>Keyboard Panning:</strong><br />
+ WASD/arrows for up, down and sideways panning. Hold down SHIFT for faster movement.</p>
+  </li>
+  <li>
+    <p><strong>Keyboard Zooming:</strong><br />
+ ALT + WASD/arrows for zooming.</p>
+  </li>
+  <li>
+    <p><strong>Fit Y-axis to contents:</strong><br />
+ q</p>
+  </li>
+  <li>
+    <p><strong>Zoom out completely:</strong><br />
+  e</p>
+  </li>
+</ul><hr />
+<h1 id="raw-data-viewer">
+  
+  
+    <a href="#raw-data-viewer" class="anchor-heading" aria-labelledby="raw-data-viewer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Raw Data Viewer
+  
+  
+</h1>
+    
+<p>The <strong>Raw Data Viewer</strong> visualizes the raw data inside a PhysioData file. For more information about raw data, see the <a href=".\session-manager.html#raw-data">Session Manager</a> section. The Raw Data viewer is launched using the <strong>View Raw Data</strong> button in the Session Manager.</p>
+
+<p>The viewer consists of the following tabs:</p>
+<ul>
+  <li>
+    <p><strong>File Info:</strong><br />
+ Information about the PhysioData file are displayed in the <strong>File Info</strong> tab.</p>
+  </li>
+  <li>
+    <p><strong>Raw Signals:</strong><br />
+  All signals are plotted in their raw form in the <strong>Raw Signals</strong> tab. It may be necessary to scroll down to see all channels. Each graph can be collapsed or re-expanded by clicking the button with the arrow in the top right corner of the graphs panel.</p>
+  </li>
+  <li>
+    <p><strong>Markers:</strong><br />
+ The toolbox automatically classifies a raw signal as a <strong>marker signal</strong> if it only contains non-negative integers with a max value of 65535. Signals classified as a marker signal are automatically analyzed and the detected markers are visualized and tabulated.</p>
+  </li>
+  <li>
+    <p><strong>Events:</strong>
+ Events, if present, are plotted and tabulated in the <strong>Events</strong> tab.</p>
+  </li>
+  <li>
+    <p><strong>File events:</strong><br />
+ File events are plotted and tabulated in the <strong>File events</strong> tab.</p>
+  </li>
+  <li>
+    <p><strong>Eye Tracking Dataset #:</strong><br />
+ Each eye-tracking dataset, if present, is visualized in its own tab, with each type of eye-tracking data occupying a subtab:</p>
+
+    <ul>
+      <li>
+        <p><strong>Pupil Diameters:</strong><br />
+ The raw pupil diameters are visualized as a scatter plot, with each dot representing a sample point.</p>
+      </li>
+      <li>
+        <p><strong>Gaze &amp; Fixation Data:</strong><br />
+ Both the gaze and fixation coordinates are visualized in an XY map, per snapshot. The snapshot image, if present, is also displayed in the graph. Note that gaze and fixation data is currently not included in the conversion to PhysioData files when using the File Converter to convert EyeLink .edf files or EET .gazedata or .txt files.</p>
+      </li>
+      <li>
+        <p><strong>Areas of Interest:</strong><br />
+ The AOIs are plotted as a series of horizontal bars, with each bar signifying the duration of a single hit. Like gaze and fixation data, AOIs are visualized per snapshot.</p>
+      </li>
+      <li>
+        <p><strong>Events:</strong><br />
+ Each eye-tracking dataset can contain its own set of events.</p>
+      </li>
+      <li>
+        <p><strong>Scored Sections:</strong><br />
+ Scored sections are visualized in a similar manner to AOIs, but are independent of snapshots. Note that scored sections are currently not included in the conversion to PhysioData files when using the File Converter to convert EyeLink .edf files or EET .gazedata or .txt files.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Prebuilt Epochs:</strong><br />
+ Pre-generated epochs inside the PhysioData files, if present, are plotted and tabulated in the <strong>Prebuilt Epochs</strong> tab.</p>
+  </li>
+</ul><hr />
+<h1 id="the-physioanalyzer-viewer">
+  
+  
+    <a href="#the-physioanalyzer-viewer" class="anchor-heading" aria-labelledby="the-physioanalyzer-viewer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> The PhysioAnalyzer Viewer
+  
+  
+</h1>
+    
+<p>The PhysioAnalyzer Viewer generates one tab for each PhysioAnalyzer inside the current PhysioData file. The contents of the tabs are then custom generated by the PhysioAnalyzers. The PhysioAnalyzer viewer is launched using the <strong>View Analyses</strong> button in the Session Manager.</p>
+<h2 id="user-correction-zones">
+  
+  
+    <a href="#user-correction-zones" class="anchor-heading" aria-labelledby="user-correction-zones"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Correction Zones
+  
+  
+</h2>
+    
+<p>The standard method for correcting data in the toolbox involves the user defining special <strong>correction zones</strong>, within which the toolbox treats the data points differently; e.g., by disregarding detected peaks, or skipping the raw data and interpolating over the section instead. Once a correction zone has been selected, a dialog—the <strong>Section Editor</strong>—pops up presenting the available correction options.</p>
+
+<p>Defining zones rather than having corrections be associated with specific features allows the <strong>State</strong> of the PhysioAnalyzer to be independent of its <strong>Settings</strong>, which in turn allows the settings to be changed without invalidating the corrections.</p>
+
+<p>User correction zones are plotted as bars in one or more <strong>Corrections Graphs</strong>. These thin axes display the sections where the user inserted a correction zone. Each PhysioAnalyzer determines what corrections the user may apply, and how these corrections are used. A light green colored corrections-graph indicates that the user did not enter any correction zones in that particular axes. A green-colored bar indicates that there are correction zones present, which are usually plotted using red bars.</p>
+<h3 id="fast-mode">
+  
+  
+    <a href="#fast-mode" class="anchor-heading" aria-labelledby="fast-mode"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fast-Mode
+  
+  
+</h3>
+    
+<p>Some modules support <strong>Fast-Mode</strong>, which uses the selection direction to determine if a zone is to be added or removed. Fast-Mode can be enabled through the Menu button in the top-left corner of the PhysioAnalyzer Viewer (<a href="#menu">info</a>). In Fast-Mode, the Section Editor does not appear, instead, the correction zone is immediately created thereby allowing faster data correction:</p>
+
+<ul>
+  <li>
+    <p><strong>Adding a correction zone in Fast-Mode:</strong><br />
+Left-click in the graph, then drag to the right.</p>
+  </li>
+  <li>
+    <p><strong>Removing a correction zone in Fast-Mode:</strong><br />
+Left-click in the graph, then drag to the left.</p>
+  </li>
+</ul>
+
+<p>Not all modules support Fast-Mode.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/inserting-corrections.gif
+ " title="Inserting Correction Zones"> -->
+    <img class="pdtImg" id="inserting-zones" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/inserting-corrections.gif
+ " alt="Inserting Correction Zones" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#inserting-zones">Figure 5</a>:
+        Inserting a correction zone using the Section Editor (the default mode), and using 'Fast-Mode'.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("inserting-zones");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Inserting a correction zone using the Section Editor (the default mode), and using 'Fast-Mode'.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="menu">
+  
+  
+    <a href="#menu" class="anchor-heading" aria-labelledby="menu"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Menu
+  
+  
+</h2>
+    
+<p>The <strong>Menu</strong> button in the PhysioAnalyzer Viewer offers the following options:</p>
+
+<ul>
+  <li>
+    <p><strong>Automatically plot all tabs:</strong> 
+ When this option is checked, data in all tabs are plotted when the PhysioAnalyzer Viewer is opened as opposed to when the tab is clicked on.</p>
+  </li>
+  <li>
+    <p><strong>Use Fast-Mode selection when possible:</strong> 
+ Click to enable or disable Fast-Mode. This setting applies to all opened PhysioData Viewers, and persists until the Toolbox is closed.</p>
+  </li>
+</ul>
+<h2 id="tab-toolbar">
+  
+  
+    <a href="#tab-toolbar" class="anchor-heading" aria-labelledby="tab-toolbar"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tab Toolbar
+  
+  
+</h2>
+    
+<p>Each tab has a toolbar displaying the PhysioAnalyzer type and its tag, and features an <strong>Accepted Checkbox</strong>, and the following buttons:</p>
+
+<ul>
+  <li>
+    <p><strong>Remove Corrections:</strong><br />
+ Removes all user corrections in the current PhysioAnalyzer; i.e., it resets the PhysioAnalyzer’s state. The settings, however, keep their current parameters.</p>
+  </li>
+  <li>
+    <p><strong>View/Edit Settings:</strong><br />
+ Opens the settings window for the current PhysioAnalyzer. Only the settings in the current PhysioAnalyzer are affected by changes made here. Not all settings can be changed in the individual PhysioAnalyzers; the tag, and Epoch or Event Definitions, for instance, must be changed using the PhysioAnalyzer Creator in the Session Manager.</p>
+  </li>
+  <li>
+    <p><strong>View Results:</strong><br />
+ Opens a window containing a table showing the Epoch or Event analysis of the current PhysioAnalyzer. Multiple of these windows can be opened, and the tabulated results are ‘analyses snapshots’; i.e., they are not updated when the PhysioAnalyzer is changed.</p>
+  </li>
+</ul>
+<h2 id="accepted-checkbox">
+  
+  
+    <a href="#accepted-checkbox" class="anchor-heading" aria-labelledby="accepted-checkbox"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Accepted Checkbox
+  
+  
+</h2>
+    
+<p>The <strong>Accepted Checkbox</strong> can be used to mark PhysioAnalyzers as ‘reviewed’ or ‘accepted’. This feature exists purely for user reference as it does not influence how, or if, the PhysioAnalyzer is analyzed. Changing the settings, or adding or removing corrections, does not reset the accepted status.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+         max-width: 420px; 
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/accepted.png
+ " title="Accepted and Not Accepted"> -->
+    <img class="pdtImg" id="acc-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/accepted.png
+ " alt="Accepted and Not Accepted" style="
+             width: 100%; 
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#acc-1">Figure 6</a>:
+        The Accepted Checkbox, in its default (top) and activated (bottom) states
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("acc-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Accepted Checkbox, in its default (top) and activated (bottom) states";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="epoch-and-event-graphs">
+  
+  
+    <a href="#epoch-and-event-graphs" class="anchor-heading" aria-labelledby="epoch-and-event-graphs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Epoch and Event Graphs
+  
+  
+</h2>
+    
+<p><strong>Epochs</strong>, which are sections within a signal, are usually plotted above graphs, and have their time-axis linked to the graphs below them. Epochs are visualized as rectangles, with their horizontal width indicating their span. Their colors are pseudo-randomly chosen, and their height and thickness do not carry any information. In case epochs overlap, they are stacked vertically so that they can be differentiated.</p>
+
+<p>Certain analyzers make use of Events rather than Epochs. <strong>Events</strong> are discrete—i.e., they have no duration—and are visualized with colored triangles.</p>
+
+<p>Clicking on an epoch rectangle or an event triangle opens a window displaying its information.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+         max-width: 420px; 
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/epochs-events.png
+ " title="Epochs"> -->
+    <img class="pdtImg" id="acc-2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images//user-guide/data-viewers/epochs-events.png
+ " alt="Epochs" style="
+             width: 100%; 
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#acc-2">Figure 7</a>:
+        Top: an epoch plot, showing three minute-long epochs that have been sliced into 10 second segments. Bottom: an event plot showing nine events. The time axis of the epoch and event graphs correspond to the time axis of the graphs below them.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("acc-2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Top: an epoch plot, showing three minute-long epochs that have been sliced into 10 second segments. Bottom: an event plot showing nine events. The time axis of the epoch and event graphs correspond to the time axis of the graphs below them.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

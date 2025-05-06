@@ -1,0 +1,1122 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(2)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Session Manager | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Session Manager" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/session-manager.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/session-manager.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Session Manager" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"Session Manager","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/session-manager.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide.html">User Guide</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Session Manager</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="pdt-abstract-title, no_toc" id="session-manager">
+  
+  
+    <a href="#session-manager" class="anchor-heading" aria-labelledby="session-manager"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Session Manager
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">The Session Manager is the main window of the PhysioData Toolbox. It is used for managing PhysioData files, and assigning and running analysis pipelines.</p><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#concepts-and-terminology" id="markdown-toc-concepts-and-terminology">Concepts and Terminology</a>    <ol>
+      <li><a href="#physiodata-files" id="markdown-toc-physiodata-files">PhysioData Files</a></li>
+      <li><a href="#raw-data" id="markdown-toc-raw-data">Raw Data</a>        <ol>
+          <li><a href="#signals" id="markdown-toc-signals">Signals</a></li>
+          <li><a href="#eye-tracking-dataset" id="markdown-toc-eye-tracking-dataset">Eye-tracking dataset</a></li>
+        </ol>
+      </li>
+      <li><a href="#epochs" id="markdown-toc-epochs">Epochs</a></li>
+      <li><a href="#physioanalyzer-modules" id="markdown-toc-physioanalyzer-modules">PhysioAnalyzer Modules</a></li>
+      <li><a href="#saving" id="markdown-toc-saving">Saving</a></li>
+    </ol>
+  </li>
+  <li><a href="#interface" id="markdown-toc-interface">Interface</a>    <ol>
+      <li><a href="#physiodata-files-panel" id="markdown-toc-physiodata-files-panel">PhysioData Files Panel</a></li>
+      <li><a href="#physioanalyzer-configurator-panel" id="markdown-toc-physioanalyzer-configurator-panel">PhysioAnalyzer Configurator Panel</a></li>
+    </ol>
+  </li>
+  <li><a href="#data-export-panel" id="markdown-toc-data-export-panel">Data Export Panel</a>    <ol>
+      <li><a href="#generating-epoch-summaries" id="markdown-toc-generating-epoch-summaries">Generating Epoch Summaries</a></li>
+      <li><a href="#generating-resampled-epoch-signals" id="markdown-toc-generating-resampled-epoch-signals">Generating Resampled Epoch Signals</a></li>
+      <li><a href="#generating-a-data-archive" id="markdown-toc-generating-a-data-archive">Generating a Data Archive</a></li>
+    </ol>
+  </li>
+</ol>
+
+</details><hr />
+<h1 id="concepts-and-terminology">
+  
+  
+    <a href="#concepts-and-terminology" class="anchor-heading" aria-labelledby="concepts-and-terminology"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Concepts and Terminology
+  
+  
+</h1>
+    
+<p>From the <strong>Session Manager</strong>, users can: import PhysioData files; create PhysioAnalyzer modules and propagate them to the files; launch viewers to review and interact with the data in the files; batch analyze the data inside the files; and save the current session. These concepts, and the terminology required to understand the PhysioData Toolbox and its user interaction mechanics, are laid out below.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- iF this is the first run, add a modal div (for popups)  
+        https://www.w3schools.com/howto/howto_css_modal_images.asp
+-->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" data-proofer-ignore="" />
+    <div id="caption"></div>
+</div>
+
+<script>
+
+    // Close the modal window when users click it's background:
+    var modal = document.getElementById("myModal");
+    modal.style.cursor ="pointer";
+    modal.onclick = function () {
+        modal.style.display = "none";
+        
+        // Reenable the scrollbar on the overlying body:
+        document.body.style.overflow = '';
+    }
+
+    
+
+</script>
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\session-manager.png
+ " title="Session Manager"> -->
+    <img class="pdtImg" id="session-manager-img" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\session-manager.png
+ " alt="Session Manager" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#session-manager-img">Figure 1</a>:
+        The Session Manager, which is the main toolbox window. It manages the PhysioData files, the PhysioAnalyzers and the data export.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("session-manager-img");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Session Manager, which is the main toolbox window. It manages the PhysioData files, the PhysioAnalyzers and the data export.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="physiodata-files">
+  
+  
+    <a href="#physiodata-files" class="anchor-heading" aria-labelledby="physiodata-files"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PhysioData Files
+  
+  
+</h2>
+    
+<p><strong>PhysioData files</strong> are specifically formatted MATLAB files that contain raw data, and all settings and user-corrections necessary to analyze those data. By design, the Toolbox saves all information necessary to analyze an individual file inside that same file, which obviates the need for separate ‘analysis definition’ files.</p>
+<h2 id="raw-data">
+  
+  
+    <a href="#raw-data" class="anchor-heading" aria-labelledby="raw-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Raw Data
+  
+  
+</h2>
+    
+<p>Physiological data and metadata that have been converted to the PhysioData specification are referred to as <strong>raw data</strong>. These data can be analyzed by the Toolbox, but are never altered. The Toolbox supports two types of raw data: signals and eye-tracking datasets.</p>
+<h3 id="signals">
+  
+  
+    <a href="#signals" class="anchor-heading" aria-labelledby="signals"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Signals
+  
+  
+</h3>
+    
+<p><strong>Signals</strong> refer to a collection of uniformly sampled time-series (e.g. a ECG and EMG data), optionally including <strong>events</strong>, which are named moments inside the recording (e.g. ‘Start Recording’ or ‘End Trial 1’). A signal inside a collection thereof may be referred to as <strong>channel</strong> and referenced by means of a ‘channel number’ (e.g. the ECG and EMG data are in channels 1 and 2, respectively). A special type of signal is a <strong>marker</strong> channel, which is a digital signal with activity that reflects sections and/or events inside the recording.</p>
+<h3 id="eye-tracking-dataset">
+  
+  
+    <a href="#eye-tracking-dataset" class="anchor-heading" aria-labelledby="eye-tracking-dataset"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Eye-tracking dataset
+  
+  
+</h3>
+    
+<p>An <strong>eye-tracking dataset</strong> contains pupil-size and gaze data, as well as named moments (<strong>eye-tracking events</strong>) and named segments (<strong>eye-tracking sections</strong>).</p>
+<h2 id="epochs">
+  
+  
+    <a href="#epochs" class="anchor-heading" aria-labelledby="epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Epochs
+  
+  
+</h2>
+    
+<p>Analyzing continuous recordings usually involves segmenting the data into time-sections of interest, aka <strong>epochs</strong>, and analyzing them independently. These epochs are generally defined relative to <strong>markers</strong> or <strong>events</strong> inside the raw data. A fundamental aim of the toolbox is to automate the epoch-based batch-analyses of signals by providing a flexible rule-based method for defining how data must be segmented. A collection of user-defined rules by which a signal is to be segmented is referred to as an <strong>Epoch Definition table</strong>. These user-created definitions are used by the Toolbox to automatically identify, isolate, name, and analyze special sections of recorded data. Additionally, PhysioData files can contain ‘File Epochs’, which are pre-generated custom epochs. This allows users to create and analyze custom epochs that cannot be generated using the epoch definition table</p>
+<h2 id="physioanalyzer-modules">
+  
+  
+    <a href="#physioanalyzer-modules" class="anchor-heading" aria-labelledby="physioanalyzer-modules"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PhysioAnalyzer Modules
+  
+  
+</h2>
+    
+<p>PhysioAnalyzer modules are components that define the analysis pipeline, user-interaction and visualization scheme for a specific type of data. For example, the ECG Signal Analyzer defines how a raw ECG signal is processed and what settings are used in this procedure, as well as how the data is visualized and which user-corrections are possible (e.g. rejecting faulty sections). These modules can be created, modified and applied to the desired PhysioData files using the <strong>PhysioAnalyzer Configurator</strong> panel in the Session Manager.</p>
+<h2 id="saving">
+  
+  
+    <a href="#saving" class="anchor-heading" aria-labelledby="saving"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Saving
+  
+  
+</h2>
+    
+<p>Saving commits the PhysioAnalyzer modules and their data, including the user corrections, to their respective PhysioData files so that they can be reloaded in the future. During a PhysioData Toolbox session, all PhysioAnalyzer data are kept in memory and persist only for the current session. It is not until the user saves the data that they’re stored to disk.</p><hr />
+<h1 id="interface">
+  
+  
+    <a href="#interface" class="anchor-heading" aria-labelledby="interface"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Interface
+  
+  
+</h1>
+    
+<p>In addition to the panels described below, the Session Manager features a directory bar showing the <strong>Current Directory</strong>, which is the folder from which the current PhysioData files have been imported. This directory is set using the <strong>Open</strong> button, and can be rescanned by clicking the <strong>Refresh</strong> button.</p>
+
+<p>Clicking the <strong>Menu</strong> button reveals options, including a shortcut to the File Converter application and to the PhysioData Toolbox website.</p>
+<h2 id="physiodata-files-panel">
+  
+  
+    <a href="#physiodata-files-panel" class="anchor-heading" aria-labelledby="physiodata-files-panel"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PhysioData Files Panel
+  
+  
+</h2>
+    
+<p>The <strong>PhysioData Files</strong> panel is used for managing the imported PhysioData files. The imported PhysioData files and their included PhysioAnalyzers are displayed in the file tree. Each top-level node displays the filename and the tags of that file’s PhysioAnalyzers. <strong><font color="#145E28">Green</font></strong> and <strong><font color="#C83223">Red</font></strong> tags indicate that a PhysioAnalyzers has or has not been marked as accepted by the user. A lightning bolt indicates that the file’s raw data is loaded into memory.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+         max-width: 480px; 
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\physiodata-files-panel-tree.png
+ " title="PhysioData Files Tree"> -->
+    <img class="pdtImg" id="file-tree-panel" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\physiodata-files-panel-tree.png
+ " alt="PhysioData Files Tree" style="
+             width: 100%; 
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#file-tree-panel">Figure 2</a>:
+        The PhysioData Files panel, showing the imported PhysioData files and their PhysioAnalyzers. File 001 is expanded, showing it has a Blood Pressure Analyzer tagged BP, an ECG analyzer tagged ECG, an HRV analyzer tagged HRV, and a Skin Conductance Analyzer tagged SC. Additionally, the ECG analyzer is expanded showing its settings and state.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("file-tree-panel");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The PhysioData Files panel, showing the imported PhysioData files and their PhysioAnalyzers. File 001 is expanded, showing it has a Blood Pressure Analyzer tagged BP, an ECG analyzer tagged ECG, an HRV analyzer tagged HRV, and a Skin Conductance Analyzer tagged SC. Additionally, the ECG analyzer is expanded showing its settings and state.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>Each file node can the expanded to reveal the PhysioAnalyzer modules it contains, which in turn can be expanded to reveal that module’s settings and state.</p>
+
+<p>Clicking the <strong>View Raw Data</strong> button opens the <strong>Raw Data Viewer</strong>, which visualizes all raw data inside the file currently selected in the tree. Similarly, the <strong>View Analyses</strong> button opens the <strong>PhysioAnalyzer Viewer</strong>, which displays the file’s PhysioAnalyzer modules and their data. The <strong>Remove Analyses</strong> button launches a selection window allowing the users to choose which PhysioAnalyzers to remove from the selected files.</p>
+
+<p>The current session can be saved using the <strong>Save</strong> button, which stores the PhysioAnalyzers, including all user corrections, inside their corresponding PhysioData files. It is important to note that the toolbox does not automatically save anything. As such, it is strongly recommended to save often if the changes made are to be kept.</p>
+<h2 id="physioanalyzer-configurator-panel">
+  
+  
+    <a href="#physioanalyzer-configurator-panel" class="anchor-heading" aria-labelledby="physioanalyzer-configurator-panel"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PhysioAnalyzer Configurator Panel
+  
+  
+</h2>
+    
+<p>The <strong>PhysioAnalyzer Configurator</strong> panel is used for defining or modifying the PhysioAnalyzers, and then propagating them to selected PhysioData files. The <strong>Current PhysioAnalyzer Configurations</strong> tree shows the currently defined PhysioAnalyzers and their settings. These PhysioAnalyzers are not linked to any files, and do not contain any state (user corrections). It is not until the user applies the PhysioAnalyzer to the PhysioData files using the <strong>Apply to PhysioData Files</strong> button that the PhysioAnalyzer settings are propagated to the selected files, and linked to data.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+         max-width: 480px; 
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\configurator-panel.png
+ " title="PhysioAnalyzer Module Configurator"> -->
+    <img class="pdtImg" id="config-panel" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\configurator-panel.png
+ " alt="PhysioAnalyzer Module Configurator" style="
+             width: 100%; 
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#config-panel">Figure 3</a>:
+        The PhysioAnalyzer Configurator panel in the Session Manager. This panel features a tree showing the defined PhysioAnalyzers and their settings, and buttons for creating and applying these PhysioAnalyzers to the files. The checkboxes can be used to select only a subset of the settings for applications.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("config-panel");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The PhysioAnalyzer Configurator panel in the Session Manager. This panel features a tree showing the defined PhysioAnalyzers and their settings, and buttons for creating and applying these PhysioAnalyzers to the files. The checkboxes can be used to select only a subset of the settings for applications.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>New PhysioAnalyzers can be created by clicking the <strong>Create New Analyzer</strong> button, which opens a list of available PhysioAnalyzers. Once the desired PhysioAnalyzer is selected, a window opens allowing the user to modify the settings. This window can be reopened at any time by selecting the PhysioAnalyzer and clicking <strong>View/Edit Analyzer</strong>. Analyzers can be removed by selecting them and clicking the <strong>Remove Analyzer</strong> button.</p>
+
+<p>PhysioAnalyzers can be imported from a PhysioData file by first selecting the desired file in the PhysioAnalyzer file tree, then clicking the <strong>Import From PhysioData File</strong> button. This copies the settings of all the PhysioAnalyzers inside the selected PhysioData file to the <strong>PhysioAnalyzer Configurator</strong>.</p>
+
+<p>The PhysioAnalyzer tree allows the user to check and uncheck individual PhysioAnalyzers and any of their settings. If a PhysioData file already contains a PhysioAnalyzer of the same type and with the same tag, only the checked setting(s) within that PhysioAnalyzer will be updated. This allows the user to change only certain settings across selected files, leaving other settings intact.</p>
+
+<p>Once the <strong>Apply to PhysioData Files</strong>  button is clicked, the user is presented with a summary of the settings that are to be pushed to the files, and some additional options. Checking the <strong>Mark overwritten PhysioAnalyzers as ‘Unaccepted’</strong> box will reset the accepted status of each PhysioAnalyzer that new settings were pushed to, while the <strong>Clear State</strong> option clears the state (all user corrections and scored items) from the affected PhysioAnalyzers.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\pushing-modules.png
+ " title="Pushing PhysioAnalyzer modules to files"> -->
+    <img class="pdtImg" id="push-prompt" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\pushing-modules.png
+ " alt="Pushing PhysioAnalyzer modules to files" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#push-prompt">Figure 4</a>:
+        The summary and options window that  pops up when applying PhysioAnalyzers to PhysioData files. Note that in this case, only the following settings will be pushed to the files: channel number, epochs definitions, high-pass filter settings, and minimum R-peak value. All other settings and all PhysioAnalyzers with different tags will be left unaffected.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("push-prompt");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The summary and options window that  pops up when applying PhysioAnalyzers to PhysioData files. Note that in this case, only the following settings will be pushed to the files: channel number, epochs definitions, high-pass filter settings, and minimum R-peak value. All other settings and all PhysioAnalyzers with different tags will be left unaffected.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>Note that the <strong>Remove Analyzer</strong> and <strong>View/Edit Analyzer</strong> buttons act on the selected  PhysioAnalyzers (highlighted in blue), while the <strong>Apply to PhysioData Files</strong>  button acts on the checked PhysioAnalyzers and their checked settings, regardless of selection.</p><hr />
+<h1 id="data-export-panel">
+  
+  
+    <a href="#data-export-panel" class="anchor-heading" aria-labelledby="data-export-panel"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Data Export Panel
+  
+  
+</h1>
+    
+<p>The <strong>Data Export</strong> panel contains options for batch analyzing and exporting the raw and processed data for further analysis.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+         max-width: 480px; 
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\export-panel.png
+ " title="The Data Export Panel"> -->
+    <img class="pdtImg" id="export-panel" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\export-panel.png
+ " alt="The Data Export Panel" style="
+             width: 100%; 
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#export-panel">Figure 5</a>:
+        The Data Export panel in the Session Manager.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("export-panel");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Data Export panel in the Session Manager.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="generating-epoch-summaries">
+  
+  
+    <a href="#generating-epoch-summaries" class="anchor-heading" aria-labelledby="generating-epoch-summaries"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Generating Epoch Summaries
+  
+  
+</h2>
+    
+<p>The PhysioData Toolbox can perform batch epoch-based descriptive statistical analysis. When the <strong>Epoch Summaries</strong> button is clicked, all epochs inside all PhysioAnalyzers inside the selected PhysioData files are analyzed and the results are saved as one Excel file, one MATLAB file, or a set of files. The results are stored as tables with each epoch on a separate row, and all the variables as columns.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\excel-output.png
+ " title="Excel output"> -->
+    <img class="pdtImg" id="excel-output" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\session-manager\excel-output.png
+ " alt="Excel output" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#excel-output">Figure 6</a>:
+        The epoch analysis results saved as an Excel file. The first column shows the unique Epoch identifier, and its cells’ background colors are grouped by file.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("excel-output");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The epoch analysis results saved as an Excel file. The first column shows the unique Epoch identifier, and its cells’ background colors are grouped by file.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>See each module’s page for information about which variables (metrics) they calculate.</p>
+<h2 id="generating-resampled-epoch-signals">
+  
+  
+    <a href="#generating-resampled-epoch-signals" class="anchor-heading" aria-labelledby="generating-resampled-epoch-signals"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Generating Resampled Epoch Signals
+  
+  
+</h2>
+    
+<p>Instead of generating summaries of data per epoch, it is also possible to export resampled data of each epoch. When the <strong>Resampled Epoch Signals</strong> button is clicked, the user is asked which module (PhysioAnalyzer) to resample and the desired sampling rate (ranging from 50 Hz to 1 Hz) can be selected. The signal sections that fall withing the epochs are then resampled and saved as Excel file, MATLAB file, or several tsv files.</p>
+
+<p>See each module’s page for information about which signals they resample.</p>
+<h2 id="generating-a-data-archive">
+  
+  
+    <a href="#generating-a-data-archive" class="anchor-heading" aria-labelledby="generating-a-data-archive"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Generating a Data Archive
+  
+  
+</h2>
+    
+<p>Next to epoch summaries and resampled epoch signals, the toolbox can also export all PhysioAnalyzer data as MATLAB files (by using the <strong>Data Archive</strong> button). This is useful for when the user wants to have access to the data generated by the PhysioAnalyzers, before it is condensed into epoch summaries, or resampled.</p>
+
+<p>It is advisable to create a data archive of MATLAB files once everything has been satisfactorily corrected and reviewed. Since the PhysioData files do not actually contain the signals generated by the PhysioAnalyzers, it will be impossible to regenerate these signals and hence recreate the analysis without the version of the PhysioData Toolbox originally used.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

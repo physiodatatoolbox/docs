@@ -1,0 +1,1693 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(3)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > ul > li:nth-child(3) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > ul > li:nth-child(3) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ECG Signal Analyzer | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="ECG Signal Analyzer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ECG Signal Analyzer" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"ECG Signal Analyzer","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide.html">User Guide</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html">PhysioAnalyzers</a></li>
+    <li class="breadcrumb-nav-list-item"><span>ECG Signal Analyzer</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="pdt-abstract-title, no_toc" id="ecg-signal-analyzer">
+  
+  
+    <a href="#ecg-signal-analyzer" class="anchor-heading" aria-labelledby="ecg-signal-analyzer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> ECG Signal Analyzer
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">The ECG Signal Analyzer performs epoch-based time-domain analysis of an ECG signal, and allows users to perform basic R-peak and IBI correction.</p><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#user-corrections" id="markdown-toc-user-corrections">User Corrections</a>    <ol>
+      <li><a href="#correction-cases-and-workflow" id="markdown-toc-correction-cases-and-workflow">Correction Cases and Workflow</a></li>
+      <li><a href="#view-r-waves" id="markdown-toc-view-r-waves">View R-Waves</a></li>
+      <li><a href="#adding-r-peaks" id="markdown-toc-adding-r-peaks">Adding R-Peaks</a>        <ol>
+          <li><a href="#when-to-add-r-peaks" id="markdown-toc-when-to-add-r-peaks">When to Add R-Peaks</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#processing-and-analysis-pipeline" id="markdown-toc-processing-and-analysis-pipeline">Processing and Analysis Pipeline</a></li>
+  <li><a href="#settings" id="markdown-toc-settings">Settings</a></li>
+  <li><a href="#metrics" id="markdown-toc-metrics">Metrics</a></li>
+  <li><a href="#resampled-signals" id="markdown-toc-resampled-signals">Resampled Signals</a></li>
+</ol>
+
+</details><hr />
+<h1 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h1>
+    
+<p>The <strong>ECG Signal Analyzer</strong> module and its GUI can be used to process ECG signals into user-reviewed and curated R-peaks and Inter-Beat Interval (IBI) time-series. On analysis, these data are then used to extract epoch-based time-domain ECG metrics.</p>
+
+<p>The R-peaks and IBIs processed by the ECG signal analyzer module can be referenced by other modules for additional analysis:</p>
+
+<ul>
+  <li>
+    <p><strong>HRV module:</strong><br />
+ The HRV module uses the IBIs to calculate HRV metrics.</p>
+  </li>
+  <li>
+    <p><strong>IBI module:</strong><br />
+ The IBI module uses the R-peaks to calculate event-based heartbeat-specific IBI acceleration and deceleration.</p>
+  </li>
+  <li>
+    <p><strong>ICG ensemble module:</strong><br />
+ The ICG ensemble module uses the R-peaks to time-lock ECG and ICG waveforms to each heartbeat, and to calculate cardiac intervals.</p>
+  </li>
+</ul>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- iF this is the first run, add a modal div (for popups)  
+        https://www.w3schools.com/howto/howto_css_modal_images.asp
+-->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" data-proofer-ignore="" />
+    <div id="caption"></div>
+</div>
+
+<script>
+
+    // Close the modal window when users click it's background:
+    var modal = document.getElementById("myModal");
+    modal.style.cursor ="pointer";
+    modal.onclick = function () {
+        modal.style.display = "none";
+        
+        // Reenable the scrollbar on the overlying body:
+        document.body.style.overflow = '';
+    }
+
+    
+
+</script>
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-gui-1.png
+ " title="ECG Signal Analyzer"> -->
+    <img class="pdtImg" id="gui-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-gui-1.png
+ " alt="ECG Signal Analyzer" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#gui-1">Figure 1</a>:
+        The ECG Signal Analyzer interface, showing the raw and filtered ECG signals, the detected R-peaks, the IBIs and the instantaneous heart rate.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("gui-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The ECG Signal Analyzer interface, showing the raw and filtered ECG signals, the detected R-peaks, the IBIs and the instantaneous heart rate.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>The ECG signal analyzer module GUI contains the following plots:</p>
+
+<ul>
+  <li>
+    <p><strong>ECG (top):</strong><br />
+ Shows the raw and the filtered ECG signals.</p>
+  </li>
+  <li>
+    <p><strong>IBI (middle):</strong><br />
+ Shows the IBI events, and draws a dashed line between them for easier visual detection of outliers. Note, however, that the IBIs are purely discrete events, and not a continuous signal.</p>
+  </li>
+  <li>
+    <p><strong>IHR (bottom):</strong>
+ Shows the continuous Instantaneous Heart Rate, as calculated from the IBIs.</p>
+  </li>
+</ul><hr />
+<h1 id="user-corrections">
+  
+  
+    <a href="#user-corrections" class="anchor-heading" aria-labelledby="user-corrections"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Corrections
+  
+  
+</h1>
+    
+<p>The ECG module allows users to specify automatic feature rejection parameters in the settings, which is the easiest way to automatically reject erroneously classified R-peaks or IBIs. Additionally, users can also correct the generated data by marking two types of rejection zones: R-peak rejection zones; and, IBI rejection zones.</p>
+
+<p>Data correction options of the ECG Signal Analyzer:</p>
+
+<ul>
+  <li>
+    <p><strong>Rejecting faulty R-peaks:</strong><br />
+ To mark or unmark a section of the filtered ECG signal as an R-Peak exclusion zone,  left-click in the ECG graph at the start-time of the desired section, drag the mouse, and release at the end-time of the desired section. Choose the desired action from the menu.</p>
+  </li>
+  <li>
+    <p><strong>Rejecting faulty IBIs:</strong><br />
+ To mark or unmark a section of the IBI time series as an IBI exclusion zone, left click in the IBI graph at the start-time of the desired section, drag the mouse, and release at the end-time of the desired section. Choose the desired action from the menu.</p>
+  </li>
+</ul>
+
+<p>Unlike the Generic Signal Analyzer, the raw data cannot be interpolated. As of version 0.6.2, R-peaks can also be <a href="#adding-r-peaks">manually added</a>.</p>
+<h2 id="correction-cases-and-workflow">
+  
+  
+    <a href="#correction-cases-and-workflow" class="anchor-heading" aria-labelledby="correction-cases-and-workflow"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Correction Cases and Workflow
+  
+  
+</h2>
+    
+<p>Firstly, if the ECG Signal Analyzer consistently fails to properly detect R-peaks, it is best to change the automatic rejection criteria in the Settings window. This can be done per file via the PhysioAnalyzer Viewer; or, if the issue persists across files, via the PhysioAnalyzer Configurator, and then applied to selected files.</p>
+
+<p>In the case that either noise or a secondary ECG wave is erroneously detected as an R-Peak, two distinctly shorter consecutive IBIs will be visible in the plot. To correct this, insert an R-peak exclusion zone that covers the wave producing the erroneous R-peak. This will cause the faulty R-peak to be rejected, and will merge the two short IBIs into a single valid IBI.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-correction-r-1.png
+ " title="R-Peak correction 1"> -->
+    <img class="pdtImg" id="correction-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-correction-r-1.png
+ " alt="R-Peak correction 1" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#correction-1">Figure 2</a>:
+        Excluding an erroneous R-peak, located at approximately 341 seconds: first select the section in the ECG axes using the left mouse button, then select the disregard option from the popup menu.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("correction-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Excluding an erroneous R-peak, located at approximately 341 seconds: first select the section in the ECG axes using the left mouse button, then select the disregard option from the popup menu.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-correction-r-2.png
+ " title="R-Peak correction 2"> -->
+    <img class="pdtImg" id="correction-2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-correction-r-2.png
+ " alt="R-Peak correction 2" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#correction-2">Figure 3</a>:
+        An R-peak exclusion zone has now been created, and the erroneous R-peak removed. Notice how the IBIs and IHR lines are updated.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("correction-2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "An R-peak exclusion zone has now been created, and the erroneous R-peak removed. Notice how the IBIs and IHR lines are updated.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>Conversely, a missed R-peak results in a single distinctly long IBI. This can be corrected by inserting an IBI exclusion zone over the long IBI. Missed R-peaks can be caused by temporary loss of transmission when using wireless systems. In those cases, the loss of transmission produces a flat-line in the raw signal, which can sometimes be seen at the spot where the missing R-peak is expected to have been.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-correction-ibi-1.png
+ " title="IBI correction 1"> -->
+    <img class="pdtImg" id="ibi-correction-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-correction-ibi-1.png
+ " alt="IBI correction 1" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ibi-correction-1">Figure 4</a>:
+        Excluding an erroneous IBI, located at approximately 335.7 seconds: first select the section in the IBI axes by clicking the left mouse button and dragging the cursor; then, select the 'disregard' option from the menu.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ibi-correction-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Excluding an erroneous IBI, located at approximately 335.7 seconds: first select the section in the IBI axes by clicking the left mouse button and dragging the cursor; then, select the 'disregard' option from the menu.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-correction-ibi-2.png
+ " title="IBI correction 2"> -->
+    <img class="pdtImg" id="ibi-correction-2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-correction-ibi-2.png
+ " alt="IBI correction 2" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ibi-correction-2">Figure 5</a>:
+        An IBI exclusion zone has now been created, and the erroneous IBI removed. Notice how the IHR line is also updated. IBIs that are rejected based on the criteria defined in the Feature Detection Settings are marked using a diamond, whereas IBIs that are rejected based on the exclusion zones are marked using squares, as in the figure above.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ibi-correction-2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "An IBI exclusion zone has now been created, and the erroneous IBI removed. Notice how the IHR line is also updated. IBIs that are rejected based on the criteria defined in the Feature Detection Settings are marked using a diamond, whereas IBIs that are rejected based on the exclusion zones are marked using squares, as in the figure above.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!-- TODO: Update the print screens above. -->
+<h2 id="view-r-waves">
+  
+  
+    <a href="#view-r-waves" class="anchor-heading" aria-labelledby="view-r-waves"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> View R-Waves
+  
+  
+</h2>
+    
+<p>Clicking on the <strong>View R-Waves</strong> button reveals the “R-waves” side-panel, which displays superimposed signal-sections (aka waves) around all R-peaks–both automatically-detected and user-defined ones, with the latter plotting as dotted lines. Only R-peaks that are located inside one or more epochs are considered. The superimposed waves are plotted relative to their R-peak locations.</p>
+
+<p>This feature can be used to quickly detect whether all accepted R-peaks (inside epochs) are valid. Clicking on a wave in the side-panel will cause the main graphs to zoom in on that wave.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-r-waves-1.png
+ " title="IBI correction 3"> -->
+    <img class="pdtImg" id="ibi-correction-3" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-r-waves-1.png
+ " alt="IBI correction 3" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ibi-correction-3">Figure 6</a>:
+        The R-waves side-panel. Note that the deviating QRS wave can be quickly identified using the side-panel, without having to asses each wave individually. When the deviating line is clicked, the Toolbox zooms into that section on the main axes.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ibi-correction-3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The R-waves side-panel. Note that the deviating QRS wave can be quickly identified using the side-panel, without having to asses each wave individually. When the deviating line is clicked, the Toolbox zooms into that section on the main axes.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="adding-r-peaks">
+  
+  
+    <a href="#adding-r-peaks" class="anchor-heading" aria-labelledby="adding-r-peaks"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Adding R-Peaks
+  
+  
+</h2>
+    
+<p>Users can manually add R-peaks at any time-point inside the ECG signal by right clicking inside the ECG or IBI axes, and selecting the desired option from the <strong>Add/remove user-defined R-peaks</strong> submenu:</p>
+
+<ul>
+  <li>
+    <p><strong>Add R-peak here:</strong><br />
+ This option adds an R-peak at the time-point where the user right-clicked inside the axes.</p>
+  </li>
+  <li>
+    <p><strong>Add R-peak at nearest peak:</strong><br />
+ This adds an R-peak at the peak that is nearest to the time-point where the user clicked. The peak detection is performed on the filtered ECG signal (plotted in blue).</p>
+  </li>
+  <li>
+    <p><strong>Add R-peaks that split the gap equally.:</strong><br />
+ This estimates how many R-peaks are missing using the adjacent IBIs, then splits the gap accordingly so that each new IBI has the same value. This only works when 1, 2 or 3 IBIs are likely missing.</p>
+  </li>
+</ul>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-add-r-1.png
+ " title="User-defined R-Peak 1"> -->
+    <img class="pdtImg" id="add-r-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-add-r-1.png
+ " alt="User-defined R-Peak 1" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#add-r-1">Figure 7</a>:
+        Example of an R-peak that was not detected, but that has a discernable location.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("add-r-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Example of an R-peak that was not detected, but that has a discernable location.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-add-r-2.png
+ " title="User-defined R-Peak 2"> -->
+    <img class="pdtImg" id="add-r-2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-add-r-2.png
+ " alt="User-defined R-Peak 2" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#add-r-2">Figure 8</a>:
+        Right-clicking in the ECG axes shows the context menu, and the sub-options for manually adding and removing R-peaks.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("add-r-2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Right-clicking in the ECG axes shows the context menu, and the sub-options for manually adding and removing R-peaks.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-add-r-3.png
+ " title="User-defined R-Peak 3"> -->
+    <img class="pdtImg" id="add-r-3" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/ecg-module-add-r-3.png
+ " alt="User-defined R-Peak 3" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#add-r-3">Figure 9</a>:
+        A manually added R-peak. In this case, the option 'Add at nearest peak' was chosen, which placed the R-peak at the top of the peak. Note that the large jump in the IBI times-series has now disappeared. 
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("add-r-3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "A manually added R-peak. In this case, the option 'Add at nearest peak' was chosen, which placed the R-peak at the top of the peak. Note that the large jump in the IBI times-series has now disappeared. ";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>The user-defined R-peaks are not influenced by the R-rejection zones, and have precedence over the automatically detected R-peaks. As such, automatically detected R-peaks that are too close to the user-defined R-peaks are automatically rejected. This distance is determined by the R-separation parameter in the module’s settings, but it is regardlessly always at least 100 ms. Similarly, new user-defined R-peaks have precedence over older ones, so when a new one is added, old ones that are too close are deleted.</p>
+<h3 id="when-to-add-r-peaks">
+  
+  
+    <a href="#when-to-add-r-peaks" class="anchor-heading" aria-labelledby="when-to-add-r-peaks"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> When to Add R-Peaks
+  
+  
+</h3>
+    
+<p>It is generally not necessary to add R-peaks if only a few are missing (compared to the length of the epoch). Furthermore, R-peaks should only be added when their locations can be visually determined, but when the detection parameters can not be tweaked further to enable the Toolbox to find them automatically. The exception to this rule is if users are specifically interested in the R-peak count, in which case adding missing R-peaks will enable the correction of that metric (even if the exact location cannot be determined).</p><hr />
+<h1 id="processing-and-analysis-pipeline">
+  
+  
+    <a href="#processing-and-analysis-pipeline" class="anchor-heading" aria-labelledby="processing-and-analysis-pipeline"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Processing and Analysis Pipeline
+  
+  
+</h1>
+    
+<p>In the ECG module, the desired channel is extracted from the current file’s raw data using the user-specified channel. Then, the user-specified gain, and low-pass and high-pass filtering options are applied to produce the filtered ECG signal, on which the R-peaks are detected. From the R-Peaks that fit the relevant criteria and user-approval, all IBIs are calculated. IBIs that fall withing a user rejection zone, or violate a criteria, are then filtered out. The remaining IBIs are used in the analysis, and to generate the Instantaneous Heart Rate (IHR).</p>
+
+<p>IBIs are defined as having the value of the interval between the current R-peak and the previous; i.e., they are timestamped at the R-peak that ends that IBI. As such, IBIs that start outside of an epoch but end inside it are still considered part of that epoch.</p><hr />
+<h1 id="settings">
+  
+  
+    <a href="#settings" class="anchor-heading" aria-labelledby="settings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Settings
+  
+  
+</h1>
+    
+<p>The ECG signal analyzer assumes that the unit of the ECG signal is <strong>mV</strong>. If this is not the case, fill in an appropriate gain value (multiplier) to transform the raw signal into mV; e.g., if the signal is in V, the gain should be 1000. Additionally, the gain can be used to flip the ECG signal if necessary. Since the toolbox cannot detect downwards pointing R-waves, ‘upside-down’ ECG signals must be flipped by applying a negative gain.</p>
+
+<p>The auto-generated list below shows the settings available in the ECG Signal Analyzer module:</p>
+
+<ul>
+  <li>
+    <p><strong>General Settings:</strong><br />
+ Name, source and epoch settings for this PhysioAnalyzer.</p>
+
+    <ul>
+      <li>
+        <p><strong>Analyzer prefix (tag):</strong><br />
+ The tag (name) of this PhysioAnalyzer. The tag must be unique and start with a letter, and may only contain alphanumeric characters.</p>
+      </li>
+      <li>
+        <p><strong>Channel-number of signal:</strong><br />
+ The channel number (index) of the signal to be analyzed.</p>
+      </li>
+      <li>
+        <p><strong>Generate epochs from:</strong><br />
+ Specifies how epochs are generated.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Preprocessing Settings:</strong><br />
+ The gain is the value with which the raw ECG signal needs to be multiplied to convert it into mV.</p>
+
+    <ul>
+      <li>
+        <p><strong>Gain (signal multiplier) [x]:</strong><br />
+ The gain is the value with which the raw signal is multiplied before being further processed and analyzed.</p>
+      </li>
+      <li>
+        <p><strong>Highpass filter [Hz]:</strong><br />
+ The high-pass filter and its cutoff frequency.</p>
+      </li>
+      <li>
+        <p><strong>Lowpass filter [Hz]:</strong><br />
+ The low-pass filter and its cutoff frequency.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>ECG Feature Detection Settings</strong><br />
+ Parameters for automatically rejecting R-Peaks and IBIs. Tick the checkboxes to enable the criteria.</p>
+
+    <ul>
+      <li>
+        <p><strong>Minimum R-peak value [mV]:</strong><br />
+ Peaks in the ECG signal below this level are not classified as R-Peaks.</p>
+      </li>
+      <li>
+        <p><strong>Maximum R-peak value [mV]:</strong><br />
+ Peaks in the ECG signal above this level are not classified as R-Peaks.</p>
+      </li>
+      <li>
+        <p><strong>Minimum distance between R-peaks [s]:</strong><br />
+ Only the highest peaks in the ECG signal within this distance of other peaks are classified as R-Peaks.</p>
+      </li>
+      <li>
+        <p><strong>Minimum IBI value [s]:</strong><br />
+ IBI’s with a value lower than this parameter are automatically rejected.</p>
+      </li>
+      <li>
+        <p><strong>Maximum IBI value [s]:</strong><br />
+ IBI’s with a value higher than this parameter are automatically rejected.</p>
+      </li>
+    </ul>
+  </li>
+</ul><hr />
+<h1 id="metrics">
+  
+  
+    <a href="#metrics" class="anchor-heading" aria-labelledby="metrics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Metrics
+  
+  
+</h1>
+    
+<p>The auto-generated table belows lists all the metrics produced by the ECG Signal Analyzer module.</p>
+
+<!---
+    This include generates a table with metrics for a given PhysioAnalyzer module.
+-->
+
+<p class="fs-3 mb-1"><a id="metrics" href="#metrics">Table 1</a>:
+The metrics calculated by the ECG Signal Analyzer module.</p>
+<div class="table-wrapper"><table>
+  
+    
+    <tr>
+      
+        <th>Variable:</th>
+      
+        <th>Unit:</th>
+      
+        <th>Description:</th>
+      
+    </tr>
+    
+
+    <tr class="row1">
+<td class="col1">
+      HR_mean
+    </td><td class="col2">
+      BPM
+    </td><td class="col3">
+      Mean of the continuous Heart Rate, as interpolated from the accepted IBI data points.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      R_peakCount
+    </td><td class="col2">
+      count
+    </td><td class="col3">
+      Count of accepted R-peaks inside current epoch, including user-defined added R-peaks.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      R_peakUserDefinedCount
+    </td><td class="col2">
+      count
+    </td><td class="col3">
+      Count of user-defined R-peaks inside current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      IBI_mean
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      Arithmetic mean of the accepted discrete IBIs. IBI values are defined as: IBI(n) = Rt(n)-Rt(n-1), and are timestamped using: IBIt(n) = Rt(n).
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      IBI_weighted_mean
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      Self-weighted mean of the accepted discrete IBIs; i.e., sum(IBIs.^2)/sum(IBIs).
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      IBI_min
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      Min value of the accepted discrete IBI data points.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      IBI_max
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      Max value of the accepted discrete IBI data points.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      IBI_std
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      Standard Deviation of the accepted discrete IBI data points (SD normalized by (N-1), where N is the sample size).
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      IBI_count
+    </td><td class="col2">
+      count
+    </td><td class="col3">
+      Count of accepted IBI data points inside current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      IBI_coverage
+    </td><td class="col2">
+      %
+    </td><td class="col3">
+      The percentage-wise IBI coverage of the epoch; i.e., 100*(sum of the IBIs)/(Epoch Duration).
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      HRV_rmssd
+    </td><td class="col2">
+      ms
+    </td><td class="col3">
+      The Root Mean Squared of the Differences between Successive IBIs (nonadjacent IBIs disregarded).
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      HRV_ssdCount
+    </td><td class="col2">
+      count
+    </td><td class="col3">
+      Count of succesive IBIs inside current epoch. Nonadjacent IBIs are not considered succesive.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      HRV_pNN20
+    </td><td class="col2">
+      %
+    </td><td class="col3">
+      Percentage of absolute differences between successive IBIs that are greater than 20 ms.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      HRV_pNN50
+    </td><td class="col2">
+      %
+    </td><td class="col3">
+      Percentage of absolute differences between successive IBIs that are greater than 50 ms.
+    </td></tr>
+
+  
+</table></div>
+
+<p>Note that the ECG module does not detrend the IBIs, as opposed to the HRV module, which does detrend the IBIs and calculates similar metrics on the detrended IBI instead.</p><hr />
+<h1 id="resampled-signals">
+  
+  
+    <a href="#resampled-signals" class="anchor-heading" aria-labelledby="resampled-signals"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Resampled Signals
+  
+  
+</h1>
+    
+<p>When exporting the resampled epoch signals, the ECG Signal Analyzer resamples and extracts the filtered IHR signal.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

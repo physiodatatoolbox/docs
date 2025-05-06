@@ -70,6 +70,22 @@ Separate chapters by horizontal line.
 
 ---
 
+# Adding Videos
+
+The video include is quite simple and does not feature a lightbox.
+
+{% include video.html
+    vid="test.webm"
+    id="ans-1"
+    caption="Test video 1. This is a long test caption with many line breaks. This is a long test caption with many line breaks. This is a long test caption with many line breaks.
+    
+     This is a long test caption with many line breaks." %}
+
+Test text here.
+
+---
+
+
 # Footnotes and References #
 
 Just use inline references, with a foot note link. Foot notes are then inserted at the end of the page, in the references chapter.

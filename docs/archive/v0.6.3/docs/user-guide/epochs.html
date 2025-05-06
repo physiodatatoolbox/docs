@@ -1,0 +1,1901 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(5)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Epochs | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Epochs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/epochs.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/epochs.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Epochs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"Epochs","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/epochs.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide.html">User Guide</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Epochs</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="epochs">
+  
+  
+    <a href="#epochs" class="anchor-heading" aria-labelledby="epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Epochs
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">Epoch are relevant time segments within a recording. The Toolbox can automatically detect epochs based on predefined rule-sets, and perform descriptive analyses on them.</p>
+
+<!---
+    This displays a multi-line capable message with an alert icon.
+-->
+
+<div class="alert-wrapper" style="
+        display: grid;
+        grid-template-columns: 40px auto;
+        grid-template-rows: auto;
+        gap: 0px 0px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        grid-template-areas: 'alert-icon alert-text';
+        background-color: #fdf4f4;
+        border-radius: 6px;
+        border: 1px solid #dfdedd">
+
+    <div class="fs-5" style="
+            grid-area: alert-icon;
+            background-color:transparent;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            ">
+        ❕
+    </div>
+
+    <div class="lh-tight" style="
+            grid-area: alert-text;
+            background-color:transparent;
+            display: flex; 
+            align-items: center;
+            margin-right: 12px;">
+        
+        <p>The Epoch definition system was renewed in v0.6. If you are already familiar with how epochs worked in v0.5, please read <a href="#new-epoch-features-in-v06"> this section</a> for a summary of the new features.</p>
+
+
+    </div>
+    
+  </div><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#referenceable-events" id="markdown-toc-referenceable-events">Referenceable Events</a>    <ol>
+      <li><a href="#markers" id="markdown-toc-markers">Markers</a></li>
+    </ol>
+  </li>
+  <li><a href="#defining-epochs" id="markdown-toc-defining-epochs">Defining Epochs</a>    <ol>
+      <li><a href="#epoch-definition-table" id="markdown-toc-epoch-definition-table">Epoch Definition Table</a></li>
+    </ol>
+  </li>
+  <li><a href="#advanced-epoch-definition-features" id="markdown-toc-advanced-epoch-definition-features">Advanced Epoch Definition Features</a>    <ol>
+      <li><a href="#specifying-the-values" id="markdown-toc-specifying-the-values">Specifying the Values</a></li>
+      <li><a href="#multiple-occurrence" id="markdown-toc-multiple-occurrence">Multiple Occurrence</a></li>
+      <li><a href="#multiple-delays" id="markdown-toc-multiple-delays">Multiple Delays</a></li>
+      <li><a href="#pairing-multiple-start-and-end-times" id="markdown-toc-pairing-multiple-start-and-end-times">Pairing Multiple Start and End Times</a></li>
+      <li><a href="#epoch-data" id="markdown-toc-epoch-data">Epoch Data</a></li>
+    </ol>
+  </li>
+  <li><a href="#epoch-builder" id="markdown-toc-epoch-builder">Epoch Builder</a>    <ol>
+      <li><a href="#outer-window" id="markdown-toc-outer-window">Outer Window</a></li>
+      <li><a href="#tab-1-define-epochs" id="markdown-toc-tab-1-define-epochs">Tab 1: Define Epochs</a>        <ol>
+          <li><a href="#epoch-definition-menus" id="markdown-toc-epoch-definition-menus">Epoch Definition Menus</a></li>
+          <li><a href="#slicing-epochs" id="markdown-toc-slicing-epochs">Slicing Epochs</a></li>
+        </ol>
+      </li>
+      <li><a href="#tab-2-markers-and-events-inside-test-file" id="markdown-toc-tab-2-markers-and-events-inside-test-file">Tab 2: Markers and Events Inside Test File</a></li>
+      <li><a href="#tab-3-preview-epochs" id="markdown-toc-tab-3-preview-epochs">Tab 3: Preview Epochs</a></li>
+    </ol>
+  </li>
+  <li><a href="#new-epoch-features-in-v06" id="markdown-toc-new-epoch-features-in-v06">New Epoch Features in v0.6+</a></li>
+  <li><a href="#events" id="markdown-toc-events">Events</a></li>
+</ol>
+
+</details><hr />
+<h1 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h1>
+    
+<p>One key feature of the Toolbox is its ability to automatically segment data into relevant sections, aka <strong>epochs</strong>, for analysis. This automatic segmentation occurs by applying a user-defined rule-set to the data inside a PhysioData file, and resolving that into epochs. The rule-set, aka <strong>epoch definition</strong>, defines how each epoch must be constructed by referencing events, markers, etc. inside the file. These data are referred to as <strong>Referenceable Events</strong>.</p>
+
+<p>In the Toolbox, epochs are tied to the PhysioAnalyzer modules. Each PhysioAnalyzer has a setting labeled <strong>Generate epoch from</strong> and a drop down menu allowing the user to select <strong>Epoch Definition Table</strong> or <strong>PhysioAnalyzer with tag</strong>. If the former is selected, the module will generate its own epochs based on the epoch definition table provided; or, if the latter is selected, the module copies epochs from another module, selected via its tag.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- iF this is the first run, add a modal div (for popups)  
+        https://www.w3schools.com/howto/howto_css_modal_images.asp
+-->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" data-proofer-ignore="" />
+    <div id="caption"></div>
+</div>
+
+<script>
+
+    // Close the modal window when users click it's background:
+    var modal = document.getElementById("myModal");
+    modal.style.cursor ="pointer";
+    modal.onclick = function () {
+        modal.style.display = "none";
+        
+        // Reenable the scrollbar on the overlying body:
+        document.body.style.overflow = '';
+    }
+
+    
+
+</script>
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-settings.png
+ " title="Epoch Settings"> -->
+    <img class="pdtImg" id="epoch-settings" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-settings.png
+ " alt="Epoch Settings" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#epoch-settings">Figure 1</a>:
+        The settings panel of the Generic Signal Analyzer, shown twice with different epoch settings. Note the setting labeled 'Generate epochs from', and the dropdown menu beside it. When the user selects 'Epoch Definition Table', the default option, then a button appears below the menu (left). Clicking the button opens the Epoch Builder GUI, where users can import, edit and test epoch definition tables. When 'PhysioAnalyzer with tag:' is selected (right), a text field appears allowing users to enter the tag of the PhysioAnalyzer from which the epochs should be copied (e.g. 'ECG').
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("epoch-settings");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The settings panel of the Generic Signal Analyzer, shown twice with different epoch settings. Note the setting labeled 'Generate epochs from', and the dropdown menu beside it. When the user selects 'Epoch Definition Table', the default option, then a button appears below the menu (left). Clicking the button opens the Epoch Builder GUI, where users can import, edit and test epoch definition tables. When 'PhysioAnalyzer with tag:' is selected (right), a text field appears allowing users to enter the tag of the PhysioAnalyzer from which the epochs should be copied (e.g. 'ECG').";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>Next to analyzing epochs generated using an epoch definition, the Toolbox will also analyze pre-made epochs saved in the PhysioData file. <!--- TODO: add link to file spec. --></p><hr />
+<h1 id="referenceable-events">
+  
+  
+    <a href="#referenceable-events" class="anchor-heading" aria-labelledby="referenceable-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referenceable Events
+  
+  
+</h1>
+    
+<p>Referenceable events are moments inside a recording that are logged for the purpose of marking relevant events, and that the Toolbox can reference for the purpose of generating epochs. The Toolbox automatically creates these referenceable events from labels, events, markers, sections, etc.</p>
+
+<p>Each referenceable event has the following properties</p>
+
+<ul id="defs">
+  <li>
+    <p><strong>Value:</strong><br />
+ The value of the referenceable event refers to its contents: e.g., a marker has a numeric value; an event has a word or sentence, etc.</p>
+  </li>
+  <li>
+    <p><strong>Time:</strong><br />
+ The time of the referenceable event is its timestamp; e.g. the time associated with an event, or the time a marker was received. For each referenceable event, its time property reflects the timestamp of its onset.</p>
+  </li>
+  <li>
+    <p><strong>Duration:</strong>
+ The duration of a referenceable event refers to the time interval between its onset and its offset. In the case of markers, it would refer to the interval between when the marker assumes its value and releases it. When a referenceable event is discreet, i.e. it consists of a single time point, its duration is zero.</p>
+  </li>
+  <li>
+    <p><strong>Occurrence:</strong><br />
+  The occurrence of a referenceable event refers to the ordinal number (1<sup>st</sup>, 2<sup>nd</sup>, etc.) of that event’s value within the set.</p>
+  </li>
+</ul>
+
+<p>Referenceable events are always ordered chronologically.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/ref-evt.svg
+ " title="Referenceable Events"> -->
+    <img class="pdtImg" id="ref-evt-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/ref-evt.svg
+ " alt="Referenceable Events" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ref-evt-1">Figure 2</a>:
+        An example set of 5 referenceable events, of which one—the second—is not discrete. Discrete events are visualized in the Toolbox as a triangles pointing downwards towards their timestamps with their values hovering above. In the case of indiscrete events, the triangles are replaced by horizontal bars, which start at the event's timestamp and span its duration.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ref-evt-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "An example set of 5 referenceable events, of which one—the second—is not discrete. Discrete events are visualized in the Toolbox as a triangles pointing downwards towards their timestamps with their values hovering above. In the case of indiscrete events, the triangles are replaced by horizontal bars, which start at the event's timestamp and span its duration.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>As an example, take the 15 second recording shown in <a href="#ref-evt-1">Figure 2</a>, where 5 events were logged:</p>
+
+<ul>
+  <li>
+    <p><strong>Event 1:</strong><br />
+ The first event has the value ‘Label A’, a time of 2 s, a duration of zero, and an occurrence of 1 (it is the first label with value ‘Label A’). Note that this event is discrete, and therefore has a duration of zero.</p>
+  </li>
+  <li>
+    <p><strong>Event 2:</strong><br />
+ The second event has the value ‘Label B’, a time of 4 s, a duration of 5 s, and an occurrence of 1 (it is the first label with value ‘Label B’). Note that this event is not discrete, and therefor as a positive duration, and is plotted as a section.</p>
+  </li>
+  <li>
+    <p><strong>Event 3:</strong><br />
+ The third event has the value ‘Label C’, a time of 10 s, and an occurrence of 1.</p>
+  </li>
+  <li>
+    <p><strong>Event 4:</strong><br />
+ The forth event has the value ‘Label D’*, a time of 12 s, and an occurrence of 1.</p>
+  </li>
+  <li>
+    <p><strong>Event 5:</strong><br />
+ The fifth event has the value ‘Label C’, a time of 14 s, and an occurrence of 2; i.e., it is the <strong>second</strong> label with that value.</p>
+  </li>
+</ul>
+<h2 id="markers">
+  
+  
+    <a href="#markers" class="anchor-heading" aria-labelledby="markers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Markers
+  
+  
+</h2>
+    
+<p>One common technique for logging events is to record markers, aka triggers, in a separate channel alongside the physiological signals. These markers are usually sent by the task-pc to the recording device (e.g. BIOPAC), and assume different values to mark different events in the recording. The Toolbox automatically detects marker channels and converts them into referenceable events, with the same properties as described previously. As such, the Toolbox documentation may refer to markers as events.</p>
+
+<p>Markers are converted into referenceable events using the following rules:</p>
+
+<ul>
+  <li>A signal is considered a marker channel if it is more that 75% flat, and has only non-negative integer values less than or equal to 65535.</li>
+  <li>A marker is defined as a contiguous section in the signal with an integer value of 1 or higher; i.e., a marker cannot have a value of 0. A zero in the signal is simply interpreted as the absence of a marker.</li>
+  <li>If a marker channel starts with a non-zero value, that section is not classified as a marker. Markers start being classified at the first value-change that produces a non-zero value. This is done to prevent marker values present before the task starts (but when the recording is already taking place) from being classified as markers. As a result, if the signal starts with a non-zero value, then goes to zero, that time point cannot be referenced as it is neither the end nor start of any marker.</li>
+  <li>If a marker channel holds a value only for a single sample, that value is not classified as a marker. This is done to prevent very short intermediate values from being classified as markers.</li>
+  <li>Markers are transformed into referenceable events with numeric values.</li>
+</ul>
+
+<p>Even though markers are converted to standard referenceable events by the Toolbox, they are visualized as continuous signals, since that is how they were originally recorded. Referenceable events produced from markers are never discrete.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/ref-evt-marks.svg
+ " title="Referenceable Events from Markers"> -->
+    <img class="pdtImg" id="ref-evt-marks-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/ref-evt-marks.svg
+ " alt="Referenceable Events from Markers" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ref-evt-marks-1">Figure 3</a>:
+        An example of a digital signal recorded while receiving markers. Five markers were logged. The green triangles indicate the onset of the markers, which corresponds to their timestamps; and the red triangles indicate their offsets, which corresponds with their timestamps plus their duration.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ref-evt-marks-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "An example of a digital signal recorded while receiving markers. Five markers were logged. The green triangles indicate the onset of the markers, which corresponds to their timestamps; and the red triangles indicate their offsets, which corresponds with their timestamps plus their duration.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>The example marker channel visualized in Figure  features the following markers:</p>
+
+<ul id="marker-list">
+  <li>
+    <p><strong>Marker 1:</strong><br />
+ The first marker has a value of 10, a time of 1 s, a duration of 1 s, and an occurrence of 1.</p>
+  </li>
+  <li>
+    <p><strong>Marker 2:</strong><br />
+  The second marker has a value of 20, a time of 4 s, a duration of 0.1 s, and an occurrence of 1.</p>
+  </li>
+  <li>
+    <p><strong>Marker 3:</strong><br />
+  The third marker has a value of 30, a time of 6 s, a duration of 3 s, and an occurrence of 1. Notice that markers don’t have to end at zero, but end at any change in value, which if not zero, corresponds to the onset of the next marker.</p>
+  </li>
+  <li>
+    <p><strong>Marker 4:</strong><br />
+  The fourth marker has a value of 40, a time of 9 s, a duration of 2 s, and an occurrence of 1.</p>
+  </li>
+  <li>
+    <p><strong>Marker 5:</strong><br />
+  The fifth marker has a value of 10, a time of 12 s, a duration of 2 s, and an occurrence of 2. it is the <strong>second</strong> marker a the value of 10.</p>
+  </li>
+</ul><hr />
+<h1 id="defining-epochs">
+  
+  
+    <a href="#defining-epochs" class="anchor-heading" aria-labelledby="defining-epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Defining Epochs
+  
+  
+</h1>
+    
+<p>To create an epoch, two time points must be found: the <strong>epoch start time</strong> and the <strong>epoch end time</strong>. As such, an epoch can be defined by specifying its name, as well as where its start and end should be placed given the referenceable events in the file. Specifying how to separately resolve the start and end times of a single epoch, therefore, involves the user providing an answer to the following questions, twice:</p>
+
+<p class="ml-4"><em>Which set of referenceable events should the Toolbox use?<br />
+Within that set, events with what values should be extracted?<br />
+Of those extracted events, exactly which occurrence should be used?<br />
+Taking that specific event as a reference, where should the time point be placed.</em></p>
+
+<p>In the Toolbox, the data that allows the resolution the questions above must are encoded in an <strong>Epoch Definition Table</strong>.</p>
+<h2 id="epoch-definition-table">
+  
+  
+    <a href="#epoch-definition-table" class="anchor-heading" aria-labelledby="epoch-definition-table"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Epoch Definition Table
+  
+  
+</h2>
+    
+<p>A definition for an epoch is built from three basic components: the epoch name; the start time definition; and the end time definition. The last two each resolve to a certain time in the recording, and are encoded using four parameters that the user must specify, the: <strong>channel</strong>, <strong>value</strong>, <strong>occurrence</strong>, and <strong>delay</strong>. These parameters, listed below, correspond the questions mentioned above:</p>
+
+<ul>
+  <li>
+    <p><strong>Channel:</strong><br />
+ The channel indicates which set of referenceable events should be used to resolve the current time point. See the <a href=".\file-converter.html">File-Converter</a> documentation for info about how referenceable events are created from various data formats. The channel can be specified as:</p>
+
+    <ul>
+      <li>
+        <p><strong>number:</strong><br />
+ If a number is filled in, the Toolbox will use the <strong>markers</strong> found the that channel; e.g., specifying channel = <code>4</code>, makes the Toolbox use the markers in signal channel 4.</p>
+      </li>
+      <li>
+        <p><strong>events:</strong><br />
+ If <code>events</code> is filled in, the Toolbox will use the events associated with the signals. For data converted from AcqKnowledge .acq files, this corresponds to the <strong>labels</strong>. For data recorded with VU-DAMS system, this corresponds to all events, labels and messages in the 5fs file. In addition to <code>events</code>; <code>event</code>, <code>label</code> or <code>labels</code> will do the same, and regardless of capitalizations.</p>
+      </li>
+      <li>
+        <p><strong>et.events:</strong><br />
+ If <code>et.events</code> is filled in, the Toolbox will use the events in the eye-tracking data. When using data recording with Tobii EET, the File Converter can automatically generate these events based on the <strong>variables</strong> (columns) in the gazedata file. When analyzing Eye-Link data, these events correspond to the <strong>messages</strong> sent to the eye-tracker.</p>
+      </li>
+      <li>
+        <p><strong>file:</strong><br />
+ If <code>file</code> is filled in for the channel, the Toolbox will use events it has automatically generated for the file. These include one event at the start of the file (t = 0) with the value <code>SOF</code>; one at the end of the file with the value <code>EOF</code>; and one event with value <code>file</code> that spans the whole recording.</p>
+      </li>
+      <li>
+        <p><strong>epochs:</strong><br />
+ Epochs are also referenceable events, and can be used to define new epochs. If <code>epochs</code> is filled in, the Toolbox will extract epoch(s) with names that match the specified value.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Value:</strong><br />
+ The value parameter specifies the value used to extract the desired referenceable events. It can be a number or a string. For instance, value = <code>10</code> refers to all events (e.g. markers) with the value 10. Which of those need to be referenced is then decided by the occurrence. Similarly, value = <code>Label A</code> refers to all events with that value Label A.</p>
+  </li>
+  <li>
+    <p><strong>Occurrence (aka Occur):</strong><br />
+ After events have been retrieved from the specified channel and filtered by matching them to the specified value, the desired event is selected by specifying its occurrence. For instance, specifying channel = <code>1</code>, value = <code>10</code> and occur = <code>2</code> indicates that from the markers in channel 4, the second occurrence of the marker with value 10 needs to be selected.</p>
+  </li>
+  <li>
+    <p><strong>Delay:</strong><br />
+ Once an event is selected, the delay specifies where the time-point must be placed relative to the time-stamp of the event. For instance, a delay = <code>10</code> states that the time point, be it the epoch start or end, must be placed 10 second after the event time. Stating delay = <code>10</code> would place the time point 10 seconds before the event. Additionally, the keyword <code>dur</code> can be used to refer to the <a href="#defs">duration</a> of the event. For instance, stating delay = <code>dur</code> will place the time-point at the end of the event; delay = <code>dur / 2</code> will place it in the middle of the event span; and delay = <code>dur - 10</code> will place it 10 seconds before the end (regardless of the start time).</p>
+  </li>
+</ul>
+
+<p>As an example, let’s say we want to create the following four epoch based on the markers in Figure 3:</p>
+
+<ul>
+  <li>
+    <p><strong>Epoch 1:</strong><br />
+ The first epoch must start at the first marker with value 10 (<a href="#marker-list">Marker 1</a>), and end at the first marker with value 20 (<a href="#marker-list">Marker 2</a>)</p>
+  </li>
+  <li>
+    <p><strong>Epoch 2:</strong><br />
+ The second epoch must start one second before the end of the first marker with value 10 (<a href="#marker-list">Marker 3</a>), and end at the end of that same marker. Note that the end of a marker, or any referenceable event, is its timestamp offset by its duration.</p>
+  </li>
+  <li>
+    <p><strong>Epoch 3:</strong><br />
+ The third epoch must start at the end of the first marker with value 40 (<a href="#marker-list">Marker 4</a>), and end at the end of the <strong>second</strong> marker with value 10.</p>
+  </li>
+  <li>
+    <p><strong>Epoch 4:</strong><br />
+ The fourth epoch must start at the start of the first marker with value 10 (<a href="#marker-list">Marker 1</a>), and end at the second marker with value 10 (<a href="#marker-list">Marker 5</a>).</p>
+  </li>
+</ul>
+
+<p>In all cases, assume that the markers are located in channel 4. A table can now be built to define epochs by stating the epoch name, and two sets of the four parameters described above; one for the epoch start, and one for the epoch end.</p>
+
+<!---
+    This include generates a table from a given csv file.
+-->
+
+<p class="fs-3 mb-1"><a id="def-eg-table-1" href="#def-eg-table-1">Table 1</a>:
+Epoch definition example.</p>
+<div class="table-wrapper"><table>
+  
+    
+    <tr>
+      
+        <th>epochName:</th>
+      
+        <th>startChannel:</th>
+      
+        <th>startValue:</th>
+      
+        <th>startOccur:</th>
+      
+        <th>startDelay:</th>
+      
+        <th>endChannel:</th>
+      
+        <th>endValue:</th>
+      
+        <th>endOccur:</th>
+      
+        <th>endDelay:</th>
+      
+    </tr>
+    
+
+    <tr class="row1">
+<td class="col1">
+      Epoch_1
+    </td><td class="col2">
+      4
+    </td><td class="col3">
+      10
+    </td><td class="col4">
+      1
+    </td><td class="col5">
+      0
+    </td><td class="col6">
+      4
+    </td><td class="col7">
+      20
+    </td><td class="col8">
+      1
+    </td><td class="col9">
+      0
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      Epoch_2
+    </td><td class="col2">
+      4
+    </td><td class="col3">
+      30
+    </td><td class="col4">
+      1
+    </td><td class="col5">
+      dur-1
+    </td><td class="col6">
+      4
+    </td><td class="col7">
+      30
+    </td><td class="col8">
+      1
+    </td><td class="col9">
+      dur
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      Epoch_3
+    </td><td class="col2">
+      4
+    </td><td class="col3">
+      40
+    </td><td class="col4">
+      1
+    </td><td class="col5">
+      dur
+    </td><td class="col6">
+      4
+    </td><td class="col7">
+      10
+    </td><td class="col8">
+      2
+    </td><td class="col9">
+      dur
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      Epoch_4
+    </td><td class="col2">
+      4
+    </td><td class="col3">
+      10
+    </td><td class="col4">
+      1
+    </td><td class="col5">
+      0
+    </td><td class="col6">
+      4
+    </td><td class="col7">
+      10
+    </td><td class="col8">
+      2
+    </td><td class="col9">
+      0
+    </td></tr>
+
+  
+</table></div>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epochs-def-example-1.svg
+ " title="Referenceable Events from Markers"> -->
+    <img class="pdtImg" id="def-eg-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epochs-def-example-1.svg
+ " alt="Referenceable Events from Markers" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#def-eg-1">Figure 4</a>:
+        The same markers as before, but with the epochs (on top) that were created by resolving the Epoch Definition Table using the markers.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("def-eg-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The same markers as before, but with the epochs (on top) that were created by resolving the Epoch Definition Table using the markers.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>An epoch definition table, as presented above, can be applied to different files, and will always generate the right epochs based on each file’s markers. To help users build epoch definition tables, the Toolbox includes an <a href="#epoch-builder-gui">Epoch Builder GUI</a>.</p>
+
+<p>Epochs may only exist if they have a duration of 10 ms or more; i.e., their end time must occur 10 ms or more after their start time. The epoch will result in an error otherwise. The Toolbox places no other restrictions on epoch times; they may start and/or end before and/or after the recording.</p>
+<h1 id="advanced-epoch-definition-features">
+  
+  
+    <a href="#advanced-epoch-definition-features" class="anchor-heading" aria-labelledby="advanced-epoch-definition-features"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Advanced Epoch Definition Features
+  
+  
+</h1>
+    
+<p>The Toolbox’s epoch resolution engine can make use of numeric ranges and regular expressions when filtering values, and can reference multiple occurrences and delays in a single epoch definition. As such, epochs don’t have to be defined one by one, and explicitly.</p>
+<h2 id="specifying-the-values">
+  
+  
+    <a href="#specifying-the-values" class="anchor-heading" aria-labelledby="specifying-the-values"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Specifying the Values
+  
+  
+</h2>
+    
+<p>The value parameter can be specified as a number or a string, but also as a numeric range, a numeric set, or a regular expressions. This allows the value-filtering step to match various events that don’t have the exact same value, or that have a value containing ‘non-conforming’ section (e.g. an event with a timestamp in the value, which will vary randomly between recordings).</p>
+
+<p>Specifying the value parameter as:</p>
+<ul>
+  <li>
+    <p><strong>A number:</strong><br />
+When a single number is specified—e.g. value = <code>10</code>, the events with exactly those values are used.</p>
+  </li>
+  <li>
+    <p><strong>A numeric set:</strong><br />
+When a numeric set is entered—e.g. value = <code>[10:20]</code> or value = <code>[100 200]</code>, all events values that are a member of that set is matched. In the first case, all events with the values 10 through 20, and in the second, all events with values 100 or 200. Standard MATLAB syntax can be used to specify numeric sets.</p>
+  </li>
+  <li>
+    <p><strong>A string:</strong><br />
+When specifying the value as a string—e.g. value = <code>Label A</code>, only labels with values that completely match (case sensitive) are used. Note that leading and trailing white spaces are ignored.</p>
+  </li>
+  <li>
+    <p><strong>A regular expression:</strong><br />
+When the value is specified as a string enclosed in ^ and $—e.g. value = <code>$Label [A-Z]^</code>, it is treated as a regular expression, and any events with values matching the expression are used. Note that both the ^ and $ anchors are used as part of the expression. See <a href="https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html">MATLAB</a> help for more information about regular expressions. Feel free to email the <a href="../about.html">developers</a> for help generating regular expression patterns.</p>
+  </li>
+</ul>
+<h2 id="multiple-occurrence">
+  
+  
+    <a href="#multiple-occurrence" class="anchor-heading" aria-labelledby="multiple-occurrence"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Multiple Occurrence
+  
+  
+</h2>
+    
+<p>Similar to specifying numeric values, occurrences can be specified as a single number or as a set. Additionally, the keyword <code>last</code> can be used, which will resolve to the index of the last event that matches the specified value. The usage of last is equal to the MATLAB usage of <code>end</code> (which can also be used instead of last). As an example, when specifying occur = <code>1:last</code>, all occurrences of the events that match the specified value are selected.</p>
+
+<p>Note that when the value is not strictly specified—i.e., it is specified as a regular expression or a numeric range—the selected events may not have exactly the same value, but will still be ordered sequentially. For instance, when using <a href="#marker-list">these markers</a>, and specifying value = <code>[1:255]</code>, then occur = <code>[2 3]</code>, the second and third of all the markers with values between 1 and 255 are selected; i.e., the 2nd and 3rd markers in the list. These are the occurrences 2 and 3 of the events that match the value specification (<code>[1:255]</code>), even though those events themselves don’t have occurrence 2 and 3; they are both the first occurrence of their exact values. The occur parameter targets the order of the events that were selected by the value filter, thus if the value is not strictly specified, the occurrences inside the set produced by the value filter might differ from the event occurrences.</p>
+
+<p>Occurrences must resolve to positive integers, and basic MATLAB functions can be used, like max(), min(), ceil(), floor(), round(), etc.</p>
+<h2 id="multiple-delays">
+  
+  
+    <a href="#multiple-delays" class="anchor-heading" aria-labelledby="multiple-delays"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Multiple Delays
+  
+  
+</h2>
+    
+<p>The delay parameter can be specified as a single number or as a vector; or as a formula that resolves into one of the two. When specified as a single number, that delay is applied to all events that match the value and occurrences specified in the definition. For instance, if the value and occurrence parameters produce 2 events, and the delay is specified as delay = <code>5</code>, then two time points will be produces; 5 seconds after both events.</p>
+
+<p>When the delay is specified as a vector, then all delays are applied to all events. For instance, if the value and occurrence parameters produce 2 events, and the delay is specified as delay = <code>[5 10]</code>, then four time points will be produces; 5 and 10 seconds after both events. Multiple delays will be applied occurrence by occurrence; e.g., the delay <code>[5 10]</code> when applied to two events (Event_A and Event_B), will produce the time sequence: Event_A + 5; Event_A + 10; Event_B + 5; Event_B + 10.</p>
+
+<p>When specifying multiple delays, standard MATLAB syntax can be used, including basic functions like max(), min(), ceil(), floor(), round(), etc. Additionally, the keyword dur can be used, which resolves into the duration of the event that the delay is applied to.</p>
+<h2 id="pairing-multiple-start-and-end-times">
+  
+  
+    <a href="#pairing-multiple-start-and-end-times" class="anchor-heading" aria-labelledby="pairing-multiple-start-and-end-times"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pairing Multiple Start and End Times
+  
+  
+</h2>
+    
+<p>The epoch start and end definitions are resolved separately, then paired up to form epochs. If the start or end definition produces more times than the other, the un-pairable times will produce epochs with errors.</p>
+<h2 id="epoch-data">
+  
+  
+    <a href="#epoch-data" class="anchor-heading" aria-labelledby="epoch-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Epoch Data
+  
+  
+</h2>
+    
+<p>When an epoch analysis is run and exported, <strong>epoch data</strong>, which includes each epoch’s name, start and end times, as well as extra metadata, is included in the output. The extra metadata contains data about the epoch definition resolution, and the events referenced. This includes the actual values, durations and occurrences of the referenced events, as well as the delays applied. Since these parameters don’t have to be specified explicitly, the actual value that these parameters resolve to may emerge only after applying the epoch definition to the a file.</p>
+
+<!-- TODO: Include table. --><hr />
+<h1 id="epoch-builder">
+  
+  
+    <a href="#epoch-builder" class="anchor-heading" aria-labelledby="epoch-builder"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Epoch Builder
+  
+  
+</h1>
+    
+<p>The Toolbox contains an <strong>Epoch Builder</strong> to help users build and test epoch definition tables. It is launched whenever users click <strong>View/Edit Epochs</strong> button in the PhysioAnalyzer settings panel.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-builder-gui.png
+ " title="Epoch Builder"> -->
+    <img class="pdtImg" id="epoch-builder-gui" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-builder-gui.png
+ " alt="Epoch Builder" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#epoch-builder-gui">Figure 5</a>:
+        The Epoch Builder window.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("epoch-builder-gui");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Epoch Builder window.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>The Epoch Builder can be split into two main sections: the <strong>outer window</strong> and the <strong>tab group</strong>. The outer window contains the banner on top, the file bar below that, and the buttons on the bottom. The tab group contains tabs that display the current epoch definition table and its associated data.</p>
+
+<p>Note, the Epoch Builder can only manage epoch definition tables with 100 rows or less.</p>
+<h2 id="outer-window">
+  
+  
+    <a href="#outer-window" class="anchor-heading" aria-labelledby="outer-window"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Outer Window
+  
+  
+</h2>
+    
+<p>In the outer window, under the banner, lies the <strong>File Bar</strong>. It shows the current test file, which is the file used to resolve the current epoch definition when the <strong>Generate Epochs</strong> button is clicked. This button is also located in the file bar, and is only enabled if files are loaded into the Session Manager.</p>
+
+<p>At the bottom of the window lies three buttons:</p>
+<ul>
+  <li>
+    <p><strong>Ok:</strong><br />
+Accepts and saves the current epoch definition, and exits the Epoch Builder.</p>
+  </li>
+  <li>
+    <p><strong>Reset:</strong><br />
+Undoes all changes and reloads the original epoch definition present when the builder was launched.</p>
+  </li>
+  <li>
+    <p><strong>Cancel:</strong><br />
+Discards all changes and closes the Epoch Builder.</p>
+  </li>
+</ul>
+
+<p>If the Epoch Builder window is closed manually, all changes are discarded.</p>
+<h2 id="tab-1-define-epochs">
+  
+  
+    <a href="#tab-1-define-epochs" class="anchor-heading" aria-labelledby="tab-1-define-epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tab 1: Define Epochs
+  
+  
+</h2>
+    
+<p>The first tab, labeled <strong>Define Epochs</strong>, shows the epoch definition table and allows users to edit it.</p>
+
+<!-- TODO: Include tab image. -->
+
+<p>The tab contains the following buttons:</p>
+<ul>
+  <li>
+    <p><strong>Copy Table:</strong><br />
+Copies the current epoch definition table to the clipboard, allowing it to be pasted and edited in Excel.</p>
+  </li>
+  <li>
+    <p><strong>Paste Table:</strong><br />
+Overwrites the current definition table with the contents of the clipboard. This allows tables to be copied from Excel.</p>
+  </li>
+  <li>
+    <p><strong>Load From File:</strong><br />
+Overwrites the current definition table with the contents of an Excel file.</p>
+  </li>
+  <li>
+    <p><strong>Add Metadata Column:</strong><br />
+Adds a metadata column to the epoch definition table.</p>
+  </li>
+  <li>
+    <p><strong>Remove Metadata Column(s):</strong><br />
+Removes one or more columns from the epoch definition table.</p>
+  </li>
+  <li>
+    <p><strong>Add Row:</strong><br />
+Add a new row to the bottom of the epoch definition table.</p>
+  </li>
+  <li>
+    <p><strong>Removes Row(s):</strong><br />
+Removes one or more rows from the epoch definition table.</p>
+  </li>
+</ul>
+
+<p>Below the buttons, the epochs that the current epoch definition table produces when applied to the current file are visualized. This includes epochs already present in the file. The plot is refreshed whenever the ‘Generate Epochs’ button is clicked, and is only visible if files are loaded into the Session Manager.</p>
+
+<p>Below that, in the main section of the Define Epochs tabs, is the <strong>Epoch Definition Table</strong>. The first column (light blue) contains the epoch names, with the next 4 (light green) containing the start time definition, followed by the end time definition (light red). Subsequent columns contain optional metadata (light yellow). Users can freely modify the contents of the cells, or can use the cells’ right click menus. If a row in the epoch definition table produces one or more errors, they are shown in the table under the concerning row.</p>
+<h3 id="epoch-definition-menus">
+  
+  
+    <a href="#epoch-definition-menus" class="anchor-heading" aria-labelledby="epoch-definition-menus"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Epoch Definition Menus
+  
+  
+</h3>
+    
+<p>Right clicking the cells in the epoch definition table reveals a context menu. The contents of the menu reflects the actual contents of the current test file, and where applicable, is determined by the value of one or more other parameters.</p>
+
+<ul>
+  <li>
+    <p><strong>Channel:</strong><br />
+ When right-clicking the <strong>startChannel</strong> or <strong>endChannel</strong> cells, the first menu item lists the sets of referenceable events in the file. This determines what values are shown.</p>
+  </li>
+  <li>
+    <p><strong>Value:</strong><br />
+ When right-clicking the <strong>startValue</strong> or <strong>endValue</strong> cells, the first menu item lists all the unique values present in the selected set, specified by either the startChannel and endChannel, respectively. The number of occurrences for each value is also shown. The items below present additional options, such as referencing ‘all events’.</p>
+  </li>
+  <li>
+    <p><strong>Occur:</strong><br />
+When right-clicking the <strong>startOccur</strong> or <strong>endOccur</strong> cells, the first menu item lists all the occurs matching the concerning value parameter. Additional items allow e.g. the selection of all occurrences.</p>
+  </li>
+  <li>
+    <p><strong>Delay:</strong><br />
+When right-clicking the <strong>startDelay</strong> or <strong>endDelay</strong> cells, a set of delay options are presented. Below that, the option to slice the event is offered, see <a href="#slicing-epochs">Slicing Epochs</a>.</p>
+  </li>
+</ul>
+
+<p>The context menus also allow the current table row to be deleted or duplicated; and the start or end definitions to be copied from one to the other.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-builder-gui-context-menus.gif
+ " title="Epoch Builder Context Menus"> -->
+    <img class="pdtImg" id="epoch-builder-menus" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-builder-gui-context-menus.gif
+ " alt="Epoch Builder Context Menus" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#epoch-builder-menus">Figure 6</a>:
+        The definition table in the Epoch Builder features cells with context menus reflecting the referenceable events in the current file. In the GIF, the menus are used to define epochs as starting at all events with value 100, and ending 10 seconds after. The events are taken from the markers in channel 4.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("epoch-builder-menus");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The definition table in the Epoch Builder features cells with context menus reflecting the referenceable events in the current file. In the GIF, the menus are used to define epochs as starting at all events with value 100, and ending 10 seconds after. The events are taken from the markers in channel 4.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h3 id="slicing-epochs">
+  
+  
+    <a href="#slicing-epochs" class="anchor-heading" aria-labelledby="slicing-epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Slicing Epochs
+  
+  
+</h3>
+    
+<p>At times, users may wish to slice large epochs into smaller sections. To do this, the large epochs must first be defined in the epoch definition table (or must already be present in a file). The startChannel and endChannel must then be set to <code>epochs</code> so that these epochs can be referenced, and the startValue and endValue parameters, in combination with startOccur and endOccur, can be used to specify the name and occurrences of the to be referenced epoch(s).</p>
+
+<p>If the startDelay is set to <code>0</code>, and the endDelay to <code>dur</code>, new epochs spanning the entirety of the referenced epoch(s) are created. Similarly, if the delays are set to <code>[0 10]</code> and <code>[10 dur]</code>, two new epochs are created: one spanning the first 10 seconds of the referenced epoch(s), and the other starting after the first, and ending where the referenced epoch(s) end.</p>
+
+<p>To fully slice a epoch, right-click the startDelay or endDelay cells after the startChannel and endChannel have been set to <code>epochs</code>, and the value and occur parameters have been used to select the epoch(s) to be sliced. The Toolbox will then present a dialog with slicing options, and will automatically generate the necessary startDelay and endDelay parameters.</p>
+<h2 id="tab-2-markers-and-events-inside-test-file">
+  
+  
+    <a href="#tab-2-markers-and-events-inside-test-file" class="anchor-heading" aria-labelledby="tab-2-markers-and-events-inside-test-file"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tab 2: Markers and Events Inside Test File
+  
+  
+</h2>
+    
+<p>The second tab, labeled <strong>Markers and Events inside Test File</strong>, displays all the referenceable events in the current (test) file. The epoch generated by the the current epoch definition table, as defined in tab 1, are shown above each graph. Additionally, the channel code—what needs to be entered in the channel parameter in order to reference the displayed set—is shown in the graph titles.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-builder-gui-tab-2.png
+ " title="Epoch Builder Tab 2"> -->
+    <img class="pdtImg" id="epoch-builder-gui-tab-2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-builder-gui-tab-2.png
+ " alt="Epoch Builder Tab 2" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#epoch-builder-gui-tab-2">Figure 7</a>:
+        The second tab of the Epoch Builder window, showing all referenceable events in the file. Here, the 'Events' tab is shown, which displays all events in the file. The first tab displays the markers, and the third the file events.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("epoch-builder-gui-tab-2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The second tab of the Epoch Builder window, showing all referenceable events in the file. Here, the 'Events' tab is shown, which displays all events in the file. The first tab displays the markers, and the third the file events.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="tab-3-preview-epochs">
+  
+  
+    <a href="#tab-3-preview-epochs" class="anchor-heading" aria-labelledby="tab-3-preview-epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tab 3: Preview Epochs
+  
+  
+</h2>
+    
+<p>The third tab, labeled <strong>Preview Epochs</strong>, again plots the epochs, but also shows a table with all <a href="#epoch-data">the data</a> about the generated epochs.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-builder-gui-tab-3.png
+ " title="Epoch Builder Tab 3"> -->
+    <img class="pdtImg" id="epoch-builder-gui-tab-3" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/epochs/epoch-builder-gui-tab-3.png
+ " alt="Epoch Builder Tab 3" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#epoch-builder-gui-tab-3">Figure 8</a>:
+        The third tab of the Epoch Builder window, showing a table with full information about each generated epoch.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("epoch-builder-gui-tab-3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The third tab of the Epoch Builder window, showing a table with full information about each generated epoch.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!-- TODO: Add examples --><hr />
+<h1 id="new-epoch-features-in-v06">
+  
+  
+    <a href="#new-epoch-features-in-v06" class="anchor-heading" aria-labelledby="new-epoch-features-in-v06"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> New Epoch Features in v0.6+
+  
+  
+</h1>
+    
+<p>The new epoch definition engine is similar to the old version, but features some improvements and a slightly different format. This section presents the main differences.</p>
+
+<ul>
+  <li>
+    <p><strong>EpochName Column:</strong><br />
+ The epoch name is now located in the first column rather than the last.</p>
+  </li>
+  <li>
+    <p><strong>Dur instead of at:</strong><br />
+  In the old version, the at parameter (startAt and endAt) determines if the start or the end of a marker is referenced. These parameters no longer appear in the new epoch definition. Instead, use the ‘dur’ keyword in the delay parameters (startDelay and endDelay) to add a delay equal to the duration of the marker (or other event). See <a href="#epoch-definition-table">this section</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>Dynamic Values, Occurrences and Delays:</strong><br />
+   Previously, exact values had to be specified. Now, values can be numeric ranges or regular expressions. Additionally, in the previous version, only a single predefined occurrence had to be specified (startOccur and endOccur). Now, multiple occurrences and the last keyword are supported.</p>
+
+    <p>Similarly, multiple delays can now be specified when defining epochs. See <a href="#advanced-epoch-definition-features">this section</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>epochModify Deprecated:</strong><br />
+   The epochModify column no longer appears in the new epoch definition table. If you want to slice an epoch into smaller sections, you will need to use the delay parameters. See <a href="#slicing-epochs">this section</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>New Epoch Builder:</strong><br />
+   The epoch Builder interface gas been updated and now features several improvements. Most importantly, users can now right-click inside the epoch definition table’s cells to open context-aware helper menus.</p>
+  </li>
+</ul>
+
+<p>An example of the old epoch definition:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">startChannel</th>
+      <th style="text-align: center">startValue</th>
+      <th style="text-align: center">startDelay</th>
+      <th style="text-align: center">startAt</th>
+      <th style="text-align: center">startOccur</th>
+      <th style="text-align: center">endChannel</th>
+      <th style="text-align: center">endValue</th>
+      <th style="text-align: center">endDelay</th>
+      <th style="text-align: center">endAt</th>
+      <th style="text-align: center">endOccur</th>
+      <th style="text-align: center">epochName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">200</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">on</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">200</td>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">off</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">epoch</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>The equivalent epoch definition in the new Toolbox:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">epochName</th>
+      <th style="text-align: center">startChannel</th>
+      <th style="text-align: center">startValue</th>
+      <th style="text-align: center">startDelay</th>
+      <th style="text-align: center">startOccur</th>
+      <th style="text-align: center">endChannel</th>
+      <th style="text-align: center">endValue</th>
+      <th style="text-align: center">endDelay</th>
+      <th style="text-align: center">endOccur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">epoch</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">200</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">200</td>
+      <td style="text-align: center">10 + dur</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>When opening physio data files generates in the old Toolbox version, please make sure that the epochs are resolved as intended.</p><hr />
+<h1 id="events">
+  
+  
+    <a href="#events" class="anchor-heading" aria-labelledby="events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Events
+  
+  
+</h1>
+    
+<p>Next to epochs, the Toolbox can also perform events based analysis. Events are similar to epochs, except they only contain a single time point. Where an epoch has a start time and an end time, an event only has an event time. Events can be created and edited the same way as epochs, with the only difference being that a single time point needs to be defined. An event definition table therefore consists of the following variables: eventTime, eventChannel, eventValue, eventOccur and eventDelay.</p>
+
+<p>Currently, only the IBI module makes use of events.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

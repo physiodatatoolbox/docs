@@ -21,7 +21,7 @@ The PhysioData Toolbox is being developed and maintained by:
 {% if these_people_are_clowns %}
 🤡   
 {: .fs-10 .lh-0 .ml-6}{% endif %}
-**Elío E. Sjak-Shie**  
+**ir. Elío E. Sjak-Shie**  
 Lead developer  
 _Research Engineer @ Leiden University_
 {: .ml-4}
@@ -31,7 +31,7 @@ _Research Engineer @ Leiden University_
 {% if these_people_are_clowns %}&nbsp;  
 🤡   
 {: .fs-10 .lh-0 .ml-6}{% endif %}
-**Iris M. Spruit**  
+**Iris M. Spruit, MSc**  
 Contributor  
 _Research Technician @ Leiden University_
 {: .ml-4}

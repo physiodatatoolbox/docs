@@ -176,7 +176,7 @@ Click on the **View Raw Data** button to launch the **Raw Data Viewer**. The Raw
 
 ---
 
-# Creating PhysioAnalyzer modules #
+# Creating PhysioAnalyzer Modules #
 **PhysioAnalyzer modules** are signal-specific preprocessing, visualization and analysis pipelines that users can construct and apply to the files. If, for instance, a PhysioData file contains electrocardiogram (ECG) and skin conductance (SC) signals, the user can add ECG and SC modules to the file in order to perform ECG and SC specific analyses on the respective data.
 
 ## Creating the ECG PhysioAnalyzer ##
@@ -212,7 +212,7 @@ The epoch definition of the habituation epochs is provided in the [Figure](#habi
  1. Define the end of the epoch:
      - The definition of the end of the epoch is pretty similar to the definition of the start of the epoch. We can quickly copy the information of the start of the epoch by right-clicking on any of the **end** fields, and selecting **Copy from start definition**. 
      - Because we want the epoch to end at the 'Habituation_End' events, modify the **endValue** to `Habituation_End`, or right-click on the field and select **Events available in channel** and select **Habituation_End (2 occurrences)**.
- 1. Hit the **Generate Epochs** button in the top left corner and observe that two epochs are added in the **Preview of epochs** graph.
+ 1. Hit the **Generate Epochs** button in the top right corner of the tab and observe that two epochs are added in the **Preview of epochs** graph.
 
 {% include image.html
             img="tutorial\Habituation-epochs.png"
@@ -225,18 +225,18 @@ The epoch definition of the stimulus epochs is provided in the [Figure](#stimulu
  1. Add another row to the Epoch Definition Table.
  1. In the new row, fill in the **epochName**: `CS_plus_Resp_img_1`.
  1. Define the start of the epochs:
-     - Since we want to reference markers in channel 4, fill in `4` in the **startChannel** cell (or right-click on the cell and select the appropriate option).
+     - Since we want to reference markers in channel 4, fill in `4` in the **startChannel** cell (or right-click on the cell and select the appropriate option). Note, the Toolbox will attempt to guess which channel is most likely to be referenced, with preference given to marker channels, when present. As such, in the example dataset, `4` will be filled in by default when a new row is added.
      - For the CS+ with image 1 trials, marker 11 was used, fill in `11` in **startValue** (or right-click on the cell and select the appropriate marker).
      - Because we want to generate epochs from all markers with value 11, fill in `1:last` in **startOccur** which will take all occurrences (or right-click and select **All occurrences**). Note that although in file 'CS_Example_01' there is only one occurrence of marker 11, this is not the case for other files!
      - The epochs start at the onset of the marker, therefore the **startDelay** can be left at `0`.
- 1. Define the end of the epochs:
+ 2. Define the end of the epochs:
      - Copy the information of the start of the epoch to the end of the epoch.
      - Adjust the **endDelay** to `8` (note that the start- and endDelay are in seconds!).
- 1. Since the CS+ with image 2 epoch definition is very similar to the CS+ image 1 epoch definition, right click on any of the cells of the row we just created and select **Duplicate row**. 
- 1. In the new row, we only need to adjust the epoch name and the marker value to reference the CS+ image 2 trials:
+ 3. Since the CS+ with image 2 epoch definition is very similar to the CS+ image 1 epoch definition, right click on any of the cells of the row we just created and select **Duplicate row**. 
+ 4. In the new row, we only need to adjust the epoch name and the marker value to reference the CS+ image 2 trials:
      - Fill in `CS_plus_Resp_img_2` in **epochName**.
      - Fill in `12`in **startValue** and in **endValue**.
- 1. Hit the **Generate Epochs** button and check whether the epochs were created correctly.
+ 5. Hit the **Generate Epochs** button and check whether the epochs were created correctly.
 
    {% include image.html
             img="tutorial\Stimulus-epochs.png"
@@ -249,14 +249,14 @@ The epoch definition of the extinction supra epochs is provided in the [Figure](
  1. Add another row.
  1. Fill in the **epochName**: `Ext_Supra`.
  1. Define the start of the epochs:
-     - Again, we want to reference markers in channel 4, fill in `4` in the **startChannel** cell (or right-click on the cell and select the appropriate option).
+     - Again, we want to reference markers in channel 4, so make sure the **startChannel** is set to `4`.
      - Fill in `100` in **startValue** (or right-click on the cell and select the appropriate marker) to reference markers with value 100.
      - Fill in `1:last` in **startOccur** to reference all occurrences (or right-click and select **All occurrences**).
      - The **startDelay** can be left at `0`. 
- 1. Define the end of the epochs:
+ 2. Define the end of the epochs:
      - Copy the information of the start of the epoch to the end of the epoch.
      - Adjust the **endDelay** to `dur`, or right-click on the cell and select **Duration of the marker**. This will create epochs that span for the duration of the markers (onset to offset).
- 1. Hit the **Generate Epochs** button and notice that 12 small epochs were created.
+ 3. Hit the **Generate Epochs** button and notice that 12 small epochs were created.
 
   {% include image.html
             img="tutorial\Ext_Supra-epochs.png"
@@ -323,18 +323,18 @@ The epoch definition of the extinction supra epochs is provided in the [Figure](
 </details>
 
 ### Finish creating the ECG PhysioAnalyzer ###
-When done with creating epochs, click **OK** to close the Epoch Builder window and return to the PhysioAnalyzer settings window. We'll leave the settings to their default values for now (see the [ECG Analyzer](..\user-guide\physioanalyzer-modules\ecg-module.html#settings) chapter in the User Guide for more information on the ECG analyzer settings). Click **OK** to save the changes and return to the Session Manager. Note that although we created an analyzer, the analyzer and the settings and epochs it contains are not applied to the data files yet. We will first create the other analyzers, then apply all analyzers to our data files. 
+When done with creating epochs, click **Save and Exit** to close the Epoch Builder window and return to the PhysioAnalyzer settings window. We'll leave the settings to their default values for now (see the [ECG Analyzer](..\user-guide\physioanalyzer-modules\ecg-module.html#settings) chapter in the User Guide for more information on the ECG analyzer settings). Click **OK** to save the changes and return to the Session Manager. Note that although we created an analyzer, the analyzer and the settings and epochs it contains are not applied to the data files yet. We will first create the other analyzers, then apply all analyzers to our data files. 
 
 ## Creating the SC PhysioAnalyzer ##
  - Click the **Create New Analyzer** button again and select the **Skin Conductance Analyzer**.
  - Fill in `2` in the channel number field to make the module use the EDA signal in channel 2.
- - We will use the same epochs as we defined in the ECG module, therefore, select **PhysioAnalyzer with tag:** from the drop-down menu, and fill in `ECG` in the field below. This will make this module dynamically use any epochs we defined in the ECG module.
+ - We will use the same epochs as we defined in the ECG module, therefore, from the drop-down menu to the right of the **Generate epochs from** label, select **PhysioAnalyzer with tag** instead of **Epoch Definition Table**. This will change the **View/Edit Epochs** button into a text field, into which the tag of the module to be referenced can be entered. As such, fill in `ECG` in the field. This will make this module dynamically use any epochs we defined in the ECG module.
  - Click **Ok** to close the window and add these settings to the PhysioAnalyzer tree (we'll leave the settings at their default values, for more information on the Skin Conductance Analyzer settings, see the [Skin Conductance Analyzer chapter](..\user-guide\physioanalyzer-modules\SC-module.html#settings) in the User Guide).
 
 ## Adding the HRV PhysioAnalyzer ##
  - Click the **Create New Analyzer** button again and select the **HRV Analyzer**
  - Fill in `ECG` in the **Tag of the ECG Analyzer** field. In order for it to function, the HRV analyzer must be linked to an ECG module. 
- - As with the previous analyzer, we will use the same epochs as we defined in the ECG module. Select **PhysioAnayzer with tag** from the epoch drop-down menu and fill in `ECG` in the field below.
+ - As with the previous analyzer, we will use the same epochs as we defined in the ECG module. Select **PhysioAnalyzer with tag** from the epoch drop-down menu and fill in `ECG` in the field below.
  - Click **Ok** to close the window. We'll leave the HRV settings to their default, for more information on these settings, consult the [HRV Analyzer chapter](..\user-guide\physioanalyzer-modules\hrv-module.html#settings)  in the User Guide.
 
 ## Applying the Settings to the PhysioData files ##
@@ -354,10 +354,13 @@ When done with creating epochs, click **OK** to close the Epoch Builder window a
 This section shows the basics of reviewing and correcting PhysioAnalyzer data.
 
 ## Launching and Using the PhysioAnalyzer Viewer ##
- - In the Session Manager, click the **View Analyses** button in the PhysioData Files panel to open the **PhysioAnalyzer Viewer** window. This window visualizes each PhysioAnalyzer present inside the current file. One tab is created per analyzer.
- - The top graph shows the epochs that were generated from the epoch definition. Click on the epochs bar for more epoch information. Below that are the Analyzer-specific data graphs, e.g. for ECG it contains the ECG, Interbeat Interval (IBI) and Instantaneous Heart Rate (IHR) plots. In the legend you can click on a line to hide it. Right-clicking the ECG graph reveals some extra options.
- - Inspect the plots inside the ECG and SC tabs using the zooming and panning commands described previously. Use the file bar to navigate through the files.
- - Corrections can be saved in individual physioData files by using the **Save** button next to the **Menu**.
+
+  - In the Session Manager, click the **View Analyses** button in the PhysioData Files panel to open the **PhysioAnalyzer Viewer** window. This window visualizes each PhysioAnalyzer present inside the current file. One tab is created per analyzer.
+  - The top graph shows the epochs that were generated from the epoch definition. Click on the epochs bar for more epoch information. Below that are the Analyzer-specific data graphs, e.g. for ECG it contains the ECG, Interbeat Interval (IBI) and Instantaneous Heart Rate (IHR) plots. In the legend you can click on a line to hide it. Right-clicking the ECG graph reveals some extra options.
+  - Inspect the plots inside the ECG and SC tabs using the zooming and panning commands described previously. Use the file bar to navigate through the files.
+  - Edits made to the current file can be saved by clicking the **Save** button next to the **Menu**, as detailed later in this tutorial.
+
+<!-- TODO: Link to Saving info above. Also, consider touching on saving earlier in the tutorial. If the Toolbox  crashes (e.g. when exporting to Excel) and the user has not saved, they have to redo everything. -->
 
    {% include image.html
             img="tutorial\PhysioAnalyzerViewer.png"
@@ -372,36 +375,27 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
      - In the ECG plot there are two R-peaks clearly higher than the other R-peaks at around 500 s and 1100 s. This does not necessarily mean these peaks are faulty, but it is worth checking out.
      - In the IBI plot there are a few clear outliers around 300 and 900 s, with high IBI values, and some possible outliers between 400 and 600 s and around 1100 s, with low IBI values.
       > Note that deviating QRS waves can also be detected by using the **View R-Waves** button, introduced in version 0.6.2 ([info](..\user-guide\physioanalyzer-modules\ecg-module.html#view-r-waves)).
- - Zoom in (by selecting an area with the right mouse button) at the high R-peak around 500s. Notice that this peak is not a 'real' R-peak, but an extra peak between two R-peaks, resulting in two short IBIs. The R-peak can be removed by selecting an area covering the faulty R-peak (using the left mouse button), and selecting **Disregard R-Peaks in selected section**. The disregarded region is visualized in the **R-Skip** graph above the ECG plot. Notice how removing this R-peak also corrects the faulty IBIs at this time point.
+ - Zoom in (by selecting an area with the right mouse button) at the high R-peak around 500s. Notice that this peak is not a 'real' R-peak, but an extra peak between two R-peaks, resulting in two short IBIs. The R-peak can be removed by selecting an area covering the faulty R-peak (using the left mouse button), and selecting **Disable R-Peak detection in the selected section**. The disregarded region is visualized in the **R-Reject** graph above the ECG plot. Notice how removing this R-peak also corrects the faulty IBIs at this time point.
 
    {% include image.html
-            img="tutorial\ECG_Faulty_R-Peak-2.png"
-            title="R-Peak rejection1"
+            img="tutorial\ecg-peak-rejection.gif"
+            title="R-Peak rejection"
             id="rPeakRejection1"
             caption="Selecting and disregarding an R-peak." %}
 
-  {% include image.html
-            img="tutorial\ECG_Faulty_R-Peak-3.png"
-            title="R-Peak rejection 2"
-            id="rPeakRejection2"
-            caption="Newly created R-skip zone." %}           
-
- - Zoom in at the 300 s outliers in the IBI plot and notice how this is caused by missing R-waves in the ECG signal, resulting in two instances of doubly long IBIs. Since R-peaks cannot be manually added in this version of the toolbox, correction must involve removing the bad IBIs.
+ - Zoom in at the 300 s outliers in the IBI plot and notice how this is caused by missing R-waves in the ECG signal, resulting in two instances of doubly long IBIs. This tutorial focusses on how to remove erroneous IBIs. Alternatively, you can manually add missing R-peaks as described [here](..\user-guide\physioanalyzer-modules/ecg-module.html#adding-r-peaks).
  - The IBI artifacts can be manually corrected in a similar manner as removing the R-Peak. Zoom in to the IBI artifact at 274 s, and, using the left mouse button, select an area covering the IBI. Subsequently, select **Disregard IBIs in selected section** from the menu. The toolbox will now refrain from using any IBIs located inside this newly inserted **IBI skip zone**, which is visualized in the **IBI-skip** graph.
 
    {% include image.html
-            img="tutorial\ECG_Faulty_IBI-1.png"
-            title="IBI rejection 1"
+            img="tutorial\ibi-rejection.gif"
+            title="IBI rejection"
             id="ibiRejection1"
-            caption="IBI artifacts." %}
+            caption="Selecting and disregarding erroneous IBIs." %}
 
-  {% include image.html
-            img="tutorial\ECG_Faulty_IBI-2.png"
-            title="IBI rejection 2"
-            id="ibiRejection2"
-            caption="Select and disregard IBI." %} 
+Note, to remove an inserted rejection zone, add a new zone the covers the zone you want to remove and select the opposite option. See the [Data Viewers](..\user-guide\data-viewers.html#the-physioanalyzer-viewer) page for more information.
 
- - Since manually removing individual IBIs can be time consuming, a better approach may be to adjust the **Maximum IBI value** setting in this particular PhysioAnalyzer. Zoom the IBI plot completely out by double clicking it. Notice how the correct IBIs in this file are never located above 1.3 s. Click the **View/Edit Settings** button in the ECG tab and set the **Maximum IBI** value to `1.3`. After clicking **Ok**, the ECG module will automatically remove all IBIs above the said threshold. In the IBI graph, these automatically rejected IBIs are displayed as diamonds and are not used to generate the Instantaneous Heart Rate (IHR), which is calculated by interpolating all non-rejected IBIs. Note that adjusting the settings within the PhysioAnalyzer Viewer will only affect the current file. Other files are not affected and keep the settings as originally specified when the PhysioAnalyzer was created.
+ - Since manually removing individual IBIs can be time consuming, a better approach may be to adjust the automatic IBI filtering this particular PhysioAnalyzer. Zoom the IBI plot completely out by double clicking it. Notice how the correct IBIs in this file are never located above 1.3 s, or below 0.5 s (zoom in to verify). Click the **Settings** button in the ECG tab and set the **Maximum IBI** value to `1.3` and the **Minimum IBI value** to `0.5`. After clicking **Ok**, the ECG module will automatically remove all IBIs outside of these thresholds.
+ <br>In the IBI graph, these automatically rejected IBIs are displayed as diamonds and are not used to generate the Instantaneous Heart Rate (IHR), which is calculated by interpolating all non-rejected IBIs. Note that adjusting the settings within the PhysioAnalyzer Viewer will only affect the current file. Other files are not affected and keep the settings as originally specified when the PhysioAnalyzer was created. Note that only clear outliers can be removed using thresholds. Other erroneous R-peaks and IBIs must be removed manually using rejection zones.
 
     {% include image.html
             img="tutorial\ECG_Edit_Settings.png"
@@ -409,7 +403,6 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="ecgEditSettings"
             caption="Edit ECG settings of current PhysioData file." %} 
 
- - Check out and if necessary remove the possible outliers located around 550 s and 1100 s. 
  - When done, mark the ECG module in 'CS_Example_01' as accepted by clicking the checkbox.
  - Press the **Save** button next to the **Menu** button to save the corrections you just made in the current PhysioData file.
  - Navigate to the ECG tab in 'CS_Example_04' and notice that there seem to be a lot of artifacts in the IBI data.
@@ -420,13 +413,15 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
             id="lowRPeaks1"
             caption="ECG containing a lot of IBI artifacts." %} 
 
- - Zoom in at some of the artifacts. Many IBIs are automatically rejected, visualized by diamonds in the IBI graph. Notice that each time before an outlying IBI occurs, an R-peak is 'missed' by the PhysioData Toolbox. This means that a 'true' R-peak was not detected as R-peak. Rather than manually removing each IBI, we can fix this by adjusting the **Minimum R-peak value** setting in this particular PhysioAnalyzer. Zoom completely out by double clicking on the ECG graph. Notice that the R-peaks hover around 0.5 mV, but do not go below 0.3 mV. Click the **View/Edit Settings** button in the ECG tab and set the **Minimum R-peak value** value to `0.3`. After clicking **Ok**, the ECG module will automatically detect the R-peaks with a value above 0.3.
+ - Zoom in at some of the artifacts. Many IBIs are automatically rejected, visualized by diamonds in the IBI graph. Notice that each time before an outlying IBI occurs, an R-peak is 'missed' by the PhysioData Toolbox. This means that a 'true' R-peak was not detected as R-peak.
 
     {% include image.html
             img="tutorial\ECG_Low_R-peaks-2.png"
             title="Low R-peaks 2"
             id="lowRPeaks2"
             caption="R-peaks missed by the PhysioData Toolbox." %}
+ 
+ - Rather than manually removing each IBI, we can fix this by adjusting the **Minimum R-peak value** setting in this particular PhysioAnalyzer. Zoom completely out by double clicking on the ECG graph. Notice that the R-peaks hover around 0.5 mV, but do not go below 0.3 mV. Click the **Settings** button in the ECG tab and set the **Minimum R-peak value** value to `0.3`. After clicking **Ok**, the ECG module will automatically detect the R-peaks with a value above 0.3.
 
 {% include image.html
             img="tutorial\ECG_Low_R-peaks-3.png"
@@ -442,19 +437,14 @@ The ECG module features the ability to mark and reject erroneous R-peaks and IBI
 Data correction in the Skin Conductance graph consists of the user inserting **Raw-Skip zones** inside which the raw data are not used. Instead, the data inside the zone are replaced by linear interpolation before applying the low-pass filter, and performing the subsequent processing and analysis actions. 
  - Go the the SC tab in 'CS_Example_01'. Notice how the skin conductance signal features two downward spikes, possibly caused by the electrodes coming loose (driving down the conductance) and one upwards spike, possibly caused by the electrodes getting short circuited (driving up the conductance).
  - In the Skin Conductance graph, zoom in to the artifact at around 650 s. Notice how the (raw) signal is suddenly dropping to 0 and does not reflect any natural skin conductance reaction. However, the toolbox does assign SCR landmarks to this spike (SCR valley and peak). It is thus important to remove these faulty sections.
- - Select a section straddling the artifact. Focus on covering the spike in the gray raw data signal. Select **Disregard raw skin conductance data and interpolate** and **Do not detect SCRs with landmarks in selected section** to remove the spike and to not use the section for SCR detection.
+ - Select a section straddling the artifact. Focus on covering the spike in the gray raw data signal. Select **Disregard raw skin conductance data and interpolate** to remove the spike. As your not modifying the SCR detection, leave **SCR detection** on **Keep as is**.
 
      {% include image.html
-            img="tutorial\SC_faulty_spike-2.png"
-            title="SC artifact 1"
+            img="tutorial\SC_faulty_spike.gif"
+            title="SC artifact"
             id="scArtifact1"
-            caption="Selecting and disregarding a SC zone." %}
-  {% include image.html
-            img="tutorial\SC_faulty_spike-3.png"
-            title="SC artifact 2"
-            id="scArtifact2"
-            caption="Newly created SC raw skip zone." %}
-
+            caption="Selecting and disregarding a zone in the skin conductance signal." %}
+  
  - Do the same for the other artifacts.
  - When done, mark the SC module in 'CS_Example_01' as accepted by clicking the checkbox.
  - Press the **Save** button to save the corrections you just made.
@@ -502,7 +492,7 @@ Say we want to update the epoch definitions in all files, but leave the other se
  - We will also add a Metadata Column so that more information is included in the exported data:
      - Click **Add Metadata Column**
      - Enter `Type` in the Column Name field.
-     - In the newly created column, fill in `response` in 'Resp' epochs (rows 3 and 4) and `baseline` in the 'Base' epochs (rows 6 and 7).
+     - In the newly created column, fill in `response` in 'Resp' epochs (rows 3 and 4) and `baseline` in the 'Base' epochs (rows 8 and 9).
 
        {% include image.html
             img="tutorial\EpochsAdjusted-2.png"
@@ -510,7 +500,7 @@ Say we want to update the epoch definitions in all files, but leave the other se
             id="epochsAdjusted"
             caption="The Epoch Definition table with the baseline epochs and metadata column added." %}
 
- - Click **Ok** in the Epoch Builder and the Settings dialog to return to the Session Manager.
+ - Click **Save and Exit** in the Epoch Builder and the Settings dialog to return to the Session Manager.
  - Expand the ECG module in the PhysioAnalyzer tree, and deselect all settings except the **Epochs** (labeled **Epochs from definition: 7 row(s) in table**). 
 
 {% include image.html
@@ -521,15 +511,7 @@ Say we want to update the epoch definitions in all files, but leave the other se
     no_shadow = true
     caption = "The ECG module with only the Epochs setting checked." %}
 
- - Click the **Apply to PhysioData Files**. This will open a summary of the settings that are to be pushed to the files. In this window, click **Apply to all files** to propagate the listed settings, in this case the epochs, to all the PhysioData files. This will leave the other settings intact.
-
- {% include image.html
-    img="tutorial\PhysioAnalyzerSetting-2.png"
-    title= "PhysioAnalyzer Setting"
-    id="physioAnalyzerSetting"
-    max_width="500px"
-    no_shadow = true
-    caption = "The Batch PhysioAnalyzer Propagator window. It shows a summary of the PhysioAnalyzers that are about to be pushed to the files, including their settings." %}
+ - Click the **Apply to PhysioData Files** button. This will open a summary of the settings that are to be pushed to the files. Notice that only the epochs are now included in the settings. Click **Apply to all files** to propagate the listed settings, in this case the epochs, to all the PhysioData files. This will leave the other settings intact. It is also possible to preselect files in the file tree, and push settings only to them.
 
  Note that the **Maximum IBI value** setting in 'CS_Example_01' and the **Minimum R-peak value** in 'CS_Examples_04' were previously customized and differ from the other files. As such, if that setting were not unchecked in the PhysioAnalyzer tree, its value would be pushed to all files overwriting any file-specific values.
 

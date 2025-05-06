@@ -28,7 +28,7 @@ The output of this module consists of the IBIs surrounding events, and their del
     img="user-guide/physioanalyzers/ibi-module-gui-1.png"
     title= page.title
     id="gui-1"
-    caption="The IBI Sequence Analyzer, showing IBIs -5 to 5 surrounding an event (red triangle). The size of the IBI circles increase with their index, which allows the user to detect when IBIs from one event overlap IBIs from another event. Note that IBI(-1) is the first IBI to occur after the event, however, it is not characterized as IBI(0) due to the threshold being set at 0.5." %} 
+    caption="The IBI Sequence Analyzer, showing IBIs -5 to 5 surrounding an event (the downward-facing triangle in the Events graph). The size of the IBI circles increase with their index, which allows the user to detect when IBIs from one event overlap IBIs from another event. Note that IBI(-1) is the first IBI to occur after the event, however, it is not characterized as IBI(0) due to the threshold being set at 0.5." %} 
 
 # User Corrections #
 The IBI module itself does not allow users to correct artifacts, this must instead be done in the linked ECG module. Any changes made to the IBIs in the linked ECG module are automatically transmitted to the IBI module, and the graphs and results table are automatically updated.

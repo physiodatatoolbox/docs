@@ -63,7 +63,7 @@ The following zooming actions can be performed when interacting with axes:
     Double-click on a graph using the left mouse button to reset the zoom. This will zoom out to a level where all data points fit inside the graph.
  
  {% include image.html
-    img="/user-guide/data-viewers/graph_interactions.gif"
+    img="/user-guide/data-viewers/graph-interactions.gif"
     title="Graph Interactions"
     id="ga"
     caption="Animations of basic graphs interactions (zooming, panning, etc.)." %}
@@ -181,7 +181,7 @@ Each tab has a toolbar displaying the PhysioAnalyzer type and its tag, and featu
  - **Remove Corrections:**  
 	Removes all user corrections in the current PhysioAnalyzer; i.e., it resets the PhysioAnalyzer’s state. The settings, however, keep their current parameters.
 
- - **View/Edit Settings:**  
+ - **Settings:**  
 	Opens the settings window for the current PhysioAnalyzer. Only the settings in the current PhysioAnalyzer are affected by changes made here. Not all settings can be changed in the individual PhysioAnalyzers; the tag, and Epoch or Event Definitions, for instance, must be changed using the PhysioAnalyzer Creator in the Session Manager.
 
  - **View Results:**  
@@ -198,6 +198,8 @@ The **Accepted Checkbox** can be used to mark PhysioAnalyzers as ‘reviewed’ 
     max_width="420px"
     caption="The Accepted Checkbox, in its default (top) and activated (bottom) states" %}
 
+The accepted checkbox is located in the PhysioAnalyzer Viewer, in the op right corner of the tab, as seen in the [Figure](#pa-data) above.
+
 ## Epoch and Event Graphs
 **Epochs**, which are sections within a signal, are usually plotted above graphs, and have their time-axis linked to the graphs below them. Epochs are visualized as rectangles, with their horizontal width indicating their span. Their colors are pseudo-randomly chosen, and their height and thickness do not carry any information. In case epochs overlap, they are stacked vertically so that they can be differentiated. 
 
@@ -212,3 +214,5 @@ Clicking on an epoch rectangle or an event triangle opens a window displaying it
     no_shadow = true
     max_width="420px"
     caption="Top: an epoch plot, showing three minute-long epochs that have been sliced into 10 second segments. Bottom: an event plot showing nine events. The time axis of the epoch and event graphs correspond to the time axis of the graphs below them." %}
+
+The epoch and event graphs are located in the PhysioAnalyzer Viewer, above the other axes, as seen in the [Figure](#pa-data) above.

@@ -1,0 +1,892 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(6)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > ul > li:nth-child(6) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > ul > li:nth-child(6) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(6) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ICG Ensemble Analyzer | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="ICG Ensemble Analyzer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ICG Ensemble Analyzer" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"ICG Ensemble Analyzer","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide.html">User Guide</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html">PhysioAnalyzers</a></li>
+    <li class="breadcrumb-nav-list-item"><span>ICG Ensemble Analyzer</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="pdt-abstract-title, no_toc" id="icg-ensemble-analyzer">
+  
+  
+    <a href="#icg-ensemble-analyzer" class="anchor-heading" aria-labelledby="icg-ensemble-analyzer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> ICG Ensemble Analyzer
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">The ICG Ensemble Module generates one ICG and one ECG ensemble waveform per epoch, and allows the user to score the necessary ICG landmarks.</p><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#user-corrections" id="markdown-toc-user-corrections">User Corrections</a>    <ol>
+      <li><a href="#rejecting-or-accepting-waveforms" id="markdown-toc-rejecting-or-accepting-waveforms">Rejecting or Accepting Waveforms</a></li>
+      <li><a href="#scoring" id="markdown-toc-scoring">Scoring</a></li>
+    </ol>
+  </li>
+  <li><a href="#settings" id="markdown-toc-settings">Settings</a></li>
+  <li><a href="#metrics" id="markdown-toc-metrics">Metrics</a></li>
+</ol>
+
+</details><hr />
+<h1 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h1>
+    
+<p>The <strong>ICG Ensemble Analyzer</strong> module performs epoch-based analysis of ensemble ICG and ECG signals, and allows the user to manually score the Q, B, C, and X points on the ensembles. In addition, the user can exclude deviant waveforms from the ensemble.</p>
+
+<p><strong>Waveforms</strong> are sections of the ICG and ECG signals that straddle each R-peak, and the <strong>ensemble</strong> is the grand average curve of the individual waveforms,</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- iF this is the first run, add a modal div (for popups)  
+        https://www.w3schools.com/howto/howto_css_modal_images.asp
+-->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" data-proofer-ignore="" />
+    <div id="caption"></div>
+</div>
+
+<script>
+
+    // Close the modal window when users click it's background:
+    var modal = document.getElementById("myModal");
+    modal.style.cursor ="pointer";
+    modal.onclick = function () {
+        modal.style.display = "none";
+        
+        // Reenable the scrollbar on the overlying body:
+        document.body.style.overflow = '';
+    }
+
+    
+
+</script>
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/icg-ensemble-module-gui-1.png
+ " title="ICG Ensemble Analyzer"> -->
+    <img class="pdtImg" id="gui-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/icg-ensemble-module-gui-1.png
+ " alt="ICG Ensemble Analyzer" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#gui-1">Figure 1</a>:
+        The ICG Ensemble Analyzer (Manual Scoring) GUI, showing: the ICG signal and the R-peak times (top graph, labeled dZ/dt); the current epoch data (leftmost table); the ensemble ECG and ICG curves, as well as the individual waveforms (two center graphs); and, the individual waveform data (rightmost table). Note that the first waveform in the table can be excluded from the ensemble by unchecking the 'Use Waveform' box. The rejected waveform is visualized by a triangle in the Wave-Skip graph, above its R-peak location.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("gui-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The ICG Ensemble Analyzer (Manual Scoring) GUI, showing: the ICG signal and the R-peak times (top graph, labeled dZ/dt); the current epoch data (leftmost table); the ensemble ECG and ICG curves, as well as the individual waveforms (two center graphs); and, the individual waveform data (rightmost table). Note that the first waveform in the table can be excluded from the ensemble by unchecking the 'Use Waveform' box. The rejected waveform is visualized by a triangle in the Wave-Skip graph, above its R-peak location.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>To ensemble the ICG and ECG signals, a valid ECG Signal Analyzer module must be present in the PhysioData file. The R-peak times from this ECG module, as well as the user specified waveform start and end offsets, are used to slice the ICG and ECG signals into individual waveforms. Only waveforms that completely fit inside one or more epochs are further processed. The filtered ECG signal from the ECG module is used for the ECG waveforms, and the ICG signal is taken from the user specified channel, and optionally pre-processed.</p>
+
+<p>The ICG Ensemble Analyzer only analyzes the ICG (-dZ/dt) signal, the Generic Signal Analyzer module can be used to calculate descriptive statistics from the Z-signal; e.g., mean Z value per epoch. Similarly, ECG based metrics are only calculated in the ECG module, not the ICG module itself. For convenience and compatibility, consider defining the necessary epochs in the ECG module, then referring to them in the ICG and Generic Signal Analyzers. The toolbox cannot generate a -dZ/dt signal from a Z signal, but this can be done beforehand using a custom MATLAB script.</p>
+
+<p>The waveform rejection criteria, and the placement strategy for the Q, B, C and X points are at the researchers’ own discretion, and fall outside of the scope of this document. Because the Q-point is used to mark the onset of the PEP, ‘R-onset PEP’ can technically be calculated by placing the Q-point at the R onset.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+         max-width: 600px; 
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/icg-ensemble-module-landmarks.png
+ " title="ICG Landmarks"> -->
+    <img class="pdtImg" id="landmarks" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/icg-ensemble-module-landmarks.png
+ " alt="ICG Landmarks" style="
+             width: 100%; 
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#landmarks">Figure 2</a>:
+        The ECG (top) and ICG (bottom) ensembles, and their landmarks. The R and C points are automatically detected, whereas the Q, B and X points must be manually scored by the user.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("landmarks");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The ECG (top) and ICG (bottom) ensembles, and their landmarks. The R and C points are automatically detected, whereas the Q, B and X points must be manually scored by the user.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script><hr />
+<h1 id="user-corrections">
+  
+  
+    <a href="#user-corrections" class="anchor-heading" aria-labelledby="user-corrections"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Corrections
+  
+  
+</h1>
+    
+<p>With the exception of basic pre-filtering, the ICG Ensemble Analyzer module does not allow the user to modify the ICG signal. It is, however, possible to include or exclude individual waveforms from the ensembles, and to custom place the ICG and ECG landmarks (except the R-peaks).</p>
+
+<p>The <strong>Epoch Data</strong> and <strong>Waveform Data</strong> tables, and the <strong>Waveform Graphs</strong> display information about the currently selected epoch, and allow that epoch’s ensemble to be scored. To change the currently selected epoch, choose another one from the dropdown menu in the Epoch Data table, or click on the desired epoch in the epoch graph.</p>
+
+<p>The filtered ECG signal and the R-peak times, and hence also the ensembles, are dependent on the linked ECG module, and are automatically updated whenever the ECG module’s data is changed.</p>
+<h2 id="rejecting-or-accepting-waveforms">
+  
+  
+    <a href="#rejecting-or-accepting-waveforms" class="anchor-heading" aria-labelledby="rejecting-or-accepting-waveforms"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rejecting or Accepting Waveforms
+  
+  
+</h2>
+    
+<p>Once a waveform is rejected, neither the ICG nor ECG waveforms corresponding to that R-peak will be used to calculate the ensemble averages of any epoch that that R-peak may be in. Rejected waves are visualized in the wave-skip graph as triangles above their R-peak times. Additionally, rejected waveforms are plotted as dashed lines in the <strong>Waveform Graphs</strong>. Individual waveforms can be rejected and included one at a time by checking or unchecking their <strong>Use Waveform</strong> box in the <strong>Waveform Data</strong> table.</p>
+
+<!-- Lib for equations: 
+Tip: https://www.codecogs.com/latex/eqneditor.php
+-->
+<script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<p>The analyzer module calculates a deviation metric for each ICG waveform to facilitate the identification and rejection of abnormal waveforms. This metric, the <strong>Normalized Root Mean Squared Deviation</strong> (NRMSD) is calculated as root mean squared of the deviation between each sample of a ICG waveform \((\small ICG{i})\) and the corresponding sample of the ICG ensemble \((\small \widehat{ICG}_{i})\). The RMSD is then normalized using the range of the ensemble, as in <a href="#eq1">Equation 1</a>.</p>
+
+<div id="eq1">\[\begin{equation}
+\small
+NRMSD = \sqrt[]{
+\frac{\sum_{i=1}^{n}(\widehat{ICG}_{i} - ICG{i})^{2}}{n}
+}
+\cdot
+(\widehat{ICG}_{max} - \widehat{ICG}_{min})
+
+\tag{Eq. 1}
+\end{equation}\]
+</div>
+
+<p>The <strong>Sort</strong> button toggles the table sort between increasing R-peak time and decreasing NRMSD.</p>
+<h2 id="scoring">
+  
+  
+    <a href="#scoring" class="anchor-heading" aria-labelledby="scoring"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Scoring
+  
+  
+</h2>
+    
+<p>The Q-point can be scored by right-clicking inside the ECG waveform graph axes at the desired Q-point time, and selecting the <strong>Place Q-Point at this time</strong> from the context menu. Similarly, the B and X points can be scored by right-clicking inside the ICG waveform graph axes. All manually scored points are automatically placed on their respective ensemble curves at the sample that is closest to the user-specified time; i.e., a sampling rate of 1000 Hz allows scoring with 1 ms accuracy.</p>
+
+<p>To facilitate the scoring of the ECG and ICG landmarks, the first time derivative,  acceleration, and the second time derivative, jerk, of both signals are calculated. Clicking the <strong>Ensemble | Accel. + Jerk | Waves</strong> button toggles between showing the waveforms or the derivatives. As the derivatives are arbitrarily scaled to fit the ensemble curve range, they should only be used for visual aid when scoring.</p><hr />
+<h1 id="settings">
+  
+  
+    <a href="#settings" class="anchor-heading" aria-labelledby="settings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Settings
+  
+  
+</h1>
+    
+<p>The ICG Ensemble Analyzer assumes that the unit of the ICG signal is <strong>-Ω/s</strong>. If this is not the case, fill in an appropriate gain value (multiplier) to transform the signal into -Ω/s.</p>
+
+<p>The auto-generated list below shows the settings available in the ICG Ensemble Analyzer module:</p>
+
+<ul>
+  <li>
+    <p><strong>General Settings:</strong><br />
+ Name, source and epoch settings for this PhysioAnalyzer.</p>
+
+    <ul>
+      <li>
+        <p><strong>Analyzer prefix (tag):</strong><br />
+ The tag (name) of this PhysioAnalyzer. The tag must be unique and start with a letter, and may only contain alphanumeric characters.</p>
+      </li>
+      <li>
+        <p><strong>Tag of the ECG Analyzer:</strong><br />
+ The tag of the ECG Analyzer from which the accepted R-peaks are used.</p>
+      </li>
+      <li>
+        <p><strong>Channel-number of signal:</strong><br />
+ The channel number (index) of the signal to be analyzed.</p>
+      </li>
+      <li>
+        <p><strong>Generate epochs from:</strong><br />
+ Specifies how epochs are generated.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Preprocessing Settings:</strong><br />
+ The gain is the value with which the raw -dZ/dt signal needs to be multiplied to convert it into -Ω/s.</p>
+
+    <ul>
+      <li>
+        <p><strong>Gain (signal multiplier) [x]:</strong><br />
+ The gain is the value with which the raw signal is multiplied before being further processed and analyzed.</p>
+      </li>
+      <li>
+        <p><strong>Highpass filter [Hz]:</strong><br />
+ The high-pass filter and its cutoff frequency.</p>
+      </li>
+      <li>
+        <p><strong>Lowpass filter [Hz]:</strong><br />
+ The low-pass filter and its cutoff frequency.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Epoch Ensembling Settings:</strong><br />
+ Settings for generating the ensembled -dZ/dt signal, per epoch. These settings cannot be changed.</p>
+
+    <ul>
+      <li>
+        <p><strong>Start of waveform vs. R-peak [s]:</strong><br />
+ The relative delay of the start of the ensembled ICG waveform, relative to the R-peak.</p>
+      </li>
+      <li>
+        <p><strong>End of waveform vs. R-peak [s]:</strong><br />
+ The relative delay of the end of the ensembled ICG waveform, relative to the R-peak.</p>
+      </li>
+    </ul>
+  </li>
+</ul><hr />
+<h1 id="metrics">
+  
+  
+    <a href="#metrics" class="anchor-heading" aria-labelledby="metrics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Metrics
+  
+  
+</h1>
+    
+<p>The auto-generated table belows lists all the metrics produced by the ICG Ensemble Analyzer module.</p>
+
+<!---
+    This include generates a table with metrics for a given PhysioAnalyzer module.
+-->
+
+<p class="fs-3 mb-1"><a id="metrics" href="#metrics">Table 1</a>:
+The metrics calculated by the ICG Ensemble Analyzer module.</p>
+<div class="table-wrapper"><table>
+  
+    
+    <tr>
+      
+        <th>Variable:</th>
+      
+        <th>Unit:</th>
+      
+        <th>Description:</th>
+      
+    </tr>
+    
+
+    <tr class="row1">
+<td class="col1">
+      RQ
+    </td><td class="col2">
+      ms
+    </td><td class="col3">
+      Time of scored Q-Point on the ensembled ECG curve, relative to the R-Point.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      Q_Amp
+    </td><td class="col2">
+      mV
+    </td><td class="col3">
+      Amplitude of scored Q-Point on the ensembled ECG curve.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      RB
+    </td><td class="col2">
+      ms
+    </td><td class="col3">
+      Time of scored B-Point on the ensembled ICG curve, relative to the R-Point.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      B_Amp
+    </td><td class="col2">
+      -ohm/sec
+    </td><td class="col3">
+      Amplitude of scored B-Point on the ensembled ICG curve.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      RC
+    </td><td class="col2">
+      ms
+    </td><td class="col3">
+      Time of scored C-Point (dZdt-max) on the ensembled ICG curve, relative to the R-Point.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      C_Amp
+    </td><td class="col2">
+      -ohm/sec
+    </td><td class="col3">
+      Amplitude of scored C-Point (dZdt-max) on the ensembled ICG curve.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      RX
+    </td><td class="col2">
+      ms
+    </td><td class="col3">
+      Time of scored X-Point on the ensembled ICG curve, relative to the R-Point.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      X_Amp
+    </td><td class="col2">
+      -ohm/sec
+    </td><td class="col3">
+      Amplitude of scored X-Point on the ensembled ICG curve.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      HR
+    </td><td class="col2">
+      BPM
+    </td><td class="col3">
+      Average instantaneous Heart Rate, in BPM.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      PEP
+    </td><td class="col2">
+      ms
+    </td><td class="col3">
+      The Pre-Ejection Period (PEP = RB-RQ).
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      PEPplausibility
+    </td><td class="col2">
+      -
+    </td><td class="col3">
+      The range of plausible PEP values for the given HR.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      LVET
+    </td><td class="col2">
+      ms
+    </td><td class="col3">
+      The Left Ventricular Ejection Time (LVET = RX-RB).
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      LVETplausibility
+    </td><td class="col2">
+      -
+    </td><td class="col3">
+      The range of plausible LVET values for the given HR.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      nWaveforms
+    </td><td class="col2">
+      count
+    </td><td class="col3">
+      Number of complete waveforms inside the epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      nAcceptedWaveforms
+    </td><td class="col2">
+      count
+    </td><td class="col3">
+      Number of accepted waveforms inside the epoch.
+    </td></tr>
+
+  
+</table></div>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

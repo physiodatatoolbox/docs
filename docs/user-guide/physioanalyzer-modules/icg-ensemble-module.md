@@ -95,6 +95,6 @@ The auto-generated list below shows the settings available in the {{ page.title 
 ---
 
 # Metrics
-The auto-generated table belows lists all the metrics produced by the {{ page.title }} module.
+The auto-generated table below lists all the metrics produced by the {{ page.title }} module.
 
 {% include metrics-table.html id="metrics" %}

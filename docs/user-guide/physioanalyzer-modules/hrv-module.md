@@ -24,7 +24,7 @@ The **HRV Analyzer** retrieves corrected IBI (Inter Beat Interval) data from a l
     img="user-guide/physioanalyzers/hrv-module-gui-1.png"
     title= page.title
     id="gui-1"
-    caption="The HRV module's GUI. The top graph shows the epochs (green, blue and red rectangles), and the graph below that shows the IBI events (blue circles), the contiguous IBIs (blue line) and the global trend baseline (red line). The bottom left panel shows the name of the current epoch in the dropdown menu, and under it various metrics for that epoch. The bottom right panel shows collapsible graphs that visualize the: detrended IBIs; IBI successive differences; Poincaré plot; and Lomb-Scargle periodogram (for power analysis)." %} 
+    caption="The HRV module's GUI. The top graph shows the epochs (green, blue and red rectangles), and the graph below that shows the IBI events (blue circles), the contiguous IBIs (blue line) and the global trend baseline (red line). The bottom left panel shows the name of the current epoch in the dropdown menu, and under it various metrics for that epoch. The bottom right panel shows collapsible graphs that visualize the: detrended IBIs; IBI successive differences; Poincaré plot; and Lomb-Scargle periodogram (for power analysis). Not all graphs are shown here, but are presented in their concerning sections below." %} 
 
 The two topmost graphs of the HRV module visualize the epochs, the IBI data that were retrieved from the ECG module and---if enabled---the global trend baseline. Below those are two panels labeled **Epoch Data and Results** and **Epoch Specific Plots**, which show the analysis results and plots of the selected epoch.
 
@@ -50,17 +50,24 @@ The HRV module extracts the following standard time-domain metrics from the detr
 The RMSSD and the successive IBI differences from which it was calculated are visualized in the module's **Successive Differences** graph in the Epoch Specific Plots panel.
 
 {% include image.html
-    img="user-guide/physioanalyzers/hrv-module-gui-detrended-rmssd.png"
-    title= "Detrended IBIs and RMSSD"
-    id="gui-detrend-rmssd"
+    img="user-guide/physioanalyzers/hrv-module-gui-detrended.png"
+    title= "Detrended IBIs"
+    id="gui-detrend"
     no_shadow = true
-    caption="The detrended epoch-specific IBIs (top) and the differences between them (bottom). For visualization purposes, the heart rate acceleration events are plotted in pink and the heart rate deceleration events in aquamarine. Note that a heart rate acceleration is defined as an increase in heart rate, which equals a decrease in inter beat interval." %} 
+    caption="The detrended epoch-specific IBIs." %}
+
+{% include image.html
+    img="user-guide/physioanalyzers/hrv-module-gui-rmssd.png"
+    title= "Detrended IBIs and RMSSD"
+    id="gui-rmssd"
+    no_shadow = true
+    caption="The differences between successive IBIs. For visualization purposes, the heart rate acceleration events are plotted in pink and the heart rate deceleration events in aquamarine. Note that a heart rate acceleration is defined as an increase in heart rate, which equals a decrease in inter beat interval." %} 
 
 ## Frequency-Domain Analysis ##
 The **Lomb-Scargle** method is used to estimate the IBI time-series' Power Spectral Density (PSD), from which the Very Low Frequency (VLF), Low Frequency (LF), and High Frequency (HF) powers are computed.
 
 {% include image.html
-    img="user-guide/physioanalyzers/hrv-module-ls.png"
+    img="user-guide/physioanalyzers/hrv-module-gui-ls.png"
     title= "Lomb-Scargle Periodogram"
     id="ls-1"
     no_shadow = true
@@ -70,7 +77,7 @@ The **Lomb-Scargle** method is used to estimate the IBI time-series' Power Spect
 The HRV module generates a Poincaré plot for the non-linear analysis of HRV. A **Poincaré plot** is a scatter plot where each IBI (IBI<sub>n</sub>) is plotted against the subsequent IBI (IBI<sub>n+1</sub>), with the former and latter representing the horizontal and vertical axes, respectively. The Poincaré plot refers to IBIn and IBIn+1 as RR<sub>n</sub> and RR<sub>n+1</sub> in order to better comply with convention.
 
 {% include image.html
-    img="user-guide/physioanalyzers/hrv-module-pp.png"
+    img="user-guide/physioanalyzers/hrv-module-gui-pp.png"
     title= "Poincaré Plot"
     id="PP-1"
     no_shadow = true

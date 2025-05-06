@@ -1,0 +1,2057 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(10)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > ul > li:nth-child(10) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(4) > ul > li:nth-child(10) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(10) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Skin Conductance Analyzer | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Skin Conductance Analyzer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Skin Conductance Analyzer" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"Skin Conductance Analyzer","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide.html">User Guide</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html">PhysioAnalyzers</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Skin Conductance Analyzer</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="pdt-abstract-title, no_toc" id="skin-conductance-analyzer">
+  
+  
+    <a href="#skin-conductance-analyzer" class="anchor-heading" aria-labelledby="skin-conductance-analyzer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Skin Conductance Analyzer
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">Preprocesses a Skin Conductance signal, and extracts tonic and phasic components, as well as SCRs (Skin Conductance Responses).</p><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#user-corrections" id="markdown-toc-user-corrections">User Corrections</a></li>
+  <li><a href="#processing-and-analysis-pipeline" id="markdown-toc-processing-and-analysis-pipeline">Processing and Analysis Pipeline</a>    <ol>
+      <li><a href="#step-1-filtering-the-scl-signal" id="markdown-toc-step-1-filtering-the-scl-signal">Step 1: Filtering the SCL signal</a></li>
+      <li><a href="#step-2-calculating-the-tonic-and-phasic-signals" id="markdown-toc-step-2-calculating-the-tonic-and-phasic-signals">Step 2: Calculating the Tonic and Phasic signals</a></li>
+      <li><a href="#step-3-scr-detection-and-analysis" id="markdown-toc-step-3-scr-detection-and-analysis">Step 3: SCR Detection and Analysis</a>        <ol>
+          <li><a href="#valley-peak-pair-detection" id="markdown-toc-valley-peak-pair-detection">Valley-Peak Pair Detection</a></li>
+          <li><a href="#inflection-point-detection" id="markdown-toc-inflection-point-detection">Inflection Point Detection</a></li>
+          <li><a href="#scr-classification" id="markdown-toc-scr-classification">SCR Classification</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#settings" id="markdown-toc-settings">Settings</a></li>
+  <li><a href="#metrics" id="markdown-toc-metrics">Metrics</a></li>
+  <li><a href="#resampled-signals" id="markdown-toc-resampled-signals">Resampled Signals</a></li>
+</ol>
+
+</details><hr />
+<h1 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h1>
+    
+<p>The <strong>Skin Conductance Analyzer</strong> can be used to: processes <strong>Skin Conductance Level (SCL)</strong> data; extract <strong>Tonic</strong> and <strong>Phasic</strong> SCL components; and, detect and analyze <strong>Skin Conductance Responses (SCRs)</strong>.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- iF this is the first run, add a modal div (for popups)  
+        https://www.w3schools.com/howto/howto_css_modal_images.asp
+-->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" data-proofer-ignore="" />
+    <div id="caption"></div>
+</div>
+
+<script>
+
+    // Close the modal window when users click it's background:
+    var modal = document.getElementById("myModal");
+    modal.style.cursor ="pointer";
+    modal.onclick = function () {
+        modal.style.display = "none";
+        
+        // Reenable the scrollbar on the overlying body:
+        document.body.style.overflow = '';
+    }
+
+    
+
+</script>
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-gui-1.png
+ " title="Skin Conductance Analyzer"> -->
+    <img class="pdtImg" id="gui-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-gui-1.png
+ " alt="Skin Conductance Analyzer" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#gui-1">Figure 1</a>:
+        The Skin Conductance Analyzer GUI, showing the SCL (in axes labeled Skin Conductance) and the phasic channel (in the axes labeled Phasic SC).
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("gui-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Skin Conductance Analyzer GUI, showing the SCL (in axes labeled Skin Conductance) and the phasic channel (in the axes labeled Phasic SC).";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script><hr />
+<h1 id="user-corrections">
+  
+  
+    <a href="#user-corrections" class="anchor-heading" aria-labelledby="user-corrections"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Corrections
+  
+  
+</h1>
+    
+<p>The Skin Conductance Analyzer features the same correction method as the  <a href="./physioanalyzer.html#user-corrections">Generic Signal Analyzer</a>; i.e., sections of the raw signal can be marked for exclusion and interpolation. Due to the way the tonic signal is measured—with a moving minimum filter—it is imperative to remove dipping artifacts, such as those cause by electrode disconnection.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-correction-1.png
+ " title="SCL Correction 1"> -->
+    <img class="pdtImg" id="correction-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-correction-1.png
+ " alt="SCL Correction 1" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#correction-1">Figure 2</a>:
+        A section of the SCL signal (light blue line) showing a dipping artifact around t = 520 s, caused by an electrode-disconnection event. As a result, the tonic SCL (dark blue line) gets pulled downwards, which also leads to artifacts in the phasic SCL (not shown), as it’s calculated using the tonic signal. To correct this, a zone can be created inside which the raw signal is discarded and interpolated, see Figure 50.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("correction-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "A section of the SCL signal (light blue line) showing a dipping artifact around t = 520 s, caused by an electrode-disconnection event. As a result, the tonic SCL (dark blue line) gets pulled downwards, which also leads to artifacts in the phasic SCL (not shown), as it’s calculated using the tonic signal. To correct this, a zone can be created inside which the raw signal is discarded and interpolated, see Figure 50.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-correction-2.png
+ " title="SCL Correction 2"> -->
+    <img class="pdtImg" id="correction-2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-correction-2.png
+ " alt="SCL Correction 2" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#correction-2">Figure 3</a>:
+        After inserting an interpolation zone is created, visualized as the red rectangle in the top 'Raw-Skip' graph, the raw signal is interpolated over the ‘skip zone’ and the filtered and tonic SCL signals no longer feature the dipping artifact.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("correction-2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "After inserting an interpolation zone is created, visualized as the red rectangle in the top 'Raw-Skip' graph, the raw signal is interpolated over the ‘skip zone’ and the filtered and tonic SCL signals no longer feature the dipping artifact.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>Additionally, the module includes the ability to add zones in which SCR detection is disabled; referred to as <strong>SCR rejection</strong> zones. These zones, visualized as red rectangles in the second graph from the top, have two effects:</p>
+
+<ul>
+  <li>
+    <p><strong>SCR removal:</strong><br />
+ If an SCR onset or peak lies within the SCR-rejection zone, that SCR is removed.</p>
+  </li>
+  <li>
+    <p><strong>Inflection point removal:</strong><br />
+ If an inflection point lies within the SCR-rejection zone, it is removed. This effectively merges the SCRs that were split by the inflection zone, see <a href="#correction-3">Figure</a> below.</p>
+  </li>
+</ul>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-correction-3.png
+ " title="SCR Correction"> -->
+    <img class="pdtImg" id="correction-3" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-correction-3.png
+ " alt="SCR Correction" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#correction-3">Figure 4</a>:
+        Inserting a 'SCR rejection' zone over an inflection point causes the Toolbox to merge bordering SCRs.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("correction-3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Inserting a 'SCR rejection' zone over an inflection point causes the Toolbox to merge bordering SCRs.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script><hr />
+<h1 id="processing-and-analysis-pipeline">
+  
+  
+    <a href="#processing-and-analysis-pipeline" class="anchor-heading" aria-labelledby="processing-and-analysis-pipeline"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Processing and Analysis Pipeline
+  
+  
+</h1>
+    
+<p>The Skin Conductance module uses the following terminology.</p>
+
+<ul>
+  <li>
+    <p><strong>SCL:</strong><br />
+ The SCL (Skin Conductance Level) refers to the low pass filtered Skin Conductance signal; i.e. it is the smoothed but not decomposed skin conductance signal. The unfiltered signal is referred to as the Raw SCL.</p>
+  </li>
+  <li>
+    <p><strong>Tonic SCL:</strong><br />
+ The Tonic SCL refers to the tonic (slow moving) component of the SCL signal.</p>
+  </li>
+  <li>
+    <p><strong>Phasic SCL:</strong><br />
+ The Phasic SCL refers to the phasic (fast moving) component of the SCL signal.</p>
+  </li>
+  <li>
+    <p><strong>SCR:</strong><br />
+ The SCR (Skin Conductance Response) refers to a section in the SCL signal with a specific shape–namely an upwards hump suggesting a sudden increase in skin conductance activity, followed by a decay. The Toolbox identifies SCRs by scanning the signal for sections that conform to specific SCR definition. Any SCRs that conform are classified, regardless of their proximity to epochs.</p>
+  </li>
+</ul>
+<h2 id="step-1-filtering-the-scl-signal">
+  
+  
+    <a href="#step-1-filtering-the-scl-signal" class="anchor-heading" aria-labelledby="step-1-filtering-the-scl-signal"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 1: Filtering the SCL signal
+  
+  
+</h2>
+    
+<p>The raw SCL signal is fetched from the specified channel, and if enabled, the shock removal moving median filter is applied. The result is then multiplied by the gain, and if enabled, low pass filtered at the specified cutoff frequency.</p>
+
+<p>It is from this filtered signal that the <strong>SCL_filt</strong> metrics are calculated.</p>
+<h2 id="step-2-calculating-the-tonic-and-phasic-signals">
+  
+  
+    <a href="#step-2-calculating-the-tonic-and-phasic-signals" class="anchor-heading" aria-labelledby="step-2-calculating-the-tonic-and-phasic-signals"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 2: Calculating the Tonic and Phasic signals
+  
+  
+</h2>
+    
+<p>First, the filtered SCL signal is resampled using spline interpolation applied to a new 20 Hz time-vector spanning the length of the filtered SCL signal. The tonic SCL signal is then calculated by first applying a moving minimum filter with the user-specifiable window size to the resampled SCL signal, then smoothing the result using a Gaussian kernel of the same window size.</p>
+
+<p>The phasic SCL signal is calculated by applying a 1st order high pass Butterworth filter with the specified cutoff frequency to the down sampled and interpolated SCL signal.</p>
+
+<p>It is from these tonic and phasic signals, which all have 20 Hz resolution, that the <strong>SCL_tonic</strong> and <strong>SCL_phasic</strong> metrics are calculated.</p>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-tonic-phasic.png
+ " title="SCR Correction"> -->
+    <img class="pdtImg" id="tonic-phasic" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-tonic-phasic.png
+ " alt="SCR Correction" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#tonic-phasic">Figure 5</a>:
+        The filtered SCL signal (light blue line, top graph); tonic SCL signal (dark blue line, top graph); and phasic SCL signal (orange line, bottom graph). Additionally, the area under the phasic line is visualized in light orange (bottom graph).
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("tonic-phasic");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The filtered SCL signal (light blue line, top graph); tonic SCL signal (dark blue line, top graph); and phasic SCL signal (orange line, bottom graph). Additionally, the area under the phasic line is visualized in light orange (bottom graph).";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="step-3-scr-detection-and-analysis">
+  
+  
+    <a href="#step-3-scr-detection-and-analysis" class="anchor-heading" aria-labelledby="step-3-scr-detection-and-analysis"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Step 3: SCR Detection and Analysis
+  
+  
+</h2>
+    
+<p>If enabled, SCRs are detected on the resampled SCL signal described in Step 2, which has a 20 Hz resolution, using the approach described here.</p>
+<h3 id="valley-peak-pair-detection">
+  
+  
+    <a href="#valley-peak-pair-detection" class="anchor-heading" aria-labelledby="valley-peak-pair-detection"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Valley-Peak Pair Detection
+  
+  
+</h3>
+    
+<p>Using peak and valley detection, each occurrence of a valley succeeded by a peak, henceforth collectively <strong>valley-peak pairs</strong>, are identified.</p>
+<h3 id="inflection-point-detection">
+  
+  
+    <a href="#inflection-point-detection" class="anchor-heading" aria-labelledby="inflection-point-detection"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Inflection Point Detection
+  
+  
+</h3>
+    
+<p>If superimposed SCR detection is enabled, SCRs are split at inflection points location on their up slope. To find these inflection points, the resampled SCL signal is first smoothed using a Gaussian filter with the user-specified window size, then derived to attain the first time derivative of the SCL, the SCL’. Subsequently, this signal is also smoothed and derived in the same manner to attain the second time derivative of the SCL signal, the SCL’’.</p>
+
+<p>For each previously found valley-peak pair, the section of the SCL’’ signal between the valley and the peak is searched for negative-to-positive zero-crossings. Zero-crossings inside SCR rejection zones are discarded. The remaining negative-to-positive zero-crossings become <strong>inflection points</strong>, and each valley-peak pair featuring inflection points are split at their respective inflection points, where the inflection point becomes the peak to the previous valley, and the valley to the subsequent peak, forming new valley-peak pairs.</p>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-no-split-scr.png
+ " title="SCR Inflection"> -->
+    <img class="pdtImg" id="no-split-scr" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-no-split-scr.png
+ " alt="SCR Inflection" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#no-split-scr">Figure 6</a>:
+        An SCR that has not been split at its inflection points; i.e., superimposed SCRs detection is disabled. The rising edge of the SCR clearly features an inflection point around t = 1935.4 s; and one less distinguishable inflection point at t = 1933.5 s.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("no-split-scr");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "An SCR that has not been split at its inflection points; i.e., superimposed SCRs detection is disabled. The rising edge of the SCR clearly features an inflection point around t = 1935.4 s; and one less distinguishable inflection point at t = 1933.5 s.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-inflection.png
+ " title="SCR Detection"> -->
+    <img class="pdtImg" id="scr-detection" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide/physioanalyzers/sc-module-inflection.png
+ " alt="SCR Detection" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#scr-detection">Figure 7</a>:
+        Left: when superimposed SCR detection is enabled, the rising SCR is split at its two inflection points, which are defined as the negative-to-positive zero-crossings of the second derivative of the SCL (the pink dotted lines). Right: increasing the derivative smoothing window size smooths out the second derivative of the SCL, thereby reducing the inflection point detection sensitivity.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("scr-detection");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Left: when superimposed SCR detection is enabled, the rising SCR is split at its two inflection points, which are defined as the negative-to-positive zero-crossings of the second derivative of the SCL (the pink dotted lines). Right: increasing the derivative smoothing window size smooths out the second derivative of the SCL, thereby reducing the inflection point detection sensitivity.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h3 id="scr-classification">
+  
+  
+    <a href="#scr-classification" class="anchor-heading" aria-labelledby="scr-classification"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> SCR Classification
+  
+  
+</h3>
+    
+<p>Valley-peak pairs, which may now include those generated by inflection-point splitting, are filtered using the user-specified amplitude and rise time criteria. Additionally, any valley-peak pair with a valley and/or peak inside a SCR rejection zone is discarded. The remaining valley-peak pairs are classified as SCRs, with the valley being defined as the SCRs onset time, and the peak as its peak.</p>
+
+<p>When assigning SCRs to epochs, an SCR is associated with an epoch if the SCR’s onset time lies within  that epoch’s start time plus the user-specified  <strong>start-latency</strong>, and the epoch’s end time plus the specified <strong>end-latency</strong>. SCRs can belong to multiple overlapping epochs, and as a result of the latency compensation, also to multiple non-overlapping epochs.</p><hr />
+<h1 id="settings">
+  
+  
+    <a href="#settings" class="anchor-heading" aria-labelledby="settings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Settings
+  
+  
+</h1>
+    
+<p>The Skin Conductance analyzer assumes that the unit of the raw signal is <strong>µS</strong>. If this is not the case, fill in an appropriate gain value (multiplier) to transform the raw signal into µS.</p>
+
+<p>The auto-generated list below shows the settings available in the Skin Conductance Analyzer module:</p>
+
+<ul>
+  <li>
+    <p><strong>General Settings:</strong><br />
+ Name, source and epoch settings for this PhysioAnalyzer.</p>
+
+    <ul>
+      <li>
+        <p><strong>Analyzer prefix (tag):</strong><br />
+ The tag (name) of this PhysioAnalyzer. The tag must be unique and start with a letter, and may only contain alphanumeric characters.</p>
+      </li>
+      <li>
+        <p><strong>Channel-number of signal:</strong><br />
+ The channel number (index) of the signal to be analyzed.</p>
+      </li>
+      <li>
+        <p><strong>Generate epochs from:</strong><br />
+ Specifies how epochs are generated.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Preprocessing Settings:</strong><br />
+ Settings for processing the raw Skin Conductance signal. This module assumes that the signal is in μS, if it is not, fill in a multiplier (gain) to convert it. The signal is then (optionally) lowpass filtered to produce a smooth Skin Conductance (SC) signal.</p>
+
+    <ul>
+      <li>
+        <p><strong>Gain (signal multiplier) [x]:</strong><br />
+ The gain is the value with which the raw signal is multiplied before being further processed and analyzed.</p>
+      </li>
+      <li>
+        <p><strong>Lowpass filter [Hz]:</strong><br />
+ The low-pass filter and its cutoff frequency.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>SCR Detection Settings:</strong><br />
+ Skin Conductance Responses (SCRs) are detected using the “valley to peak” method. If enabled, superimposed SCRs are detected by splitting rising SCRs at inflection points. When performing epoch analysis, an SCR is assigned to an epoch if its onset time falls within that epoch’s start time plus the “start-shift”, and that epoch’s end time plus the “end-shift”.</p>
+
+    <ul>
+      <li>
+        <p><strong>Detect SCRs in the SC signal [ ]:</strong><br />
+ Toggles the detection of SCRs.</p>
+      </li>
+      <li>
+        <p><strong>Min. and max. SCR amplitude [μS]:</strong><br />
+ The minimum and maximum allowable SCR amplitude.</p>
+      </li>
+      <li>
+        <p><strong>Min. and max. SCR rise time [s]:</strong><br />
+ The minimum and maximum allowable SCR rise time.</p>
+      </li>
+      <li>
+        <p><strong>Derivative smoothing window [s]:</strong><br />
+ The window length, in seconds, used to smooth the SC and SC’ signals when deriving SC’’.</p>
+      </li>
+      <li>
+        <p><strong>Detect superimposed SCRs:</strong><br />
+ Superimposed SCRs may feature inflections rather than valleys and/or peaks. As such, enabling superimposed SCR detection will split ongoing SCRs at the inflection points.</p>
+      </li>
+      <li>
+        <p><strong>Epoch-assignment start/end shifts [s]:</strong><br />
+ The epoch start and end shifts used when assigning SCRs to epochs (for SCR latency compensation).</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Tonic and Phasic Calculation:</strong><br />
+ The Toolbox generates a tonic SCL signal by applying moving minimum and gaussian filters to the SC signal. The phasic SCL is generated by high-pass filtering the SC signal.</p>
+
+    <ul>
+      <li>
+        <p><strong>Tonic window size [s]:</strong><br />
+ The window size, in seconds, of the moving minimum and gaussian filters used to generate the tonic SCL signal.</p>
+      </li>
+      <li>
+        <p><strong>Phasic highpass filter [Hz]:</strong><br />
+ The cutoff frequency of the high-pass filter used to calculate the phasic channel.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Electrical Shock Removal:</strong><br />
+ If participants underwent electrical stimulation during the data acquisition, electrical spike artifacts that cannot be removed by the lowpass filter may be present in the skin conductance signal. Enable the median filter to remove them.</p>
+
+    <ul>
+      <li><strong>Median filter window length [ms]:</strong><br />
+ The window length of the median filter applied to the raw SC signal.</li>
+    </ul>
+  </li>
+</ul><hr />
+<h1 id="metrics">
+  
+  
+    <a href="#metrics" class="anchor-heading" aria-labelledby="metrics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Metrics
+  
+  
+</h1>
+    
+<p>The auto-generated table belows lists all the metrics produced by the Skin Conductance Analyzer module.</p>
+
+<!---
+    This include generates a table with metrics for a given PhysioAnalyzer module.
+-->
+
+<p class="fs-3 mb-1"><a id="metrics" href="#metrics">Table 1</a>:
+The metrics calculated by the Skin Conductance Analyzer module.</p>
+<div class="table-wrapper"><table>
+  
+    
+    <tr>
+      
+        <th>Variable:</th>
+      
+        <th>Unit:</th>
+      
+        <th>Description:</th>
+      
+    </tr>
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_filt_min
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The min. of the filtered SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_filt_max
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The max. of the filtered SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_filt_mean
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The mean of the filtered SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_filt_median
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The median of the filtered SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_filt_std
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The standard deviation of the filtered SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_tonic_min
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The min. of the tonic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_tonic_max
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The max. of the tonic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_tonic_mean
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The mean of the tonic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_tonic_median
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The median of the tonic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_tonic_std
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The standard deviation of the tonic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_phasic_min
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The min. of the phasic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_phasic_max
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The max. of the phasic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_phasic_mean
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The mean of the phasic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_phasic_median
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The median of the phasic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_phasic_std
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The standard deviation of the phasic SCL signal in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_phasic_area_norm
+    </td><td class="col2">
+      uS/s
+    </td><td class="col3">
+      The area under the phasic signal in the current epoch, normalized by dividing it by the epoch duration.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCL_rawSkipZone
+    </td><td class="col2">
+      %
+    </td><td class="col3">
+      The percentage of the current epoch in which the raw SC signal was discarded and regenerated using interpolation.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_count
+    </td><td class="col2">
+      n
+    </td><td class="col3">
+      The count of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_first_amp
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The amplitude of the first SCR in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_first_riseTime
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The rise time of the first SCR in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_first_onsetValue
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The onset value of the first SCR in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_first_latency
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The latencies of the first SCR in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_amp_min
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The min. of the amplitudes of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_amp_max
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The max. of the amplitudes of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_amp_mean
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The mean of the amplitudes of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_amp_median
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The median of the amplitudes of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_amp_std
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The sample standard deviation of the amplitudes of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_riseTime_min
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The min. of the rise-times of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_riseTime_max
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The max. of the rise-times of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_riseTime_mean
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The mean of the rise-times of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_riseTime_median
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The median of the rise-times of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_riseTime_std
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The sample standard deviation of the rise-times of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_onsetValue_min
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The min. of the onset values of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_onsetValue_max
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The max. of the onset values of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_onsetValue_mean
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The mean of the onset values of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_onsetValue_median
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The median of the onset values of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_onsetValue_std
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The sample standard deviation of the onset values of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_latency_min
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The min. of the latencies of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_latency_max
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The max. of the latencies of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_latency_mean
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The mean of the latencies of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_latency_median
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The median of the latencies of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_latency_std
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The sample standard deviation of the latencies of all SCRs in the current epoch.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_scrSkipZone
+    </td><td class="col2">
+      %
+    </td><td class="col3">
+      The percentage of the current epoch covered in 'Reject SCR' zones.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_inflection_userRemoval
+    </td><td class="col2">
+      n
+    </td><td class="col3">
+      The number of otherwise present inflection-points that were manually rejected by the user in the current epoch. Note, for this metric, the inflection-point timestamps are assigned to epochs without considering the min. and max. latencies.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      SCR_userRemoval
+    </td><td class="col2">
+      n
+    </td><td class="col3">
+      The number of otherwise valid SCRs manually rejected by the user in the current epoch.
+    </td></tr>
+
+  
+</table></div>
+
+<p>In addition to the epoch-based metrics above, the Skin Conductance Analyzer also outputs a table with all SCR data.</p>
+
+<!---
+    This include generates a table from a given csv file.
+-->
+
+<p class="fs-3 mb-1"><a id="metrics-scr" href="#metrics-scr">Table 2</a>:
+The SCR-specific data. This table is also exported by the module when epoch analysis is run.</p>
+<div class="table-wrapper"><table>
+  
+    
+    <tr>
+      
+        <th>Variable:</th>
+      
+        <th>Unit:</th>
+      
+        <th>Description:</th>
+      
+    </tr>
+    
+
+    <tr class="row1">
+<td class="col1">
+      dataSource
+    </td><td class="col2">
+      filename
+    </td><td class="col3">
+      The filename of the data source.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      scrError
+    </td><td class="col2">
+      
+    </td><td class="col3">
+      Possible error preventing SRCs from being detected.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      index
+    </td><td class="col2">
+      -
+    </td><td class="col3">
+      The SCR index.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      totalCount
+    </td><td class="col2">
+      -
+    </td><td class="col3">
+      The total number of SCRs in the current signal (see dataSource).
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      onsetTime
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The onset time of the SCR.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      riseTime
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The SCR rise-time.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      onsetValue
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The Skin Conductance value at the SCR onset.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      amp
+    </td><td class="col2">
+      uS
+    </td><td class="col3">
+      The SCR amplitude.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      isOnsetInflection
+    </td><td class="col2">
+      
+    </td><td class="col3">
+      Indicates if the onset of the SCR is an inflection.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      isPeakInflection
+    </td><td class="col2">
+      
+    </td><td class="col3">
+      Indicates if the 'peak' of the SCR is an inflection.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      inEpoch_name
+    </td><td class="col2">
+      
+    </td><td class="col3">
+      The name(s) of the epochs that the SCR is assigned to, with the latency range being considered.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      inEpoch_count
+    </td><td class="col2">
+      
+    </td><td class="col3">
+      The number of epochs that the SCR is assigned to, with the latency range being considered.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      inEpoch_latency_min
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The minimum latency of the current SCR, with the latencies being calculated relative to the start times of each epoch that the SCR is assigned to.
+    </td></tr>
+
+  
+    
+
+    <tr class="row1">
+<td class="col1">
+      inEpoch_latency_max
+    </td><td class="col2">
+      s
+    </td><td class="col3">
+      The maximum latency of the current SCR, with the latencies being calculated relative to the start times of each epoch that the SCR is assigned to.
+    </td></tr>
+
+  
+</table></div><hr />
+<h1 id="resampled-signals">
+  
+  
+    <a href="#resampled-signals" class="anchor-heading" aria-labelledby="resampled-signals"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Resampled Signals
+  
+  
+</h1>
+    
+<p>When exporting the resampled epoch signals, the Skin Conductance Analyzer resamples and extracts the filtered, tonic and phasic SCL signals.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

@@ -1,0 +1,24 @@
+# NOTE: This is the config for archiving PhysioData Toolbox website versions.
+# The versions will reside in docs/archive/v0.0.0.
+
+# Building and archiving:
+#  1:  Switch to the commit you want to archive, create branch named:
+#      (v0.0.0_archive).
+#  2:  Make changes below to reflect version.
+#  3:  Commit.
+#  4:  Use the following command to build (change version):
+#     bundle exec jekyll build --config _config.yml,_config_archive.yml --destination docs/archive/v0.0.0
+#  5: Switch latest doc version commit and bring changes. Do not commit the docs
+#     archive to the new branch.
+#  6: Update the doc-versions.md in the latest build.
+
+# Make sure there is a .nojekyll file /docs/archive/ to prevent GH pages from
+# trying to jekyll-parse it.
+
+# PDT Site Metadata:
+title: 'PhysioData Toolbox (v0.X.X Archive)'
+email: 'PhysioDataToolbox@fsw.leidenuniv.nl'
+description: >-
+  The PhysioData Toolbox is an application for analyzing physiological signals.
+baseurl: 'docs/archive/v0.X.X'
+url: "https://physiodatatoolbox.leidenuniv.nl"

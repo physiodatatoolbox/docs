@@ -1,0 +1,1135 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>File Converter | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="File Converter" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/file-converter.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/file-converter.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="File Converter" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"File Converter","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/file-converter.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide.html">User Guide</a></li>
+    <li class="breadcrumb-nav-list-item"><span>File Converter</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="pdt-abstract-title, no_toc" id="file-converter">
+  
+  
+    <a href="#file-converter" class="anchor-heading" aria-labelledby="file-converter"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> File Converter
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">The File Converter is an app that converts various data formats into PhysioData files for use in the Toolbox.</p><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ol>
+      <li><a href="#launching-the-file-converter" id="markdown-toc-launching-the-file-converter">Launching the File Converter</a></li>
+      <li><a href="#supported-file-types" id="markdown-toc-supported-file-types">Supported File Types</a></li>
+    </ol>
+  </li>
+  <li><a href="#user-interface" id="markdown-toc-user-interface">User Interface</a>    <ol>
+      <li><a href="#data-previewer" id="markdown-toc-data-previewer">Data Previewer</a></li>
+      <li><a href="#file-conversion" id="markdown-toc-file-conversion">File Conversion</a></li>
+    </ol>
+  </li>
+  <li><a href="#biopac-files" id="markdown-toc-biopac-files">BIOPAC Files</a></li>
+  <li><a href="#vu-ams" id="markdown-toc-vu-ams">VU-AMS</a></li>
+  <li><a href="#libc-achieva-mri" id="markdown-toc-libc-achieva-mri">LIBC Achieva MRI</a>    <ol>
+      <li><a href="#analysis-tips" id="markdown-toc-analysis-tips">Analysis Tips</a></li>
+    </ol>
+  </li>
+  <li><a href="#biosemi" id="markdown-toc-biosemi">BioSemi</a></li>
+  <li><a href="#eet-output" id="markdown-toc-eet-output">EET Output</a>    <ol>
+      <li><a href="#experimental-design-considerations" id="markdown-toc-experimental-design-considerations">Experimental Design Considerations</a></li>
+    </ol>
+  </li>
+  <li><a href="#eyelink" id="markdown-toc-eyelink">EyeLink</a>    <ol>
+      <li><a href="#experimental-design-considerations-1" id="markdown-toc-experimental-design-considerations-1">Experimental Design Considerations</a></li>
+      <li><a href="#analysis-tips-1" id="markdown-toc-analysis-tips-1">Analysis Tips</a></li>
+    </ol>
+  </li>
+</ol>
+
+</details><hr />
+<h1 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h1>
+    
+<p>The PhysioData toolbox is designed to only analyze standardized PhysioData files, which are MATLAB files with the physioData extension that comply with the PhysioData file specification.</p>
+
+<!--- TODO: Link to file specification above. --->
+
+<p>To facilitate the batch conversion of raw physiological data to the PhysioData format, the toolbox includes a separate <em>File Converter</em> application.</p>
+<h2 id="launching-the-file-converter">
+  
+  
+    <a href="#launching-the-file-converter" class="anchor-heading" aria-labelledby="launching-the-file-converter"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Launching the File Converter
+  
+  
+</h2>
+    
+<p>The File Converter can be launched by selecting it from the welcome screen, or by clicking the menu in the top left corner of the Session Manager, then selecting the File Converter.</p>
+<h2 id="supported-file-types">
+  
+  
+    <a href="#supported-file-types" class="anchor-heading" aria-labelledby="supported-file-types"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Supported File Types
+  
+  
+</h2>
+    
+<p>The current version of the File Converter supports the following raw file formats:</p>
+
+<ul>
+  <li>BIOPAC</li>
+  <li>VU-AMS</li>
+  <li>BioSemi</li>
+  <li>LIBC Philips Achieva 3T MRI scanner</li>
+  <li>E-Prime Extension for Tobii (EET)</li>
+  <li>EyeLink</li>
+</ul>
+
+<p>If your raw data is stored in another format, you can still generate PhysioData files for processing in the Toolbox using a custom MATLAB script (<a href="..\user-guide\physiodata-file-format.html">more info</a>).</p><hr />
+<h1 id="user-interface">
+  
+  
+    <a href="#user-interface" class="anchor-heading" aria-labelledby="user-interface"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Interface
+  
+  
+</h1>
+    
+<p>Files can be imported into the File Converter by clicking the <strong>Select Files</strong> button and selecting the correct file type and import options. Once the raw files have been imported, information about their contents is presented in the <strong>Current Raw Files</strong> table, with each row below the top row representing a single file.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- iF this is the first run, add a modal div (for popups)  
+        https://www.w3schools.com/howto/howto_css_modal_images.asp
+-->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" data-proofer-ignore="" />
+    <div id="caption"></div>
+</div>
+
+<script>
+
+    // Close the modal window when users click it's background:
+    var modal = document.getElementById("myModal");
+    modal.style.cursor ="pointer";
+    modal.onclick = function () {
+        modal.style.display = "none";
+        
+        // Reenable the scrollbar on the overlying body:
+        document.body.style.overflow = '';
+    }
+
+    
+
+</script>
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\file-converter-interface.png
+ " title="File converter interface"> -->
+    <img class="pdtImg" id="fc-1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\file-converter-interface.png
+ " alt="File converter interface" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#fc-1">Figure 1</a>:
+        The File Converter interface, showing 5 imported BIOPAC files (PPN_01.acq – PPN_05.acq) with 13 channels each
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("fc-1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The File Converter interface, showing 5 imported BIOPAC files (PPN_01.acq – PPN_05.acq) with 13 channels each";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!-- TODO: Remake the printscreen to include the new Session Manager buttons. Also add it to the description. -->
+
+<p>The first column in the Current Raw Files table contains checkboxes used for enabling and disabling individual files for conversion. The <strong>File</strong> and <strong>Info</strong> columns to the right of that show the file names and a summary of the file contents, respectively.</p>
+
+<p>In the case that the raw files contain signals, the subsequent columns will show their names and units. Similarly, if a file contains pupil diameter data, columns representing the left and right pupil size data will appear. The checkboxes in the top row can be used to enable and disable individual channels for conversion. It is strongly recommended to not convert data that are not required for analysis.</p>
+
+<p>Below the table, the <strong>Clear File List</strong> button resets the converter to its default empty state, and the <strong>Converter Options</strong> button launches a menu showing custom conversion options for the selected file type. This button is disabled if the file type does not have any custom options, as is the case for BIOPAC files.</p>
+<h2 id="data-previewer">
+  
+  
+    <a href="#data-previewer" class="anchor-heading" aria-labelledby="data-previewer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Data Previewer
+  
+  
+</h2>
+    
+<p>Clicking the <strong>Preview Converted Data</strong> button converts the first enabled raw file and displays the converted data in a new window called <strong>Data Previewer</strong>, which is similar to the Toolbox’s Raw Data Viewer. For more information about viewing and navigating through raw data, see the <a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html">Data Viewers</a>.</p>
+
+<p>The Data Previewer only converts the signals currently enabled for conversion in the Raw Files table (i.e., data in columns where the first row has a checked checkbox). Additionally, if available, the Data Previewer uses the currently set custom converter options when generating data for previewing. These options can be viewed by clicking the custom options button in the main File Converter window (below the table), or the same button in the Data Previewer (to the left of the current file menu). Note that previewing does not actually create a PhysioData file.</p>
+<h2 id="file-conversion">
+  
+  
+    <a href="#file-conversion" class="anchor-heading" aria-labelledby="file-conversion"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> File Conversion
+  
+  
+</h2>
+    
+<p>The <strong>Convert File</strong> button in the main File Converter window starts the file conversion process, which, depending on the file type, may take a few minutes to complete. The resulting PhysioData files are always given the same name as their raw file counterparts, with the exception of the extension. Before conversion, make sure that all files are similar and compatible with the selected conversion options.</p>
+
+<p>If the File Converter detects imminent filename collisions, i.e. that similarly named PhysioData files already exist in the destination folder, the following options become available:</p>
+<ul>
+  <li>
+    <p><strong>Skip files that already exist (default):</strong><br />
+If this option is left selected, the raw files that would produce a PhysioData files that already exist are not converted.</p>
+  </li>
+  <li>
+    <p><strong>Only overwrite the raw data inside the existing PhysioData files:</strong><br />
+This option causes the File Converter to only rewrite the raw data inside the PhysioData file, if it already exists, leaving any modules settings, states and corrections intact. Use this option if for instance you already have modules and correction in the file that you do not want to override, but you do want to change the raw data.</p>
+  </li>
+  <li>
+    <p><strong>Completely overwrite existing PhysioData files:</strong><br />
+When selected, any preexisting PhysioData file with a conflicting name will be completely overwritten.</p>
+  </li>
+</ul><hr />
+<h1 id="biopac-files">
+  
+  
+    <a href="#biopac-files" class="anchor-heading" aria-labelledby="biopac-files"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> BIOPAC Files
+  
+  
+</h1>
+    
+<p>The built-in BIOPAC converter supports AcqKnowledge (<strong>v3.9 – v5.0.2</strong>) data saved as .acq files or exported as .mat files. Due to a limitation in the BIOPAC File API, only AcqKnowledge .acq files that comply with the following requirements can be converted:</p>
+<ul>
+  <li>All channels must have the same sampling rate</li>
+  <li>All channels must have the same length</li>
+</ul>
+
+<p>However, AcqKnowledge data that don’t conform to this requirement can still be exported as .mat files and converted. Note that when AcqKnowledge saves data as a .mat file, the events are lost. Alternatively, the data can be saved as a ‘Windows AcqKnowledge 3 Graph’, which is compatible with the BIOPAC File Converter.</p>
+
+<p>When using digital markers, and depending on the experimental design, the BIOPAC AcqKnowledge data may contain 8 digital channels that are only used to calculate a separate 8-bit decimal marker channel. If this is the case, these 8 single-bit channels, usually labeled ‘Digital Input’, should be omitted from conversion as they are not necessary for data analysis.</p>
+
+<p>The BIOPAC converter does not feature any custom conversion options.</p><hr />
+<h1 id="vu-ams">
+  
+  
+    <a href="#vu-ams" class="anchor-heading" aria-labelledby="vu-ams"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> VU-AMS
+  
+  
+</h1>
+    
+<p>The VU-AMS converter supports converting raw 5FS files recorded using the VU-AMS system. All sub-sampled signals are up-sampled to the master sampling rate through linear interpolation and nearest neighbor extrapolation.</p>
+
+<p>If a channel labeled Z0 is present, a -dZ/dt channel is generated using a differentiating 256 order FIR filter with a high-pass cutoff frequency of 1 Hz, and a low-pass cutoff frequency of 10 Hz.</p>
+
+<p>The VU-AMS converter does not feature any custom options.</p><hr />
+<h1 id="libc-achieva-mri">
+  
+  
+    <a href="#libc-achieva-mri" class="anchor-heading" aria-labelledby="libc-achieva-mri"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> LIBC Achieva MRI
+  
+  
+</h1>
+    
+<p>PhysLog files generated by the LIBC Philips Achieva 3T MRI scanner can be converted to the PhysioData format using the LIBC Achieva MRI converter. Note that this converter is designed specifically for use with data from the Leiden University scanner, and may not work as intended on data from other scanners, even those of the same make and model.</p>
+
+<p>The converter makes the following variables from the raw physlog .log files available:</p>
+
+<ul>
+  <li><strong>v1:</strong> The first VCG vector.</li>
+  <li><strong>v1:</strong> The second VCG vector.</li>
+  <li><strong>resp:</strong> The respiration signal.</li>
+  <li><strong>ppu:</strong> The ppu (pulse) signal.</li>
+  <li><strong>gx:</strong> The MR X-gradient.</li>
+  <li><strong>gy:</strong> The MR Y-gradient.</li>
+  <li><strong>gz:</strong> The MR Z-gradient.</li>
+</ul>
+
+<p>Additionally, the converter produces a channel which is the average of both v1 and v2 called <strong>v1v2avg</strong>; i.e. v1v2avg = (v1 + v2) / 2. The scanner also logs physiological trigger events in the mark channel inside the physlog file. These events are converted into 3 synthetic signals with spikes at the locations of triggers: <strong>VCG_TRIG</strong>, <strong>PPU_TRIG</strong> and <strong>RESP_TRIG</strong>.</p>
+
+<p>The converter assumes a sampling frequency of 496 Hz.</p>
+
+<p>The LIBC Achieva MRI converter does not feature any custom options.</p>
+<h2 id="analysis-tips">
+  
+  
+    <a href="#analysis-tips" class="anchor-heading" aria-labelledby="analysis-tips"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Analysis Tips
+  
+  
+</h2>
+    
+<p>When using the ECG module to analyze the VCG data, it has been observed that using v1v2avg as the “ECG” channel, and applying a high-pass filter of 8 Hz and a low-pass of 46 Hz–approximately–works adequately across various participants and conditions. Increasing the high-pass filter frequency may further improve the suppression of noise and other cardiac waves.</p>
+
+<p>Note that the ECG module expects an ECG signal in the common mV range. Since this is not the case with the physlog signals, the module’s gain, or the detection and rejection criteria, will need to be modified.</p><hr />
+<h1 id="biosemi">
+  
+  
+    <a href="#biosemi" class="anchor-heading" aria-labelledby="biosemi"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> BioSemi
+  
+  
+</h1>
+    
+<p>The BioSemi converter can be used to extract physiological signals from .bdf files and save them in the  PhysioData format. Since the PhysioData Toolbox cannot analyze EEG data, only other physiological signals present in the file, such as ECG, EMG, skin conductance, etc., should be extracted.</p>
+
+<p>For BioSemi files, the following BioSemi Options can be set:</p>
+
+<ul>
+  <li>
+    <p><strong>Calculation Channels:</strong><br />
+This field can be used to generate new data from signals in the file. This can for example be useful for generating an ECG signal. The BioSemi <a href="#biosemi-opts">options window</a> provides a calculation example.</p>
+  </li>
+  <li>
+    <p><strong>Markers and Button Presses:</strong><br />
+Enables the conversion of Markers and/or Button Presses to markers and labels in the PhysioData file, respectively. By default, both Markers and Button Presses are converted. Note, however, that button presses are not debounced.</p>
+  </li>
+</ul>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\biosemi-custom-options.png
+ " title="BioSemi custom options"> -->
+    <img class="pdtImg" id="biosemi-opts" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\biosemi-custom-options.png
+ " alt="BioSemi custom options" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#biosemi-opts">Figure 2</a>:
+        The custom conversion options available for BioSemi files.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("biosemi-opts");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The custom conversion options available for BioSemi files.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script><hr />
+<h1 id="eet-output">
+  
+  
+    <a href="#eet-output" class="anchor-heading" aria-labelledby="eet-output"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> EET Output
+  
+  
+</h1>
+    
+<p>The E-Prime Extensions for Tobii (EET) output converter supports EET files with the .gazedata (EET 2.x – 3.1) and the .txt (EET 3.2) extensions.</p>
+
+<p>This converter features the following custom options:</p>
+
+<ul>
+  <li>
+    <p><strong>Eye-tracking Event Generation:</strong><br />
+  In this field, one or more column names of the EET files can be specified. These columns will then be used to generate eye-tracking events by finding the start and end of each contiguous section of values, or a combination of values.</p>
+  </li>
+  <li>
+    <p><strong>Gap Threshold:</strong> 
+  The Toolbox assumes that a time gap between subsequent rows in the gazedata file indicates a break in a section, even if the rows otherwise form a contiguous section. The gap is classified as a difference in row-timestamps with duration larger than N times the sample duration (1/fs). N must be larger than 1, and can be inf. Setting it to inf effectively turns off the above mentioned assumption.</p>
+  </li>
+  <li>
+    <p><strong>AOI Analysis:</strong><br />
+In this field, one column name of the EET files can be specified. This column should hold the current area of interest (AOI) hit data. It thus holds the AOI name that is currently looked at (if any). In EET 3.2 files, the ComponentName column can be used for AOI Analysis. The ComponentName column is automatically created in EET 3.2 files and contains the (sub)object or slide state that is currently being looked at.</p>
+  </li>
+</ul>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\eet-custom-options.png
+ " title="EET custom options"> -->
+    <img class="pdtImg" id="eet-opts" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\eet-custom-options.png
+ " alt="EET custom options" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#eet-opts">Figure 3</a>:
+        The custom conversion options available for EET files.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("eet-opts");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The custom conversion options available for EET files.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="experimental-design-considerations">
+  
+  
+    <a href="#experimental-design-considerations" class="anchor-heading" aria-labelledby="experimental-design-considerations"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Experimental Design Considerations
+  
+  
+</h2>
+    
+<p>There are a few considerations one should keep in mind when designing an E-Prime task with EET eye tracking and when aiming to analyze the data with the PhysioData Toolbox.</p>
+
+<p>The first is the <strong>Eye-tracking Event Generation</strong> column(s). This column should hold data relevant for event generation (usually String data) and is crucial, as it will be impossible to create epochs without it. The event generation column could for example hold the currently running object in E-Prime, such as “Stimulus” or “Fixation”. When segmentation requires more detailed information, multiple columns can be used for event generation. For example, the currently running object, and the condition of the current trial (e.g. “congruent” and “incongruent”). See the <a href="#eet-gazedata">figure below</a> for example event generation columns in the gazedata file.</p>
+
+<p>By default, E-Prime does not save any event data in the gazedata file, these data have to be defined by the user. See <a href="https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Software/E-Prime/E-Prime%20and%20Tobii">here</a> for instructions on how to incorporate Tobii eye tracking in an E-Prime experiment, including adding event data to the gazedata files.</p>
+
+<p>Another consideration is the AOI column used for the <strong>AOI Analysis</strong> (not relevant when only pupil data is analyzed). The AOI column should hold the name of the AOI the participant was looking at. By default, E-Prime 3 (when used with EET 3.2) saves a variable called <strong>ComponentName</strong>. This variable holds the component of the experiment (e.g. Slide sub-object) the participant is looking at. This variable could function as an AOI column. However, whether this variable is suited should be evaluated. See the <a href="#eet-gazedata">figure below</a> for an example AOI column in the gazedata.</p>
+
+<p>It is strongly recommended to convert gazedata from an initial pilot to check whether the event generation column(s) and (if applicable) the AOI column are sufficient for the purpose of the study, before starting data collection.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\eet-converter-gazedata.png
+ " title="EET example gazedata"> -->
+    <img class="pdtImg" id="eet-gazedata" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\eet-converter-gazedata.png
+ " alt="EET example gazedata" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#eet-gazedata">Figure 4</a>:
+        EET example gazedata obtained with a (fictitious) E-Prime task. In the task, each trial consisted of a Fixation followed by a Stimulus. The Stimulus was a Slide object with a picture of a face with a certain expression (happy, angry or sad). By using empty text sub-objects, several AOIs were drawn: AOIFace (face excluding the eyes, nose and mouth), AOIEyes, AOINose, and AOIMouth. The task saved the ObjectOnScreen variable, holding the currently running object (Fixation or Stimulus), the Condition variable, holding the emotion of the person in the picture (happy, angry or sad), and the AOI variable, holding the AOI that was being looked at. Events can be generated using both the ObjectOnScreen and Condition variable in the following way: ObjectOnScreen;Condition. This will create the following events: 'Stimulus angry', 'Stimulus happy', etc. The AOI column can be used for the AOI Analysis.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("eet-gazedata");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "EET example gazedata obtained with a (fictitious) E-Prime task. In the task, each trial consisted of a Fixation followed by a Stimulus. The Stimulus was a Slide object with a picture of a face with a certain expression (happy, angry or sad). By using empty text sub-objects, several AOIs were drawn: AOIFace (face excluding the eyes, nose and mouth), AOIEyes, AOINose, and AOIMouth. The task saved the ObjectOnScreen variable, holding the currently running object (Fixation or Stimulus), the Condition variable, holding the emotion of the person in the picture (happy, angry or sad), and the AOI variable, holding the AOI that was being looked at. Events can be generated using both the ObjectOnScreen and Condition variable in the following way: ObjectOnScreen;Condition. This will create the following events: 'Stimulus angry', 'Stimulus happy', etc. The AOI column can be used for the AOI Analysis.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script><hr />
+<h1 id="eyelink">
+  
+  
+    <a href="#eyelink" class="anchor-heading" aria-labelledby="eyelink"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> EyeLink
+  
+  
+</h1>
+    
+<p>The EyeLink converter can be used to extract raw pupil-size data from SR research’s EyeLink .edf files.</p>
+
+<p>This converter features the following custom options:</p>
+
+<ul>
+  <li>
+    <p><strong>Remove EyeLink System Events:</strong><br />
+  The File Converter converts all messages available in the .edf file to eye-tracking events, except the events that match the regular expression specified in this field. Leaving the field blank converts all messages. Many EyeLink system-events are not actually used by the PhysioData Toolbox and can therefore be omitted from conversion. The default value removes these system-events.</p>
+  </li>
+  <li>
+    <p><strong>DataViewer Options:</strong><br />
+  If messages were sent with an time-offset prefix as defined by DataViewer, then the timestamps of those messages can be corrected accordingly by the File Converter. Messages should have the following format: &lt;offset&gt; &lt;msg&gt;, where &lt;offset&gt; is the message delay in ms.</p>
+  </li>
+</ul>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\eyelink-custom-options.png
+ " title="EyeLink custom options"> -->
+    <img class="pdtImg" id="el-opts" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/user-guide\file-converter\eyelink-custom-options.png
+ " alt="EyeLink custom options" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#el-opts">Figure 5</a>:
+        The custom conversion options available for EyeLink files.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("el-opts");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The custom conversion options available for EyeLink files.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="experimental-design-considerations-1">
+  
+  
+    <a href="#experimental-design-considerations-1" class="anchor-heading" aria-labelledby="experimental-design-considerations-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Experimental Design Considerations
+  
+  
+</h2>
+    
+<p>When collecting pupil size with an EyeLink eye tracker, the use of a head stabilizer (chinrest) is required and it is advised to keep the camera distance fixed for all participants. Also, make sure that the AREA or DIAMETER setting in the EyeLink recording software is consistent for all participants. For more information on collecting pupil size with EyeLink, see <a href="https://www.sr-support.com/showthread.php?tid=41&amp;pid=40#pid40">Recording and Analyzing Pupil Data (Pupillometry)</a> on the SR Research Support Forum (note that you need to log-in or register to be able to view the thread).</p>
+<h2 id="analysis-tips-1">
+  
+  
+    <a href="#analysis-tips-1" class="anchor-heading" aria-labelledby="analysis-tips-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Analysis Tips
+  
+  
+</h2>
+    
+<p>The Pupil Diameter module expects the pupil diameter to be in mm. This is not the case for EyeLink data, where pupil diameter is reported in arbitrary pixels. Therefore, the module’s gain or detection and rejection criteria will need to be modified.</p>
+
+<p>EyeLink pupil diameter data can be converted to mm, for instructions see this <a href="https://www.sr-support.com/thread-154.html">FAQ</a> on the SR Research Support Forum (log-in required). Converting the pupil diameter to mm can be done in the PhysioData Toolbox, by using the <strong>Gain</strong> setting in the Pupil Diameter module, or it can be done after processing the data in the PhysioData Toolbox, in for example Excel, R or SPSS.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

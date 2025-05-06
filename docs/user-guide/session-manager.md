@@ -56,9 +56,9 @@ The **PhysioData Files** panel is used for managing the imported PhysioData file
 
 {% include image.html
     img="user-guide\session-manager\physiodata-files-panel-tree.png"
-    max_width="480px"
     title="PhysioData Files Tree"
     id="file-tree-panel"
+    no_shadow = true
     caption=
     "The PhysioData Files panel, showing the imported PhysioData files and their PhysioAnalyzers. File 001 is expanded, showing it has a Blood Pressure Analyzer tagged BP, an ECG analyzer tagged ECG, an HRV analyzer tagged HRV, and a Skin Conductance Analyzer tagged SC. Additionally, the ECG analyzer is expanded showing its settings and state."
     %}
@@ -74,9 +74,9 @@ The **PhysioAnalyzer Configurator** panel is used for defining or modifying the 
 
 {% include image.html
     img="user-guide\session-manager\configurator-panel.png"
-    max_width="480px"
     title="PhysioAnalyzer Module Configurator"
     id="config-panel"
+    no_shadow = true
     caption=
     "The PhysioAnalyzer Configurator panel in the Session Manager. This panel features a tree showing the defined PhysioAnalyzers and their settings, and buttons for creating and applying these PhysioAnalyzers to the files. The checkboxes can be used to select only a subset of the settings for applications."
 %}
@@ -94,7 +94,7 @@ Once the **Apply to PhysioData Files**  button is clicked, the user is presented
     title="Pushing PhysioAnalyzer modules to files"
     id="push-prompt"
     caption=
-    "The summary and options window that  pops up when applying PhysioAnalyzers to PhysioData files. Note that in this case, only the following settings will be pushed to the files: channel number, epochs definitions, high-pass filter settings, and minimum R-peak value. All other settings and all PhysioAnalyzers with different tags will be left unaffected."
+    "The summary and options window that  pops up when applying PhysioAnalyzers to PhysioData files. Note that in this case, only the following settings will be pushed to the files: epochs definitions, high-pass filter settings, and minimum R-peak value. These settings will only be applied to modules tagged ECG. All other settings, i.e.  settings not in this list, and all PhysioAnalyzers with different tags, will be left unaffected. By choosing the appropriate button, the settings can be propagated to all files, or only the files previously selected in the Session Manager (in this  case the first two files)."
 %}
 
 Note that the **Remove Analyzer** and **View/Edit Analyzer** buttons act on the selected  PhysioAnalyzers (highlighted in blue), while the **Apply to PhysioData Files**  button acts on the checked PhysioAnalyzers and their checked settings, regardless of selection.
@@ -107,7 +107,7 @@ The **Data Export** panel contains options for batch analyzing and exporting the
 {% include image.html
     img="user-guide\session-manager\export-panel.png"
     title="The Data Export Panel"
-    max_width="480px"
+    no_shadow = true
     id="export-panel"
     caption=
     "The Data Export panel in the Session Manager."

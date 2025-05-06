@@ -18,7 +18,7 @@ The PhysioData Toolbox can be downloaded as a zip file containing the executable
 The Toolbox requires the free {{ site.pdt_mcr_ver_long }}:
 {: .pdt-abstract-body}
 
-[MATLAB Runtimes](https://nl.mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 320px; text-align: center;"}
+[MATLAB Runtimes](https://mathworks.com/products/compiler/matlab-runtime.html){: .pdt-btn style="width: 320px; text-align: center;"}
 
 See installation guide [below](#installation).
 {: .pdt-abstract-body}
@@ -42,19 +42,20 @@ If this is your first time using the Toolbox, follow the [Basic Walkthrough](.\t
 {: .ml-4}
 
 ## SmartScreen Warning ##
-When running PhysioDataToolbox.exe for the first time, especially recently released versions, you might get a Windows SmartScreen warning. This is because even though the PhysioData Toolbox executable is signed, it is considered _unrecognized_ until it has built a reputation with the Microsoft SmartScreen system ([more info](https://en.wikipedia.org/wiki/Microsoft_SmartScreen#Code_Signing_Certificates)).
+When running PhysioDataToolbox.exe for the first time, especially recently released versions, you might get a Windows SmartScreen warning.
 
-To run the Toolbox anyway, click **More Info**, then **Run anyway**.
+To run the Toolbox anyway, click **More Info**, then **Run anyway**. If no such button appears, you will need to unblock the executable. Instructions [below](#unblocking-the-toolbox).
 
 {% include image.html
     img="smartscreen-popup.png"
     title="SmartScreen"
     caption="When running a new version of the Toolbox for the first time, you might encounter a Windows SmartScreen warning. To run the Toolbox, click More info then Run anyway. If that options does not appear, you will need to unblock the executable. More info below." %}
 
-In **Windows 11**, the Run Anyway option may not appear. In that case, to run the Toolbox, you must manually unblock it. To do so:
+### Unblocking the Toolbox ###
+In certain cases--especially in **Windows 11**--the Run Anyway option may not appear. In that case, to run the Toolbox, you must manually unblock it. To do so:
  1. Right-click the **PhysioDataToolbox.exe** file.
- 1. Click **Properties**. If that option does not appear, first click **Show more options**.
- 1. In Properties, under the **General** tab, enable the **Unblock** checkbox.
+ 2. Click **Properties**. If that option does not appear, first click **Show more options**.
+ 3. In Properties, under the **General** tab, enable the **Unblock** checkbox.
 
 More information about this procedure can be found [here](https://www.elevenforum.com/t/unblock-file-downloaded-from-internet-in-windows-11.1125/).
 
@@ -64,8 +65,6 @@ More information about this procedure can be found [here](https://www.elevenforu
 The Toolbox is in active development and is made freely available 'as is' to students and researchers. The software has undergone thorough testing and validation, but is presented without guarantee, and without warranty of fitness for a particular purpose. Always double-check the results, and please report any errors, inconsistencies and suggestions to the development team.
 
 The PhysioData Toolbox is meant strictly for non-diagnostic, non-medical and non-commercial use.
-
-This Toolbox sends anonymous usage data to an online analytics server for tracking how often the Toolbox and its various features are used. These data are necessary for rationalizing the continued development and maintenance of the Toolbox and its components. No physiological (meta)data, analysis results or personally identifiable information is collected.
 
 If you use the PhysioData Toolbox, please cite it using the following information:
 

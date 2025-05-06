@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(6)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(6) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(6) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(6) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PhysioData File Format | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="PhysioData File Format" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PhysioData File Format" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"PhysioData File Format","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide.html">User Guide</a></li>
+    <li class="breadcrumb-nav-list-item"><span>PhysioData File Format</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="physiodata-file-format">
+  
+  
+    <a href="#physiodata-file-format" class="anchor-heading" aria-labelledby="physiodata-file-format"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PhysioData File Format
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">This page contains information about the PhysioData file format and examples of custom PhysioData file generation in MATLAB.</p><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ol>
+      <li><a href="#physioanalyzers" id="markdown-toc-physioanalyzers">PhysioAnalyzers</a></li>
+    </ol>
+  </li>
+  <li><a href="#file-specification-and-format" id="markdown-toc-file-specification-and-format">File Specification and Format</a>    <ol>
+      <li><a href="#file-contents-outline" id="markdown-toc-file-contents-outline">File Contents Outline</a></li>
+    </ol>
+  </li>
+  <li><a href="#matlab-examples" id="markdown-toc-matlab-examples">MATLAB Examples</a>    <ol>
+      <li><a href="#basic-example-1" id="markdown-toc-basic-example-1">Basic Example 1</a></li>
+      <li><a href="#other-examples" id="markdown-toc-other-examples">Other Examples</a></li>
+    </ol>
+  </li>
+</ol>
+
+</details><hr />
+<h1 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h1>
+    
+<p>The Toolbox can only read data from PhysioData files, which are standard MATLAB MAT files that correspond to the Toolbox’s data format, and have the .physioData extension. PhysioData files can be generated using the <a href=".\file-converter.html">File Converter</a> or a custom MATLAB script.</p>
+
+<p>Using a custom MATLAB script to generate PhysioData file has the following benefits:</p>
+
+<ul>
+  <li>
+    <p><strong>Any Suitable Raw Data:</strong><br />
+ If the raw data format is not supported by the File Converter, it can still be saved as a PhysioData file using a custom MATLAB script and analyzed by the Toolbox.</p>
+  </li>
+  <li>
+    <p><strong>Pre-generated Epoch:</strong><br />
+ If the logic needed to generate epochs is not supported by the Toolbox’s epoch resolution engine, or the data required to generate the epochs are saved in separate files, the desired epochs can be pre-generated using a MATLAB script and still analyzed using the Toolbox. Additionally, this method allows the inclusion of custom metadata in the epoch table, which will be copied to the results table.</p>
+  </li>
+</ul>
+<h2 id="physioanalyzers">
+  
+  
+    <a href="#physioanalyzers" class="anchor-heading" aria-labelledby="physioanalyzers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> PhysioAnalyzers
+  
+  
+</h2>
+    
+<p>The PhysioData Toolbox is essentially a collection of graphical user interfaces that allow users to visualize and process the data inside PhysioData files. The processing occurs using specific modules called PhysioAnalyzers. Each such module is designed to analyze one specific type of signal; e.g., the ECG Signal Analyzer module analyzes a raw ECG signal, extracts the heart rate and other cardiac metrics, and allows the user to review and correct the generated data.</p>
+
+<p>Analyzing data using the toolbox consists of the user first creating a PhysioAnalyzer module and defining its <strong>Settings</strong>, then propagating that to one or more imported PhysioData files. The settings determine: the source of the raw data (e.g. the channel); the gain and filtering parameters; the epoch definition; etc. Subsequently, the user can visualize the PhysioAnalyzer data and insert corrections, scored landmarks, etc. These user-added data is referred to as the <strong>State</strong> of the PhysioAnalyzer module.</p>
+
+<p>The derived signals generated by the PhysioAnalyzer modules (e.g. the filtered ECG signals and the Heart Rate) are not saved to in the PhysioData file, only the necessary information to generate these signals from the raw data is: i.e. its type (aka class name, e.g. ECG_Module), and its Settings and State. The Toolbox internally refers to these data as the PhysioAnalyzer template, and saves it in the base of the PhysioData file inside a struct named physioAnalyzerTemplates. The Toolbox was not designed to allow user-modification of the physioAnalyzerTemplates variable.</p>
+
+<p>Using the Raw Data, the Settings and the State, the Toolbox dynamically generates the PhysioAnalyzer data when it is requested. As such, no derived data is saved to disk other than when generating a <a href="./session-manager.html#generating-a-data-archive">Data Archive</a>.</p><hr />
+<h1 id="file-specification-and-format">
+  
+  
+    <a href="#file-specification-and-format" class="anchor-heading" aria-labelledby="file-specification-and-format"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> File Specification and Format
+  
+  
+</h1>
+    
+<p>PhysioData files are MATLAB MAT v7.3 files with the .physioData extension. The Toolbox only saves data inside the PhysioData file using built-in MATLAB types: structs, cell arrays, tables, etc. PhysioData files can contain physiological signals, eye-tracking data, and timing metadata. These raw data are visualized by the Raw Data Viewer, as described <a href="./data-viewers.html#raw-data-viewer">here</a>.</p>
+
+<!---
+    This displays a multi-line capable message with an alert icon.
+-->
+
+<div class="alert-wrapper" style="
+        display: grid;
+        grid-template-columns: 40px auto;
+        grid-template-rows: auto;
+        gap: 0px 0px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        grid-template-areas: 'alert-icon alert-text';
+        background-color: #fdf4f4;
+        border-radius: 6px;
+        border: 1px solid #dfdedd">
+
+    <div class="fs-5" style="
+            grid-area: alert-icon;
+            background-color:transparent;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            ">
+        🚧
+    </div>
+
+    <div class="lh-tight" style="
+            grid-area: alert-text;
+            background-color:transparent;
+            display: flex; 
+            align-items: center;
+            margin-right: 12px;">
+        
+        <p>This page is still under development and does not currently contain information about eye-tracking data inside PhysioData files.</p>
+
+
+    </div>
+    
+  </div>
+
+<p>Please note the following:</p>
+<ul>
+  <li>
+    <p><strong>No Strings:</strong><br />
+ The PhysioData file does not use Strings, only character arrays (use single quotes, <a href="https://nl.mathworks.com/help/matlab/characters-and-strings.html">more info</a>). Cell arrays of chars are used to represent arrays of strings.</p>
+  </li>
+  <li>
+    <p><strong>Sampling Frequency:</strong><br />
+ All signals must have the same sampling frequency and the same number of samples. The sampling frequency (<code>pdtData.data.signals.fs</code>) must be between 10 and 10000 Hz.</p>
+  </li>
+  <li>
+    <p><strong>User Variables:</strong><br />
+  When loading and subsequently saving a PhysioData file, the Toolbox will strip any base variables not part of the official file specification; other non-compliant variables may be deleted as well. To include additional data inside PhysioData files, place them in the UserData variable. This variable will also be included when a Data Archive is generated.</p>
+  </li>
+  <li>
+    <p><strong>Marker Signals:</strong><br />
+  If a signal fulfils the definition of a “Marker signal”, the Toolbox will extract markers from it and make those markers available for referencing when generating epochs (<a href="./epochs.html#markers">more info about markers</a>).</p>
+  </li>
+  <li>
+    <p><strong>Loading and Saving PhysioData Files:</strong><br />
+  To load the data from a PhysioData file into MATLAB, call the load function with the -mat flag: <code>pdtData = load(filename, '-mat');</code>. Similarly, to save the data as a PhysioDat file, call save with the -struct flag and the name of the struct that corresponds to the PhysioData file format: <code>save('filename', '-struct', 'pdtData');</code>. Make sure to specify the physioData extension.</p>
+  </li>
+  <li>
+    <p><strong>Updating a PhysioData File:</strong><br />
+ The raw data inside a PhysioData file—including the pre-generated epochs—can be modified without losing the PhysioAnalyzer module’s settings and state by calling MATLAB’s save function with the ‘-append’ flag. This will append the desired base variable to the PhysioData file and keep the PhysioAnalyzer modules, which are saved in the physioAnalyzerTemplates variable, intact.</p>
+  </li>
+  <li>
+    <p><strong>File Version Warning:</strong><br />
+ When generating PhysioData files in MATLAB and opening them in the Toolbox, a warning may be encountered upon loading the files specifying that they not generated using the current version of the Toolbox. The warning will not be shown again after the file has been saved by the Toolbox.</p>
+  </li>
+</ul>
+<h2 id="file-contents-outline">
+  
+  
+    <a href="#file-contents-outline" class="anchor-heading" aria-labelledby="file-contents-outline"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> File Contents Outline
+  
+  
+</h2>
+    
+<p>The tree below visualizes the most user-relevant contents of a PhysioData file, as represented in MATLAB by a struct.</p>
+
+<!---
+    This include builds a tree from json data (used to visualize the PDT file format).
+-->
+
+<p class="fs-3 mb-1"><a id="filetree" href="#filetree">Outline 1</a>:
+The contents of an PhysioData file. The bold strings with frames indicate the field-name if the parent is a struct, and the variable-name  otherwise. Click on the triangle to expand or collapse a node.</p>
+<filetree class="text-mono fs-3" id="filetree"></filetree>
+
+<!-- 
+  On first run, add the script and CSS:
+    INFO:  https://ashutosh.blog/embedding-code-from-github-in-a-website
+-->
+
+<link rel="stylesheet" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/libs/vanillatree/vanillatree.css" />
+
+<script src="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/libs/vanillatree/vanillatree.min.js"></script>
+
+<script>
+    // The code below parses the file description in the json and visualizes it in a tree using the vanillatree lib.
+
+    // Read in tree stuff:
+    const main = document.querySelector("filetree");
+    const tree = new VanillaTree(main);
+
+    // Read javascript:
+    var oXHR = new XMLHttpRequest();
+    oXHR.onreadystatechange = ajaxCallback;
+    oXHR.overrideMimeType("application/json");
+    oXHR.responseType = "json"
+    oXHR.open("GET", "https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/files/file-format.json", true);
+    oXHR.send();
+
+    // File read callback:
+    function ajaxCallback() {
+        if (oXHR.readyState == 4 && oXHR.status == "200") {
+
+            // Build tree:
+            window.pdt_format = this.response
+            addNode(this.response[0], "")
+        }
+    }
+
+    // Adds node:
+    function addNode(node_data, parent_id) {
+
+        // ID for current node:
+        let node_id = parent_id + node_data.field
+
+        // Data for current node (tree leaf):
+        let tree_node_data = {
+            label: `<div style="padding: 3px 5px 3px 5px; border: 1px solid #b5b5b5; border-radius: 4px; width: fit-content; background: #f5f6fa"><b>${node_data.field}</b></div><div style="white-space: break-spaces;margin: 3px 0px 5px 5px">[${node_data.size} ${node_data.type}]<br><i>${node_data.desc}</i></div>`,
+            parent: parent_id,
+            id: node_id,
+            opened: true
+        }
+
+        // Add node:
+        tree.add(tree_node_data);
+
+        // Add children:
+        if (node_data.children) {
+            for (child_node_data of node_data.children) {
+                addNode(child_node_data, node_id)
+            }
+        }
+    }
+</script><hr />
+<h1 id="matlab-examples">
+  
+  
+    <a href="#matlab-examples" class="anchor-heading" aria-labelledby="matlab-examples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> MATLAB Examples
+  
+  
+</h1>
+    
+<p>Any suitable data can be converted into a PhysioData file for use in the Toolbox using custom MATLAB scripts. <strong>Download</strong> the code and data for the examples below from <a href="https://github.com/physiodatatoolbox/code_examples">this GitHub repo</a> by clicking on the Code button and Download ZIP.</p>
+<h2 id="basic-example-1">
+  
+  
+    <a href="#basic-example-1" class="anchor-heading" aria-labelledby="basic-example-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Basic Example 1
+  
+  
+</h2>
+    
+<p>This example shows how to create a PhysioData file from ECG and EDA (skin conductance) data saved inside a tsv file. It also shows how to add custom referenceable events (labels) and pre-generated epochs.</p>
+
+<!---
+    This include fetches and displays code from github.
+-->
+
+<!--
+    Add a <pre> block with the data attribs. This block will be populated with the code.
+-->
+
+<p class="fs-3 mb-1"><a id="Example1" href="#Example1">Code 1</a>:
+An example showing the basic elements of saving signals and timing metadata inside a PhysioData file. Find this example and its data in the <a href="https://github.com/physiodatatoolbox/code_examples/tree/main/Generating_PhysioData_Files/Basic_Example_1">/code_examples/Generating_PhysioData_Files/</a> folder of the examples repo.</p>
+<pre class="fs-5" data-lang="matlab" data-src="https://raw.githubusercontent.com/physiodatatoolbox/code_examples/main/Generating_PhysioData_Files/Basic_Example_1/main.m"></pre>
+
+<!-- 
+  On first run, add the script and CSS:
+    INFO:  https://ashutosh.blog/embedding-code-from-github-in-a-website
+-->
+
+<link rel="stylesheet" href="/assets/libs/highlight/styles/vs.min.css" />
+
+<script src="/assets/libs/highlight/highlight.min.js" onload="hljs.highlightAll();"></script>
+
+<link rel="stylesheet" href="/assets/libs/highlight-line-number/style.css" />
+
+<script src="/assets/libs/highlight-line-number/highlightjs-line-numbers.min.js"></script>
+
+<script>
+  function normalizeWhiteSpace(code) {
+    let lines = code.split("\n");
+    if (lines.length < 1) {
+      return code;
+    }
+
+    let spacesToRemove = Infinity;
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].length < 1) {
+        continue;
+      }
+
+      spacesToRemove = Math.min(spacesToRemove, lines[i].search(/\S|$/));
+    }
+
+    return lines
+      .map(function (v) {
+        return v.substring(spacesToRemove);
+      })
+      .join("\n");
+  }
+
+  function createCodeElement(code, language) {
+    let element = document.createElement("code");
+    element.innerHTML = normalizeWhiteSpace(code);
+    if (language) {
+      element.classList.add(`language-${language}`);
+    }
+
+    return element;
+  }
+
+  function createFileLinkElement(url) {
+    let element = document.createElement("a");
+    element.innerHTML = "View file";
+    element.href = url;
+
+    let container = document.createElement("div");
+    container.classList.add("view-file");
+    container.appendChild(element);
+    return container;
+  }
+</script>
+
+<script>
+  addEventListener("DOMContentLoaded", function () {    
+    document.querySelectorAll("pre[data-src]").forEach(function (item) {
+      let url = item.getAttribute("data-src");
+      let viewURL = item.getAttribute("data-view") || url;
+      let start = parseInt(item.getAttribute("data-start") || 1);
+      let end = parseInt(item.getAttribute("data-end")) || Infinity;
+      let language = item.getAttribute("data-lang");
+      
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.addEventListener("load", function () {
+        let code = `error: unable to load the resource at "${url}"`;
+        if (this.responseText) {
+          code = this.responseText
+            .split("\n")
+            .slice(start - 1, end)
+            .join("\n");
+        }
+
+        let codeElement = createCodeElement(code, language);
+        hljs.highlightElement(codeElement);
+        item.appendChild(codeElement);
+       //item.appendChild(createFileLinkElement(viewURL));
+
+      hljs.initLineNumbersOnLoad();
+
+      });
+
+      xhr.send();
+    });
+  });
+
+</script>
+<h2 id="other-examples">
+  
+  
+    <a href="#other-examples" class="anchor-heading" aria-labelledby="other-examples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Other Examples
+  
+  
+</h2>
+    
+<p>This page is still under construction and will be extended as needed. If you require help generating PhysioData files in MATLAB, please contact the <a href="../about.html">Toolbox developers</a>.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

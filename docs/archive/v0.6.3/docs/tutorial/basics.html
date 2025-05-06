@@ -1,0 +1,3937 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/docs/archive/v0.6.3/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(1) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(4) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(1) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122931168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'UA-122931168-1', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/docs/archive/v0.6.3/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/docs/archive/v0.6.3/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/docs/archive/v0.6.3/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Basic Walkthrough | PhysioData Toolbox (v0.6.3 Archive)</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Basic Walkthrough" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<meta property="og:description" content="The PhysioData Toolbox is an application for analyzing physiological signals." />
+<link rel="canonical" href="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/tutorial/basics.html" />
+<meta property="og:url" content="https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/tutorial/basics.html" />
+<meta property="og:site_name" content="PhysioData Toolbox (v0.6.3 Archive)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Basic Walkthrough" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The PhysioData Toolbox is an application for analyzing physiological signals.","headline":"Basic Walkthrough","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/pdt.svg"}},"url":"https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/docs/tutorial/basics.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/docs/archive/v0.6.3/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="PhysioData Toolbox (v0.6.3 Archive)"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/features.html" class="nav-list-link">Features</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/installation.html" class="nav-list-link">Download and Installation</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorial category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/tutorial.html" class="nav-list-link">Tutorial</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial/basics.html" class="nav-list-link">Basic Walkthrough</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in User Guide category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide.html" class="nav-list-link">User Guide</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/file-converter.html" class="nav-list-link">File Converter</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/session-manager.html" class="nav-list-link">Session Manager</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/data-viewers.html" class="nav-list-link">Data Viewers</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PhysioAnalyzers category" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules.html" class="nav-list-link">PhysioAnalyzers</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/overview.html" class="nav-list-link">Overview</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/physioanalyzer.html" class="nav-list-link">Generic Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ecg-module.html" class="nav-list-link">ECG Signal Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/ibi-module.html" class="nav-list-link">IBI Sequence Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/hrv-module.html" class="nav-list-link">HRV Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/icg-ensemble-module.html" class="nav-list-link">ICG Ensemble Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/bp-module.html" class="nav-list-link">Blood Pressure Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/resp-module.html" class="nav-list-link">Respiration Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/emg-module.html" class="nav-list-link">EMG Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/SC-module.html" class="nav-list-link">Skin Conductance Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/pupil-module.html" class="nav-list-link">Pupil Diameter Analyzer</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physioanalyzer-modules/aoi-module.html" class="nav-list-link">Area of Interest Hit Analyzer</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/epochs.html" class="nav-list-link">Epochs</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/user-guide/physiodata-file-format.html" class="nav-list-link">PhysioData File Format</a></li></ul></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/change-log.html" class="nav-list-link">Version History</a></li><li class="nav-list-item"><a href="/docs/archive/v0.6.3/docs/about.html" class="nav-list-link">About</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search PhysioData Toolbox (v0.6.3 Archive)" aria-label="Search PhysioData Toolbox (v0.6.3 Archive)" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  <!---
+    This include defines the custom header, which specifies the current version.
+    If the current version is not the latest, it will be displayed in a different color.
+-->
+
+
+
+<nav aria-label="Auxiliary" class="aux-nav">
+    <ul class="aux-nav-list">
+
+        <li class="aux-nav-list-item">
+            <a href="/docs/doc-versions.html" class="site-button fs-4"
+                title="Click for other PhysioData Toolbox versions."
+                  style="background-color: #f10b3747;" 
+                >
+                Version&nbsp;0.6.3&nbsp;(Archive)
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/archive/v0.6.3/docs/tutorial.html">Tutorial</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Basic Walkthrough</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="pdt-abstract-title, no_toc" id="basic-walkthrough">
+  
+  
+    <a href="#basic-walkthrough" class="anchor-heading" aria-labelledby="basic-walkthrough"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Basic Walkthrough
+  
+  
+</h1>
+    
+
+<p class="pdt-abstract-body">The basic tutorial will teach users the core concepts of the Toolbox, and how to import, visualize, clean and analyze data.</p><hr />
+<details open="">
+  <summary class="text-delta">
+    Table of contents
+  </summary>
+<ol id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ol>
+      <li><a href="#converting-raw-data" id="markdown-toc-converting-raw-data">Converting Raw Data</a></li>
+      <li><a href="#example-dataset" id="markdown-toc-example-dataset">Example Dataset</a></li>
+    </ol>
+  </li>
+  <li><a href="#running-the-toolbox" id="markdown-toc-running-the-toolbox">Running the Toolbox</a></li>
+  <li><a href="#importing-files" id="markdown-toc-importing-files">Importing Files</a>    <ol>
+      <li><a href="#view-raw-data" id="markdown-toc-view-raw-data">View Raw Data</a></li>
+    </ol>
+  </li>
+  <li><a href="#creating-physioanalyzer-modules" id="markdown-toc-creating-physioanalyzer-modules">Creating PhysioAnalyzer modules</a>    <ol>
+      <li><a href="#creating-the-ecg-physioanalyzer" id="markdown-toc-creating-the-ecg-physioanalyzer">Creating the ECG PhysioAnalyzer</a></li>
+      <li><a href="#defining-epochs" id="markdown-toc-defining-epochs">Defining Epochs</a>        <ol>
+          <li><a href="#define-the-habituation-epochs" id="markdown-toc-define-the-habituation-epochs">Define the habituation epochs</a></li>
+          <li><a href="#define-the-stimulus-epochs" id="markdown-toc-define-the-stimulus-epochs">Define the stimulus epochs</a></li>
+          <li><a href="#define-the-extinction-supra-epochs" id="markdown-toc-define-the-extinction-supra-epochs">Define the extinction supra epochs</a></li>
+          <li><a href="#finish-creating-the-ecg-physioanalyzer" id="markdown-toc-finish-creating-the-ecg-physioanalyzer">Finish creating the ECG PhysioAnalyzer</a></li>
+        </ol>
+      </li>
+      <li><a href="#creating-the-sc-physioanalyzer" id="markdown-toc-creating-the-sc-physioanalyzer">Creating the SC PhysioAnalyzer</a></li>
+      <li><a href="#adding-the-hrv-physioanalyzer" id="markdown-toc-adding-the-hrv-physioanalyzer">Adding the HRV PhysioAnalyzer</a></li>
+      <li><a href="#applying-the-settings-to-the-physiodata-files" id="markdown-toc-applying-the-settings-to-the-physiodata-files">Applying the Settings to the PhysioData files</a></li>
+    </ol>
+  </li>
+  <li><a href="#reviewing-physioanalyzer-data" id="markdown-toc-reviewing-physioanalyzer-data">Reviewing PhysioAnalyzer Data</a>    <ol>
+      <li><a href="#launching-and-using-the-physioanalyzer-viewer" id="markdown-toc-launching-and-using-the-physioanalyzer-viewer">Launching and Using the PhysioAnalyzer Viewer</a></li>
+      <li><a href="#correcting-the-ecg-data" id="markdown-toc-correcting-the-ecg-data">Correcting the ECG data</a></li>
+      <li><a href="#correcting-the-sc-data" id="markdown-toc-correcting-the-sc-data">Correcting the SC data</a></li>
+      <li><a href="#viewing-the-hrv-data" id="markdown-toc-viewing-the-hrv-data">Viewing the HRV data</a></li>
+      <li><a href="#viewing-results" id="markdown-toc-viewing-results">Viewing results</a></li>
+    </ol>
+  </li>
+  <li><a href="#updating-the-settings" id="markdown-toc-updating-the-settings">Updating the Settings</a></li>
+  <li><a href="#exporting-analysis" id="markdown-toc-exporting-analysis">Exporting Analysis</a></li>
+  <li><a href="#saving-the-session" id="markdown-toc-saving-the-session">Saving the session</a></li>
+</ol>
+
+</details><hr />
+<h1 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h1>
+    
+<p>This tutorial uses an ECG, Skin Conductance and Blood Pressure example dataset provided in the PhysioData Toolbox zip file. However, core concepts of the PhysioData Toolbox that apply to all data types are introduced. Following this basic tutorial is recommended for all first-time users, including researchers seeking to analyze other data types, such as eye-tracking data. This tutorial will take approximately 1.5 hours to complete.</p>
+
+<p>Please note that the Toolbox is designed for use with a <strong>3-button mouse</strong> (e.g. a mouse with a clickable scroll wheel). A track-pad will not allow full interaction with the graphs.</p>
+<h2 id="converting-raw-data">
+  
+  
+    <a href="#converting-raw-data" class="anchor-heading" aria-labelledby="converting-raw-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Converting Raw Data
+  
+  
+</h2>
+    
+<p>The PhysioData Toolbox can only read <strong>PhysioData Files</strong>, which are special MATLAB files with the .physioData format. To convert your own data for use in the PhysioData Toolbox, use the <a href="..\user-guide\file-converter.html">File Converter</a>. For the current tutorial, use the provided files, as explained below.</p>
+
+<p>If your raw data is stored in a format that is not supported by the File Converter, you can still generate PhysioData files for processing in the Toolbox using a custom MATLAB script (<a href="..\user-guide\physiodata-file-format.html">more info</a>).</p>
+<h2 id="example-dataset">
+  
+  
+    <a href="#example-dataset" class="anchor-heading" aria-labelledby="example-dataset"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Example Dataset
+  
+  
+</h2>
+    
+<p>The Shock-Conditioning example files loosely represent a classic supra/sub perceptual electrical shock conditioning task. The experiment consisted of several phases and trials, which can be identified using the markers, events and pre-generated epochs found in the files. During the experiment, ECG, Skin Conductance and Blood Pressure signals were obtained. The example dataset is specifically designed to exhibit the usage of several Toolbox features.</p>
+
+<details>
+  <summary><strong>Example Dataset Details</strong></summary>
+  <p>Below a description of the six phases of the experiment and their associated events, markers, and pregenerated epochs is given. Events and markers signal important moments in the data. <strong>Events</strong> are messages that describe a certain moment. <strong>Markers</strong> are recorded as signal and assume numeric values that signify certain moments. <strong>Epochs</strong> are segments of data that are created by referencing events and markers. See the <a href="..\user-guide\epochs.html">Epochs</a> chapter for more information on events, markers, and epochs.</p>
+
+  <p>
+    <p><strong>Habituation Phase:</strong></p>
+
+    <p>The habituation phase was split into two sections, both demarked by ‘Habituation_Start’ and ‘Habituation_End’ events.</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>Event:</th>
+          <th style="text-align: center">Event indicates:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Habituation_Start</td>
+          <td style="text-align: center">start of first habituation phase</td>
+        </tr>
+        <tr>
+          <td>Habituation_End</td>
+          <td style="text-align: center">end of first habituation phase</td>
+        </tr>
+        <tr>
+          <td>Habituation_Start</td>
+          <td style="text-align: center">start of second habituation phase</td>
+        </tr>
+        <tr>
+          <td>Habituation_End</td>
+          <td style="text-align: center">end of second habituation phase</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+  </p>
+
+  <p>
+    <p><strong>Baseline Phase:</strong></p>
+
+    <p>During the baseline, participants watched one of three available movies. The start and end, as well as the movie, are indicated by events.</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>Event:</th>
+          <th style="text-align: center">Event indicates:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Baseline_Start (&lt;MOVIENAME&gt;)</td>
+          <td style="text-align: center">start of baseline movie</td>
+        </tr>
+        <tr>
+          <td>Baseline_End (&lt;MOVIENAME&gt;)</td>
+          <td style="text-align: center">end of baseline movie</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+  </p>
+
+  <p>
+    <p><strong>Acquisition Phase:</strong></p>
+
+    <p>The acquisition phase consisted of trials in which conditioned stimuli (images) were shown. The onset of these images are indicated by markers, as described below. These markers are pulses with a duration of 50 ms, that immediately precede the image onset. Note that CS++ is CS+ which is actually followed by an electrical shock. The trials were presented in random order.</p>
+
+    <p>Each trial has the following sequence:</p>
+    <ul>
+      <li>Trial baseline: starts at 2 seconds before the image onset, and ends at the image onset.</li>
+      <li>Trial response: starts at the image onset, and ends 8 seconds after.</li>
+    </ul>
+
+    <p>In addition to the markers, a pregenerated epoch named ‘Acquisition’ spanning the complete acquisition phase is included in the files.</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Marker:</th>
+          <th style="text-align: center">Marker indicates:</th>
+          <th style="text-align: center">Trial Type</th>
+          <th style="text-align: center">Image ID:</th>
+          <th style="text-align: center">Perceptual Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">11</td>
+          <td style="text-align: center">impending image onset</td>
+          <td style="text-align: center">CS+</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">supra</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">12</td>
+          <td style="text-align: center">impending image onset</td>
+          <td style="text-align: center">CS+</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">supra</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">21</td>
+          <td style="text-align: center">impending image onset</td>
+          <td style="text-align: center">CS++</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">supra</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">22</td>
+          <td style="text-align: center">impending image onset</td>
+          <td style="text-align: center">CS++</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">supra</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">33</td>
+          <td style="text-align: center">impending image onset</td>
+          <td style="text-align: center">CS-</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">supra</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">34</td>
+          <td style="text-align: center">impending image onset</td>
+          <td style="text-align: center">CS-</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: center">supra</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+  </p>
+
+  <p>
+    <p><strong>Extinction Phase:</strong></p>
+
+    <p>The extinction phase consists of trials showing either supra-perceptual or sub-perceptual stimuli. The supra and sub conditions were counterbalanced between participants; half got the sub, half got the supra. The trials were presented in random order. Each trial consists of:</p>
+    <ul>
+      <li>Fixation: 3 seconds,</li>
+      <li>Onset of image, indicated by the start of the marker,</li>
+      <li>A mask in case of sub-perceptual stimuli.</li>
+      <li>A wait period, the end of which corresponds to the end of the marker.</li>
+    </ul>
+
+    <p>In addition to the markers, a pregenerated epoch named ‘Extinction’ spanning the complete extinction phase is included in the files.</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Marker:</th>
+          <th style="text-align: center">Marker indicates:</th>
+          <th style="text-align: center">Perceptual Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">100</td>
+          <td style="text-align: center">duration of extinction image and wait</td>
+          <td style="text-align: center">supra</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">101</td>
+          <td style="text-align: center">duration of extinction image and wait</td>
+          <td style="text-align: center">sub</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+  </p>
+
+  <p>
+    <p><strong>Rating Phase:</strong></p>
+
+    <p>In the rating phase, participants were asked to rate the four image stimuli on a scale of 1 to 5. The images were presented in random order, and the four rating events were recorded as events. The value of the four rating events include the image ID (1, 2, 3 or 4, shown as &lt;ID&gt; below); and the rating (1, 2, 3, 4 or 5, shown as &lt;RAT&gt; below).</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>Event:</th>
+          <th style="text-align: center">Event indicates:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pic_&lt;ID&gt;_rated_&lt;RAT&gt;</td>
+          <td style="text-align: center">Rating event, with encoded image ID and rating</td>
+        </tr>
+        <tr>
+          <td>Pic_&lt;ID&gt;_rated_&lt;RAT&gt;</td>
+          <td style="text-align: center">Rating event, with encoded image ID and rating</td>
+        </tr>
+        <tr>
+          <td>Pic_&lt;ID&gt;_rated_&lt;RAT&gt;</td>
+          <td style="text-align: center">Rating event, with encoded image ID and rating</td>
+        </tr>
+        <tr>
+          <td>Pic_&lt;ID&gt;_rated_&lt;RAT&gt;</td>
+          <td style="text-align: center">Rating event, with encoded image ID and rating</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+  </p>
+
+  <p>
+    <p><strong>Questionnaire Phase:</strong></p>
+
+    <p>After the experiment, the participants were asked to fill in a questionnaire. The span of this event is indicated by a pregenerated epoch named ‘Questionnaire’.</p>
+
+  </p>
+</details><hr />
+<h1 id="running-the-toolbox">
+  
+  
+    <a href="#running-the-toolbox" class="anchor-heading" aria-labelledby="running-the-toolbox"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Running the Toolbox
+  
+  
+</h1>
+    
+<p>Download the Toolbox as described <a href="../installation.html">here</a>, and launch it by running the <strong>PhysioDataToolbox.exe</strong> file. When run for the first time, it may take a few minutes before the Toolbox loads. Once the Toolbox loads, read the welcome message and launch the <strong>Session Manager</strong>.</p><hr />
+
+<!-- Note for below, insert zero-width white spaces so that long strings can be broken (handy for the narrow mobile-mode). -->
+<h1 id="importing-files">
+  
+  
+    <a href="#importing-files" class="anchor-heading" aria-labelledby="importing-files"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Importing Files
+  
+  
+</h1>
+    
+<p>Click on the <strong>Open</strong> button in the Session Manager and select the folder with the example files (PhysioDataToolbox\​data\​example_datasets\​ECG_EDA_BP_ShockCS\). Alternatively, you can open the example files by going to <strong>Menu</strong>, selecting <strong>Open Example Files</strong> and clicking <strong>ECG EDA BP ShockCS</strong>. The Session Manager should now list all PhysioData files inside the folder (12 in total). Note the PhysioAnalyzers within the files in red. Because we will make new Analyzers in this walkthrough, start by clicking the <strong>Remove Analyses</strong> button below the file tree, checking all <strong>PhysioAnalyzer Tags</strong> checkboxes, and clicking the <strong>Remove from all files</strong> button.</p>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- iF this is the first run, add a modal div (for popups)  
+        https://www.w3schools.com/howto/howto_css_modal_images.asp
+-->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" data-proofer-ignore="" />
+    <div id="caption"></div>
+</div>
+
+<script>
+
+    // Close the modal window when users click it's background:
+    var modal = document.getElementById("myModal");
+    modal.style.cursor ="pointer";
+    modal.onclick = function () {
+        modal.style.display = "none";
+        
+        // Reenable the scrollbar on the overlying body:
+        document.body.style.overflow = '';
+    }
+
+    
+
+</script>
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\SessionManager_filesOpened.png
+ " title="Session Manager"> -->
+    <img class="pdtImg" id="SessionManager" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\SessionManager_filesOpened.png
+ " alt="Session Manager" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#SessionManager">Figure 1</a>:
+        The Session Manager with the example files loaded.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("SessionManager");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Session Manager with the example files loaded.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="view-raw-data">
+  
+  
+    <a href="#view-raw-data" class="anchor-heading" aria-labelledby="view-raw-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> View Raw Data
+  
+  
+</h2>
+    
+<p>Click on the <strong>View Raw Data</strong> button to launch the <strong>Raw Data Viewer</strong>. The Raw Data Viewer displays all signal channels, events, eye-tracking data, and epochs inside the PhysioData file. When a marker channel is detected, it is automatically analyzed and visualized in a separate tab.</p>
+
+<ul>
+  <li>
+    <p>Which file is currently being shown is specified in the <strong>Current File</strong> bar above the tabs. To navigate to a different file, either select it using the dropdown menu, or use the buttons.</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Raw Signals</strong> tab to see the data. Scroll up and down using the scrollbar to reveal more channels. Take note of what data are in which channel.</p>
+
+    <blockquote>
+      <p>To <strong>zoom</strong>, select a section of the graph using the right mouse button. Double-clicking the graph resets the view. Additional zooming and panning options are available through (a combination of) the other mouse buttons, see the <a href="..\user-guide\data-viewers.html#graph-interactions">Data Viewers</a> section.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\RawDataViewer_1.png
+ " title="Raw Data Viewer: Raw Signals tab"> -->
+    <img class="pdtImg" id="RDV-RawSignals" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\RawDataViewer_1.png
+ " alt="Raw Data Viewer: Raw Signals tab" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#RDV-RawSignals">Figure 2</a>:
+        Raw Signals tab of the Raw Data Viewer.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("RDV-RawSignals");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Raw Signals tab of the Raw Data Viewer.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>To view the markers inside the current file, click on the <strong>Markers in signal channel 4</strong> tab. In the example files, channel 4 is a digital marker channel, which is automatically detected by the Toolbox.</li>
+</ul>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\RawDataViewer_2.png
+ " title="Raw Data Viewer: Markers tab"> -->
+    <img class="pdtImg" id="RDV-Markers" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\RawDataViewer_2.png
+ " alt="Raw Data Viewer: Markers tab" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#RDV-Markers">Figure 3</a>:
+        Markers tab of the Raw Data Viewer.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("RDV-Markers");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Markers tab of the Raw Data Viewer.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>Click on the <strong>Events</strong> tab to see the events inside the current file.</li>
+</ul>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\RawDataViewer_3.png
+ " title="Raw Data Viewer: Events tab"> -->
+    <img class="pdtImg" id="RDV-Events" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\RawDataViewer_3.png
+ " alt="Raw Data Viewer: Events tab" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#RDV-Events">Figure 4</a>:
+        Events tab of the Raw Data Viewer.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("RDV-Events");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Events tab of the Raw Data Viewer.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>
+    <p>Click on the <strong>File events</strong> tab to view the file events inside the current file.</p>
+  </li>
+  <li>
+    <p>Click on the <strong>Prebuilt Epochs</strong> tab to view the epochs that were prebuilt in the PhysioData File. Below, in the <a href="#defining-epochs">Defining Epochs</a> chapter we will generate more epochs.</p>
+  </li>
+  <li>
+    <p>When done inspecting the raw data, close the Raw Data Viewer and return to the Session Manager.</p>
+  </li>
+</ul><hr />
+<h1 id="creating-physioanalyzer-modules">
+  
+  
+    <a href="#creating-physioanalyzer-modules" class="anchor-heading" aria-labelledby="creating-physioanalyzer-modules"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating PhysioAnalyzer modules
+  
+  
+</h1>
+    
+<p><strong>PhysioAnalyzer modules</strong> are signal-specific preprocessing, visualization and analysis pipelines that users can construct and apply to the files. If, for instance, a PhysioData file contains electrocardiogram (ECG) and skin conductance (SC) signals, the user can add ECG and SC modules to the file in order to perform ECG and SC specific analyses on the respective data.</p>
+<h2 id="creating-the-ecg-physioanalyzer">
+  
+  
+    <a href="#creating-the-ecg-physioanalyzer" class="anchor-heading" aria-labelledby="creating-the-ecg-physioanalyzer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating the ECG PhysioAnalyzer
+  
+  
+</h2>
+    
+<ul>
+  <li>In the Session Manager, click on the <strong>Create New Analyzer</strong> button and choose the <strong>ECG Signal Analyzer</strong>.</li>
+  <li>Since ‘ECG’ is a fitting name for the module and the ECG signal is in channel 1 (click the <strong>See Channels</strong> button to verify this), these settings can be left at their default values.</li>
+  <li>Click on the <strong>View/Edit Epochs</strong> button to open the <strong>Epoch Builder</strong>.</li>
+</ul>
+<h2 id="defining-epochs">
+  
+  
+    <a href="#defining-epochs" class="anchor-heading" aria-labelledby="defining-epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Defining Epochs
+  
+  
+</h2>
+    
+<p><strong>Epochs</strong>, also called trails or segments, are sections of interest within a recording. Epochs are generally defined relative to <strong>markers</strong> or <strong>events</strong>, which are special timestamped moments within the recorded data. The toolbox is designed to automatically segment a signal into epochs using a collection of user-specified rules, and extract relevant metrics for each epoch. For more information on epochs, markers, and events, see the <a href="..\user-guide\epochs.html">Epochs</a> chapter.</p>
+
+<p>The <strong>Define Epochs</strong> tab of the Epoch Builder window shows the <strong>Epoch Definition Table</strong>. Here, the rules for defining epochs are created. By default, an epoch spanning the whole file is created. Notice that in the <strong>Preview of epochs</strong> graph the prebuilt epochs are also visible.</p>
+
+<ul>
+  <li>Click on the second tab to see all referenceable data inside the current file. In the example files, these are the markers in channel 4, the events, and the file events.
+    <blockquote>
+      <p>Let’s say we want to create the following epochs:</p>
+      <ul>
+        <li><strong>Habituation epochs</strong> that span from the events ‘Habituation_Start’ to ‘Habituation_End’</li>
+        <li><strong>Stimulus epochs:</strong>
+          <ul>
+            <li>CS+ image 1 epochs, that span from the onset of marker with value 11 to 8 seconds later</li>
+            <li>CS+ image 2 epochs, that span from the onset of marker with value 12 to 8 seconds later</li>
+          </ul>
+        </li>
+        <li><strong>Extinction supra epochs</strong> that span for the duration of the marker with value 100</li>
+      </ul>
+    </blockquote>
+  </li>
+</ul>
+
+<p>NOTE: for more details about the phases of the experiment and their associated markers and events, see the <a href="#example-dataset">Example Dataset</a> section.</p>
+<h3 id="define-the-habituation-epochs">
+  
+  
+    <a href="#define-the-habituation-epochs" class="anchor-heading" aria-labelledby="define-the-habituation-epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Define the habituation epochs
+  
+  
+</h3>
+    
+<p>The epoch definition of the habituation epochs is provided in the <a href="#habituationEpochs">Figure</a> below.</p>
+<ol>
+  <li>Go back to the <strong>Define Epochs</strong> tab.</li>
+  <li>Click <strong>add row</strong>.</li>
+  <li>In the newly created row, fill in the <strong>epochName</strong>: <code>Habituation</code>.</li>
+  <li>Define the start of the epoch:
+    <ul>
+      <li>Since we want to reference an event, fill in <code>events</code> in the <strong>startChannel</strong> field, or right-click on the field and select <strong>Channels available in test file</strong> and <strong>Use Events (26 found)</strong>.</li>
+      <li>Fill in the <strong>startValue</strong>, which is the name of the event, in this case <code>Habituation_Start</code> (note that the start- and endValue are case-sensitive!), or right-click on the field, select <strong>Events available in channel</strong> and select <strong>Habituation_Start (2 occurrences)</strong>.</li>
+      <li>Because we want to create epochs of all habituation segments, we want to reference all ‘Habituation_Start’ events. This is achieved by filling in <code>1:last</code> in <strong>startOccur</strong>, or right-clicking on the field and selecting <strong>All occurrences</strong>.</li>
+      <li>The epochs should start directly on the ‘Habituation_Start’ events, therefore we can leave the startDelay at <code>0</code>.</li>
+    </ul>
+  </li>
+  <li>Define the end of the epoch:
+    <ul>
+      <li>The definition of the end of the epoch is pretty similar to the definition of the start of the epoch. We can quickly copy the information of the start of the epoch by right-clicking on any of the <strong>end</strong> fields, and selecting <strong>Copy from start definition</strong>.</li>
+      <li>Because we want the epoch to end at the ‘Habituation_End’ events, modify the <strong>endValue</strong> to <code>Habituation_End</code>, or right-click on the field and select <strong>Events available in channel</strong> and select <strong>Habituation_End (2 occurrences)</strong>.</li>
+    </ul>
+  </li>
+  <li>Hit the <strong>Generate Epochs</strong> button in the top left corner and observe that two epochs are added in the <strong>Preview of epochs</strong> graph.</li>
+</ol>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Habituation-epochs.png
+ " title="Habituation Epochs"> -->
+    <img class="pdtImg" id="habituationEpochs" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Habituation-epochs.png
+ " alt="Habituation Epochs" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#habituationEpochs">Figure 5</a>:
+        The Epoch Definition Table with the Habituation epochs added.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("habituationEpochs");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Epoch Definition Table with the Habituation epochs added.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h3 id="define-the-stimulus-epochs">
+  
+  
+    <a href="#define-the-stimulus-epochs" class="anchor-heading" aria-labelledby="define-the-stimulus-epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Define the stimulus epochs
+  
+  
+</h3>
+    
+<p>The epoch definition of the stimulus epochs is provided in the <a href="#stimulusEpochs">Figure</a> below.</p>
+<ol>
+  <li>Add another row to the Epoch Definition Table.</li>
+  <li>In the new row, fill in the <strong>epochName</strong>: <code>CS_plus_Resp_img_1</code>.</li>
+  <li>Define the start of the epochs:
+    <ul>
+      <li>Since we want to reference markers in channel 4, fill in <code>4</code> in the <strong>startChannel</strong> cell (or right-click on the cell and select the appropriate option).</li>
+      <li>For the CS+ with image 1 trials, marker 11 was used, fill in <code>11</code> in <strong>startValue</strong> (or right-click on the cell and select the appropriate marker).</li>
+      <li>Because we want to generate epochs from all markers with value 11, fill in <code>1:last</code> in <strong>startOccur</strong> which will take all occurrences (or right-click and select <strong>All occurrences</strong>). Note that although in file ‘CS_Example_01’ there is only one occurrence of marker 11, this is not the case for other files!</li>
+      <li>The epochs start at the onset of the marker, therefore the <strong>startDelay</strong> can be left at <code>0</code>.</li>
+    </ul>
+  </li>
+  <li>Define the end of the epochs:
+    <ul>
+      <li>Copy the information of the start of the epoch to the end of the epoch.</li>
+      <li>Adjust the <strong>endDelay</strong> to <code>8</code> (note that the start- and endDelay are in seconds!).</li>
+    </ul>
+  </li>
+  <li>Since the CS+ with image 2 epoch definition is very similar to the CS+ image 1 epoch definition, right click on any of the cells of the row we just created and select <strong>Duplicate row</strong>.</li>
+  <li>In the new row, we only need to adjust the epoch name and the marker value to reference the CS+ image 2 trials:
+    <ul>
+      <li>Fill in <code>CS_plus_Resp_img_2</code> in <strong>epochName</strong>.</li>
+      <li>Fill in <code>12</code>in <strong>startValue</strong> and in <strong>endValue</strong>.</li>
+    </ul>
+  </li>
+  <li>Hit the <strong>Generate Epochs</strong> button and check whether the epochs were created correctly.</li>
+</ol>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Stimulus-epochs.png
+ " title="Stimulus Epochs"> -->
+    <img class="pdtImg" id="stimulusEpochs" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Stimulus-epochs.png
+ " alt="Stimulus Epochs" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#stimulusEpochs">Figure 6</a>:
+        The Epoch Definition Table with the stimulus epochs added.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("stimulusEpochs");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Epoch Definition Table with the stimulus epochs added.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h3 id="define-the-extinction-supra-epochs">
+  
+  
+    <a href="#define-the-extinction-supra-epochs" class="anchor-heading" aria-labelledby="define-the-extinction-supra-epochs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Define the extinction supra epochs
+  
+  
+</h3>
+    
+<p>The epoch definition of the extinction supra epochs is provided in the <a href="#extSupraEpochs">Figure</a> below.</p>
+<ol>
+  <li>Add another row.</li>
+  <li>Fill in the <strong>epochName</strong>: <code>Ext_Supra</code>.</li>
+  <li>Define the start of the epochs:
+    <ul>
+      <li>Again, we want to reference markers in channel 4, fill in <code>4</code> in the <strong>startChannel</strong> cell (or right-click on the cell and select the appropriate option).</li>
+      <li>Fill in <code>100</code> in <strong>startValue</strong> (or right-click on the cell and select the appropriate marker) to reference markers with value 100.</li>
+      <li>Fill in <code>1:last</code> in <strong>startOccur</strong> to reference all occurrences (or right-click and select <strong>All occurrences</strong>).</li>
+      <li>The <strong>startDelay</strong> can be left at <code>0</code>.</li>
+    </ul>
+  </li>
+  <li>Define the end of the epochs:
+    <ul>
+      <li>Copy the information of the start of the epoch to the end of the epoch.</li>
+      <li>Adjust the <strong>endDelay</strong> to <code>dur</code>, or right-click on the cell and select <strong>Duration of the marker</strong>. This will create epochs that span for the duration of the markers (onset to offset).</li>
+    </ul>
+  </li>
+  <li>Hit the <strong>Generate Epochs</strong> button and notice that 12 small epochs were created.</li>
+</ol>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Ext_Supra-epochs.png
+ " title="Ext Supra Epochs"> -->
+    <img class="pdtImg" id="extSupraEpochs" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Ext_Supra-epochs.png
+ " alt="Ext Supra Epochs" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#extSupraEpochs">Figure 7</a>:
+        The Epoch Definition Table with the extinction supra epochs added.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("extSupraEpochs");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Epoch Definition Table with the extinction supra epochs added.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<details>
+  <summary><strong>Advanced epoch definitions using regular expressions</strong></summary>
+  <p>The following part shows how to create epochs by referencing multiple events with regular expressions. Most users will not need to use them.</p>
+
+  <blockquote>
+    <p>Let’s say we also want to create the following epochs:</p>
+    <ul>
+      <li><strong>Baseline epoch</strong> that spans from the event ‘Baseline_Start (&lt;MOVIENAME&gt;)’ to the event ‘Baseline_End (&lt;MOVIENAME&gt;)’.</li>
+      <li><strong>Rating epochs</strong> that start 5 seconds before the ‘Pic_&lt;ID&gt;_rated_&lt;RATING&gt;’ events and end at the ‘Pic_&lt;ID&gt;_rated_&lt;RATING&gt;’ events.</li>
+    </ul>
+  </blockquote>
+
+  <p>
+    <p><strong>Define the baseline epoch</strong></p>
+
+    <p>The epoch definition of the baseline epoch is provided in the <a href="#baselineEpochs">Figure</a> below.</p>
+    <ol>
+      <li>Add another row to the Epoch Definition Table.</li>
+      <li>Fill in the <strong>epochName</strong>: <code>Baseline</code>.</li>
+      <li>Define the start of the epoch:
+        <ul>
+          <li>Fill in <code>events</code> in the <strong>startChannel</strong> field or right click and navigate to the right channel.</li>
+          <li>Fill in the <strong>startValue</strong>. The baseline events start with ‘Baseline_Start’, followed by a space and then the name of the video clip the participant watched in parentheses: ‘Baseline_Start (&lt;MOVIENAME&gt;)’. We can reference all baseline events with all different movie names using one <a href="https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html">regular expression</a>: <code>^Baseline_Start (.*)$</code>
+            <ul>
+              <li><code>^</code> and <code>$</code> mark the start and end of the regular expression, respectively.</li>
+              <li><code>.</code> means any single character.</li>
+              <li><code>*</code> means 0 or more consecutive times.</li>
+            </ul>
+          </li>
+          <li>Leave <strong>startOccur</strong> to <code>1</code> (there is only one baseline segment).</li>
+          <li>Leave <strong>startDelay</strong> at <code>0</code>.</li>
+        </ul>
+      </li>
+      <li>Define the end of the epoch:
+        <ul>
+          <li>Copy the information of the start of the epoch to the end of the epoch by right-clicking and selecting <strong>Copy from start definition</strong>.</li>
+          <li>Modify the <strong>endValue</strong> to <code>^Baseline_End (.*)$</code></li>
+        </ul>
+      </li>
+      <li>Hit the <strong>Generate Epochs</strong> button and check whether the epoch was created correctly.</li>
+    </ol>
+
+    <p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+    <!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+    <!-- The image path:
+-->
+
+    <!-- The image number counter:
+-->
+
+    <!-- Determine the ID: 
+-->
+
+    <!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+    <!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+    <figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Baseline-epochs.png
+ " title="Baseline Epochs"> -->
+    <img class="pdtImg" id="baselineEpochs" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Baseline-epochs.png
+ " alt="Baseline Epochs" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#baselineEpochs">Figure 8</a>:
+        The Epoch Definition Table with the Baseline epochs added.
+    </figcaption>
+    
+</figure>
+
+    <!---
+    Add lightbox popup code:
+-->
+
+    <script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("baselineEpochs");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Epoch Definition Table with the Baseline epochs added.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+  </p>
+  <p>
+    <p><strong>Define the rating epochs</strong></p>
+
+    <p>The epoch definition of the rating epochs is provided in the <a href="#ratingEpochs">Figure</a> below.</p>
+    <ol>
+      <li>Click <strong>Add Row</strong>.</li>
+      <li>Fill in the <strong>epochName</strong>: <code>Rating</code>.</li>
+      <li>Define the start of the epochs:
+        <ul>
+          <li>Fill in <code>events</code> (or use the right-click option) in <strong>startChannel</strong>.</li>
+          <li>We want to reference all the rating events, but because participants gave different ratings to different pictures, the names of these events differ per participant. Again, we can use regular expressions to reference all events with the same pattern. In our case, we want to reference all events with the following pattern: ‘Pic_&lt;ID&gt;_rated_&lt;RATING&gt;’, where &lt;ID&gt; can be a digit ranging 1-4 and &lt;RATING&gt; can be a digit ranging 1-5. In regular expression this translates to <code>Pic_\d_rated_\d</code>, where <code>\d</code> means any numeric digit. When using regular expressions in the Epoch Builder, always start with <code>^</code> and end with <code>$</code>. Thus, fill in <code>^Pic_\d_rated_\d$</code> in <strong>startValue</strong>.</li>
+          <li>Reference all occurrences in <strong>startOccur</strong>.</li>
+          <li>We want the epochs to start 5 seconds before the events, therefore, fill in <code>-5</code> in <strong>startDelay</strong>.</li>
+        </ul>
+      </li>
+      <li>Define the end of the epochs:
+        <ul>
+          <li>Copy the start epoch fields to the end epoch fields.</li>
+          <li>We want the epochs to end at the events, therefore fill in <code>0</code> in <strong>endDelay</strong>.</li>
+        </ul>
+      </li>
+      <li>Hit the <strong>Generate Epochs</strong> button and notice that 4 small epochs were created.</li>
+    </ol>
+
+    <p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+    <!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+    <!-- The image path:
+-->
+
+    <!-- The image number counter:
+-->
+
+    <!-- Determine the ID: 
+-->
+
+    <!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+    <!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+    <figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Rating-epochs.png
+ " title="Rating Epochs"> -->
+    <img class="pdtImg" id="ratingEpochs" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\Rating-epochs.png
+ " alt="Rating Epochs" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ratingEpochs">Figure 9</a>:
+        The Epoch Definition Table with the rating epochs added.
+    </figcaption>
+    
+</figure>
+
+    <!---
+    Add lightbox popup code:
+-->
+
+    <script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ratingEpochs");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Epoch Definition Table with the rating epochs added.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+  </p>
+</details>
+<h3 id="finish-creating-the-ecg-physioanalyzer">
+  
+  
+    <a href="#finish-creating-the-ecg-physioanalyzer" class="anchor-heading" aria-labelledby="finish-creating-the-ecg-physioanalyzer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Finish creating the ECG PhysioAnalyzer
+  
+  
+</h3>
+    
+<p>When done with creating epochs, click <strong>OK</strong> to close the Epoch Builder window and return to the PhysioAnalyzer settings window. We’ll leave the settings to their default values for now (see the <a href="..\user-guide\physioanalyzer-modules\ecg-module.html#settings">ECG Analyzer</a> chapter in the User Guide for more information on the ECG analyzer settings). Click <strong>OK</strong> to save the changes and return to the Session Manager. Note that although we created an analyzer, the analyzer and the settings and epochs it contains are not applied to the data files yet. We will first create the other analyzers, then apply all analyzers to our data files.</p>
+<h2 id="creating-the-sc-physioanalyzer">
+  
+  
+    <a href="#creating-the-sc-physioanalyzer" class="anchor-heading" aria-labelledby="creating-the-sc-physioanalyzer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating the SC PhysioAnalyzer
+  
+  
+</h2>
+    
+<ul>
+  <li>Click the <strong>Create New Analyzer</strong> button again and select the <strong>Skin Conductance Analyzer</strong>.</li>
+  <li>Fill in <code>2</code> in the channel number field to make the module use the EDA signal in channel 2.</li>
+  <li>We will use the same epochs as we defined in the ECG module, therefore, select <strong>PhysioAnalyzer with tag:</strong> from the drop-down menu, and fill in <code>ECG</code> in the field below. This will make this module dynamically use any epochs we defined in the ECG module.</li>
+  <li>Click <strong>Ok</strong> to close the window and add these settings to the PhysioAnalyzer tree (we’ll leave the settings at their default values, for more information on the Skin Conductance Analyzer settings, see the <a href="..\user-guide\physioanalyzer-modules\SC-module.html#settings">Skin Conductance Analyzer chapter</a> in the User Guide).</li>
+</ul>
+<h2 id="adding-the-hrv-physioanalyzer">
+  
+  
+    <a href="#adding-the-hrv-physioanalyzer" class="anchor-heading" aria-labelledby="adding-the-hrv-physioanalyzer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Adding the HRV PhysioAnalyzer
+  
+  
+</h2>
+    
+<ul>
+  <li>Click the <strong>Create New Analyzer</strong> button again and select the <strong>HRV Analyzer</strong></li>
+  <li>Fill in <code>ECG</code> in the <strong>Tag of the ECG Analyzer</strong> field. In order for it to function, the HRV analyzer must be linked to an ECG module.</li>
+  <li>As with the previous analyzer, we will use the same epochs as we defined in the ECG module. Select <strong>PhysioAnayzer with tag</strong> from the epoch drop-down menu and fill in <code>ECG</code> in the field below.</li>
+  <li>Click <strong>Ok</strong> to close the window. We’ll leave the HRV settings to their default, for more information on these settings, consult the <a href="..\user-guide\physioanalyzer-modules\hrv-module.html#settings">HRV Analyzer chapter</a>  in the User Guide.</li>
+</ul>
+<h2 id="applying-the-settings-to-the-physiodata-files">
+  
+  
+    <a href="#applying-the-settings-to-the-physiodata-files" class="anchor-heading" aria-labelledby="applying-the-settings-to-the-physiodata-files"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Applying the Settings to the PhysioData files
+  
+  
+</h2>
+    
+<ul>
+  <li>In the Session Manager’s PhysioAnalyzer Configurator panel, click the <strong>Apply to PhysioData Files</strong> and the <strong>Apply to all 12 file(s)</strong> buttons to propagate the settings of the listed PhysioAnalyzers to all the files. This will create one ECG, one SC, and one HRV module inside each file. Note that the modules inside the PhysioAnalyzer tree on the right side of the Session Manager don’t do anything until they are applied.</li>
+  <li>You should now see <code>ECG, HRV and SC</code> after each file in the PhysioData file tree. The red color indicates that these modules have not yet been marked as ‘accepted’ by the user. You can expand each file to reveal the PhysioAnalyzers inside it, and each PhysioAnalyzer to reveal its current settings and state.</li>
+  <li>
+    <p>Click <strong>Remove Analyzer</strong> in the PhysioAnalyzer Configurator panel three times to remove the analyzers from this panel. Note that they are still in the files. To reimport the settings from a file, select the desired file and click <strong>Import From PhysioData File</strong>. This will copy the PhysioAnalyzer settings in that file back to the PhysioAnalyzer Configurator.</p>
+
+    <!---
+ Images include for nice images in the PDT Doc.
+-->
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\FileTree.png
+ " title="File Tree"> -->
+    <img class="pdtImg" id="fileTree" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\FileTree.png
+ " alt="File Tree" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#fileTree">Figure 10</a>:
+        The file tree after the PhysioAnalyzers have been applied to the files.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("fileTree");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The file tree after the PhysioAnalyzers have been applied to the files.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script><hr />
+<h1 id="reviewing-physioanalyzer-data">
+  
+  
+    <a href="#reviewing-physioanalyzer-data" class="anchor-heading" aria-labelledby="reviewing-physioanalyzer-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Reviewing PhysioAnalyzer Data
+  
+  
+</h1>
+    
+<p>This section shows the basics of reviewing and correcting PhysioAnalyzer data.</p>
+<h2 id="launching-and-using-the-physioanalyzer-viewer">
+  
+  
+    <a href="#launching-and-using-the-physioanalyzer-viewer" class="anchor-heading" aria-labelledby="launching-and-using-the-physioanalyzer-viewer"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Launching and Using the PhysioAnalyzer Viewer
+  
+  
+</h2>
+    
+<ul>
+  <li>In the Session Manager, click the <strong>View Analyses</strong> button in the PhysioData Files panel to open the <strong>PhysioAnalyzer Viewer</strong> window. This window visualizes each PhysioAnalyzer present inside the current file. One tab is created per analyzer.</li>
+  <li>The top graph shows the epochs that were generated from the epoch definition. Click on the epochs bar for more epoch information. Below that are the Analyzer-specific data graphs, e.g. for ECG it contains the ECG, Interbeat Interval (IBI) and Instantaneous Heart Rate (IHR) plots. In the legend you can click on a line to hide it. Right-clicking the ECG graph reveals some extra options.</li>
+  <li>Inspect the plots inside the ECG and SC tabs using the zooming and panning commands described previously. Use the file bar to navigate through the files.</li>
+  <li>
+    <p>Corrections can be saved in individual physioData files by using the <strong>Save</strong> button next to the <strong>Menu</strong>.</p>
+
+    <!---
+ Images include for nice images in the PDT Doc.
+-->
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\PhysioAnalyzerViewer.png
+ " title="PhysioAnalyzer Viewer"> -->
+    <img class="pdtImg" id="physioAnalyzerViewer" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\PhysioAnalyzerViewer.png
+ " alt="PhysioAnalyzer Viewer" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#physioAnalyzerViewer">Figure 11</a>:
+        The PhysioAnalyzer Viewer.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("physioAnalyzerViewer");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The PhysioAnalyzer Viewer.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h2 id="correcting-the-ecg-data">
+  
+  
+    <a href="#correcting-the-ecg-data" class="anchor-heading" aria-labelledby="correcting-the-ecg-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Correcting the ECG data
+  
+  
+</h2>
+    
+<p>The ECG module features the ability to mark and reject erroneous R-peaks and IBIs.</p>
+<ul>
+  <li>Navigate to the <strong>ECG</strong> tab in ‘CS_Example_01’.</li>
+  <li>Looking at the ECG and IBI plots, a few anomalies can be noticed:
+    <ul>
+      <li>In the ECG plot there are two R-peaks clearly higher than the other R-peaks at around 500 s and 1100 s. This does not necessarily mean these peaks are faulty, but it is worth checking out.</li>
+      <li>In the IBI plot there are a few clear outliers around 300 and 900 s, with high IBI values, and some possible outliers between 400 and 600 s and around 1100 s, with low IBI values.
+        <blockquote>
+          <p>Note that deviating QRS waves can also be detected by using the <strong>View R-Waves</strong> button, introduced in version 0.6.2 (<a href="..\user-guide\physioanalyzer-modules\ecg-module.html#view-r-waves">info</a>).</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Zoom in (by selecting an area with the right mouse button) at the high R-peak around 500s. Notice that this peak is not a ‘real’ R-peak, but an extra peak between two R-peaks, resulting in two short IBIs. The R-peak can be removed by selecting an area covering the faulty R-peak (using the left mouse button), and selecting <strong>Disregard R-Peaks in selected section</strong>. The disregarded region is visualized in the <strong>R-Skip</strong> graph above the ECG plot. Notice how removing this R-peak also corrects the faulty IBIs at this time point.</p>
+
+    <!---
+ Images include for nice images in the PDT Doc.
+-->
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Faulty_R-Peak-2.png
+ " title="R-Peak rejection1"> -->
+    <img class="pdtImg" id="rPeakRejection1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Faulty_R-Peak-2.png
+ " alt="R-Peak rejection1" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#rPeakRejection1">Figure 12</a>:
+        Selecting and disregarding an R-peak.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("rPeakRejection1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Selecting and disregarding an R-peak.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Faulty_R-Peak-3.png
+ " title="R-Peak rejection 2"> -->
+    <img class="pdtImg" id="rPeakRejection2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Faulty_R-Peak-3.png
+ " alt="R-Peak rejection 2" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#rPeakRejection2">Figure 13</a>:
+        Newly created R-skip zone.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("rPeakRejection2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Newly created R-skip zone.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>Zoom in at the 300 s outliers in the IBI plot and notice how this is caused by missing R-waves in the ECG signal, resulting in two instances of doubly long IBIs. Since R-peaks cannot be manually added in this version of the toolbox, correction must involve removing the bad IBIs.</li>
+  <li>
+    <p>The IBI artifacts can be manually corrected in a similar manner as removing the R-Peak. Zoom in to the IBI artifact at 274 s, and, using the left mouse button, select an area covering the IBI. Subsequently, select <strong>Disregard IBIs in selected section</strong> from the menu. The toolbox will now refrain from using any IBIs located inside this newly inserted <strong>IBI skip zone</strong>, which is visualized in the <strong>IBI-skip</strong> graph.</p>
+
+    <!---
+ Images include for nice images in the PDT Doc.
+-->
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Faulty_IBI-1.png
+ " title="IBI rejection 1"> -->
+    <img class="pdtImg" id="ibiRejection1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Faulty_IBI-1.png
+ " alt="IBI rejection 1" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ibiRejection1">Figure 14</a>:
+        IBI artifacts.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ibiRejection1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "IBI artifacts.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Faulty_IBI-2.png
+ " title="IBI rejection 2"> -->
+    <img class="pdtImg" id="ibiRejection2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Faulty_IBI-2.png
+ " alt="IBI rejection 2" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ibiRejection2">Figure 15</a>:
+        Select and disregard IBI.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ibiRejection2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Select and disregard IBI.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>
+    <p>Since manually removing individual IBIs can be time consuming, a better approach may be to adjust the <strong>Maximum IBI value</strong> setting in this particular PhysioAnalyzer. Zoom the IBI plot completely out by double clicking it. Notice how the correct IBIs in this file are never located above 1.3 s. Click the <strong>View/Edit Settings</strong> button in the ECG tab and set the <strong>Maximum IBI</strong> value to <code>1.3</code>. After clicking <strong>Ok</strong>, the ECG module will automatically remove all IBIs above the said threshold. In the IBI graph, these automatically rejected IBIs are displayed as diamonds and are not used to generate the Instantaneous Heart Rate (IHR), which is calculated by interpolating all non-rejected IBIs. Note that adjusting the settings within the PhysioAnalyzer Viewer will only affect the current file. Other files are not affected and keep the settings as originally specified when the PhysioAnalyzer was created.</p>
+
+    <p><!---
+ Images include for nice images in the PDT Doc.
+--></p>
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Edit_Settings.png
+ " title="ECG edit settings"> -->
+    <img class="pdtImg" id="ecgEditSettings" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Edit_Settings.png
+ " alt="ECG edit settings" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#ecgEditSettings">Figure 16</a>:
+        Edit ECG settings of current PhysioData file.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("ecgEditSettings");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Edit ECG settings of current PhysioData file.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>Check out and if necessary remove the possible outliers located around 550 s and 1100 s.</li>
+  <li>When done, mark the ECG module in ‘CS_Example_01’ as accepted by clicking the checkbox.</li>
+  <li>Press the <strong>Save</strong> button next to the <strong>Menu</strong> button to save the corrections you just made in the current PhysioData file.</li>
+  <li>
+    <p>Navigate to the ECG tab in ‘CS_Example_04’ and notice that there seem to be a lot of artifacts in the IBI data.</p>
+
+    <p><!---
+ Images include for nice images in the PDT Doc.
+--></p>
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Low_R-peaks-1.png
+ " title="Low R-peaks 1"> -->
+    <img class="pdtImg" id="lowRPeaks1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Low_R-peaks-1.png
+ " alt="Low R-peaks 1" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#lowRPeaks1">Figure 17</a>:
+        ECG containing a lot of IBI artifacts.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("lowRPeaks1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "ECG containing a lot of IBI artifacts.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>
+    <p>Zoom in at some of the artifacts. Many IBIs are automatically rejected, visualized by diamonds in the IBI graph. Notice that each time before an outlying IBI occurs, an R-peak is ‘missed’ by the PhysioData Toolbox. This means that a ‘true’ R-peak was not detected as R-peak. Rather than manually removing each IBI, we can fix this by adjusting the <strong>Minimum R-peak value</strong> setting in this particular PhysioAnalyzer. Zoom completely out by double clicking on the ECG graph. Notice that the R-peaks hover around 0.5 mV, but do not go below 0.3 mV. Click the <strong>View/Edit Settings</strong> button in the ECG tab and set the <strong>Minimum R-peak value</strong> value to <code>0.3</code>. After clicking <strong>Ok</strong>, the ECG module will automatically detect the R-peaks with a value above 0.3.</p>
+
+    <p><!---
+ Images include for nice images in the PDT Doc.
+--></p>
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Low_R-peaks-2.png
+ " title="Low R-peaks 2"> -->
+    <img class="pdtImg" id="lowRPeaks2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Low_R-peaks-2.png
+ " alt="Low R-peaks 2" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#lowRPeaks2">Figure 18</a>:
+        R-peaks missed by the PhysioData Toolbox.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("lowRPeaks2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "R-peaks missed by the PhysioData Toolbox.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Low_R-peaks-3.png
+ " title="Low R-peaks 3"> -->
+    <img class="pdtImg" id="lowRPeaks3" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ECG_Low_R-peaks-3.png
+ " alt="Low R-peaks 3" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#lowRPeaks3">Figure 19</a>:
+        Adjusting the settings of the PhysioAnalyzer for the current PhysioData file.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("lowRPeaks3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Adjusting the settings of the PhysioAnalyzer for the current PhysioData file.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>One outlying IBI remains at around 800 s. Remove this IBI.</li>
+  <li>When done, mark this module as accepted by clicking the checkbox.</li>
+  <li>Press the <strong>Save</strong> button to save the corrections in the current PhysioData File.</li>
+</ul>
+<h2 id="correcting-the-sc-data">
+  
+  
+    <a href="#correcting-the-sc-data" class="anchor-heading" aria-labelledby="correcting-the-sc-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Correcting the SC data
+  
+  
+</h2>
+    
+<p>Data correction in the Skin Conductance graph consists of the user inserting <strong>Raw-Skip zones</strong> inside which the raw data are not used. Instead, the data inside the zone are replaced by linear interpolation before applying the low-pass filter, and performing the subsequent processing and analysis actions.</p>
+<ul>
+  <li>Go the the SC tab in ‘CS_Example_01’. Notice how the skin conductance signal features two downward spikes, possibly caused by the electrodes coming loose (driving down the conductance) and one upwards spike, possibly caused by the electrodes getting short circuited (driving up the conductance).</li>
+  <li>In the Skin Conductance graph, zoom in to the artifact at around 650 s. Notice how the (raw) signal is suddenly dropping to 0 and does not reflect any natural skin conductance reaction. However, the toolbox does assign SCR landmarks to this spike (SCR valley and peak). It is thus important to remove these faulty sections.</li>
+  <li>
+    <p>Select a section straddling the artifact. Focus on covering the spike in the gray raw data signal. Select <strong>Disregard raw skin conductance data and interpolate</strong> and <strong>Do not detect SCRs with landmarks in selected section</strong> to remove the spike and to not use the section for SCR detection.</p>
+
+    <p><!---
+ Images include for nice images in the PDT Doc.
+--></p>
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\SC_faulty_spike-2.png
+ " title="SC artifact 1"> -->
+    <img class="pdtImg" id="scArtifact1" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\SC_faulty_spike-2.png
+ " alt="SC artifact 1" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#scArtifact1">Figure 20</a>:
+        Selecting and disregarding a SC zone.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("scArtifact1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Selecting and disregarding a SC zone.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\SC_faulty_spike-3.png
+ " title="SC artifact 2"> -->
+    <img class="pdtImg" id="scArtifact2" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\SC_faulty_spike-3.png
+ " alt="SC artifact 2" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#scArtifact2">Figure 21</a>:
+        Newly created SC raw skip zone.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("scArtifact2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Newly created SC raw skip zone.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>Do the same for the other artifacts.</li>
+  <li>When done, mark the SC module in ‘CS_Example_01’ as accepted by clicking the checkbox.</li>
+  <li>Press the <strong>Save</strong> button to save the corrections you just made.</li>
+</ul>
+<h2 id="viewing-the-hrv-data">
+  
+  
+    <a href="#viewing-the-hrv-data" class="anchor-heading" aria-labelledby="viewing-the-hrv-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Viewing the HRV data
+  
+  
+</h2>
+    
+<p>The HRV module itself does not allow users to correct artifacts, this must instead be done in the linked ECG module. Any changes made to the IBIs in the linked ECG module are automatically transmitted to the HRV module, and the graphs and results table are automatically updated. Note that it is important to remove artifacts in both the R-peak and IBI signals in the ECG module. When, for example, the analyzer incorrectly identified an extra R-peak, correcting the corresponding IBI alone will incorrectly mark the preceding and succeeding IBI as noncontiguous, which can have an effect on the HRV results.</p>
+<ul>
+  <li>
+    <p>Navigate to the HRV tab in ‘CS_Example_01’. Note that we previously corrected the IBI signal in the ECG module of this file and that this is also visible when looking at the IBI plot in the top. Zoom in and notice the missing IBIs around 270 s.</p>
+
+    <p><!---
+ Images include for nice images in the PDT Doc.
+--></p>
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\HRV-IBIs-2.png
+ " title="HRV module"> -->
+    <img class="pdtImg" id="hrvModule" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\HRV-IBIs-2.png
+ " alt="HRV module" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#hrvModule">Figure 22</a>:
+        The HRV module zoomed in at the IBIs around 270 s.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("hrvModule");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The HRV module zoomed in at the IBIs around 270 s.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>Select the epoch that you wish to review the results of by using the dropdown menu at the left, or by clicking the buttons next to it, or by clicking on one of the epoch rectangles in the epoch plot in the top of the window.</li>
+  <li>Inspect the plots using the zooming and panning commands. In the right bottom part of the window the <strong>Detrended IBIs</strong>, <strong>Successive Differences</strong>, <strong>Poincare Plot</strong>, and <strong>Lomb-Scargle Periodogram</strong> are displayed. These plots can be minimized by clicking the arrow button in the right upper corner.</li>
+  <li>When reviewed, mark the HRV module in ‘CS_Example_01’ as accepted.</li>
+</ul>
+<h2 id="viewing-results">
+  
+  
+    <a href="#viewing-results" class="anchor-heading" aria-labelledby="viewing-results"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Viewing results
+  
+  
+</h2>
+    
+<ul>
+  <li>Review the other modules in the other files, correct where necessary, and mark them as accepted.</li>
+  <li>You can view each module’s individual results by clicking the <strong>View Results</strong> button. This will perform descriptive analyses on each epoch in the current PhysioAnalyzer, and show the results in Excel. In the <strong>INFO</strong> tab summaries of all current settings and states are provided.</li>
+  <li>Close the PhysioAnalyzer Viewer when done and go back to the Session Manager.</li>
+</ul><hr />
+<h1 id="updating-the-settings">
+  
+  
+    <a href="#updating-the-settings" class="anchor-heading" aria-labelledby="updating-the-settings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Updating the Settings
+  
+  
+</h1>
+    
+<p>At times it may be necessary to update one or more specific settings within multiple existing PhysioAnalyzers, without overwriting other customized settings, and without removing the corrections. This can be done using the <strong>PhysioAnalyzer Configurator</strong> in the Session Manager.</p>
+
+<p>Say we want to update the epoch definitions in all files, but leave the other settings intact:</p>
+<ul>
+  <li>Select any file in the file tree, and click the <strong>Import from PhysioData file</strong> button. Remove the <strong>Skin Conductance Analyzer</strong> and the <strong>HRV Analyzer</strong> from the PhysioAnalyzer tree by selecting them (by clicking them) and clicking the <strong>Remove Analyzer</strong> button.</li>
+  <li>Click the <strong>View/Edit Analyzer</strong> button, then in the settings dialog, the <strong>Click to View/Edit Epochs</strong> button.</li>
+  <li>We are going to add trial baseline epochs (ranging 2 seconds before stimulus onset to stimulus onset) that precede the already existing CS+ epochs.
+    <ul>
+      <li>Add a row.</li>
+      <li>Fill in <code>CS_plus_Base_img_1</code> in <strong>epochName</strong>.</li>
+      <li>Leave <strong>startChannel</strong> at <code>4</code>.</li>
+      <li>Fill in <code>11</code> in <strong>startValue</strong>.</li>
+      <li>Fill in <code>1:last</code> in <strong>startOccur</strong>.</li>
+      <li>Fill in <code>-2</code> in <strong>startDelay</strong>.</li>
+      <li>Copy the start definition fields to the end definition fields.</li>
+      <li>Modify the <strong>endDelay</strong> to <code>0</code>.</li>
+      <li>Right click in a field of the row that was just created and select <strong>Duplicate row</strong>.</li>
+      <li>Modify the <strong>epochName</strong> to <code>CS_plus_Base_img_2</code>.</li>
+      <li>Modify the <strong>startValue</strong> and <strong>endValue</strong> to <code>12</code>.</li>
+      <li>Click <strong>Generate Epochs</strong> and verify that the epochs were created correctly.</li>
+    </ul>
+  </li>
+  <li>We will also add a Metadata Column so that more information is included in the exported data:
+    <ul>
+      <li>Click <strong>Add Metadata Column</strong></li>
+      <li>Enter <code>Type</code> in the Column Name field.</li>
+      <li>
+        <p>In the newly created column, fill in <code>response</code> in ‘Resp’ epochs (rows 3 and 4) and <code>baseline</code> in the ‘Base’ epochs (rows 6 and 7).</p>
+
+        <!---
+ Images include for nice images in the PDT Doc.
+-->
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\EpochsAdjusted-2.png
+ " title="Epochs adjusted"> -->
+    <img class="pdtImg" id="epochsAdjusted" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\EpochsAdjusted-2.png
+ " alt="Epochs adjusted" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#epochsAdjusted">Figure 23</a>:
+        The Epoch Definition table with the baseline epochs and metadata column added.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("epochsAdjusted");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Epoch Definition table with the baseline epochs and metadata column added.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>Click <strong>Ok</strong> in the Epoch Builder and the Settings dialog to return to the Session Manager.</li>
+  <li>Expand the ECG module in the PhysioAnalyzer tree, and deselect all settings except the <strong>Epochs</strong> (labeled <strong>Epochs from definition: 7 row(s) in table</strong>).</li>
+</ul>
+
+<!---
+    Images include for nice images in the PDT Doc.
+-->
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+         max-width: 500px; 
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\EpochSettingSelected-2.png
+ " title="Epoch setting selected"> -->
+    <img class="pdtImg" id="epochSettingSelected" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\EpochSettingSelected-2.png
+ " alt="Epoch setting selected" style="
+             width: 100%; 
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#epochSettingSelected">Figure 24</a>:
+        The ECG module with only the Epochs setting checked.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("epochSettingSelected");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The ECG module with only the Epochs setting checked.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>Click the <strong>Apply to PhysioData Files</strong>. This will open a summary of the settings that are to be pushed to the files. In this window, click <strong>Apply to all files</strong> to propagate the listed settings, in this case the epochs, to all the PhysioData files. This will leave the other settings intact.</li>
+</ul>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+         max-width: 500px; 
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\PhysioAnalyzerSetting-2.png
+ " title="PhysioAnalyzer Setting"> -->
+    <img class="pdtImg" id="physioAnalyzerSetting" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\PhysioAnalyzerSetting-2.png
+ " alt="PhysioAnalyzer Setting" style="
+             width: 100%; 
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#physioAnalyzerSetting">Figure 25</a>:
+        The Batch PhysioAnalyzer Propagator window. It shows a summary of the PhysioAnalyzers that are about to be pushed to the files, including their settings.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("physioAnalyzerSetting");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Batch PhysioAnalyzer Propagator window. It shows a summary of the PhysioAnalyzers that are about to be pushed to the files, including their settings.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<p>Note that the <strong>Maximum IBI value</strong> setting in ‘CS_Example_01’ and the <strong>Minimum R-peak value</strong> in ‘CS_Examples_04’ were previously customized and differ from the other files. As such, if that setting were not unchecked in the PhysioAnalyzer tree, its value would be pushed to all files overwriting any file-specific values.</p>
+
+<ul>
+  <li>Use the PhysioAnalyzer viewer to verify that the new epochs are present in all files, and that the customized <strong>Maximum IBI value</strong> setting in ‘CS_Example_01’ and <strong>Minimum R-peak value</strong> in ‘CS_Examples_04’ are still intact.</li>
+</ul><hr />
+<h1 id="exporting-analysis">
+  
+  
+    <a href="#exporting-analysis" class="anchor-heading" aria-labelledby="exporting-analysis"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exporting Analysis
+  
+  
+</h1>
+    
+<p>The results of all the PhysioAnalyzers inside multiple PhysioData files can be exported to different file formats, by first selecting the desired PhysioData files in the file tree, then clicking the <strong>Epoch Summaries</strong> button in the <strong>Data Export</strong> panel. We will export the data to an Excel file.</p>
+<ul>
+  <li>Select all PhysioData files (tip: use ctrl + A).</li>
+  <li>Click the <strong>Epoch Summaries</strong> button, then click <strong>Analyze all files</strong>, wait for the toolbox to collect the descriptive analyses and then select <strong>As one Excel file, with one table per worksheet</strong> and click <strong>Ok</strong>. Finally, click the <strong>Open Excel File</strong> button to view the file. The results are automatically saved to a new timestamped Excel file in the current data directory.</li>
+</ul>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\DataExport-2.png
+ " title="Data export options"> -->
+    <img class="pdtImg" id="dataExport" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\DataExport-2.png
+ " alt="Data export options" style="
+            
+            display: block;
+            ;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 10px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#dataExport">Figure 26</a>:
+        The Data Export panel.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("dataExport");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Data Export panel.";
+        modalImg.style.cssText =  "";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+
+<ul>
+  <li>For each unique PhysioAnalyzer tag, two new sheets are created: the <strong>&lt;tag&gt;_RESULTS</strong> and <strong>&lt;tag&gt;_INFO</strong> sheets. These sheets can be accessed using the tabs in the bottom left corner of the Excel window. The ‘RESULTS’ sheet contains all the results for all epochs in that PhysioAnalyzer, inside all selected files. Notice that these results include the user created Metadata column <strong>Type_user</strong>. The ‘INFO’ sheet contains information about the settings and state. Rows that belong to the same file are grouped together by color in the first column.</li>
+  <li>Note that the data are automatically formatted as Excel tables, allowing you to easily filter and sort the data. As an example, the table can be filtered to only show the stimulus baseline and response epochs by clicking the button in the <strong>epochName</strong> table header (cell D:5), and selecting only the stimulus epochs (that start with ‘ECG_CS’).</li>
+</ul>
+
+<p><!---
+    Images include for nice images in the PDT Doc.
+--></p>
+
+<!-- Left and right padding for image:
+ - Allow users to set a left indent parameter,
+   which overrides the image's tendency to center.
+-->
+
+<!-- The image path:
+-->
+
+<!-- The image number counter:
+-->
+
+<!-- Determine the ID: 
+-->
+
+<!-- Add fancy img-aware drop-shadow:
+        https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css
+-->
+
+<!-- Make figure:
+        Use table for formatting, see:
+        https://stackoverflow.com/a/11652170 
+-->
+<figure class="" style="
+        padding: 0px;
+        padding-left: 26px;
+        padding-right: 26px;
+         margin: auto; 
+        margin-bottom: 24px;
+        margin-top: 38px;
+        display: table;
+        
+        ">
+
+    <!-- Add an image with a link to the image source: -->
+    <!-- <a href="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ExcelExport.png
+ " title="Excel Export"> -->
+    <img class="pdtImg" id="excelExport" src="
+https://physiodatatoolbox.leidenuniv.nl/docs/archive/v0.6.3/assets/images/tutorial\ExcelExport.png
+ " alt="Excel Export" style="
+            
+            display: block;
+            -webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);;
+            " />
+    <!-- </a> -->
+    <!-- Add caption, with a "Figure X:" prefix that
+        has a link to the figure anchor.
+        Format the caption as one font size smaller than the body.-->
+    
+    <figcaption class="fs-3" style="
+            line-height: 1.5;
+                padding: 0px;
+                 padding-top: 16px; 
+                padding-left: 26px;
+                padding-right: 26px;
+                padding-bottom: 20px;
+                text-align: justify;
+                display: table-caption;
+                caption-side: bottom;">
+        <a href="#excelExport">Figure 27</a>:
+        The Excel data export format.
+    </figcaption>
+    
+</figure>
+
+<!---
+    Add lightbox popup code:
+-->
+
+<script>
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("excelExport");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "The Excel data export format.";
+        modalImg.style.cssText =  "-webkit-filter: drop-shadow(1px 1px 3px #222);filter: drop-shadow(1px 1px 3px #222);";
+
+        // Disable the scrollbar on the overlying body:
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+</script>
+<h1 id="saving-the-session">
+  
+  
+    <a href="#saving-the-session" class="anchor-heading" aria-labelledby="saving-the-session"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Saving the session
+  
+  
+</h1>
+    
+<p>Edits made to PhysioData files can be saved in individual files by clicking the <strong>Save</strong> button in the PhysioAnalyzer Viewer. This will save the PhysioAnalyzers, including their settings and state, and all user corrections in that PhysioData file. To save all files, click the <strong>Save all files</strong> button in the Session Manager.</p>
+
+<p><strong>It is strongly advised to save often to prevent data loss in case the PhysioData Toolbox inadvertently closes.</strong></p>
+
+<p>Note, only PhysioAnalyzers that have been applied to PhysioData files are saved inside their respective files. Those PhysioAnalyzers are visualized in the file tree inside the PhysioData files panel in the Session Manager. PhysioAnalyzers in the PhysioAnalyzer configurator are not saved and will be lost when the Toolbox is closed.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    
+<!-- The attrib footer -->
+<p class="text-small text-grey-dk-100 mb-0">© Copyright Leiden University, 2022.</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

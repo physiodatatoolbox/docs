@@ -1,0 +1,132 @@
+[
+    {
+        "field": "pdtData",
+        "size": "1 x 1",
+        "type": "struct",
+        "desc": "A scalar struct holding the contents of a PhysioData file.",
+        "children": [
+            {
+                "field": "data",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct holding all raw data, including events.",
+                "children": [
+                    {
+                        "field": "labels",
+                        "size": "1 x 1",
+                        "type": "struct",
+                        "desc": "The labels field inside the data variable holds the labels (i.e. events) that are associated with the signals inside the PhysioData file. This field can be omitted if no labels are present.",
+                        "children": [
+                            {
+                                "field": "t",
+                                "size": "k x 1",
+                                "type": "double",
+                                "desc": "A single column vector with the times, in seconds, of the labels."
+                            },
+                            {
+                                "field": "channels",
+                                "size": "1 x 1",
+                                "type": "cell",
+                                "desc": "A single cell that holds a [k x 1 cell] cell array of char arrays, with each element being the name/value of the label."
+                            },
+                            {
+                                "field": "channelUnits",
+                                "size": "1 x 1",
+                                "type": "cell",
+                                "desc": "A single cell containing the following char: '-' (labels don't have units)."
+                            },
+                            {
+                                "field": "channelNames",
+                                "size": "1 x 1",
+                                "type": "cell",
+                                "desc": "A single cell containing the following char array: 'Labels'."
+                            }
+                        ]
+                    },
+                    {
+                        "field": "signals",
+                        "size": "1 x 1",
+                        "type": "struct",
+                        "desc": "A scalar struct that holds raw signal data in a collection of channels.",
+                        "children": [
+                            {
+                                "field": "fs",
+                                "size": "1 x 1",
+                                "type": "double",
+                                "desc": "A scalar double indicating the sampling frequency of the signals in Hz. The time vector is dynamically calculated with the first sample at t = 0 and a sample interval of 1/fs."
+                            },
+                            {
+                                "field": "channels",
+                                "size": "1 x k",
+                                "type": "cell",
+                                "desc": "A cell array that holds one signal per cell; i.e. one time-series per channel. All channels must contain the same amount of samples in a single column. All signals share the same time-vector."
+                            },{
+                                "field": "channelUnits",
+                                "size": "1 x k",
+                                "type": "cell",
+                                "desc": "A cell array with k char arrays indicating the unit of each signal. A cell element can be an empty char if the corresponding signal has no unit."
+                            },
+                            {
+                                "field": "channelNames",
+                                "size": "1 x k",
+                                "type": "cell",
+                                "desc": "A cell array with k char arrays indicating the name of each signal."
+                            },{
+                                "field": "channelDescription",
+                                "size": "1 x k",
+                                "type": "cell",
+                                "desc": "A cell array with k char arrays indicating the description of each signal. A cell element can be an empty char if the corresponding signal has no description."
+                            }
+                        ]
+                    }
+                ]
+            },{
+                "field": "epochs",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct that holds pre-generated epochs. This field can be omitted if no pre-generated epochs are present.",
+                "children": [
+                    {
+                        "field": "epochData",
+                        "size": "m x n",
+                        "type": "table",
+                        "desc": "The epochData table is an m by n table containing m pre-generated epochs. The table must contain the following variables:\n\n<b>startTime</b>: an m x 1 double specifying the start time of the epoch, in seconds.\n<b>endTime</b>: an m x 1 double specifying the end time of the epoch, in seconds.\n<b>epochName</b>: an m x 1 cell array of chars specifying the name of the epoch.\n\nAdditionally, the table may contain extra metadata columns, which will be copied to the output file. All metadata columns must be either a single column double vector, or a single column cell array of chars.\n\nThe 'duration', 'dataSource', 'error', etc. variables are automatically added by the Toolbox."
+                    }
+                ]
+            },{
+                "field": "physioDataInfo",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct that holds metadata about the file. When generating a PhysioData file, this struct is optional, and so are each of its field.",
+                "children": [
+                    {
+                        "field": "rawDataSource",
+                        "size": "1 x m",
+                        "type": "char",
+                        "desc": "The name of the original raw data file. Can be omitted if irrelevant."
+                    },{
+                        "field": "pdtFileCreationDate",
+                        "size": "1 x m",
+                        "type": "char",
+                        "desc": "The file creation timestamp (no specific time-format required). Can be omitted if irrelevant."
+                    },{
+                        "field": "pdtFileCreationUser",
+                        "size": "1 x m",
+                        "type": "char",
+                        "desc": "The name of the user that created the file. Can be omitted if irrelevant."
+                    }
+                ]
+            },{
+                "field": "UserData",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct that can be used to hold user data. This variable will be copied to the output when generating a Data Archive. It can be omitted if irrelevant."
+            },{
+                "field": "physioAnalyzerTemplates",
+                "size": "1 x 1",
+                "type": "struct",
+                "desc": "A scalar struct that holds the PhysioAnalyzer module's settings and state. This variable is not intended to be user-modifiable."
+            }
+        ]
+    }
+]

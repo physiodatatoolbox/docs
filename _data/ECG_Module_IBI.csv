@@ -1,0 +1,9 @@
+Variable,Unit,Description
+"dataSource","filename","The filename of the data source."
+"index","-","The IBI index."
+"totalCount","-","The total number of IBIs in the current signal (see dataSource)."
+"ibiTime","s","The timestamp of the IBI. This is the timetamp of the R-peak at the end of the IBI."
+"ibiStartTime","s","The timestamp of the start of the IBI. This is the timetamp of the R-peak at the start of the IBI."
+"ibi","s","The IBI (Interbeat Interval)."
+"inEpoch_name","","The names of the epochs that the IBI is inside of. Note that IBIs are assigned to an epoch if their end-time lies inside it."
+"inEpoch_count","","The number of epochs that the IBI is inside of. Note that IBIs are assigned to an epoch if their end-time lies inside it."

@@ -1,0 +1,22 @@
+
+{
+    "version": "0.6.3",
+    "download_url": "https://surfdrive.surf.nl/files/index.php/s/bUL3YZOiZ5d1KSI/download",
+    "mcr_ver_short": "9.9",
+    "matlab_ver": "2020b",
+    "version_archive" : [
+      {
+      "version" : "0.6.2" ,
+      "download_url" : "https://surfdrive.surf.nl/files/index.php/s/fWa41Qiq1ODlxzy/download",
+      "release_date_str" : "Dec 23<sup>rd</sup>, 2021"
+      },{
+      "version" : "0.6.1" ,
+      "download_url" : "https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download",
+      "release_date_str" : "July 8<sup>th</sup>, 2021"
+      },{
+      "version" : "0.5.0" ,
+      "download_url" : "https://surfdrive.surf.nl/files/index.php/s/V4d5vPp976TlXuk/download",
+      "release_date_str" : "Oct 1<sup>st</sup>, 2019"
+      }
+      ]
+  }

@@ -24,11 +24,18 @@ One key feature of the Toolbox is its ability to automatically segment data into
 In the Toolbox, epochs are tied to the PhysioAnalyzer modules. Each PhysioAnalyzer has a setting labeled **Generate epoch from** and a drop down menu allowing the user to select **Epoch Definition Table** or **PhysioAnalyzer with tag**. If the former is selected, the module will generate its own epochs based on the epoch definition table provided; or, if the latter is selected, the module copies epochs from another module, selected via its tag.
 
 {% include image.html
-    img="user-guide/epochs/epoch-settings.png"
+    img="user-guide/epochs/epoch-settings-1.png"
     title= "Epoch Settings"
     id="epoch-settings"
     no_shadow = true
-    caption = "The settings panel of the Generic Signal Analyzer, shown twice with different epoch settings. Note the setting labeled 'Generate epochs from', and the dropdown menu beside it. When the user selects 'Epoch Definition Table', the default option, then a button appears below the menu (left). Clicking the button opens the Epoch Builder GUI, where users can import, edit and test epoch definition tables. When 'PhysioAnalyzer with tag:' is selected (right), a text field appears allowing users to enter the tag of the PhysioAnalyzer from which the epochs should be copied (e.g. 'ECG')." %}
+    caption = "The settings panel of the Generic Signal Analyzer. Note the setting labeled 'Generate epochs from', and the dropdown menu beside it. When the user selects 'Epoch Definition Table', the default option, a button appears below the menu. Clicking the button opens the Epoch Builder GUI, where users can import, edit and test epoch definition tables." %}
+
+{% include image.html
+    img="user-guide/epochs/epoch-settings-2.png"
+    title= "Epoch Settings"
+    id="epoch-settings"
+    no_shadow = true
+    caption = "The settings panel, but with 'PhysioAnalyzer with tag:' selected from the 'Generate epochs from' menu. In this mode, a text field appears allowing users to enter the tag of the PhysioAnalyzer from which the epochs should be copied (e.g. 'ECG'). When this is done, the module will use the same epochs as the module named ECG. This allows users to define epochs once and use them in multiple modules." %}
 
 Next to analyzing epochs generated using an epoch definition, the Toolbox will also analyze pre-made epochs saved in the PhysioData file. <!--- TODO: add link to file spec. -->
 
@@ -55,7 +62,7 @@ Each referenceable event has the following properties
 Referenceable events are always ordered chronologically.
 
 {% include image.html
-    img="user-guide/epochs/ref-evt.svg"
+    img="user-guide/epochs/ref-evt.png"
     title= "Referenceable Events"
     id="ref-evt-1"
     no_shadow = true
@@ -73,7 +80,7 @@ As an example, take the 15 second recording shown in [Figure {{ image_counter }}
     The third event has the value 'Label C', a time of 10 s, and an occurrence of 1.
 
  - **Event 4:**  
-    The forth event has the value 'Label D'*, a time of 12 s, and an occurrence of 1.
+    The forth event has the value 'Label D', a time of 12 s, and an occurrence of 1.
 
  - **Event 5:**  
     The fifth event has the value 'Label C', a time of 14 s, and an occurrence of 2; i.e., it is the **second** label with that value.
@@ -92,13 +99,13 @@ Markers are converted into referenceable events using the following rules:
 Even though markers are converted to standard referenceable events by the Toolbox, they are visualized as continuous signals, since that is how they were originally recorded. Referenceable events produced from markers are never discrete.
 
 {% include image.html
-    img="user-guide/epochs/ref-evt-marks.svg"
+    img="user-guide/epochs/ref-evt-marks.png"
     title= "Referenceable Events from Markers"
     id="ref-evt-marks-1"
     no_shadow = true
     caption = "An example of a digital signal recorded while receiving markers. Five markers were logged. The green triangles indicate the onset of the markers, which corresponds to their timestamps; and the red triangles indicate their offsets, which corresponds with their timestamps plus their duration." %}
 
-The example marker channel visualized in Figure {{ num_counter }} features the following markers:
+The example marker channel visualized in Figure {{ image_counter }} features the following markers:
 
  - **Marker 1:**  
     The first marker has a value of 10, a time of 1 s, a duration of 1 s, and an occurrence of 1.
@@ -124,7 +131,7 @@ To create an epoch, two time points must be found: the **epoch start time** and 
 _Which set of referenceable events should the Toolbox use?  
 Within that set, events with what values should be extracted?  
 Of those extracted events, exactly which occurrence should be used?  
-Taking that specific event as a reference, where should the time point be placed._
+Taking that specific event as a reference, where should the time point be placed?_
 {: .ml-4}
 
 In the Toolbox, the data that allows the resolution the questions above must are encoded in an **Epoch Definition Table**.
@@ -182,7 +189,7 @@ In all cases, assume that the markers are located in channel 4. A table can now 
     %}
 
 {% include image.html
-    img="user-guide/epochs/epochs-def-example-1.svg"
+    img="user-guide/epochs/epochs-def-example-1.png"
     title= "Referenceable Events from Markers"
     id="def-eg-1"
     no_shadow = true
@@ -211,12 +218,19 @@ Specifying the value parameter as:
  - **A regular expression:**  
    When the value is specified as a string enclosed in ^ and $---e.g. value = `$Label [A-Z]^`, it is treated as a regular expression, and any events with values matching the expression are used. Note that both the ^ and $ anchors are used as part of the expression. See [MATLAB](https://nl.mathworks.com/help/matlab/matlab_prog/regular-expressions.html) help for more information about regular expressions. Feel free to email the [developers](../about.html) for help generating regular expression patterns.
 
-## Multiple Occurrence ##
+## Multiple Occurrences ##
 Similar to specifying numeric values, occurrences can be specified as a single number or as a set. Additionally, the keyword `last` can be used, which will resolve to the index of the last event that matches the specified value. The usage of last is equal to the MATLAB usage of `end` (which can also be used instead of last). As an example, when specifying occur = `1:last`, all occurrences of the events that match the specified value are selected.
 
 Note that when the value is not strictly specified---i.e., it is specified as a regular expression or a numeric range---the selected events may not have exactly the same value, but will still be ordered sequentially. For instance, when using [these markers](#marker-list), and specifying value = `[1:255]`, then occur = `[2 3]`, the second and third of all the markers with values between 1 and 255 are selected; i.e., the 2nd and 3rd markers in the list. These are the occurrences 2 and 3 of the events that match the value specification (`[1:255]`), even though those events themselves don't have occurrence 2 and 3; they are both the first occurrence of their exact values. The occur parameter targets the order of the events that were selected by the value filter, thus if the value is not strictly specified, the occurrences inside the set produced by the value filter might differ from the event occurrences.
 
 Occurrences must resolve to positive integers, and basic MATLAB functions can be used, like max(), min(), ceil(), floor(), round(), etc.
+
+## Relative Occurrences ##
+As of version 0.7.0, the endOccur can be defined relative to the that epochs's start time by appending the occurrence with the `AFTER` keyword. For instance, filling in `1 AFTER` in endOccur will find the first occurrence after the epoch's start time that matches the endValue.
+ 
+When using the `AFTER` keyword, only scalar occurrences in endOccur are supported; e.g., an endOccur of `[1 2] AFTER` will produce an error. However, the startOccur (or startDelay) can be non-scalar, in which case--when using the `AFTER` keyword--the endOccur will be applied to each resolved start time. For instance, say a file contains 10 markers with value 20 indicating the start of an epoch, each followed by a marker with a value of either an 21 or 22, indicating the end of that epoch. These epochs can be defined using the startValue of 20, a startOccur of `1:last`, an endValue of `[21 22]`, and an endOccur of `1 AFTER`.
+ 
+Similarly, the `BEFORE` keyword can be used in the startOccur to indicate the start occurrence needs to be limited to the time before the end of the epoch; e.g., a startOccur of `last BEFORE` will match the last event that matches the startValue before the end time, or times if the end definition resolves to multiple times.
 
 ## Multiple Delays ##
 The delay parameter can be specified as a single number or as a vector; or as a formula that resolves into one of the two. When specified as a single number, that delay is applied to all events that match the value and occurrences specified in the definition. For instance, if the value and occurrence parameters produce 2 events, and the delay is specified as delay = `5`, then two time points will be produces; 5 seconds after both events.
@@ -242,18 +256,27 @@ The Toolbox contains an **Epoch Builder** to help users build and test epoch def
     img="user-guide/epochs/epoch-builder-gui.png"
     title= "Epoch Builder"
     id="epoch-builder-gui"
-    no_shadow = true
     caption = "The Epoch Builder window." %}
 
-The Epoch Builder can be split into two main sections: the **outer window** and the **tab group**. The outer window contains the banner on top, the file bar below that, and the buttons on the bottom. The tab group contains tabs that display the current epoch definition table and its associated data.
+The Epoch Builder can be split into two main sections: the **outer window** and the **tab group**. The outer window contains the banner on top (where it says Epoch Builder), the file bar below that, and the buttons on the bottom. The tab group contains tabs that display the current epoch definition table and its associated data.
 
 Note, the Epoch Builder can only manage epoch definition tables with 100 rows or less.
 
 ## Outer Window ##
-In the outer window, under the banner, lies the **File Bar**. It shows the current test file, which is the file used to resolve the current epoch definition when the **Generate Epochs** button is clicked. This button is also located in the file bar, and is only enabled if files are loaded into the Session Manager.
+In the outer window, under the banner, lies the **File Bar**. It shows the current **Test File**, which is the file used to resolve the current epoch definition when the **Generate Epochs** button is clicked.
+
+In the left side of the outer window banner lies the **Menu** button, which has the following options inside the **Epoch Definition** sub-item:
+ - **Copy Table:**  
+   Copies the current epoch definition table to the clipboard, allowing it to be pasted and edited in Excel.
+
+ - **Paste Table:**  
+   Overwrites the current definition table with the contents of the clipboard. This allows tables to be copied from Excel.
+
+ - **Load From File:**  
+   Overwrites the current definition table with the contents of an Excel file.
 
 At the bottom of the window lies three buttons:  
- - **Ok:**  
+ - **Save and Exit:**  
    Accepts and saves the current epoch definition, and exits the Epoch Builder.
 
  - **Reset:**  
@@ -267,18 +290,7 @@ If the Epoch Builder window is closed manually, all changes are discarded.
 ## Tab 1: Define Epochs ##
 The first tab, labeled **Define Epochs**, shows the epoch definition table and allows users to edit it. 
 
-
-<!-- TODO: Include tab image. -->
-
 The tab contains the following buttons:
- - **Copy Table:**  
-   Copies the current epoch definition table to the clipboard, allowing it to be pasted and edited in Excel.
-
- - **Paste Table:**  
-   Overwrites the current definition table with the contents of the clipboard. This allows tables to be copied from Excel.
-
- - **Load From File:**  
-   Overwrites the current definition table with the contents of an Excel file.
 
  - **Add Metadata Column:**  
    Adds a metadata column to the epoch definition table.
@@ -291,6 +303,9 @@ The tab contains the following buttons:
 
  - **Removes Row(s):**  
    Removes one or more rows from the epoch definition table.
+
+ - **Generate Epochs:**  
+   Regenerates the epochs preview by applying the current epoch definition to the test file, as specified by the **Test File** popup menu. Note that the button is disabled if no files are loaded into the Session Manager.
    
 Below the buttons, the epochs that the current epoch definition table produces when applied to the current file are visualized. This includes epochs already present in the file. The plot is refreshed whenever the 'Generate Epochs' button is clicked, and is only visible if files are loaded into the Session Manager.
 
@@ -318,7 +333,7 @@ The context menus also allow the current table row to be deleted or duplicated; 
     title= "Epoch Builder Context Menus"
     id="epoch-builder-menus"
     no_shadow = false
-    caption = "The definition table in the Epoch Builder features cells with context menus reflecting the referenceable events in the current file. In the GIF, the menus are used to define epochs as starting at all events with value 100, and ending 10 seconds after. The events are taken from the markers in channel 4." %}
+    caption = "The definition table in the Epoch Builder features cells with context menus reflecting the referenceable events in the current file. In the GIF, the menus are used to define epochs as starting at all events with value 100, and ending 10 seconds after. The events are taken from the markers in channel 4. Lastly, the Highlight Epoch options is selected, which highlight all epochs generated by that row." %}
 
 ### Slicing Epochs ###
 At times, users may wish to slice large epochs into smaller sections. To do this, the large epochs must first be defined in the epoch definition table (or must already be present in a file). The startChannel and endChannel must then be set to `epochs` so that these epochs can be referenced, and the startValue and endValue parameters, in combination with startOccur and endOccur, can be used to specify the name and occurrences of the to be referenced epoch(s).
@@ -347,8 +362,6 @@ The second tab, labeled **Markers and Events inside Test File**, displays all th
     no_shadow = false
     caption = "The third tab of the Epoch Builder window, showing a table with full information about each generated epoch." %}
 
-<!-- TODO: Add examples -->
-
 ---
 
 # New Epoch Features in v0.6+ #
@@ -369,7 +382,7 @@ The new epoch definition engine is similar to the old version, but features some
      The epochModify column no longer appears in the new epoch definition table. If you want to slice an epoch into smaller sections, you will need to use the delay parameters. See [this section](#slicing-epochs) for more information.
 
 - **New Epoch Builder:**  
-     The epoch Builder interface gas been updated and now features several improvements. Most importantly, users can now right-click inside the epoch definition table's cells to open context-aware helper menus.
+     The epoch Builder interface has been updated and now features several improvements. Most importantly, users can now right-click inside the epoch definition table's cells to open context-aware helper menus.
 
 An example of the old epoch definition:
 

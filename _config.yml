@@ -45,21 +45,24 @@ baseurl_static: ""
 
 
 # PDT variables (for the current version):
-pdt_version: '0.6.3'
-pdt_year: '2022'
-pdt_release_date_str: 'Jan 27<sup>th</sup>, 2022'
+pdt_version: '0.7.0'
+pdt_year: '2025'
+pdt_release_date_str: 'May 6<sup>th</sup>, 2025'
 
 
 # PDT download variables (for the latest version):
-pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/bUL3YZOiZ5d1KSI/download'
-pdt_mcr_ver_short: '9.9'
-pdt_mcr_ver_long: 'MATLAB 2020b Component Runtime (v9.9)'
-pdt_matlab_ver: '2020b'
+pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/LCKAEPTbw64Vi89/download'
+pdt_mcr_ver_short: '23.3'
+pdt_mcr_ver_long: 'MATLAB 2023b Component Runtime (v23.2)'
+pdt_matlab_ver: '2023b'
 
 
 # Version archive (the pdt_info.json asset uses this array to generate a
 # web-accessible json for automated legacy Toolbox version installation):
 pdt_version_archive:
+- pdt_version: '0.6.3'
+  pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/bUL3YZOiZ5d1KSI/download'
+  pdt_release_date_str: 'Jan 27<sup>th</sup>, 2022'
 - pdt_version: '0.6.2'
   pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/fWa41Qiq1ODlxzy/download'
   pdt_release_date_str: 'Dec 23<sup>rd</sup>, 2021'

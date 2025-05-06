@@ -25,7 +25,7 @@ Unlike the other PhysioAnalyzers, the units and labels in the Generic Signal Ana
     img="user-guide/physioanalyzers/physioanalyzer-gui-1.png"
     title= page.title
     id="gui-1"
-    caption="A Generic Signal Analyzer tagged HR, showing a heart-rate signal as calculated in real-time using AcqKnowledge." %} 
+    caption="A Generic Signal Analyzer, showing a miscellaneous signal." %} 
 
 ---
 
@@ -42,16 +42,10 @@ Artifact removal in the {{ page.title }} module occurs through the user marking 
         **Use Data** tells the toolbox to use the raw data inside the section. This is the default state, and the opposite of the Disregard option. As such, it can be used to remove a section previously marked as 'Disregarded'. 
 
 {% include image.html
-    img="user-guide/physioanalyzers/physioanalyzer-correction-1.png"
+    img="user-guide/physioanalyzers/physioanalyzer-correction-1.gif"
     title= page.title
     id="correction-1"
     caption="Marking a correction zone for interpolation: after the red section has been selected by dragging the left mouse button, the pop-up menu presents two options: disregard the raw data and interpolate; or, use the raw data." %} 
-
-{% include image.html
-    img="user-guide/physioanalyzers/physioanalyzer-correction-2.png"
-    title= page.title
-    id="correction-2"
-    caption="The heart-rate signal, which featured two artifacts, has been corrected by inserting two interpolation zones." %} 
 
 ---
 
