@@ -13,10 +13,10 @@ The PhysioData Toolbox is a free, easy-to-use and fully graphical application fo
 **{{ site.pdt_release_date_str }}:** Version {{ site.pdt_version }} released ([see what's new](./docs/change-log.html)). 
 {: .pdt-abstract-body}
 
-<!--
+
 ❕ 🦕 Looking for older versions? See the [Documentation Archive](./docs/doc-versions.html) page.
 {: .ml-4}
--->
+
 ---
 
 {% assign show_smiley = true %}

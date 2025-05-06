@@ -10,7 +10,7 @@ The PhysioData Toolbox is in constant development. The latest version is {{ site
 {: .pdt-abstract-body}
 
 {% include note.html
-    text="If you have any bug reports, feature requests, suggestions or comments, please [email](./about.html) us. We would love to hear from you. 📡" %}
+    text="If you have any bug reports, feature requests, suggestions or comments, please [email](./about.html) us. We would love to hear from you." %}
 
 ---
 
