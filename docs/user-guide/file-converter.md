@@ -76,14 +76,15 @@ If the File Converter detects imminent filename collisions, i.e. that similarly 
 ---
 
 # BIOPAC Files #
-The built-in BIOPAC converter supports AcqKnowledge (**v3.9 – v5.0.8**) data saved as .acq files or exported as .mat files. Due to a limitation in the BIOPAC File API, only AcqKnowledge .acq files that comply with the following requirements can be converted: 
+The built-in BIOPAC converter supports AcqKnowledge data saved as .acq files or exported as .mat files. Only AcqKnowledge .acq files that comply with the following requirements can be converted: 
 
- - All channels must have the same sampling rate 
- - All channels must have the same length
+ - File must be saved in an **AcqKnowledge v3.9 through v5.0.8**, not newer or older.
+ - All channels must have the **same sampling rate**.
+ - All channels must have the **same length**.
 
-AcqKnowledge data that don't conform to this requirement can still be exported as .mat files and converted. Note that when AcqKnowledge saves data as a .mat file, the events are lost.
+AcqKnowledge data that don't conform to these requirements can still be exported as .mat files and then converted using the File Converter. Note that when AcqKnowledge saves data as a .mat file, the events (labels) are lost. Marker channels, however, will stay intact.
 
-If the AcqKnowledge files are newer than what the Toolbox supports, the data can be saved as a 'Windows AcqKnowledge 3 Graph' inside AcqKnowledge, which is compatible with the BIOPAC File Converter.
+Alternatively, if the AcqKnowledge files are newer than what the Toolbox supports, the data can be saved as a 'Windows AcqKnowledge 3 Graph' inside AcqKnowledge, which should be compatible with the BIOPAC File Converter given that the file conforms to the above-mentioned specifications.
 
 The BIOPAC converter does not feature any custom conversion options.
 
