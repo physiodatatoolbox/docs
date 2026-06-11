@@ -51,7 +51,7 @@ pdt_release_date_str: 'May 6<sup>th</sup>, 2025'
 
 
 # PDT download variables (for the latest version):
-pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/LCKAEPTbw64Vi89/download'
+pdt_download_url: 'https://surfdrive.surf.nl/s/LCKAEPTbw64Vi89'
 pdt_mcr_ver_short: '23.3'
 pdt_mcr_ver_long: 'MATLAB 2023b Component Runtime (v23.2)'
 pdt_matlab_ver: '2023b'
@@ -61,16 +61,16 @@ pdt_matlab_ver: '2023b'
 # web-accessible json for automated legacy Toolbox version installation):
 pdt_version_archive:
 - pdt_version: '0.6.3'
-  pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/bUL3YZOiZ5d1KSI/download'
+  pdt_download_url: 'https://surfdrive.surf.nl/s/bUL3YZOiZ5d1KSI'
   pdt_release_date_str: 'Jan 27<sup>th</sup>, 2022'
 - pdt_version: '0.6.2'
-  pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/fWa41Qiq1ODlxzy/download'
+  pdt_download_url: 'https://surfdrive.surf.nl/s/fWa41Qiq1ODlxzy'
   pdt_release_date_str: 'Dec 23<sup>rd</sup>, 2021'
 - pdt_version: '0.6.1'
-  pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/gMILKhsZTAICSsR/download'
+  pdt_download_url: 'https://surfdrive.surf.nl/s/gMILKhsZTAICSsR'
   pdt_release_date_str: 'July 8<sup>th</sup>, 2021'
 - pdt_version: '0.5.0'
-  pdt_download_url: 'https://surfdrive.surf.nl/files/index.php/s/V4d5vPp976TlXuk/download'
+  pdt_download_url: 'https://surfdrive.surf.nl/s/V4d5vPp976TlXuk'
   pdt_release_date_str: 'Oct 1<sup>st</sup>, 2019'
 
 #---------------------------------------------------------------------------------------
